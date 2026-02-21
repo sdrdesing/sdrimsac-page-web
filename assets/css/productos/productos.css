@@ -1,0 +1,17 @@
+/* Estilos exclusivos para productos.php (imágenes pequeñas) */
+.card img,
+.card-visual img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.08);
+}
+@media (max-width: 600px) {
+    .card img,
+    .card-visual img {
+        width: 60px;
+        height: 60px;
+    }
+}

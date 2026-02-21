@@ -1,0 +1,138 @@
+/* Estilos exclusivos para demo.php */
+.demo-hero {
+    background: #18376b url('../img/bg-circuitos.png') center/cover no-repeat;
+    padding: 60px 0 40px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.demo-title h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.demo-title span {
+    font-size: 1.1rem;
+    color: #cfd8e3;
+}
+.demo-content {
+    background: #f3f3ff;
+    padding: 32px 0;
+}
+.demo-info {
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 24px 18px;
+    text-align: center;
+}
+.demo-info h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-bottom: 12px;
+}
+.demo-info p {
+    font-size: 1.1rem;
+    color: #222;
+}
+.demo-form-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+.demo-form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 24px 18px;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+}
+.demo-form h3 {
+    font-size: 1.3rem;
+    color: #18376b;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+.demo-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #222;
+}
+.demo-form input, .demo-form select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #cfd8e3;
+    margin-top: 4px;
+    font-size: 1rem;
+    background: #f7f7fc;
+}
+.demo-privacidad {
+    font-size: 0.95rem;
+    color: #18376b;
+    margin-bottom: 18px;
+}
+.demo-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: #18376b;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    margin-top: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.12);
+    transition: background 0.2s;
+}
+.demo-submit-btn:hover {
+    background: #2a2aee;
+}
+.demo-img {
+    text-align: center;
+    margin-top: 12px;
+}
+.demo-img img {
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.demo-mascota-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-top: 12px;
+}
+@media (max-width: 900px) {
+    .demo-form-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .demo-img {
+        margin-top: 24px;
+    }
+}
+@media (max-width: 600px) {
+    .demo-hero {
+        padding: 32px 0 18px 0;
+    }
+    .demo-title h1 {
+        font-size: 2rem;
+    }
+    .demo-info {
+        padding: 12px 6px;
+    }
+    .demo-form {
+        padding: 12px 6px;
+    }
+}

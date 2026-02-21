@@ -1,0 +1,201 @@
+/* Estilos exclusivos y llamativos para instalacioncamaras.php */
+.cam-main {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 12px 48px 12px;
+}
+.cam-info {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(24,55,107,0.12);
+    padding: 36px 28px 28px 28px;
+    text-align: center;
+    margin-bottom: 36px;
+    border: 2px solid #2a2aee;
+}
+.cam-info h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #2a2aee;
+    letter-spacing: 1px;
+}
+.cam-info p {
+    font-size: 1.15rem;
+    color: #222;
+    margin-bottom: 22px;
+}
+.cam-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.18rem;
+    color: #18376b;
+}
+.cam-list li {
+    background: #e3eaff;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.08);
+    border: 1px solid #2a2aee;
+}
+.cam-beneficios {
+    margin-bottom: 36px;
+}
+.cam-beneficios h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.cam-beneficios-desc {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #2a2aee;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+.cam-beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 36px;
+}
+.cam-beneficio {
+    background: linear-gradient(135deg,#fff 60%,#e3eaff 100%);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
+    padding: 28px 18px;
+    text-align: center;
+    border: 2px solid #2a2aee;
+    transition: transform 0.2s;
+}
+.cam-beneficio:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
+}
+.cam-icon {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #2a2aee;
+}
+.cam-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-bottom: 10px;
+}
+.cam-text {
+    font-size: 1.05rem;
+    color: #222;
+}
+.cam-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 36px 0 36px 0;
+}
+.cam-galeria-img {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
+    border: 2px solid #2a2aee;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.cam-galeria-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
+}
+.cam-galeria-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+@media (max-width: 900px) {
+    .cam-beneficios-grid, .cam-galeria {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .cam-main {
+        padding: 0 4px 24px 4px;
+    }
+    .cam-info {
+        padding: 12px 6px;
+    }
+    .cam-beneficios-grid, .cam-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+.cam-faq-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.cam-faq {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+.cam-faq-list {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.08);
+    padding: 28px 18px;
+    min-width: 320px;
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid #2a2aee;
+}
+.cam-faq-item {
+    margin-bottom: 18px;
+}
+.cam-faq-q {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a2aee;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cam-faq-q:hover {
+    color: #18376b;
+}
+.cam-faq-a {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    display: none;
+}
+.cam-faq-item.active .cam-faq-a {
+    display: block;
+}
+.cam-faq-img {
+    text-align: center;
+    margin-top: 12px;
+}
+.cam-faq-img img {
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.12);
+    max-width: 320px;
+    width: 100%;
+}

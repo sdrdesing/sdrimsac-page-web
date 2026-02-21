@@ -1,0 +1,204 @@
+/* Manual de uso estilo columnas */
+.manual-blocks {
+    margin: 48px auto 0 auto;
+    max-width: 980px;
+    background: #f7f8fc;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.08);
+    padding: 32px 18px 24px 18px;
+}
+.manual-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.manual-col {
+    flex: 1 1 260px;
+    min-width: 240px;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.06);
+    padding: 18px 12px 18px 12px;
+    text-align: left;
+}
+.manual-icon {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #18376b;
+    margin-bottom: 8px;
+}
+.manual-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.manual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.manual-list li {
+    position: relative;
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 8px;
+    padding-left: 22px;
+}
+.manual-list li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #2a2aee;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+.manual-bottom-blocks {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 24px;
+}
+.manual-bottom-col {
+    flex: 1 1 220px;
+    min-width: 180px;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.06);
+    padding: 18px 12px 18px 12px;
+    text-align: left;
+}
+.manual-icon-bottom {
+    text-align: center;
+    font-size: 2rem;
+    color: #2a2aee;
+    margin-bottom: 8px;
+}
+.manual-title-bottom {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.manual-list-bottom {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.manual-list-bottom li {
+    position: relative;
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 8px;
+    padding-left: 22px;
+}
+.manual-list-bottom li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #18376b;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+@media (max-width: 900px) {
+    .manual-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    .manual-bottom-blocks {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Estilos exclusivos para facturacionchifa.php */
+.chifa-main {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px 48px 24px;
+}
+.chifa-img-top {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.chifa-img-large {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.chifa-desc {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.chifa-desc h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #18376b;
+}
+.chifa-desc p {
+    font-size: 1.1rem;
+    color: #222;
+}
+.chifa-img-mid {
+    display: block;
+    margin: 32px auto 32px auto;
+    max-width: 340px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.chifa-manual {
+    text-align: center;
+    margin-top: 24px;
+}
+.chifa-manual h3 {
+    font-size: 1.3rem;
+    color: #18376b;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.chifa-manual p {
+    font-size: 1.05rem;
+    color: #222;
+    margin-bottom: 12px;
+}
+.chifa-demo-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 32px;
+    background: #18376b;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.12);
+    transition: background 0.2s;
+}
+.chifa-demo-btn:hover {
+    background: #2a2aee;
+}
+@media (max-width: 600px) {
+    .chifa-main {
+        padding: 16px 6px 24px 6px;
+    }
+    .chifa-img-large, .chifa-img-mid {
+        max-width: 98vw;
+    }
+}

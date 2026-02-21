@@ -1,0 +1,88 @@
+/* CSS para el carrusel de imágenes en index.php */
+/* Carrusel de 4 imágenes horizontales - VERSION MÁS GRANDE */
+.carousel-section {
+    width: 100%;
+    background: #fff;
+    padding: 50px 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-multi-container {
+    position: relative;
+    width: 1200px;           /* ⬅ Más ancho */
+    max-width: 98vw;
+    height: 320px;           /* ⬅ Más alto */
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 6px 30px rgba(42,42,238,0.12);
+    background: #f7f8fc;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-multi-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+    width: 400%;
+    height: 320px;           /* ⬅ Ajustado */
+}
+
+.carousel-multi-slide {
+    flex: 0 0 25%;
+    max-width: 25%;
+    height: 320px;           /* ⬅ Ajustado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.carousel-multi-slide img {
+    width: 100%;
+    height: 280px;           /* ⬅ Imagen más grande */
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(42,42,238,0.10);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(42,42,238,0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;             /* ⬅ Botones más grandes */
+    height: 48px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+.carousel-btn:hover {
+    background: #2a2aee;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .carousel-multi-container {
+        width: 98vw;
+        height: 200px;
+    }
+
+    .carousel-multi-track,
+    .carousel-multi-slide {
+        height: 200px;
+    }
+
+    .carousel-multi-slide img {
+        height: 170px;
+    }
+}
