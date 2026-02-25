@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/includes/header.php'); ?>
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -94,4 +94,4 @@
 </section>
 
 <?php include("includes/social.php"); ?>
-<?php include("includes/footer.php"); ?>
+<?php include(__DIR__ . '/includes/footer.php'); ?>
