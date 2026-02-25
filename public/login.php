@@ -1,5 +1,5 @@
 <?php
-include("config/database.php");
+include(__DIR__ . '/../config/database.php');
 session_start();
 
 if(isset($_POST["login"])){
@@ -28,7 +28,7 @@ if(isset($_POST["login"])){
 }
 ?>
 
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/../includes/header.php'); ?>
 
 <!-- FONDO DIVIDIDO: imagen izquierda + formulario derecha -->
 <section class="auth-section">

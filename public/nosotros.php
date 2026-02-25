@@ -1,6 +1,6 @@
 
 <?php 
-include("includes/header.php"); 
+include(__DIR__ . '/includes/header.php'); 
 ?>
 <link rel="stylesheet" href="assets/css/nosotros.css">
 
@@ -224,4 +224,4 @@ include("includes/header.php");
 </section>
 
 <?php include("includes/social.php"); ?>
-<?php include("includes/footer.php"); ?>
+<?php include(__DIR__ . '/includes/footer.php'); ?>

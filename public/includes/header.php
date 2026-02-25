@@ -31,6 +31,7 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
 </head>
 <body>
 
+
 <div class="topbar">
     <span>📞 +51 995 764 963</span>
     <span>✉ contacto@sdrimsac.com</span>

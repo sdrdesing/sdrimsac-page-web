@@ -1,15 +1,33 @@
 <?php
+// Plantilla básica para Restaurant
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Facturación Restaurant - SDRIMSAC</title>
+    <link rel="stylesheet" href="../public/assets/css/estilo.css">
+    <link rel="stylesheet" href="../public/assets/css/facturacionrestaurant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/script.js" defer></script>
+<body>
+    <?php include(__DIR__ . '/../includes/header.php'); ?>
+    
+    <?php include(__DIR__ . '/../includes/footer.php'); ?>
+    </body>
+    </html>
+<?php
 ?><!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Aplicativo para Facturacion Electronica - Restaurante  - SDRIMSAC</title>
-<link rel="stylesheet" href="assets/css/estilo.css">
-<link rel="stylesheet" href="assets/css/facturacionrestaurant.css">
+<link rel="stylesheet" href="../public/assets/css/estilo.css">
+<link rel="stylesheet" href="../public/assets/css/facturacionrestaurant.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/../includes/header.php'); ?>
 <section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
     <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Facturación Restaurant</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
@@ -17,7 +35,7 @@
 </section>
 <!-- Banner principal -->
 <div class="restaurant-banner">
-    <img src="assets/img/restaurante.jpg" alt="App Restaurant Facturación Electrónica" />
+    <img src="../public/assets/img/restaurante.jpg" alt="App Restaurant Facturación Electrónica" />
 </div>
 
 <!-- Desarrollo de Facturación Electrónica -->
@@ -142,6 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<?php include("includes/footer.php"); ?>
+<?php include(__DIR__ . '/../includes/footer.php'); ?>
 </body>
 </html>

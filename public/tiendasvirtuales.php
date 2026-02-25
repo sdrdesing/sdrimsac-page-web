@@ -1,43 +1,42 @@
-<?php
-// Plantilla básica para Tiendas Virtuales
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Tiendas Virtuales - SDRIMSAC</title>
-<link rel="stylesheet" href="assets/css/tiendasvirtuales.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Tiendas Virtuales - SDRIMSAC</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/tiendasvirtuales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+    <?php include(__DIR__ . '/includes/header.php'); ?>
 
-<!-- BANNER -->
-<div class="page-banner">
-    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80" alt="Tiendas Virtuales SDRIM">
-    <div class="page-banner-overlay">
-        <h1>Tiendas Virtuales</h1>
-        <p>Soluciones de comercio electrónico para tu negocio</p>
+    <!-- BANNER -->
+    <div class="page-banner">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80" alt="Tiendas Virtuales SDRIM">
+        <div class="page-banner-overlay">
+            <h1>Tiendas Virtuales</h1>
+            <p>Soluciones de comercio electrónico para tu negocio</p>
+        </div>
     </div>
-</div>
-<link rel="stylesheet" href="assets/css/tiendasvirtuales/tiendasvirtuales.css">
 
-<section class="tv-contenido">
-    <div class="tv-info">
-        <h2>Descubre sobre Tienda Virtuales</h2>
-        <p>Plataforma en línea que permite a los negocios y comerciantes vender productos y servicios en Internet de manera eficiente y conveniente para los clientes. Proporciona una experiencia de compra digital completa, desde la navegación por productos hasta la finalización de transacciones seguras, lo que la convierte en una herramienta esencial en la economía digital actual.</p>
-        <ul class="tv-list">
-            <li>🛒 Proceso de Compra</li>
-            <li>📦 Gestión de Inventario</li>
-            <li>🔍 Herramientas de Búsquedas y Filtros</li>
-            <li>💬 Atención al Cliente en Línea</li>
-            <li>🎨 Personalización</li>
-            <li>🎁 Ofertas y Promociones</li>
-        </ul>
-    </div>
-    <div class="tv-beneficios">
-        <h2>BENEFICIOS DE UNA TIENDA VIRTUAL</h2>
-        <div class="tv-beneficios-desc">"Una tienda virtual no solo amplía tu alcance, sino que también optimiza tus ventas, reduce costos operativos y te acerca a un futuro más."</div>
-        <div class="tv-beneficios-grid">
+    <section class="tv-contenido">
+        <div class="tv-info">
+            <h2>Descubre sobre Tienda Virtuales</h2>
+            <p>Plataforma en línea que permite a los negocios y comerciantes vender productos y servicios en Internet de manera eficiente y conveniente para los clientes. Proporciona una experiencia de compra digital completa, desde la navegación por productos hasta la finalización de transacciones seguras, lo que la convierte en una herramienta esencial en la economía digital actual.</p>
+            <ul class="tv-list">
+                <li>🛒 Proceso de Compra</li>
+                <li>📦 Gestión de Inventario</li>
+                <li>🔍 Herramientas de Búsquedas y Filtros</li>
+                <li>💬 Atención al Cliente en Línea</li>
+                <li>🎨 Personalización</li>
+                <li>🎁 Ofertas y Promociones</li>
+            </ul>
+        </div>
+        <div class="tv-beneficios">
+            <h2>BENEFICIOS DE UNA TIENDA VIRTUAL</h2>
+            <div class="tv-beneficios-desc">"Una tienda virtual no solo amplía tu alcance, sino que también optimiza tus ventas, reduce costos operativos y te acerca a un futuro más."</div>
+            <div class="tv-beneficios-grid">
             <div class="tv-beneficio">
                 <div class="tv-icon">🌐</div>
                 <div class="tv-title">Alcance Global</div>
@@ -179,6 +178,9 @@
         </div>
     </div>
 </section>
-<?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/includes/footer.php'); ?>
+</body>
+</html>
 </body>
 </html>

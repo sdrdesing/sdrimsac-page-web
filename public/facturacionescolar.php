@@ -9,7 +9,7 @@
 <script src="js/script.js" defer></script>
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/includes/header.php'); ?>
 <section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
     <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Aplicativo para Facturacion Electronica - Escolar</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
@@ -18,6 +18,7 @@
 <!-- Banner principal -->
 <div style="max-width:900px;margin:40px auto 0 auto;padding:0;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
     <img src="assets/img/ESCOLAR.png" alt="Facturación Electrónica Escolar" style="width:100%;border-radius:18px 18px 0 0;">
+        <!-- Ruta actualizada -->
 
 
 </div>
@@ -54,18 +55,19 @@
             <li>Registro de Apoderados (Padre – Madre – Abuel@/s) e Hijos (alumnos)</li>
             <li>Registro de Multimatrículas</li>
             <li>Registro de Almacén de Útiles</li>
-        </ul>
-    </div>
-    <div style="flex:1 1 50%;padding:32px 24px 24px 24px;">
-        <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;"><i class="fa-solid fa-cash-register" style="margin-right:8px;"></i> CAJA</h3>
-        <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
-            <li>Vista en Tarjeta (con imagen) de los Productos (Útiles escolares – Uniforme – Libros) dispuestos para la Venta</li>
-            <li>Emisión de comprobantes electrónicos ilimitados con y sin IGV (Factura, Boleta y Nota de Venta) para el cobro de inscripción y cobro de matrículas, con envíos directos al WhatsApp del cliente</li>
-            <li>Emisión de comprobantes electrónicos ilimitados con diferentes métodos de pago</li>
-            <li>Campo de observaciones</li>
-            <li>Envío de Facturas y Boletas directo a SUNAT</li>
-            <li>Anulación de comprobantes (Interno y Externo) Notas de Crédito</li>
-            <li>Registro de Matrículas y Multimatrículas</li>
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Facturación Escolar - SDRIMSAC</title>
+            <link rel="stylesheet" href="assets/css/estilo.css">
+            <link rel="stylesheet" href="assets/css/facturacionescolar.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <script src="assets/js/script.js" defer></script>
+        </head>
+        <body>
+            <?php include(__DIR__ . '/includes/header.php'); ?>
             <li>Reporte de ventas diarias en pdf (con envíos directo a WhatsApp de la administración)</li>
             <li>Ingresos y Gastos de Efectivo</li>
         </ul>
@@ -92,8 +94,10 @@
     </div>
     <div style="flex:1;text-align:center;">
         <img src="assets/img/escolar_faq.png" alt="Escolar Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
+            <!-- Ruta actualizada -->
     </div>
 </div>
-<?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/includes/footer.php'); ?>
 </body>
 </html>

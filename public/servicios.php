@@ -1,5 +1,16 @@
-<?php include("includes/header.php"); ?>
-<link rel="stylesheet" href="assets/css/servicios.css">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - SDRIMSAC</title>
+  <link rel="stylesheet" href="assets/css/estilo.css">
+  <link rel="stylesheet" href="assets/css/servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+  <?php include(__DIR__ . '/includes/header.php'); ?>
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -310,5 +321,7 @@
 
 </section>
 
-<?php include("includes/social.php"); ?>
-<?php include("includes/footer.php"); ?>
+  <?php include("includes/social.php"); ?>
+  <?php include(__DIR__ . '/includes/footer.php'); ?>
+</body>
+</html>

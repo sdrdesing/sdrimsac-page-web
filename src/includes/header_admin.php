@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <title>Panel de Administración - SDRIMSAC</title>
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
     .admin-navbar {
@@ -50,7 +50,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <body>
 <nav class="admin-navbar">
     <div class="admin-logo">
-        <img src="../assets/img/SDRIMSAC.png" alt="SDRIMSAC" style="height:36px;vertical-align:middle;"> Panel Admin
+        <img src="../../public/assets/img/SDRIMSAC.png" alt="SDRIMSAC" style="height:36px;vertical-align:middle;"> Panel Admin
     </div>
     <div class="admin-menu">
         <a href="dashboard.php"><i class="fa-solid fa-chart-line"></i> Dashboard</a>

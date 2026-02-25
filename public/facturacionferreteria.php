@@ -5,19 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Aplicativo para Facturación Electrónica - Ferretería</title>
-<link rel="stylesheet" href="assets/css/estilo.css">
-<link rel="stylesheet" href="assets/css/facturacionferreteria.css">
+<link rel="stylesheet" href="../public/assets/css/estilo.css">
+<link rel="stylesheet" href="../public/assets/css/facturacionferreteria.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/../includes/header.php'); ?>
 <section class="servicios-header" style="background:#b97a1a; color:#fff; padding:60px 0 40px 0; text-align:center;">
     <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Aplicativo para Facturación Electrónica - Ferretería</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
 </section>
 <!-- Banner principal -->
 <div class="ferreteria-banner">
-    <img src="assets/img/ferreteria.png" alt="Facturación Electrónica Ferretería" />
+    <img src="../public/assets/img/ferreteria.png" alt="Facturación Electrónica Ferretería" />
 </div>
 
 <!-- Desarrollo de Facturación Electrónica -->
@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+    <?php include(__DIR__ . '/../includes/footer.php'); ?>
 </body>
 </html>
-<?php include("includes/footer.php"); ?>

@@ -7,13 +7,13 @@ $nombre = $conn->real_escape_string($_SESSION['usuario']);
 $r = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='$nombre' LIMIT 1");
 if(!$r || $r->num_rows == 0 || intval($r->fetch_assoc()['is_admin']) !== 1){ header('Location: ../index.php'); exit; }
 
-include __DIR__ . '/includes/header_admin.php';
+include __DIR__ . '/../includes/header_admin.php';
 
 $top_vistos = $conn->query("SELECT id,nombre,vistas FROM productos ORDER BY vistas DESC LIMIT 10");
 $top_vendidos = $conn->query("SELECT id,nombre,vendidos FROM productos ORDER BY vendidos DESC LIMIT 10");
 $top_favs = $conn->query("SELECT id,nombre,favoritos FROM productos ORDER BY favoritos DESC LIMIT 10");
 ?>
-<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../../public/assets/css/dashboard.css">
 <link rel="stylesheet" href="compras_historial.css">
 <link rel="stylesheet" href="compras_pendientes.css">
 

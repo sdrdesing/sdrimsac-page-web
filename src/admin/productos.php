@@ -9,7 +9,7 @@ $nombre = $conn->real_escape_string($_SESSION['usuario']);
 $r = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='$nombre' LIMIT 1");
 if(!$r || $r->num_rows == 0 || intval($r->fetch_assoc()['is_admin']) !== 1){ header('Location: ../index.php'); exit; }
 
-include __DIR__ . '/includes/header_admin.php';
+include __DIR__ . '/../includes/header_admin.php';
 
 // Handle delete action POST
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])){
@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])){
 
 $res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
 ?>
-<link rel="stylesheet" href="productos.css">
+<link rel="stylesheet" href="../../public/assets/css/productos.css">
 <section class="productos-section">
     <h2>Gestión de Productos</h2>
     <a href="producto_form.php" class="btn-nuevo-producto">+ Nuevo Producto</a>
@@ -56,5 +56,3 @@ $res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
         </tbody>
     </table>
 </section>
-
-

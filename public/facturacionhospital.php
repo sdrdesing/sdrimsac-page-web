@@ -1,5 +1,5 @@
-<?php include("includes/header.php"); ?>
-<link rel="stylesheet" href="assets/css/servicios.css">
+<?php include(__DIR__ . '/../includes/header.php'); ?>
+<link rel="stylesheet" href="../public/assets/css/servicios.css">
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -12,7 +12,7 @@
 
 
 <div class="recreos-banner" style="display:flex;justify-content:center;margin-top:40px;">
-    <img src="assets/img/hospital.jpeg" alt="App Hospital Facturación Electrónica" style="max-width:1100px;width:100%;height:auto;border-radius:16px;" />
+    <img src="../public/assets/img/hospital.jpeg" alt="App Hospital Facturación Electrónica" style="max-width:1100px;width:100%;height:auto;border-radius:16px;" />
 </div>
 
 
@@ -111,4 +111,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/../includes/footer.php'); ?>

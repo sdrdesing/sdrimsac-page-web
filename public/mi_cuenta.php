@@ -6,8 +6,8 @@ if(!isset($_SESSION['usuario'])){
 }
 $usuario = htmlspecialchars($_SESSION['usuario']);
 $tab = isset($_GET['tab']) ? $_GET['tab'] : 'main';
-include("includes/header.php");
-include("config/database.php");
+include(__DIR__ . '/../includes/header.php');
+include(__DIR__ . '/../config/database.php');
 
 // ...existing code...
 $mensaje = '';

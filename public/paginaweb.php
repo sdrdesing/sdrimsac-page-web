@@ -17,37 +17,46 @@ if(file_exists(__DIR__ . '/../config/database.php')){
 }
 ?>
 
-<?php include("includes/header.php"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Páginas Web - SDRIMSAC</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/paginaweb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <?php include(__DIR__ . '/includes/header.php'); ?>
 
-<link rel="stylesheet" href="assets/css/paginaweb.css">
+    <section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Páginas Web</h1>
+        <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
+        <div style="font-size:1.1rem;color:#cfd8e3;">Servicios <span style="color:#fff;">:</span> Páginas Web</div>
+    </section>
 
-<section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
-    <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Páginas Web</h1>
-    <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
-    <div style="font-size:1.1rem;color:#cfd8e3;">Servicios <span style="color:#fff;">:</span> Páginas Web</div>
-</section>
-
-<div class="paginaweb-intro-card">
-    <h2>Descubre sobre Páginas Web</h2>
-    <p>Especializada en el desarrollo y diseño web, y nuestra misión es transformar las ideas y visiones de nuestros clientes en experiencias web funcionales, atractivas y efectivas. Entendemos que una página web es la ventana principal de una empresa en el mundo digital, por lo que nos esforzamos por crear soluciones web de alta calidad que generen impacto y resultados tangibles.</p>
-    <div class="paginaweb-list-grid">
-        <ul class="paginaweb-list">
-            <li><i class="fa-solid fa-circle-check"></i> Diseño Web Creativos</li>
-            <li><i class="fa-solid fa-circle-check"></i> Desarrollo Web Personalizado</li>
-            <li><i class="fa-solid fa-circle-check"></i> Optimización para Móviles y Responsividad</li>
-        </ul>
-        <ul class="paginaweb-list">
-            <li><i class="fa-solid fa-circle-check"></i> Seguridad y Protección</li>
-            <li><i class="fa-solid fa-circle-check"></i> Gestión y Contenido</li>
-            <li><i class="fa-solid fa-circle-check"></i> Analíticas Web y Seguimiento</li>
-        </ul>
+    <div class="paginaweb-intro-card">
+        <h2>Descubre sobre Páginas Web</h2>
+        <p>Especializada en el desarrollo y diseño web, y nuestra misión es transformar las ideas y visiones de nuestros clientes en experiencias web funcionales, atractivas y efectivas. Entendemos que una página web es la ventana principal de una empresa en el mundo digital, por lo que nos esforzamos por crear soluciones web de alta calidad que generen impacto y resultados tangibles.</p>
+        <div class="paginaweb-list-grid">
+            <ul class="paginaweb-list">
+                <li><i class="fa-solid fa-circle-check"></i> Diseño Web Creativos</li>
+                <li><i class="fa-solid fa-circle-check"></i> Desarrollo Web Personalizado</li>
+                <li><i class="fa-solid fa-circle-check"></i> Optimización para Móviles y Responsividad</li>
+            </ul>
+            <ul class="paginaweb-list">
+                <li><i class="fa-solid fa-circle-check"></i> Seguridad y Protección</li>
+                <li><i class="fa-solid fa-circle-check"></i> Gestión y Contenido</li>
+                <li><i class="fa-solid fa-circle-check"></i> Analíticas Web y Seguimiento</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<section class="paginaweb-beneficios-section">
-    <div class="paginaweb-beneficios-title">BENEFICIOS DE LA PÁGINA WEB</div>
-    <div class="paginaweb-beneficios-desc">Descubre cómo nuestra página web te ayuda a optimizar tu tiempo y acceder a nuestros servicios en cualquier momento.<br>A continuación, te presentamos todos los beneficios que te esperan.</div>
-    <div class="paginaweb-beneficios-grid">
+    <section class="paginaweb-beneficios-section">
+        <div class="paginaweb-beneficios-title">BENEFICIOS DE LA PÁGINA WEB</div>
+        <div class="paginaweb-beneficios-desc">Descubre cómo nuestra página web te ayuda a optimizar tu tiempo y acceder a nuestros servicios en cualquier momento.<br>A continuación, te presentamos todos los beneficios que te esperan.</div>
+        <div class="paginaweb-beneficios-grid">
         <div class="paginaweb-beneficio-card">
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Visibilidad">
             <h3>Visibilidad en Línea</h3>
@@ -174,4 +183,7 @@ if(file_exists(__DIR__ . '/../config/database.php')){
     </div>
 </section>
 
-<?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/includes/footer.php'); ?>
+</body>
+</html>

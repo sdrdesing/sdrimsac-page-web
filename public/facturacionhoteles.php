@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Facturación Hoteles - SDRIMSAC</title>
-<link rel="stylesheet" href="assets/css/facturacionhoteles.css">
+<link rel="stylesheet" href="../public/assets/css/facturacionhoteles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="js/script.js" defer></script>
+<script src="../public/assets/js/script.js" defer></script>
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/../includes/header.php'); ?>
 <section class="servicios-header">
     <h1>Aplicativo para Facturacion Electronica - Hoteles</h1>
     <div>Sdrim S.A.C.</div>
@@ -17,13 +17,13 @@
 </section>
 
 <div class="hoteles-banner">
-    <img src="assets/img/hotel.png" alt="App Hoteles Facturación Electrónica" />
+    <img src="../public/assets/img/hotel.png" alt="App Hoteles Facturación Electrónica" />
 </div>
 
 <div class="hoteles-desarrollo">
     <h2>DESARROLLO DE FACTURACIÓN ELECTRÓNICA</h2>
     <p>El servicio de desarrollo de facturación electrónica para NEGOCIO – HOTEL es una herramienta integral que facilita la administración de operaciones diarias de un hotel o establecimiento de un hospedaje. Este sistema está diseñado para mejorar la eficiencia operativa, optimizar la experiencia del huésped y aumentar la rentabilidad.</p>
-    <img src="assets/img/hotel1.png" alt="Zona de Atención Hotel" />
+    <img src="../public/assets/img/hotel1.png" alt="Zona de Atención Hotel" />
 </div>
 
 <div class="hoteles-roles">
@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/../includes/footer.php'); ?>
 </body>
 </html>

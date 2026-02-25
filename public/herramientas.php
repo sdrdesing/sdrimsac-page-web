@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,6 +93,10 @@
     </div>
 </section>
 
+    <?php include("includes/social.php"); ?>
+    <?php include("includes/footer.php"); ?>
+</body>
+</html>
     <?php include("includes/social.php"); ?>
     <?php include("includes/footer.php"); ?>
 </body>

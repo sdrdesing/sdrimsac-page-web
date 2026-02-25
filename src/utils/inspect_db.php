@@ -1,5 +1,5 @@
 <?php
-include('config/database.php');
+include(__DIR__ . '/../../config/database.php');
 
 $res = $conn->query("SHOW TABLES LIKE 'usuarios'");
 if($res->num_rows === 0){

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+<?php include(__DIR__ . '/includes/header.php'); ?>
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -166,7 +166,7 @@
     </div>
 </section>
 
-<?php include("includes/footer.php"); ?>
+<?php include(__DIR__ . '/includes/footer.php'); ?>
 
 </body>
 </html>

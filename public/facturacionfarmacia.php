@@ -1,5 +1,17 @@
-<?php include("includes/header.php"); ?>
-<link rel="stylesheet" href="assets/css/servicios.css">
+<link rel="stylesheet" href="../public/assets/css/servicios.css">
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Facturación Farmacia - SDRIMSAC</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/facturacionfarmacia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <?php include(__DIR__ . '/../includes/header.php'); ?>
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -11,7 +23,7 @@
 </div>
 <!-- Banner principal -->
 <div style="max-width:900px;margin:40px auto 0 auto;padding:0;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-    <img src="assets/img/farmacia.jpeg" alt="Sistema de Facturación Electrónica Farmacia" style="width:100%;border-radius:18px 18px 0 0;">
+    <img src="../public/assets/img/farmacia.jpeg" alt="Sistema de Facturación Electrónica Farmacia" style="width:100%;border-radius:18px 18px 0 0;">
 </div>
 
 <!-- Desarrollo de Facturación Electrónica -->
@@ -105,5 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <?php include("includes/footer.php"); ?>
+
+    <?php include(__DIR__ . '/../includes/footer.php'); ?>
 </body>
 </html>
