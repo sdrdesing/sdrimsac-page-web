@@ -1,0 +1,67 @@
+/* dashboard.css - Estilos modernos para el panel admin */
+.dashboard-page {
+    background: #f7f8fa;
+    padding: 32px 0;
+    min-height: calc(100vh - 120px);
+}
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #0001;
+    padding: 32px 24px;
+}
+.dashboard-title {
+    font-size: 32px;
+    color: #1a3a6e;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.dashboard-btns {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+.dashboard-btns button {
+    background: #2255a4;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 1px 6px #2255a433;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dashboard-btns button:hover {
+    background: #1a3a6e;
+}
+.dashboard-metrics {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+.dashboard-metric {
+    flex: 1;
+    min-width: 260px;
+    background: #f4f6fa;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 6px #0001;
+}
+.dashboard-metric h3 {
+    color: #2255a4;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+.dashboard-metric ol {
+    padding-left: 18px;
+    font-size: 16px;
+}
+.dashboard-metric li {
+    margin-bottom: 8px;
+}

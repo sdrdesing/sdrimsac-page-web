@@ -1,0 +1,277 @@
+/* Estilos llamativos para marketingdigital.php */
+.md-contenido {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 12px 48px 12px;
+}
+.md-info {
+    background: linear-gradient(135deg,#f7f8fc 60%,#e3eaff 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(24,55,107,0.12);
+    padding: 36px 28px 28px 28px;
+    text-align: center;
+    margin-bottom: 36px;
+    border: 2px solid #2a2aee;
+}
+.md-info h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #2a2aee;
+    letter-spacing: 1px;
+}
+.md-info p {
+    font-size: 1.15rem;
+    color: #222;
+    margin-bottom: 22px;
+}
+.md-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.18rem;
+    color: #18376b;
+}
+.md-list li {
+    background: #e3eaff;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.08);
+    border: 1px solid #2a2aee;
+}
+.md-beneficios {
+    margin-bottom: 36px;
+}
+.md-beneficios h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.md-beneficios-desc {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #2a2aee;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+.md-beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 36px;
+}
+.md-beneficio {
+    background: linear-gradient(135deg,#fff 60%,#e3eaff 100%);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
+    padding: 28px 18px;
+    text-align: center;
+    border: 2px solid #2a2aee;
+    transition: transform 0.2s;
+}
+.md-beneficio:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
+}
+.md-icon {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #2a2aee;
+}
+.md-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #18376b;
+    margin-bottom: 10px;
+}
+.md-text {
+    font-size: 1.05rem;
+    color: #222;
+}
+.md-planes-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 28px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.md-planes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 28px;
+}
+.md-plan {
+    background: linear-gradient(135deg,#fff 60%,#e3eaff 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(24,55,107,0.12);
+    padding: 36px 28px 28px 28px;
+    min-width: 320px;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #2a2aee;
+    transition: box-shadow 0.2s;
+}
+.md-plan:hover {
+    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
+}
+.md-plan-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #2a2aee;
+    margin-bottom: 10px;
+}
+.md-plan-desc {
+    font-size: 1rem;
+    color: #18376b;
+    margin-bottom: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.md-plan-precio {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 14px;
+}
+.md-plan-precio span {
+    font-size: 1rem;
+    color: #2a2aee;
+    font-weight: 500;
+}
+.md-plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    text-align: left;
+    font-size: 1.05rem;
+    color: #222;
+}
+.md-plan-list li {
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 22px;
+    font-weight: 600;
+}
+.md-plan-list li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #2a2aee;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+.md-cotizar-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 14px 36px;
+    background: #2a2aee;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(42,42,238,0.12);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.md-cotizar-btn:hover {
+    background: #18376b;
+    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
+}
+.md-faq-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.md-faq {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+.md-faq-list {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.08);
+    padding: 28px 18px;
+    min-width: 320px;
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid #2a2aee;
+}
+.md-faq-item {
+    margin-bottom: 18px;
+}
+.md-faq-q {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.md-faq-q:hover {
+    color: #18376b;
+}
+.md-faq-a {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+.md-faq-img {
+    text-align: center;
+    margin-top: 12px;
+}
+.md-faq-img img {
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.12);
+    max-width: 320px;
+    width: 100%;
+}
+@media (max-width: 900px) {
+    .md-beneficios-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .md-planes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .md-faq {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    .md-contenido {
+        padding: 0 4px 24px 4px;
+    }
+    .md-info {
+        padding: 12px 6px;
+    }
+    .md-beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+    .md-plan {
+        padding: 12px 6px;
+    }
+    .md-faq-list {
+        padding: 12px 6px;
+    }
+}

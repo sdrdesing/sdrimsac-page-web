@@ -1,0 +1,110 @@
+/* Estilos para Facturación Créditos */
+.creditos-banner {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.creditos-banner img {
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+}
+.creditos-desarrollo {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 32px 24px 24px 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.creditos-desarrollo h2 {
+    color: #18376b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.creditos-roles-grid {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    background: #f7faff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+.creditos-rol-card {
+    flex: 1 1 220px;
+    min-width: 220px;
+    background: #fff;
+    margin: 24px 12px;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    padding: 24px 18px 18px 18px;
+}
+.creditos-rol-icon {
+    font-size: 2rem;
+    color: #18376b;
+    margin-right: 8px;
+}
+.creditos-rol-card h3 {
+    color: #18376b;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.creditos-rol-card ul {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #222;
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+.creditos-faq-section {
+    max-width: 1100px;
+    margin: 40px auto 40px auto;
+    padding: 32px 24px 24px 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.creditos-faq-section h2 {
+    color: #18376b;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.creditos-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.creditos-faq-item {
+    background: #f8fafd;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.creditos-faq-question {
+    font-weight: 600;
+    color: #18376b;
+    cursor: pointer;
+}
+.creditos-faq-answer {
+    margin-top: 8px;
+    color: #222;
+    display: none;
+}
+.creditos-faq-item.active .creditos-faq-answer {
+    display: block;
+}

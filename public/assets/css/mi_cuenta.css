@@ -1,0 +1,71 @@
+/* Estilos exclusivos para Mi Cuenta */
+body {
+    background: #f5f7fa;
+    font-family: 'Poppins', 'Inter', sans-serif;
+}
+.mi-cuenta-banner {
+    background: url('../img/bg-circuito.jpg') center/cover no-repeat;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mi-cuenta-banner h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.mi-cuenta-panel {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(26,58,110,0.10);
+    padding: 44px 32px;
+    margin-top: -60px;
+    display: flex;
+    gap: 32px;
+}
+.mi-cuenta-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.mi-cuenta-menu a {
+    display: block;
+    background: #1a3a6e;
+    color: #fff;
+    font-weight: 600;
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    text-align: left;
+    transition: background 0.2s;
+}
+.mi-cuenta-menu a:hover {
+    background: #2255a4;
+}
+.mi-cuenta-content {
+    flex: 3;
+    border: 1.5px solid #1a3a6e;
+    border-radius: 12px;
+    padding: 28px 24px;
+    background: #fff;
+}
+.mi-cuenta-content strong {
+    color: #1a3a6e;
+}
+.mi-cuenta-content a {
+    color: #2255a4;
+    font-weight: 600;
+}
+.mi-cuenta-content .legal {
+    font-size: 13px;
+    color: #5a6a85;
+    margin-top: 18px;
+    background: #f4f6fa;
+    border-radius: 8px;
+    padding: 12px;
+}

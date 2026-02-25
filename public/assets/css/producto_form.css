@@ -1,0 +1,53 @@
+/* admin/producto_form.css - Estilos para el formulario de productos en admin */
+.producto-form-section {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0002;
+  padding: 2em 2.5em;
+}
+.producto-form-section h2 {
+  color: #1a237e;
+  font-size: 1.7em;
+  margin-bottom: 1em;
+}
+.producto-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+}
+.producto-form-section label {
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+.producto-form-section input[type="text"],
+.producto-form-section input[type="number"],
+.producto-form-section textarea {
+  padding: 0.5em 0.9em;
+  border-radius: 6px;
+  border: 1px solid #bcd;
+  font-size: 1.1em;
+  background: #f4f6fa;
+  transition: border-color .2s;
+}
+.producto-form-section input:focus,
+.producto-form-section textarea:focus {
+  border-color: #2e8bff;
+  outline: none;
+}
+.producto-form-section button {
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background .2s;
+}
+.producto-form-section button:hover {
+  background: #3949ab;
+}

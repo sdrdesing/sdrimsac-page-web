@@ -1,0 +1,328 @@
+/* Fondo general con gradiente suave */
+body {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e6ecff 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #1a1a3d;
+}
+
+/* Header principal - más impactante */
+.servicios-header {
+    background: linear-gradient(135deg, #0f255a 0%, #1e3a8a 50%, #2a4bb8 100%);
+    color: white;
+    padding: 100px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicios-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.servicios-header h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 0 0 16px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.servicios-header .empresa {
+    font-size: 2.1rem;
+    font-weight: 600;
+    opacity: 0.92;
+    margin: 0 0 12px;
+}
+
+.servicios-header .servicio-tag {
+    font-size: 1.35rem;
+    background: rgba(255,255,255,0.18);
+    padding: 8px 24px;
+    border-radius: 50px;
+    display: inline-block;
+    backdrop-filter: blur(6px);
+}
+
+/* Intro card - flotante elegante */
+.paginaweb-intro-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 16px 48px rgba(42, 74, 180, 0.14);
+    padding: 48px 36px;
+    margin: -80px auto 60px;
+    max-width: 980px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(58, 108, 246, 0.12);
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.paginaweb-intro-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 28px 68px rgba(42, 74, 180, 0.22);
+}
+
+.paginaweb-intro-card h2 {
+    font-size: 2.8rem;
+    color: #1e3a8a;
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.paginaweb-intro-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 4px;
+    background: linear-gradient(90deg, #3a6cf6, #6b4eff);
+    border-radius: 2px;
+}
+
+.paginaweb-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.paginaweb-list li {
+    background: linear-gradient(135deg, #f0f5ff, #e5efff);
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: #1e40af;
+    font-weight: 600;
+    font-size: 1.08rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(58,108,246,0.08);
+}
+
+.paginaweb-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(58,108,246,0.18);
+    background: white;
+}
+
+/* Beneficios - tarjetas flotantes con íconos grandes */
+.paginaweb-beneficios-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #f8faff, #f0f4ff);
+}
+
+.paginaweb-beneficios-title {
+    font-size: 2.6rem;
+    color: #0f255a;
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.paginaweb-beneficios-desc {
+    text-align: center;
+    color: #475569;
+    font-size: 1.18rem;
+    max-width: 780px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+}
+
+.paginaweb-beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paginaweb-beneficio-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    border: 1px solid rgba(58,108,246,0.1);
+    box-shadow: 0 12px 32px rgba(42,74,180,0.09);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.paginaweb-beneficio-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 28px 68px rgba(42,74,180,0.18);
+}
+
+.paginaweb-beneficio-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(58,108,246,0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.paginaweb-beneficio-card:hover::before {
+    opacity: 1;
+}
+
+.paginaweb-beneficio-card img {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 8px 16px rgba(58,108,246,0.25));
+    transition: transform 0.5s ease;
+}
+
+.paginaweb-beneficio-card:hover img {
+    transform: scale(1.12) rotate(8deg);
+}
+
+.paginaweb-beneficio-card h3 {
+    color: #1e40af;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+}
+
+/* Precios - tarjetas premium con efecto flotante */
+.paginaweb-precios-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0f255a 0%, #1e3a8a 100%);
+    color: white;
+    position: relative;
+}
+
+.paginaweb-precios-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.08)"/><circle cx="90" cy="30" r="1.5" fill="rgba(255,255,255,0.07)"/><circle cx="40" cy="80" r="2.5" fill="rgba(255,255,255,0.09)"/></svg>') repeat;
+    opacity: 0.4;
+}
+
+.paginaweb-precios-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.paginaweb-precios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.paginaweb-precio-card {
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 32px;
+    width: 380px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    transition: all 0.45s cubic-bezier(0.34,1.56,0.64,1);
+    position: relative;
+    overflow: hidden;
+}
+
+.paginaweb-precio-card:hover {
+    transform: translateY(-24px) scale(1.04);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.35);
+}
+
+.paginaweb-precio-card::after {
+    content: '✦';
+    position: absolute;
+    font-size: 120px;
+    color: rgba(58,108,246,0.06);
+    top: -40px; right: -40px;
+    pointer-events: none;
+}
+
+.paginaweb-precio-card h3 {
+    color: #1e40af;
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+}
+
+.paginaweb-precio-card .sub {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+.paginaweb-precio-card .precio {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 16px 0 32px;
+}
+
+.paginaweb-precio-card .precio span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.paginaweb-precio-card ul li {
+    color: #1e40af;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.btn-cotizar {
+    background: linear-gradient(90deg, #3a6cf6, #6b4eff);
+    color: white;
+    border: none;
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-top: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(58,108,246,0.4);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cotizar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(58,108,246,0.55);
+    background: linear-gradient(90deg, #4f7aeb, #7c5fff);
+}
+
+/* Responsive básico */
+@media (max-width: 900px) {
+    .paginaweb-beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .paginaweb-precio-card {
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .paginaweb-beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+    .servicios-header h1 {
+        font-size: 2.8rem;
+    }
+    .paginaweb-intro-card {
+        padding: 32px 20px;
+        margin: -60px auto 40px;
+    }
+}

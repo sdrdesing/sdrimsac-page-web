@@ -1,0 +1,189 @@
+/* Estilos para facturacionpizzeria.php */
+
+.pizzeria-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 0 auto;
+  max-width: 900px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
+  background: #fff;
+}
+.pizzeria-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.pizzeria-desarrollo {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 32px auto 0 auto;
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+}
+.pizzeria-desarrollo h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #a11c1c;
+}
+.pizzeria-desarrollo p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.pizzeria-roles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px auto 0 auto;
+  max-width: 1100px;
+}
+.pizzeria-rol-card {
+  flex: 1 1 300px;
+  background: #fdf6f6;
+  border-radius: 16px;
+  box-shadow: 0 1px 8px rgba(161,28,28,0.07);
+  padding: 28px 20px 20px 20px;
+  min-width: 280px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pizzeria-rol-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #a11c1c;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pizzeria-rol-card ul {
+  padding-left: 18px;
+  color: #222;
+  font-size: 1rem;
+  margin: 0;
+}
+.pizzeria-rol-card ul li {
+  margin-bottom: 7px;
+  list-style: disc;
+}
+.pizzeria-rol-icon {
+  font-size: 1.7rem;
+  color: #a11c1c;
+}
+
+.pizzeria-roles-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 32px auto 0 auto;
+  max-width: 700px;
+}
+.pizzeria-roles-bottom .pizzeria-rol-card {
+  min-width: 200px;
+  max-width: 260px;
+  padding: 20px 12px 16px 12px;
+}
+
+.pizzeria-faq-section {
+  max-width: 1100px;
+  margin: 48px auto 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.pizzeria-faq {
+  flex: 2 1 400px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+.pizzeria-faq h2 {
+  color: #a11c1c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.pizzeria-faq-item {
+  margin-bottom: 18px;
+  border-bottom: 1px solid #f3dede;
+}
+.pizzeria-faq-question {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #a11c1c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  transition: color 0.2s;
+}
+.pizzeria-faq-question:hover {
+  color: #d32f2f;
+}
+.pizzeria-faq-answer {
+  font-size: 1rem;
+  color: #222;
+  padding: 0 0 10px 0;
+  display: none;
+  animation: fadeIn 0.3s;
+}
+.pizzeria-faq-item.active .pizzeria-faq-answer {
+  display: block;
+}
+.pizzeria-faq-toggle {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+.pizzeria-faq-item.active .pizzeria-faq-toggle {
+  transform: rotate(90deg);
+}
+
+.pizzeria-faq-img {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.pizzeria-faq-img img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(161,28,28,0.10);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .pizzeria-banner, .pizzeria-desarrollo, .pizzeria-roles, .pizzeria-faq-section {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .pizzeria-roles {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pizzeria-faq-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,554 @@
+/* ═══════════════════════════════════════════════════════════════
+   SDRIMSAC — servicios.css · Dragon Edition ANIMADO
+   Dragones flotantes · Glow dinámico · Efectos vivos
+═══════════════════════════════════════════════════════════════ */
+
+/* ─── ANIMACIONES GLOBALES ───────────────────────────────────── */
+
+/* Flotación suave — el dragón sube y baja */
+@keyframes dragonFloat {
+  0%   { transform: translateY(0px) scale(1); }
+  30%  { transform: translateY(-10px) scale(1.02); }
+  60%  { transform: translateY(-5px) scale(1.01); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+/* Rebote de entrada al cargar */
+@keyframes dragonBounceIn {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.8); }
+  60%  { opacity: 1; transform: translateY(-8px) scale(1.05); }
+  80%  { transform: translateY(4px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Glow pulsante alrededor del dragón */
+@keyframes dragonGlow {
+  0%, 100% { filter: drop-shadow(0 4px 16px rgba(0,180,255,0.3)) drop-shadow(0 0 8px rgba(0,229,255,0.2)); }
+  50%       { filter: drop-shadow(0 8px 32px rgba(0,229,255,0.6)) drop-shadow(0 0 20px rgba(100,200,255,0.4)); }
+}
+
+/* Glow dorado para módulo restaurante */
+@keyframes dragonGlowGold {
+  0%, 100% { filter: drop-shadow(0 4px 16px rgba(240,150,0,0.3)) drop-shadow(0 0 8px rgba(240,192,64,0.2)); }
+  50%       { filter: drop-shadow(0 8px 32px rgba(240,192,64,0.65)) drop-shadow(0 0 20px rgba(255,210,80,0.4)); }
+}
+
+/* Rotación leve de cola — para dar vida */
+@keyframes dragonWiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%       { transform: translateY(-8px) rotate(-1.5deg); }
+  75%       { transform: translateY(-4px) rotate(1.5deg); }
+}
+
+/* Parpadeo del borde de tarjeta */
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(0,229,255,0.18); box-shadow: 0 6px 28px rgba(0,0,0,0.4); }
+  50%       { border-color: rgba(0,229,255,0.38); box-shadow: 0 6px 28px rgba(0,0,0,0.4), 0 0 18px rgba(0,229,255,0.12); }
+}
+@keyframes borderPulseGold {
+  0%, 100% { border-color: rgba(240,192,64,0.18); box-shadow: 0 6px 28px rgba(0,0,0,0.4); }
+  50%       { border-color: rgba(240,192,64,0.4); box-shadow: 0 6px 28px rgba(0,0,0,0.4), 0 0 18px rgba(240,192,64,0.12); }
+}
+
+/* Entrada escalonada de tarjetas */
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Brillo que cruza la imagen */
+@keyframes shimmerSweep {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ─── PAGE BANNER ─────────────────────────────────────────────── */
+.page-banner {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.page-banner img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    filter: brightness(0.4) saturate(0.7);
+}
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0,30,80,0.5), rgba(0,10,30,0.3));
+    z-index: 2;
+    text-align: center;
+}
+.page-banner-overlay h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 30px rgba(0,229,255,0.5);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+}
+.page-banner-overlay p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* ─── CONTENEDOR PRINCIPAL ───────────────────────────────────── */
+.sdrim-flyer-content {
+    max-width: 1280px;
+    margin: 36px auto 70px;
+    padding: 0 44px;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────── */
+.sdrim-flyer-head {
+    text-align: center;
+    padding: 32px 28px;
+    border-radius: 18px;
+    /* Fondo oscuro sólido para que las letras sean visibles */
+    background: linear-gradient(135deg, rgba(0,15,50,0.97) 0%, rgba(0,30,90,0.97) 50%, rgba(0,20,65,0.97) 100%);
+    border: 1px solid rgba(0,229,255,0.35);
+    backdrop-filter: blur(14px);
+    margin-bottom: 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(0,229,255,0.08);
+}
+.sdrim-flyer-head h2 {
+    margin: 0 0 10px;
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.3rem, 2.8vw, 2rem);
+    font-weight: 900;
+    /* Texto blanco brillante, siempre visible */
+    color: #ffffff;
+    -webkit-text-fill-color: unset;
+    background: none;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 24px rgba(0,229,255,0.7), 0 2px 8px rgba(0,0,0,0.5);
+}
+.sdrim-flyer-head p {
+    margin: 0;
+    color: #e0f0ff;
+    font-size: clamp(0.88rem, 1.4vw, 1rem);
+    line-height: 1.65;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ─── BLOQUES SIN FONDO ──────────────────────────────────────── */
+.sdrim-features,
+.sdrim-rubros,
+.sdrim-restaurante,
+.sdrim-special {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 44px;
+    overflow: visible;
+}
+.sdrim-features::before,
+.sdrim-rubros::before,
+.sdrim-restaurante::before,
+.sdrim-special::before { display: none; }
+
+/* Títulos de sección */
+.sdrim-flyer-content h3 {
+    margin: 0 0 22px;
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #00e5ff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(0,229,255,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 0 16px rgba(0,229,255,0.5);
+}
+
+/* ─── FEATURES ───────────────────────────────────────────────── */
+.sdrim-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sdrim-features li {
+    background: rgba(0,15,50,0.92);
+    border: 1px solid rgba(0,229,255,0.25);
+    border-left: 3px solid rgba(0,229,255,0.7);
+    border-radius: 9px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #e8f4ff;          /* blanco cálido, siempre visible */
+    transition: all 0.25s;
+    line-height: 1.4;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.sdrim-features li:hover {
+    background: rgba(0,60,140,0.9);
+    border-left-color: #00e5ff;
+    color: #ffffff;
+    transform: translateX(4px);
+    box-shadow: 0 4px 18px rgba(0,229,255,0.15);
+}
+
+/* ─── GRIDS ──────────────────────────────────────────────────── */
+.sdrim-rubro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+}
+.sdrim-rest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ─── TARJETA BASE ───────────────────────────────────────────── */
+.sdrim-rubro,
+.sdrim-rest {
+    background: rgba(8,18,42,0.75);
+    border: 1px solid rgba(0,229,255,0.18);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.4);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    position: relative;
+    /* Animación de borde pulsante permanente */
+    animation: borderPulse 4s ease-in-out infinite, cardFadeUp 0.6s ease both;
+}
+
+/* Entrada escalonada según posición */
+.sdrim-rubro-grid .sdrim-rubro:nth-child(1)  { animation-delay: 0.05s, 0.05s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(2)  { animation-delay: 0.1s,  0.1s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(3)  { animation-delay: 0.15s, 0.15s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(4)  { animation-delay: 0.2s,  0.2s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(5)  { animation-delay: 0.25s, 0.25s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(6)  { animation-delay: 0.3s,  0.3s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(7)  { animation-delay: 0.35s, 0.35s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(8)  { animation-delay: 0.4s,  0.4s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(9)  { animation-delay: 0.45s, 0.45s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(10) { animation-delay: 0.5s,  0.5s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(11) { animation-delay: 0.55s, 0.55s; }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(12) { animation-delay: 0.6s,  0.6s;  }
+.sdrim-rubro-grid .sdrim-rubro:nth-child(13) { animation-delay: 0.65s, 0.65s; }
+
+.sdrim-rest {
+    border-color: rgba(240,192,64,0.18);
+    animation: borderPulseGold 4s ease-in-out infinite, cardFadeUp 0.6s ease both;
+}
+.sdrim-rest-grid .sdrim-rest:nth-child(1) { animation-delay: 0.1s, 0.1s; }
+.sdrim-rest-grid .sdrim-rest:nth-child(2) { animation-delay: 0.2s, 0.2s; }
+.sdrim-rest-grid .sdrim-rest:nth-child(3) { animation-delay: 0.3s, 0.3s; }
+
+.sdrim-rubro::after,
+.sdrim-rest::after { display: none; }
+
+/* Hover de tarjeta */
+.sdrim-rubro:hover {
+    border-color: rgba(0,229,255,0.6) !important;
+    transform: translateY(-9px) scale(1.01);
+    box-shadow: 0 22px 60px rgba(0,0,0,0.55), 0 0 32px rgba(0,229,255,0.22);
+    animation: none; /* parar pulso al hover */
+}
+.sdrim-rest:hover {
+    border-color: rgba(240,192,64,0.6) !important;
+    transform: translateY(-9px) scale(1.01);
+    box-shadow: 0 22px 60px rgba(0,0,0,0.55), 0 0 32px rgba(240,192,64,0.18);
+    animation: none;
+}
+
+/* ─── IMAGEN DEL DRAGÓN ──────────────────────────────────────── */
+.sdrim-rubro-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* Fondo degradado que da ambiente al dragón */
+    background: radial-gradient(ellipse at 50% 110%, rgba(0,100,200,0.25) 0%, rgba(5,12,30,1) 70%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* El dragón flota permanentemente */
+.sdrim-rubro-img-wrap img {
+    width: auto;
+    max-width: 88%;
+    height: 175px;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+    /* Flotación + glow constante */
+    animation: dragonFloat 3.5s ease-in-out infinite, dragonGlow 3.5s ease-in-out infinite;
+    transform-origin: center bottom;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 4px;
+}
+
+/* Restaurante: glow dorado */
+.sdrim-rest .sdrim-rubro-img-wrap img {
+    animation: dragonWiggle 3s ease-in-out infinite, dragonGlowGold 3s ease-in-out infinite;
+}
+
+/* Al hacer hover: el dragón salta y brilla más */
+.sdrim-rubro:hover .sdrim-rubro-img-wrap img {
+    animation: dragonBounceIn 0.5s ease forwards, dragonGlow 1.5s ease-in-out infinite 0.5s;
+}
+.sdrim-rest:hover .sdrim-rubro-img-wrap img {
+    animation: dragonBounceIn 0.5s ease forwards, dragonGlowGold 1.5s ease-in-out infinite 0.5s;
+}
+
+/* Barrido de brillo sobre imagen al hover */
+.sdrim-rubro-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    z-index: 3;
+    pointer-events: none;
+    transition: none;
+}
+.sdrim-rubro:hover .sdrim-rubro-img-wrap::before,
+.sdrim-rest:hover .sdrim-rubro-img-wrap::before {
+    animation: shimmerSweep 0.7s ease forwards;
+}
+
+/* Sombra/suelo bajo el dragón */
+.sdrim-rubro-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0,180,255,0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: dragonFloat 3.5s ease-in-out infinite reverse;
+}
+.sdrim-rest .sdrim-rubro-img-wrap::after {
+    background: radial-gradient(ellipse, rgba(240,192,64,0.3) 0%, transparent 70%);
+    animation: dragonWiggle 3s ease-in-out infinite reverse;
+}
+
+/* Badge */
+.sdrim-rubro-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 4;
+    background: linear-gradient(135deg, rgba(0,10,30,0.85), rgba(0,50,120,0.75));
+    border: 1px solid rgba(0,229,255,0.55);
+    color: #00e5ff;
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    font-family: 'Orbitron', monospace;
+    box-shadow: 0 0 14px rgba(0,229,255,0.3);
+    animation: badgeGlow 2.5s ease-in-out infinite;
+}
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,229,255,0.25); }
+  50%       { box-shadow: 0 0 22px rgba(0,229,255,0.55); }
+}
+.sdrim-badge-gold {
+    border-color: rgba(240,192,64,0.65);
+    color: #f0c040;
+    box-shadow: 0 0 14px rgba(240,192,64,0.25);
+    animation: badgeGlowGold 2.5s ease-in-out infinite;
+}
+@keyframes badgeGlowGold {
+  0%, 100% { box-shadow: 0 0 10px rgba(240,192,64,0.25); }
+  50%       { box-shadow: 0 0 22px rgba(240,192,64,0.55); }
+}
+
+/* ─── CUERPO DE TARJETA ──────────────────────────────────────── */
+.sdrim-rubro-body {
+    padding: 16px 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sdrim-rubro h4,
+.sdrim-rest h4 {
+    margin: 0;
+    font-size: 0.97rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 10px rgba(0,229,255,0.25);
+}
+.sdrim-rest h4 {
+    text-shadow: 0 1px 10px rgba(240,192,64,0.25);
+}
+
+.sdrim-rubro ul,
+.sdrim-rest ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+}
+.sdrim-rubro li,
+.sdrim-rest li {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #b8cfea;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+    transition: color 0.2s, padding-left 0.2s;
+}
+.sdrim-rubro li:last-child,
+.sdrim-rest li:last-child { border-bottom: none; }
+
+.sdrim-rubro:hover li { color: #d4e8ff; padding-left: 3px; }
+.sdrim-rest:hover li  { color: #ffe8aa; padding-left: 3px; }
+
+/* ─── SPECIAL ────────────────────────────────────────────────── */
+.sdrim-special > p {
+    background: rgba(8,18,42,0.65);
+    border: 1px solid rgba(240,192,64,0.25);
+    border-left: 4px solid rgba(240,192,64,0.6);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin: 0;
+    color: #c8daf4;
+    line-height: 1.75;
+    font-size: 0.93rem;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+}
+
+/* ─── SERVICIOS GRID ─────────────────────────────────────────── */
+.servicios-section { padding: 20px 44px 40px; background: transparent; }
+.servicios-grid { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; }
+.servicio-card {
+    background: rgba(8,18,42,0.7);
+    border: 1px solid rgba(0,229,255,0.16);
+    border-radius: 16px;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+}
+.servicio-card:hover {
+    border-color: rgba(0,229,255,0.45);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.5), 0 0 24px rgba(0,229,255,0.15);
+}
+.servicio-card img {
+    width: 100%; height: 160px; object-fit: cover;
+    filter: brightness(0.6) saturate(0.85);
+    transition: filter 0.4s, transform 0.4s;
+}
+.servicio-card:hover img { filter: brightness(0.82) saturate(1.1); transform: scale(1.04); }
+.servicio-body { padding: 18px; }
+.servicio-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0,229,255,0.18), rgba(0,80,180,0.2));
+    border: 1px solid rgba(0,229,255,0.35);
+    color: #ff0000; font-size: 0.7rem; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 50px; padding: 3px 12px; margin-bottom: 10px;
+    font-family: 'Orbitron', monospace;
+}
+.servicio-body h3 { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 8px; }
+.servicio-body p  { font-size: 0.85rem; color: #b8cfea; margin-bottom: 10px; line-height: 1.6; }
+.servicio-body ul { margin: 0; padding-left: 16px; }
+.servicio-body ul li { font-size: 0.82rem; color: #b8cfea; margin-bottom: 4px; }
+
+/* Showcase */
+.showcase-section { background: transparent; padding: 24px 44px; }
+.showcase-inner { display: flex; align-items: center; justify-content: center; gap: 48px; max-width: 1100px; margin: 0 auto; }
+.showcase-inner.reverse { flex-direction: row-reverse; }
+.showcase-img img {
+    width: 340px; height: 210px; object-fit: cover; border-radius: 16px;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.45); border: 1px solid rgba(0,229,255,0.15);
+    filter: brightness(0.82); transition: all 0.35s;
+}
+.showcase-img img:hover { filter: brightness(1); box-shadow: 0 18px 50px rgba(0,0,0,0.5), 0 0 20px rgba(0,229,255,0.18); }
+.showcase-text { flex: 1; }
+.showcase-text h2 {
+    font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 900;
+    background: linear-gradient(135deg, #fff, #00e5ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 12px;
+}
+.showcase-text p { font-size: 0.9rem; color: #b8cfea; margin-bottom: 18px; line-height: 1.7; }
+.btn-hero-primary {
+    display: inline-block; padding: 12px 30px;
+    background: linear-gradient(135deg, #00e5ff, #0099b8);
+    color: #000; font-weight: 800; font-size: 0.88rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    text-decoration: none; border-radius: 50px; border: none; cursor: pointer;
+    transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,229,255,0.3);
+}
+.btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,229,255,0.45); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .sdrim-rest-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+    .sdrim-flyer-content { padding: 0 22px; }
+    .servicios-section   { padding: 20px 22px 40px; }
+    .showcase-section    { padding: 24px 22px; }
+    .sdrim-rubro-grid    { grid-template-columns: repeat(2, 1fr); }
+    .sdrim-rest-grid     { grid-template-columns: 1fr; }
+    .showcase-inner      { flex-direction: column; gap: 24px; }
+    .showcase-img img    { width: 100%; }
+}
+@media (max-width: 560px) {
+    .sdrim-flyer-content  { padding: 0 14px; }
+    .sdrim-rubro-grid     { grid-template-columns: 1fr; }
+    .sdrim-features ul    { grid-template-columns: 1fr; }
+    .servicio-card        { width: 100%; }
+    .sdrim-rubro-img-wrap { height: 165px; }
+}
+
+/* Reducir movimiento para usuarios que lo prefieran */
+@media (prefers-reduced-motion: reduce) {
+    .sdrim-rubro-img-wrap img { animation: none !important; }
+    .sdrim-rubro, .sdrim-rest { animation: cardFadeUp 0.3s ease both !important; }
+    .sdrim-rubro-badge        { animation: none !important; }
+}
