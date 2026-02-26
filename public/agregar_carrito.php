@@ -1,5 +1,5 @@
 <?php
-include("config/database.php");
+include("../config/database.php");
 
 // SI VIENE DE PRODUCTOS DE BASE DE DATOS
 if(isset($_POST['id'])){

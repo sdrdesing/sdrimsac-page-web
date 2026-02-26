@@ -1,6 +1,6 @@
 
 <?php
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 session_start();
 
 // Admin check
@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])){
 
 $res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
 ?>
-<link rel="stylesheet" href="productos.css">
+<link rel="stylesheet" href="assets/css/productos.css">
 <section class="productos-section">
     <h2>Gestión de Productos</h2>
     <a href="producto_form.php" class="btn-nuevo-producto">+ Nuevo Producto</a>

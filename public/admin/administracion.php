@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/includes/header_admin.php';
 ?>
-<link rel="stylesheet" href="administracion.css">
+<link rel="stylesheet" href="assets/css/administracion.css">
 <section class="admin-section">
     <h2>Administración</h2>
     <p>Aquí podrás gestionar configuraciones, usuarios, permisos y otras opciones administrativas.</p>
@@ -12,7 +12,7 @@ include __DIR__ . '/includes/header_admin.php';
     </ul>
 
     <?php
-    require_once __DIR__ . '/../config/database.php';
+    require_once __DIR__ . '/../../config/database.php';
     $seccion = $_GET['seccion'] ?? '';
     if($seccion === 'usuarios'){
         echo '<div class="admin-box"><h3>Gestión de usuarios</h3>';

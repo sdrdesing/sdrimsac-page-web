@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config/database.php");
+include("../config/database.php");
 
 // Require login: if not logged, redirect to register with next=checkout.php
 if(!isset($_SESSION['usuario'])){

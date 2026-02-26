@@ -150,6 +150,46 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <p>Soluciones tecnológicas para empresas en Perú</p>
       </div>
 
+
+      <div class="carousel-left">
+    <div class="compat-strip">
+        <span class="compat-title">Digitaliza tu empresa hoy: Facturación electrónica rápida, segura y sin complicaciones.</span>
+        <div class="compat-logos"> 
+            </div>
+    </div>
+
+    <div class="beneficios-clave-container">
+        <h2 class="beneficios-clave-title">Beneficios Clave de Nuestra Facturación Electrónica</h2>
+        <div class="beneficios-clave-grid">
+            <div class="beneficio-item">
+                <i class="fa-solid fa-stopwatch-20 icon-blue"></i> <h3>Rapidez Increíble</h3>
+                <p>Emite tus comprobantes en segundos, no minutos.</p>
+            </div>
+            <div class="beneficio-item">
+                <i class="fa-solid fa-shield-halved icon-blue"></i>
+                <h3>Seguridad Total</h3>
+                <p>Tus datos están protegidos con cifrado de nivel bancario.</p>
+            </div>
+            <div class="beneficio-item">
+                <i class="fa-solid fa-coins icon-blue"></i>
+                <h3>Ahorro de Costos</h3>
+                <p>Reduce gastos operativos y de papel significativamente.</p>
+            </div>
+            <div class="beneficio-item">
+                <i class="fa-solid fa-laptop-medical icon-blue"></i>
+                <h3>Acceso Multiplataforma</h3>
+                <p>Gestiona tu negocio desde cualquier dispositivo y lugar.</p>
+            </div>
+        </div>
+    </div>
+</div> <div class="carousel-right">
+    </div>
+
+
+
+
+    
+
       <div class="carousel-multi-container">
         <button class="carousel-btn prev" onclick="moveMultiCarousel(-1)">&#10094;</button>
 
@@ -243,6 +283,7 @@ if(file_exists(__DIR__ . '/config/database.php')){
           <span class="compat-logo">Efact</span>
         </div>
       </div>
+      
 
     </div>
 
@@ -272,8 +313,10 @@ if(file_exists(__DIR__ . '/config/database.php')){
         </div>
       </div>
     </div>
+    
 
   </div>
+
 </section>
 
 <!-- SECCIÓN SOMOS SDRIMSAC SOLUTIONS -->

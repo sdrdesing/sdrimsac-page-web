@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 session_start();
 
 if(!isset($_SESSION['usuario'])){ header('Location: ../login.php'); exit; }
@@ -14,8 +14,8 @@ $top_vendidos = $conn->query("SELECT id,nombre,vendidos FROM productos ORDER BY 
 $top_favs = $conn->query("SELECT id,nombre,favoritos FROM productos ORDER BY favoritos DESC LIMIT 10");
 ?>
 <link rel="stylesheet" href="../assets/css/dashboard.css">
-<link rel="stylesheet" href="compras_historial.css">
-<link rel="stylesheet" href="compras_pendientes.css">
+<link rel="stylesheet" href="assets/css/compras_historial.css">
+<link rel="stylesheet" href="assets/css/compras_pendientes.css">
 
 <section class="dashboard-page">
     <div class="dashboard-container">

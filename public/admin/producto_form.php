@@ -1,6 +1,6 @@
 
 <?php
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 session_start();
 
 // Admin check
@@ -18,7 +18,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $descripcion = $conn->real_escape_string($_POST['descripcion']);
     $precio = floatval($_POST['precio']);
     $stock = intval($_POST['stock']);
-    $imagen = $conn->real_escape_string($_POST['imagen']);
+    $imagen = '';
+    if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+        $tmp_name = $_FILES['imagen']['tmp_name'];
+        $nombre_archivo = basename($_FILES['imagen']['name']);
+        $ruta_destino_absoluta = dirname(__DIR__) . '/assets/img/' . $nombre_archivo; // public/assets/img/
+        $ruta_relativa = 'assets/img/' . $nombre_archivo;
+        move_uploaded_file($tmp_name, $ruta_destino_absoluta);
+        $imagen = $ruta_relativa;
+    } elseif(isset($_POST['imagen'])) {
+        $imagen = $conn->real_escape_string($_POST['imagen']); // fallback por si acaso
+    }
 
     if(!empty($_POST['id'])){
         $idup = intval($_POST['id']);
@@ -32,10 +42,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 ?>
 <?php if($id): ?>
-<link rel="stylesheet" href="editar_producto.css">
+<link rel="stylesheet" href="assets/css/editar_producto.css">
 <section class="editar-producto-section">
     <h2>Editar Producto</h2>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $id ?>">
         <label>Nombre<br><input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required></label>
         <label>Descripción<br><textarea name="descripcion"><?= htmlspecialchars($producto['descripcion']) ?></textarea></label>
@@ -46,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     </form>
 </section>
 <?php else: ?>
-<link rel="stylesheet" href="producto_form.css">
+<link rel="stylesheet" href="assets/css/producto_form.css">
 <section class="producto-form-section">
     <h2>Nuevo Producto</h2>
     <form method="POST">
@@ -55,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <label>Descripción<br><textarea name="descripcion"></textarea></label>
         <label>Precio (S/)<br><input type="number" step="0.01" name="precio" value="0" required></label>
         <label>Stock<br><input type="number" name="stock" value="0" required></label>
-        <label>Imagen (URL)<br><input type="text" name="imagen" value=""></label>
+        <label>Imagen (archivo)<br><input type="file" name="imagen" accept="image/*"></label>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </section>

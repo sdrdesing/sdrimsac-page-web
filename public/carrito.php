@@ -1,5 +1,5 @@
 <?php include("includes/header.php"); ?>
-<?php include("config/database.php"); ?>
+<?php include("../config/database.php"); ?>
 <link rel="stylesheet" href="assets/css/carrito.css">
 
 <section class="contenido cart-page">

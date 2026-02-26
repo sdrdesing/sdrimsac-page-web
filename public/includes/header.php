@@ -159,13 +159,15 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
         if (isset($_SESSION['usuario'])) {
             $nombre = $_SESSION['usuario'];
             $is_admin = 0;
+            // Si hay conexión a la base de datos, consulta el rol
             if ($dbLoaded) {
                 $q = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='".$conn->real_escape_string($nombre)."' LIMIT 1");
                 if ($q && $row = $q->fetch_assoc()) {
                     $is_admin = intval($row['is_admin']);
                 }
             }
-            if ($is_admin === 1) {
+            // Si la sesión es admin (nombre de usuario), forzar dashboard
+            if ($is_admin === 1 || strtolower($nombre) === 'admin') {
                 $cuenta_url = 'admin/dashboard.php';
             } else {
                 $cuenta_url = 'mi_cuenta.php';
