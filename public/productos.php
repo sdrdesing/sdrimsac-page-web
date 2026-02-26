@@ -1,6 +1,6 @@
 <?php 
 include("includes/header.php"); 
-include("config/database.php"); 
+include(__DIR__ . "/../config/database.php"); 
 ?>
 <link rel="stylesheet" href="assets/css/productos.css">
 
