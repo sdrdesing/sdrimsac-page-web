@@ -1,5 +1,5 @@
 <?php
-include("config/database.php");
+include(__DIR__ . "/../config/database.php");
 session_start();
 
 $next = isset($_GET['next']) ? basename($_GET['next']) : null;
