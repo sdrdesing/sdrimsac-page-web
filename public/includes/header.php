@@ -27,10 +27,9 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
 ?>
 <link rel="stylesheet" href="<?= $cssPath ?>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="assets/js/script.js" defer></script>
+<script src="js/script.js" defer></script>
 </head>
 <body>
-
 
 <div class="topbar">
     <span>📞 +51 995 764 963</span>
@@ -82,48 +81,10 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
             </ul>
         </li>
 
-        <li class="dropdown">
-            <a href="productos.php"><i class="fa-solid fa-store"></i> Tienda</a>
-            <ul class="submenu">
-                <li><a href="productos.php">Productos</a></li>
-                <li><a href="admin/administracion.php">Administración</a></li>
-                <li><a href="admin/control.php">Control</a></li>
-                <li><a href="admin/dashboard.php">Dashboard</a></li>
-                <li><a href="admin/delete_producto.php">Eliminar Producto</a></li>
-                <li><a href="admin/products.php">Products</a></li>
-                <li><a href="admin/reportes.php">Reportes</a></li>
-                <li><a href="admin/validar_compra.php">Validar Compra</a></li>
-                <li><a href="admin/migrate_products.php">Migrar Productos</a></li>
-                <li><a href="admin/producto_form.php">Formulario Producto</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="herramientas.php"><i class="fa-solid fa-wrench"></i> Herramientas</a>
-            <ul class="submenu">
-                <li><a href="src/utils/generar_hash.php">Generar Hash</a></li>
-                <li><a href="src/utils/inspect_db.php">Inspeccionar DB</a></li>
-                <li><a href="src/utils/marcar_notificaciones.php">Marcar Notificaciones</a></li>
-                <li><a href="src/utils/ocultar_noti.php">Ocultar Notificación</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="manuales.php"><i class="fa-solid fa-book"></i> Manuales</a>
-            <ul class="submenu">
-                <li><a href="manuales.php">Manual General</a></li>
-                <li><a href="admin/dashboard.php">Manual Admin</a></li>
-                <li><a href="admin/reportes.php">Manual Reportes</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="blog.php"><i class="fa-solid fa-blog"></i> Blog</a>
-            <ul class="submenu">
-                <li><a href="blog.php">Blog General</a></li>
-                <li><a href="admin/dashboard.php">Blog Admin</a></li>
-            </ul>
-        </li>
+        <li><a href="productos.php"><i class="fa-solid fa-store"></i> Tienda</a></li>
+        <li><a href="herramientas.php"><i class="fa-solid fa-wrench"></i> Herramientas</a></li>
+        <li><a href="manuales.php"><i class="fa-solid fa-book"></i> Manuales</a></li>
+        <li><a href="blog.php"><i class="fa-solid fa-blog"></i> Blog</a></li>
         <!-- <li><a href="mi_cuenta.php"><i class="fa-solid fa-user-circle"></i> Mi cuenta</a></li> -->
     </ul>
 

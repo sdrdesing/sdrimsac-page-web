@@ -1,34 +1,8 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Productos - SDRIMSAC</title>
-  <link rel="stylesheet" href="assets/css/estilo.css">
-  <link rel="stylesheet" href="assets/css/productos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="assets/js/script.js" defer></script>
-</head>
-<body>
-  <?php 
-  include(__DIR__ . "/includes/header.php"); 
-  include(__DIR__ . "/../config/database.php"); 
-  ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Productos - SDRIMSAC</title>
-  <link rel="stylesheet" href="assets/css/estilo.css">
-  <link rel="stylesheet" href="assets/css/productos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="assets/js/script.js" defer></script>
-</head>
-<body>
-  <?php 
-  include(__DIR__ . "/includes/header.php"); 
-  include(__DIR__ . "/../config/database.php"); 
-  ?>
+<?php 
+include("includes/header.php"); 
+include("config/database.php"); 
+?>
+<link rel="stylesheet" href="assets/css/productos.css">
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -73,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const input = card.querySelector('input[name="id"]');
         if(input){
             const id = input.value;
-            fetch('../src/utils/../src/utils/incrementar_vista.php', {
+            fetch('incrementar_vista.php', {
                 method: 'POST',
                 headers: {'Content-Type':'application/x-www-form-urlencoded'},
                 body: 'id=' + encodeURIComponent(id)
@@ -235,11 +209,5 @@ document.addEventListener('DOMContentLoaded', () => {
   <?php endwhile; endif; ?>
   </div>
 </section>
-  <?php include(__DIR__ . '/includes/social.php'); ?>
-  <?php include(__DIR__ . '/includes/footer.php'); ?>
-</body>
-</html>
-  <?php include(__DIR__ . '/includes/social.php'); ?>
-  <?php include(__DIR__ . '/includes/footer.php'); ?>
-</body>
-</html>
+<?php include("includes/social.php"); ?>
+<?php include("includes/footer.php"); ?>

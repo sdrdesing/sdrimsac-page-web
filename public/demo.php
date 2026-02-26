@@ -17,7 +17,6 @@
     </div>
 </section>
 <section class="demo-content">
-    <!-- IMAGEN BANNER ADICIONAL -->
     <div class="demo-info">
         <h2>Consigue tu Demo</h2>
         <p>¿Quieres conocer cómo nuestro producto puede transformar tu experiencia? ¡Consigue tu demo rellenando este formulario! En solo unos minutos, tendrás acceso a una demostración gratuita que te mostrará todas las funcionalidades y beneficios. No dejes pasar la oportunidad de descubrir cómo podemos ayudarte a alcanzar tus objetivos. ¡Rellena el formulario y empieza hoy mismo!</p>

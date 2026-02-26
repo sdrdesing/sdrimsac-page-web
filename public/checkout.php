@@ -1,6 +1,6 @@
 <?php
 session_start();
-include(__DIR__ . '/../config/database.php');
+include("config/database.php");
 
 // Require login: if not logged, redirect to register with next=checkout.php
 if(!isset($_SESSION['usuario'])){
@@ -20,20 +20,8 @@ if($q){
     }
 }
 
-<link rel="stylesheet" href="assets/css/checkout.css">
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Checkout - SDRIMSAC</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
-    <link rel="stylesheet" href="assets/css/carrito.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="assets/js/script.js" defer></script>
-</head>
-<body>
-    <?php include(__DIR__ . '/../includes/header.php'); ?>
+include('includes/header.php');
+?>
 
 <section class="contenido">
     <h2>Checkout — Método de Pago</h2>
@@ -91,12 +79,8 @@ if($q){
     </script>
 
     <?php endif; ?>
-        <?php include("includes/social.php"); ?>
-        <?php include(__DIR__ . '/includes/footer.php'); ?>
-    </body>
-    </html>
 
 </section>
 
-<?php include(__DIR__ . '/includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>
 

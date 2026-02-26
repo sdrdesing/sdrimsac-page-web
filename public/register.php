@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . '/../config/database.php');
+include("config/database.php");
 session_start();
 
 $next = isset($_GET['next']) ? basename($_GET['next']) : null;
@@ -22,7 +22,7 @@ if(isset($_POST["registrar"])){
 }
 ?>
 
-<?php include(__DIR__ . '/../includes/header.php'); ?>
+<?php include("includes/header.php"); ?>
 
 <section class="form-section">
 <form method="POST" class="formulario">
@@ -47,4 +47,4 @@ Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experien
 </form>
 </section>
 
-<?php include(__DIR__ . '/../includes/footer.php'); ?>
+<?php include("includes/footer.php"); ?>

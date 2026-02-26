@@ -72,7 +72,7 @@ if($conn){
             $mensaje = "Hola $usuario,\n\nGracias por tu compra. Tu código de validación es: $codigo_compra.\n\nTotal: S/ $total\n\nGuarda este código y preséntalo al recoger tu producto.\n\nSaludos,\nSDRIMSAC";
             // mail($email, $asunto, $mensaje); // Descomentar en producción
             // Para pruebas, puedes guardar el mensaje en un archivo o mostrarlo en pantalla
-                file_put_contents(__DIR__.'/../logs/ultimo_mail_enviado.txt', "To: $email\nSubject: $asunto\n\n$mensaje");
+            file_put_contents(__DIR__.'/ultimo_mail_enviado.txt', "To: $email\nSubject: $asunto\n\n$mensaje");
         }
     }
     // --- FIN BLOQUE COMPRAS ---

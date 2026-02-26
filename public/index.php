@@ -5,9 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 // Intentamos cargar la conexión a la base si existe (para contar productos en carrito DB)
 $dbLoaded = false;
-if(file_exists(__DIR__ . '/../config/database.php')){
+if(file_exists(__DIR__ . '/config/database.php')){
     try {
-        require_once __DIR__ . '/../config/database.php';
+        require_once __DIR__ . '/config/database.php';
         $dbLoaded = isset($conn);
     } catch(Throwable $e){
         $dbLoaded = false;
@@ -25,7 +25,7 @@ if(file_exists(__DIR__ . '/../config/database.php')){
 <link rel="stylesheet" href="assets/css/somos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<script src="assets/js/script.js" defer></script>
+<script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -403,8 +403,8 @@ if(file_exists(__DIR__ . '/../config/database.php')){
     </div>
 </section>
 
-<?php include(__DIR__ . "/includes/social.php"); ?>
-<?php include(__DIR__ . "/includes/footer.php"); ?>
+<?php include("includes/social.php"); ?>
+<?php include("includes/footer.php"); ?>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

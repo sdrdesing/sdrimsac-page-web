@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 if(isset($_SESSION['usuario']) && isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1){
     header('Location: dashboard.php'); exit;
 }
@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <head>
     <meta charset="utf-8">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="../../public/assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
     <style>body{display:flex;align-items:center;justify-content:center;height:100vh;background:#f4f6fa}.admin-login{background:#fff;padding:28px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);width:360px}</style>
 </head>
 <body>

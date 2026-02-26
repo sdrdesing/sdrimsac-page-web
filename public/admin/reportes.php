@@ -1,8 +1,8 @@
 <?php
-include __DIR__ . '/../includes/header_admin.php';
+include __DIR__ . '/includes/header_admin.php';
 require_once __DIR__ . '/../config/database.php';
 ?>
-<link rel="stylesheet" href="../../public/assets/css/reportes.css">
+<link rel="stylesheet" href="reportes.css">
 <section class="reportes-section">
     <h2>Reportes</h2>
     <p>Aquí podrás ver y descargar reportes de ventas, productos, usuarios, etc.</p>

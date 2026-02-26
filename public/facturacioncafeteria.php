@@ -7,10 +7,9 @@
 <link rel="stylesheet" href="assets/css/estilo.css">
 <link rel="stylesheet" href="assets/css/facturacioncafeteria.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="assets/js/script.js" defer></script>
 </head>
 <body>
-<?php include(__DIR__ . '/includes/header.php'); ?>
+<?php include("includes/header.php"); ?>
 <section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
     <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Facturación Cafetería</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
@@ -34,19 +33,18 @@
 <div class="cafeteria-roles">
     <div class="cafeteria-rol-card">
         <h3><span class="cafeteria-rol-icon"><i class="fa-solid fa-user-gear"></i></span> ADMINISTRADOR</h3>
-
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Facturación Cafetería - SDRIMSAC</title>
-            <link rel="stylesheet" href="assets/css/estilo.css">
-            <link rel="stylesheet" href="assets/css/facturacioncafeteria.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-            <script src="assets/js/script.js" defer></script>
-        </head>
-        <body>
-            <?php include(__DIR__ . '/includes/header.php'); ?>
+        <ul>
+            <li>Mantenimiento de Usuarios, Clientes, Categorías, Marcas, Registro de número de Cuentas de Banco</li>
+            <li>Compras – Listado de Compras</li>
+            <li>Creación de Recetas, Productos y Servicios</li>
+            <li>Creación de Promoción/Ofertas</li>
+            <li>Ventas Administrativas (Factura, Boletas y Notas de Venta) Envíos de Factura, Boleta directos a SUNAT</li>
+            <li>Anulación de comprobantes(Interno y Externo) – Nota de Crédito</li>
+            <li>Ingresos y Gastos de Efectivo</li>
+            <li>Reporte de Caja</li>
+            <li>Reporte de Cierre de Caja por Establecimiento y Turnos</li>
+            <li>Reporte de Ganancia</li>
+            <li>Reporte de Stock de Productos</li>
             <li>Reporte Productos Vendidos</li>
             <li>Reporte Valorizado</li>
             <li>Reporte de Stock Mínimo</li>
@@ -160,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
-    <?php include(__DIR__ . '/includes/footer.php'); ?>
+<?php include("includes/footer.php"); ?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
-include __DIR__ . '/../includes/header_admin.php';
+include __DIR__ . '/includes/header_admin.php';
 ?>
-<link rel="stylesheet" href="../../public/assets/css/administracion.css">
+<link rel="stylesheet" href="administracion.css">
 <section class="admin-section">
     <h2>Administración</h2>
     <p>Aquí podrás gestionar configuraciones, usuarios, permisos y otras opciones administrativas.</p>

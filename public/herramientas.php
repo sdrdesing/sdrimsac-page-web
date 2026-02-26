@@ -1,16 +1,4 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Herramientas - SDRIMSAC</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
-    <link rel="stylesheet" href="assets/css/herramientas.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="assets/js/script.js" defer></script>
-</head>
-<body>
-    <?php include("includes/header.php"); ?>
+<?php include("includes/header.php"); ?>
 
 <!-- BANNER ADICIONAL -->
 <div class="page-banner">
@@ -93,11 +81,5 @@
     </div>
 </section>
 
-    <?php include("includes/social.php"); ?>
-    <?php include("includes/footer.php"); ?>
-</body>
-</html>
-    <?php include("includes/social.php"); ?>
-    <?php include("includes/footer.php"); ?>
-</body>
-</html>
+<?php include("includes/social.php"); ?>
+<?php include("includes/footer.php"); ?>
