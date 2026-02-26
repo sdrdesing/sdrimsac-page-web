@@ -108,7 +108,7 @@
     </div>
     <div class="recreos-faq">
         <h2>Preguntas Frecuentes</h2>
-        <div class="recreos-faq-item active">
+        <div class="recreos-faq-item">
             <div class="recreos-faq-question">¿Cuáles son los beneficios de usar la facturación electrónica?<span class="recreos-faq-toggle">&#9654;</span></div>
             <div class="recreos-faq-answer">
                 <ul>
@@ -144,11 +144,13 @@
 <script>
 // FAQ desplegable
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.recreos-faq-question').forEach(function(q) {
+    document.querySelectorAll('.faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.recreos-faq-item').forEach(function(i) { i.classList.remove('active'); });
+            // Cerrar todas las respuestas
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+            // Activar solo si no estaba activa
             if (!wasActive) item.classList.add('active');
         });
     });

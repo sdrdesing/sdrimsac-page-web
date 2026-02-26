@@ -19,7 +19,7 @@
         <p>Soluciones de comercio electrónico para tu negocio</p>
     </div>
 </div>
-<link rel="stylesheet" href="assets/css/tiendasvirtuales/tiendasvirtuales.css">
+
 
 <section class="tv-contenido">
     <div class="tv-info">

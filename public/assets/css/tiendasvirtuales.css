@@ -1,3 +1,590 @@
+/* =============================
+   BANNER SUPERIOR
+   ============================= */
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a174e;
+}
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.page-banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  background: rgba(10, 23, 78, 0.25);
+}
+.page-banner-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.page-banner-overlay p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* =============================
+   INTRODUCCIÓN EN TARJETA
+   ============================= */
+.tv-intro-card {
+  max-width: 900px;
+  margin: -80px auto 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  padding: 38px 32px 32px 32px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.tv-intro-card h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: #111;
+}
+.tv-intro-card p {
+  color: #222;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+.tv-intro-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.tv-intro-list li {
+  color: #0a174e;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.tv-intro-list li:before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #2563eb;
+  margin-right: 8px;
+}
+
+/* =============================
+   BENEFICIOS EN GRID DE TARJETAS
+   ============================= */
+.tv-beneficios-section {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+.tv-beneficios-section h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+  color: #111;
+}
+.tv-beneficios-section .tv-beneficios-desc {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 2.2rem;
+}
+.tv-beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  margin-bottom: 2.5rem;
+}
+.tv-beneficio {
+  background: #fff;
+  border: 2px solid #2d3a8c;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(26,35,126,0.08);
+  padding: 32px 18px 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tv-beneficio:hover {
+  box-shadow: 0 8px 32px rgba(26,35,126,0.13);
+  border: 2px solid #2563eb;
+  transform: translateY(-4px) scale(1.03);
+}
+.tv-icon {
+  font-size: 2.7rem;
+  margin-bottom: 12px;
+}
+.tv-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #0a174e;
+  margin-bottom: 8px;
+}
+.tv-text {
+  color: #374151;
+  font-size: 1.05rem;
+}
+
+/* =============================
+   PLANES EN TARJETAS VERTICALES
+   ============================= */
+.tv-planes-title {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+.tv-planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.tv-plan {
+  background: #fff;
+  border: 1.5px solid #e3eafc;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(26,35,126,0.08);
+  padding: 32px 24px 28px 24px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+.tv-plan:hover {
+  box-shadow: 0 8px 32px rgba(26,35,126,0.13);
+  border: 1.5px solid #2563eb;
+  transform: translateY(-4px) scale(1.03);
+}
+.tv-plan-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0a174e;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.tv-plan-desc {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.tv-plan-precio {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.tv-plan-precio span {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 400;
+}
+.tv-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  width: 100%;
+}
+.tv-plan-list li {
+  color: #263238;
+  font-size: 1rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #e3eafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tv-plan-list li:last-child {
+  border-bottom: none;
+}
+.tv-plan-list li:before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #2563eb;
+}
+.tv-cotizar-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+.tv-cotizar-btn:hover {
+  background: #0a174e;
+  transform: scale(1.06);
+}
+
+/* =============================
+   PREGUNTAS FRECUENTES (FAQ)
+   ============================= */
+.tv-faq-section {
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tv-faq-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  padding: 28px 32px 24px 32px;
+  flex: 1 1 420px;
+  min-width: 320px;
+  max-width: 540px;
+}
+.tv-faq-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #111;
+}
+.tv-faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tv-faq-list li {
+  margin-bottom: 1.1rem;
+  font-size: 1.08rem;
+  color: #222;
+}
+.tv-faq-list li .faq-q {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+}
+.tv-faq-list li .faq-a {
+  color: #222;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+.tv-faq-list li.open .faq-a {
+  display: block;
+}
+.tv-faq-img {
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tv-faq-img img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+@media (max-width: 1100px) {
+  .tv-beneficios-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tv-planes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 900px) {
+  .tv-intro-card {
+    margin: -60px 8px 32px 8px;
+    padding: 28px 10px 22px 10px;
+  }
+  .tv-beneficios-section {
+    padding: 0 4px;
+  }
+  .tv-faq-section {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+}
+@media (max-width: 600px) {
+  .page-banner {
+    height: 120px;
+  }
+  .page-banner-overlay h1 {
+    font-size: 1.5rem;
+  }
+  .tv-intro-card h2, .tv-beneficios-section h2, .tv-planes-title {
+    font-size: 1.2rem;
+  }
+  .tv-beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =============================
+   ESTILOS PARA TIENDAS VIRTUALES
+   ============================= */
+
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.page-banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 32, 64, 0.25);
+}
+.page-banner-overlay h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.page-banner-overlay p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.tv-contenido {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 24px 40px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+}
+.tv-info h2, .tv-beneficios h2, .tv-planes-title {
+  color: #1a237e;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.tv-info p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.tv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.tv-list li {
+  background: #e3eafc;
+  color: #1a237e;
+  padding: 8px 18px;
+  border-radius: 16px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tv-beneficios {
+  margin-top: 2.5rem;
+}
+.tv-beneficios-desc {
+  font-size: 1.1rem;
+  color: #263238;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.tv-beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-bottom: 2.5rem;
+}
+.tv-beneficio {
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(26,35,126,0.07);
+  padding: 28px 18px 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.tv-beneficio:hover {
+  box-shadow: 0 8px 32px rgba(26,35,126,0.13);
+  transform: translateY(-4px) scale(1.03);
+}
+.tv-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+.tv-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 6px;
+}
+.tv-text {
+  color: #374151;
+  font-size: 1rem;
+}
+.tv-planes-title {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.tv-planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.tv-plan {
+  background: #fff;
+  border: 2px solid #e3eafc;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(26,35,126,0.08);
+  padding: 32px 24px 28px 24px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+.tv-plan:hover {
+  box-shadow: 0 8px 32px rgba(26,35,126,0.13);
+  border: 2px solid #1a237e;
+  transform: translateY(-4px) scale(1.03);
+}
+.tv-plan-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+.tv-plan-desc {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.tv-plan-precio {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+.tv-plan-precio span {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 400;
+}
+.tv-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  width: 100%;
+}
+.tv-plan-list li {
+  color: #263238;
+  font-size: 1rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #e3eafc;
+}
+.tv-plan-list li:last-child {
+  border-bottom: none;
+}
+.tv-cotizar-btn {
+  display: inline-block;
+  background: #1a237e;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+.tv-cotizar-btn:hover {
+  background: #0d47a1;
+  transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+  .tv-planes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tv-plan {
+    width: 95%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tv-contenido {
+    padding: 0 6px 24px 6px;
+  }
+  .page-banner {
+    height: 140px;
+  }
+  .page-banner-overlay h1 {
+    font-size: 1.5rem;
+  }
+  .tv-info h2, .tv-beneficios h2, .tv-planes-title {
+    font-size: 1.2rem;
+  }
+}
 /* ============================================================
    MEJORA: fondo con imagen + bordes pro + dinamismo
    (pega al final de tu CSS para que sobreescriba)

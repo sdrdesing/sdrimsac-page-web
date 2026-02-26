@@ -1,6 +1,5 @@
-
 <?php 
-include("includes/header.php"); 
+include(__DIR__ . '/includes/header.php'); 
 ?>
 <link rel="stylesheet" href="assets/css/nosotros.css">
 
@@ -48,48 +47,48 @@ include("includes/header.php");
         <p class="por-que-sub">«Elige SDRIMSAC Solutions, donde la innovación y la tecnología impulsan tu crecimiento, asegurando el éxito de tu negocio en cada actualización.»</p>
         <div class="por-que-beneficios por-que-beneficios-horizontal">
             <div class="por-que-col por-que-col-left">
-                <div class="por-que-item">Más de 25 años de experiencia en el campo informático y atención al público.</div>
-                <div class="por-que-item">Somos dueños del Código.</div>
-                <div class="por-que-item">Personalizamos tu Web a medida.</div>
-                <div class="por-que-item">Realización ilimitada de Comprobantes de Pagos Electrónicos.</div>
-                <div class="por-que-item">Envíos de Comprobantes directo a Sunat.</div>
-            </div>
-            <div class="por-que-col por-que-col-center por-que-col-two-columns">
-                <div class="por-que-icons-grid">
-                    <div class="por-que-row">
-                        <div class="por-que-icon">1</div>
-                        <div class="por-que-connector"></div>
-                        <div class="por-que-icon">6</div>
-                    </div>
-                    <div class="por-que-row">
-                        <div class="por-que-icon">2</div>
-                        <div class="por-que-connector"></div>
-                        <div class="por-que-icon">7</div>
-                    </div>
-                    <div class="por-que-row">
-                        <div class="por-que-icon">3</div>
-                        <div class="por-que-connector"></div>
-                        <div class="por-que-icon">8</div>
-                    </div>
-                    <div class="por-que-row">
-                        <div class="por-que-icon">4</div>
-                        <div class="por-que-connector"></div>
-                        <div class="por-que-icon">9</div>
-                    </div>
-                    <div class="por-que-row">
-                        <div class="por-que-icon">5</div>
-                        <div class="por-que-connector"></div>
-                        <div class="por-que-icon">10</div>
-                    </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-item">Más de 25 años de experiencia en el campo informático y atención al público.</span>
+                    <span class="por-que-icon">1</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-item">Somos dueños del Código.</span>
+                    <span class="por-que-icon">2</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-item">Personalizamos tu Web a medida.</span>
+                    <span class="por-que-icon">3</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-item">Realización ilimitada de Comprobantes de Pagos Electrónicos.</span>
+                    <span class="por-que-icon">4</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-item">Envíos de Comprobantes directo a Sunat.</span>
+                    <span class="por-que-icon">5</span>
                 </div>
             </div>
             <div class="por-que-col por-que-col-right">
-                <div class="por-que-item">Servicio de PSE sin costos adicionales.</div>
-                <div class="por-que-item">Soporte técnico vía Grupo Chat Laboral.</div>
-                <div class="por-que-item">Plataforma 100% amigable.</div>
-                <div class="por-que-item">Seguridad y eficiencia en el Servicio.</div>
-                <div class="por-que-item">Somos tu mejor aliado para el crecimiento comercial.</div>
-            </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-icon">6</span>
+                    <span class="por-que-item">Servicio de PSE sin costos adicionales.</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-icon">7</span>
+                    <span class="por-que-item">Soporte técnico vía Grupo Chat Laboral.</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-icon">8</span>
+                    <span class="por-que-item">Plataforma 100% amigable.</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-icon">9</span>
+                    <span class="por-que-item">Seguridad y eficiencia en el Servicio.</span>
+                </div>
+                <div class="por-que-num-item">
+                    <span class="por-que-icon">10</span>
+                    <span class="por-que-item">Somos tu mejor aliado para el crecimiento comercial.</span>
+                </div>
             </div>
         </div>
     </div>
@@ -224,4 +223,4 @@ include("includes/header.php");
 </section>
 
 <?php include("includes/social.php"); ?>
-<?php include("includes/footer.php"); ?>
+<?php include(__DIR__ . '/includes/footer.php'); ?>

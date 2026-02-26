@@ -138,11 +138,11 @@
 <script>
 // FAQ desplegable
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.pizzeria-faq-question').forEach(function(q) {
+    document.querySelectorAll('.faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.pizzeria-faq-item').forEach(function(i) { i.classList.remove('active'); });
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
             if (!wasActive) item.classList.add('active');
         });
     });

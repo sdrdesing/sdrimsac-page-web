@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config/database.php');
+include('../config/database.php');
 
 // Ensure user is logged
 if(!isset($_SESSION['usuario'])){

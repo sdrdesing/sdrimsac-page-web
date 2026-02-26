@@ -1,4 +1,3 @@
-
 <?php
 ?><!DOCTYPE html>
 <html>
@@ -83,7 +82,7 @@
     </div>
     <div class="ferreteria-faq">
         <h2>Preguntas Frecuentes</h2>
-        <div class="ferreteria-faq-item active">
+        <div class="ferreteria-faq-item">
             <div class="ferreteria-faq-question">¿Cuáles son los beneficios de la facturación electrónica para mi ferretería?<span class="ferreteria-faq-toggle">&#9654;</span></div>
             <div class="ferreteria-faq-answer">
                 La facturación electrónica ofrece varios beneficios, como la reducción de costos operativos, mayor eficiencia en el procesamiento de facturas, mejor gestión de documentos, y cumplimiento con las normativas fiscales.
@@ -113,11 +112,13 @@
 <script>
 // FAQ desplegable
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.ferreteria-faq-question').forEach(function(q) {
+    document.querySelectorAll('.faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.ferreteria-faq-item').forEach(function(i) { i.classList.remove('active'); });
+            // Cerrar todas las respuestas
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+            // Activar solo si no estaba activa
             if (!wasActive) item.classList.add('active');
         });
     });

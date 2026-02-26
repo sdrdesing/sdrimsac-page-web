@@ -185,11 +185,6 @@ if(file_exists(__DIR__ . '/config/database.php')){
 </div> <div class="carousel-right">
     </div>
 
-
-
-
-    
-
       <div class="carousel-multi-container">
         <button class="carousel-btn prev" onclick="moveMultiCarousel(-1)">&#10094;</button>
 

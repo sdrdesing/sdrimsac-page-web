@@ -1,6 +1,6 @@
 <?php
 include("includes/header.php");
-include("config/database.php");
+include("../config/database.php");
 
 if(isset($_POST['enviar'])){
     $nombre = $_POST['nombre'];
