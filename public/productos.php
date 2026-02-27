@@ -192,6 +192,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if($res && $res->num_rows > 0):
     while($row = $res->fetch_assoc()):
       $img = !empty($row['imagen']) ? $row['imagen'] : 'https://via.placeholder.com/300x200?text=Sin+Imagen';
+      // Verificar si el archivo existe en la carpeta correcta
+      if (!empty($row['imagen']) && strpos($row['imagen'], 'assets/img/productos/') === 0) {
+        $img_path = __DIR__ . '/' . $row['imagen'];
+        if (!file_exists($img_path)) {
+          $img = 'https://via.placeholder.com/300x200?text=Sin+Imagen';
+        }
+      }
   ?>
     <div class="card card-visual">
       <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">

@@ -122,7 +122,10 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <div class="hero-btns">
             <a href="servicios.php" class="btn-hero-primary">Ver Servicios</a>
             <a href="productos.php" class="btn-hero-secondary">Explorar Tienda</a>
+            <button id="contact-asesor-btn" class="btn-hero-primary">Contacta un Asesor</button>
+            <button id="solicitar-demo-btn" class="btn-hero-secondary">Solicitar Demo</button>
         </div>
+        
         <div class="hero-stats">
             <div class="stat">
                 <strong>500+</strong>
@@ -440,6 +443,102 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <a href="register.php" class="btn-hero-primary">Crear cuenta gratis</a>
     </div>
 </section>
+
+<!-- Modal Contacta un Asesor -->
+<div id="contact-asesor-modal" class="modal-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;">
+  <div class="modal-content" style="background:#fff;border-radius:16px;max-width:600px;width:90vw;padding:32px;position:relative;box-shadow:0 8px 32px #0003;display:flex;gap:32px;">
+    <img src="assets/img/demo.png" alt="Robot SDRIMSAC" style="width:180px;height:auto;">
+    <div style="flex:1;">
+      <button id="close-modal-btn" style="position:absolute;top:16px;right:16px;background:#ffc107;border:none;border-radius:50%;width:32px;height:32px;font-size:1.5em;cursor:pointer;">&times;</button>
+      <h2 style="color:#d00;font-weight:bold;">CONTACTA UN ASESOR</h2>
+      <p>Favor completar los siguientes datos para poder contactar a un asesor</p>
+      <form>
+        <input type="text" placeholder="Nombre" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="email" placeholder="Correo electrónico" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea placeholder="QUIERO CONTACTAR UN ASESOR" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+        <div style="margin-bottom:8px;">
+          <input type="checkbox" id="not-robot">
+          <label for="not-robot">No soy un robot</label>
+        </div>
+        <button type="submit" style="background:#28a745;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1.2em;display:flex;align-items:center;gap:8px;cursor:pointer;">
+          <i class="fa-brands fa-whatsapp"></i> Contactar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Solicitar Demo -->
+<div id="solicitar-demo-modal" class="modal-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;">
+  <div class="modal-content" style="background:#fff;border-radius:16px;max-width:600px;width:90vw;padding:32px;position:relative;box-shadow:0 8px 32px #0003;display:flex;gap:32px;">
+    <img src="assets/img/SDRIMSAC.png" alt="Demo SDRIMSAC" style="width:180px;height:auto;">
+    <div style="flex:1;">
+      <button id="close-demo-modal-btn" style="position:absolute;top:16px;right:16px;background:#18376b;border:none;border-radius:50%;width:32px;height:32px;font-size:1.5em;color:#fff;cursor:pointer;">&times;</button>
+      <h2 style="color:#18376b;font-weight:bold;">SOLICITAR DEMO</h2>
+      <p>Completa los datos para solicitar una demo gratuita</p>
+      <form>
+        <input type="text" placeholder="Nombre" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="email" placeholder="Correo electrónico" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="tel" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea placeholder="¿Qué sistema te interesa?" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+        <div style="margin-bottom:8px;">
+          <input type="checkbox" id="demo-not-robot">
+          <label for="demo-not-robot">No soy un robot</label>
+        </div>
+        <button type="submit" style="background:#18376b;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1.2em;display:flex;align-items:center;gap:8px;cursor:pointer;">
+          <i class="fa-solid fa-rocket"></i> Solicitar Demo
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactBtn = document.getElementById('contact-asesor-btn');
+  const modal = document.getElementById('contact-asesor-modal');
+  const closeBtn = document.getElementById('close-modal-btn');
+  contactBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+  modal.addEventListener('click', function(e) {
+    if(e.target === modal) modal.style.display = 'none';
+  });
+
+  // Redirigir a WhatsApp al enviar el formulario
+  const form = modal.querySelector('form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'https://wa.me/51995764963';
+  });
+
+  // Solicitar Demo modal logic
+  const demoBtn = document.getElementById('solicitar-demo-btn');
+  const demoModal = document.getElementById('solicitar-demo-modal');
+  const closeDemoBtn = document.getElementById('close-demo-modal-btn');
+  demoBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    demoModal.style.display = 'flex';
+  });
+  closeDemoBtn.addEventListener('click', function() {
+    demoModal.style.display = 'none';
+  });
+  demoModal.addEventListener('click', function(e) {
+    if(e.target === demoModal) demoModal.style.display = 'none';
+  });
+  // Demo form submit: redirect to WhatsApp
+  const demoForm = demoModal.querySelector('form');
+  demoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'https://wa.me/51995764963';
+  });
+});
+</script>
 
 <?php include("includes/social.php"); ?>
 <?php include("includes/footer.php"); ?>

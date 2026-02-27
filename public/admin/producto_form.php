@@ -51,7 +51,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <label>Descripción<br><textarea name="descripcion"><?= htmlspecialchars($producto['descripcion']) ?></textarea></label>
         <label>Precio (S/)<br><input type="number" step="0.01" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" required></label>
         <label>Stock<br><input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" required></label>
-        <label>Imagen (URL)<br><input type="text" name="imagen" value="<?= htmlspecialchars($producto['imagen']) ?>"></label>
+       
+        <label>Imagen (archivo)<br><input type="file" name="imagen" accept="image/*"></label>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </section>
@@ -59,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <link rel="stylesheet" href="assets/css/producto_form.css">
 <section class="producto-form-section">
     <h2>Nuevo Producto</h2>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="">
         <label>Nombre<br><input type="text" name="nombre" value="" required></label>
         <label>Descripción<br><textarea name="descripcion"></textarea></label>

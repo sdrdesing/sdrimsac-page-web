@@ -16,18 +16,28 @@ if(isset($_POST['id'])){
     $id_producto = $producto['id'];
     $stock = isset($producto['stock']) ? intval($producto['stock']) : 0;
 
-    // Verificar stock actual en carrito
-    $verificar = "SELECT * FROM carrito WHERE id_producto = $id_producto";
+    // Obtener usuario_id si está logueado, si no, 0
+    $usuario_id = 0;
+    if (isset($_SESSION['usuario'])) {
+        $nombre_usuario = $conn->real_escape_string($_SESSION['usuario']);
+        $qUser = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre_usuario' LIMIT 1");
+        if($qUser && $rowUser = $qUser->fetch_assoc()){
+            $usuario_id = intval($rowUser['id']);
+        }
+    }
+
+    // Verificar stock actual en carrito SOLO para este usuario
+    $verificar = "SELECT * FROM carrito WHERE id_producto = $id_producto AND usuario_id = $usuario_id";
     $resultado = $conn->query($verificar);
     if($resultado->num_rows > 0){
         $rowCarrito = $resultado->fetch_assoc();
         $cantidad_total = $rowCarrito['cantidad'] + $cantidad;
         if($cantidad_total > $stock) $cantidad_total = $stock;
-        $update = "UPDATE carrito SET cantidad = $cantidad_total WHERE id_producto = $id_producto";
+        $update = "UPDATE carrito SET cantidad = $cantidad_total WHERE id_producto = $id_producto AND usuario_id = $usuario_id";
         $conn->query($update);
     } else {
         if($cantidad > $stock) $cantidad = $stock;
-        $insertar = "INSERT INTO carrito (id_producto, nombre_producto, precio, imagen, cantidad) VALUES ('$id_producto', '$nombre', '$precio', '$imagen', $cantidad)";
+        $insertar = "INSERT INTO carrito (id_producto, nombre_producto, precio, imagen, cantidad, usuario_id) VALUES ('$id_producto', '$nombre', '$precio', '$imagen', $cantidad, $usuario_id)";
         $conn->query($insertar);
     }
     header("Location: carrito.php");
@@ -47,22 +57,30 @@ elseif(isset($_POST['id_manual'])){
 }
 
 
-// 🔥 VERIFICAR SI YA EXISTE EN EL CARRITO
-$verificar = "SELECT * FROM carrito WHERE id_producto = $id_producto";
+// 🔥 VERIFICAR SI YA EXISTE EN EL CARRITO SOLO PARA ESTE USUARIO
+$usuario_id = 0;
+if (isset($_SESSION['usuario'])) {
+    $nombre_usuario = $conn->real_escape_string($_SESSION['usuario']);
+    $qUser = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre_usuario' LIMIT 1");
+    if($qUser && $rowUser = $qUser->fetch_assoc()){
+        $usuario_id = intval($rowUser['id']);
+    }
+}
+$verificar = "SELECT * FROM carrito WHERE id_producto = $id_producto AND usuario_id = $usuario_id";
 $resultado = $conn->query($verificar);
 
 if($resultado->num_rows > 0){
     // Si existe, aumentar cantidad
     $update = "UPDATE carrito 
                SET cantidad = cantidad + 1 
-               WHERE id_producto = $id_producto";
+               WHERE id_producto = $id_producto AND usuario_id = $usuario_id";
     $conn->query($update);
 } else {
     // Si no existe, insertar
     $insertar = "INSERT INTO carrito 
-                (id_producto, nombre_producto, precio, imagen, cantidad) 
+                (id_producto, nombre_producto, precio, imagen, cantidad, usuario_id) 
                 VALUES 
-                ('$id_producto', '$nombre', '$precio', '$imagen', 1)";
+                ('$id_producto', '$nombre', '$precio', '$imagen', 1, $usuario_id)";
     $conn->query($insertar);
 }
 

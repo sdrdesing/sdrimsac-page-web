@@ -227,10 +227,22 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
         <a href="carrito.php" class="cart-icon" title="Carrito">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-count"><?php
-                // Si la conexión a DB está disponible, sumar cantidades desde la tabla `carrito`
+                // Si la conexión a DB está disponible, sumar cantidades desde la tabla `carrito` solo del usuario logueado
                 $count = 0;
                 if($dbLoaded){
-                    $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
+                    if(isset($_SESSION['usuario'])){
+                        // Buscar el id del usuario
+                        $nombre = $conn->real_escape_string($_SESSION['usuario']);
+                        $qUser = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
+                        if($qUser && $rowUser = $qUser->fetch_assoc()){
+                            $usuario_id = intval($rowUser['id']);
+                            $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito WHERE usuario_id = $usuario_id");
+                        } else {
+                            $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
+                        }
+                    } else {
+                        $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
+                    }
                     if($q){
                         $r = $q->fetch_assoc();
                         $count = intval($r['total']) ?: 0;

@@ -4,7 +4,12 @@
 function toggleSocial() {
     const menu = document.getElementById("socialMenu");
     if (!menu) return;
-    menu.classList.toggle("is-open");
+    // Alternar visibilidad usando display
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
 }
 
 // Cart counter update
@@ -220,5 +225,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         }
+    }
+});
+
+// --- Menú social flotante ---
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('socialBtn');
+    const menu = document.getElementById('socialMenu');
+    let menuTimeout;
+    if (btn && menu) {
+        btn.addEventListener('mouseenter', () => {
+            clearTimeout(menuTimeout);
+            menu.classList.add('active');
+        });
+        btn.addEventListener('mouseleave', () => {
+            menuTimeout = setTimeout(() => menu.classList.remove('active'), 200);
+        });
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(menuTimeout);
+            menu.classList.add('active');
+        });
+        menu.addEventListener('mouseleave', () => {
+            menuTimeout = setTimeout(() => menu.classList.remove('active'), 200);
+        });
     }
 });

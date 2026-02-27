@@ -22,6 +22,7 @@ if($q){
 
 include('includes/header.php');
 ?>
+<link rel="stylesheet" href="assets/css/checkout.css">
 
 <section class="contenido">
     <h2>Checkout — Método de Pago</h2>

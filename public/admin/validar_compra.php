@@ -1,6 +1,6 @@
 <?php
 // validar_compra.php
-include '../config/database.php';
+include '../../config/database.php';
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header('Location: ../login.php');

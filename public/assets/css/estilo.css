@@ -769,29 +769,6 @@ img { display: block; max-width: 100%; }
 .info-card p { font-size: 13px; color: var(--gris-texto); line-height: 1.7; }
 .info-card p:first-of-type { color: var(--oscuro); font-weight: 600; }
 
-/* ============================================================
-   FLOAT BUTTON
-   ============================================================ */
-.float-container { position: fixed; bottom: 26px; right: 26px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 9px; }
-.float-btn {
-    width: 54px; height: 54px;
-    background: var(--azul); border: none; border-radius: 50%;
-    font-size: 23px; cursor: pointer;
-    box-shadow: 0 5px 22px rgba(26,58,110,0.32);
-    transition: all var(--trans);
-    display: flex; align-items: center; justify-content: center;
-}
-.float-btn:hover { background: var(--azul-medio); transform: scale(1.07); box-shadow: 0 9px 30px rgba(26,58,110,0.42); }
-.social-menu { display: none; flex-direction: column; gap: 7px; align-items: flex-end; }
-.social-menu a {
-    display: block; background: var(--blanco);
-    border: 1px solid var(--gris-medio);
-    color: var(--oscuro); padding: 9px 19px;
-    border-radius: 50px; font-size: 13px; font-weight: 600;
-    white-space: nowrap; box-shadow: var(--sombra);
-    transition: all var(--trans);
-}
-.social-menu a:hover { background: var(--azul); color: #fff; border-color: var(--azul); }
 
 /* ============================================================
    FOOTER
