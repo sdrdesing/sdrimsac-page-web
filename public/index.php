@@ -92,23 +92,6 @@ if(file_exists(__DIR__ . '/config/database.php')){
             <i class="fa-solid fa-user-circle"></i>
             <span class="account-text">Mi cuenta</span>
         </a>
-
-        <a href="carrito.php" class="cart-icon" title="Carrito">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="cart-count"><?php
-                $count = 0;
-                if($dbLoaded){
-                    $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
-                    if($q){
-                        $r = $q->fetch_assoc();
-                        $count = intval($r['total']) ?: 0;
-                    }
-                } else {
-                    $count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-                }
-                echo $count;
-            ?></span>
-        </a>
     </div>
 </nav>
 
@@ -438,9 +421,17 @@ if(file_exists(__DIR__ . '/config/database.php')){
 <!-- CTA FINAL -->
 <section class="cta-section">
     <div class="cta-inner">
-        <h2 class="section-title"><i class="fa-solid fa-rocket"></i> ¿Listo para digitalizar tu empresa?</h2>
-        <p>Únete a más de 500 empresas que ya emiten comprobantes electrónicos con sdrimsac.</p>
-        <a href="register.php" class="btn-hero-primary">Crear cuenta gratis</a>
+      <h2 class="section-title"><i class="fa-solid fa-rocket"></i> ¿Listo para digitalizar tu empresa?</h2>
+      <p>Únete a más de 500 empresas que ya emiten comprobantes electrónicos con sdrimsac.</p>
+      <a href="register.php" class="btn-hero-primary">Crear cuenta gratis</a>
+      <div class="cta-social" style="margin-top:28px; display:flex; gap:28px; justify-content:center; align-items:center;">
+        <a href="https://www.facebook.com/sdrimsacsolutions/#" target="_blank" title="Facebook SDRIMSAC" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0001;transition:box-shadow .2s,transform .2s; font-size:2.1em; color:#1877f3; border:2px solid #e6e6e6;">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@sdrimsac" target="_blank" title="TikTok SDRIMSAC" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0001;transition:box-shadow .2s,transform .2s; font-size:2.1em; color:#000; border:2px solid #e6e6e6;">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
     </div>
 </section>
 

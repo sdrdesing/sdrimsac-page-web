@@ -1,6 +1,6 @@
 <?php
 // marcar_notificaciones.php
-include 'config/database.php';
+include_once __DIR__ . '/../config/database.php';
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');

@@ -78,7 +78,9 @@ if($conn){
     // --- FIN BLOQUE COMPRAS ---
 
     // Descontar stock de cada producto comprado
-    $carrito = $conn->query("SELECT id_producto, cantidad FROM carrito");
+    // Filtrar carrito por usuario
+    $usuario_id_pago = isset($_SESSION['usuario_id']) ? intval($_SESSION['usuario_id']) : 0;
+    $carrito = $conn->query("SELECT id_producto, cantidad FROM carrito WHERE usuario_id = $usuario_id_pago");
     $sin_stock = [];
     if($carrito && $carrito->num_rows > 0){
         while($item = $carrito->fetch_assoc()){
@@ -94,8 +96,15 @@ if($conn){
             }
         }
     }
-    // Limpiar carrito
-    $conn->query("DELETE FROM carrito");
+    // Limpiar solo el carrito del usuario actual
+    $conn->query("DELETE FROM carrito WHERE usuario_id = $usuario_id_pago");
+        // Registrar pago en la tabla pagos
+        if ($usuario_id_pago > 0) {
+            $metodo_pago = $conn->real_escape_string($metodo);
+            $total_pago = $conn->real_escape_string($total);
+            $codigo_pago = $conn->real_escape_string($codigo_pedido);
+            $conn->query("INSERT INTO pagos (usuario_id, codigo_pago, metodo, total, fecha) VALUES ('$usuario_id_pago', '$codigo_pago', '$metodo_pago', '$total_pago', NOW())");
+        }
     // Activar notificación de pedido pendiente para el usuario
     $_SESSION['pedido_pendiente'] = true;
 }

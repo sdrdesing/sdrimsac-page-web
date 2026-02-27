@@ -1,7 +1,29 @@
+/* Stock info y marca de agua agotado */
+.stock-info {
+  font-size: 0.98em;
+  color: #2e8b57;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.agotado-watermark {
+  color: #fff;
+  background: #e53935;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px 24px;
+  border-radius: 8px;
+  opacity: 0.92;
+  text-align: center;
+  box-shadow: 0 2px 8px #e5393533;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  user-select: none;
+}
+/* Imagen de producto: siempre completa y centrada */
 .producto-card-img {
   width: 100%;
-  max-width: 220px;
-  height: 160px;
+  max-width: 240px;
+  height: 180px;
   object-fit: contain;
   border-radius: 12px;
   margin: 0 auto 12px auto;
@@ -14,15 +36,84 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 18px 12px 22px 12px;
+  padding: 18px 18px 22px 18px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(42,42,238,0.07);
   border: 1px solid #e1e1e1;
   transition: box-shadow 0.22s, transform 0.22s;
-  min-width: 220px;
-  max-width: 260px;
-  min-height: 320px;
+  min-width: 280px;
+  max-width: 340px;
+  min-height: 340px;
+}
+  /* Alinear botones y contenedores */
+  .producto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .producto-card-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  /* Texto truncado con '...' por defecto, animación marquee solo al hover */
+  .producto-card-text-marquee {
+    max-width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: block;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    font-weight: 700;
+    color: #223366;
+    text-align: center;
+  }
+  .producto-card-text-marquee-inner {
+    display: inline-block;
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: color 0.2s;
+  }
+  .producto-card-text-marquee.marquee-hover .producto-card-text-marquee-inner {
+    padding-left: 100%;
+    animation: marquee-text 8s linear infinite;
+    color: #2a2aee;
+    text-align: left;
+  }
+  @keyframes marquee-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  /* fallback para textos cortos: sin animación, sin elipsis */
+  .producto-card-text-marquee:not(.marquee-active) {
+    white-space: normal;
+    text-overflow: unset;
+    overflow: visible;
+    cursor: default;
+  }
+  .producto-card-text-marquee:not(.marquee-active) .producto-card-text-marquee-inner {
+    animation: none;
+    padding-left: 0;
+    transform: none;
+    color: inherit;
+  }
+
+/* Imagen adaptada completamente al contenedor */
+.producto-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 12px auto;
+  display: block;
+  background: #f7f8fc;
+  box-shadow: 0 2px 12px rgba(42,42,238,0.07);
 }
 .producto-card:hover {
   box-shadow: 0 18px 48px rgba(42,42,238,0.18);
@@ -64,32 +155,7 @@
    - Totalmente responsive
    ============================================================ */
 
-:root{
-  --brand: #18376b;
-  --brand2:#2a2aee;
-  --bg: #f7f8fc;
-  --card: #ffffff;
-  --text: #111827;
-  --muted:#6b7280;
 
-  --radius-lg: 20px;
-  --radius-md: 16px;
-
-  --border: 1px solid rgba(24,55,107,0.10);
-  --shadow-sm: 0 8px 22px rgba(24,55,107,0.08);
-  --shadow-md: 0 18px 44px rgba(24,55,107,0.16);
-}
-
-/* Sección */
-.productos-section{
-  background:
-    radial-gradient(900px 320px at 20% 0%, rgba(42,42,238,0.12), transparent 60%),
-    radial-gradient(900px 320px at 85% 10%, rgba(24,55,107,0.10), transparent 60%),
-    linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
-  padding: 64px 0 46px;
-  text-align: center;
-  border-top: 1px solid rgba(0,0,0,0.04);
-}
 
 /* Títulos */
 .productos-title{

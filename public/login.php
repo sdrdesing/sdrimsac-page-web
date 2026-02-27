@@ -17,6 +17,22 @@ if(isset($_POST["login"])){
             $error = "Usuario bloqueado. Contacte al administrador.";
         } elseif(password_verify($pass,$user["password"])) {
             $_SESSION["usuario"] = $user["nombre"];
+            $_SESSION["usuario_id"] = $user["id"];
+
+            // ✅ NUEVO: si venía de añadir al carrito, reintenta agregar y luego irá a carrito.php
+            if (isset($_SESSION['pending_add_to_cart'])) {
+                header("Location: agregar_carrito.php?replay=1");
+                exit;
+            }
+
+            // ✅ NUEVO: si existe redirect_after_login (por ejemplo carrito.php), redirige ahí
+            if (isset($_SESSION['redirect_after_login']) && !empty($_SESSION['redirect_after_login'])) {
+                $redir = $_SESSION['redirect_after_login'];
+                unset($_SESSION['redirect_after_login']);
+                header("Location: $redir");
+                exit;
+            }
+
             header("Location: index.php");
             exit;
         } else {

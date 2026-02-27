@@ -16,12 +16,12 @@ include(__DIR__ . "/../config/database.php");
 <!-- PAGINACIÓN -->
 <?php
 // Paginación
-$productosPorPagina = 8;
+$productosPorPagina = 6;
 $totalProductos = $conn->query("SELECT COUNT(*) as total FROM productos")->fetch_assoc()['total'];
 $totalPaginas = ceil($totalProductos / $productosPorPagina);
 $paginaActual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
 $offset = ($paginaActual - 1) * $productosPorPagina;
-$sql = "SELECT * FROM productos LIMIT $offset, $productosPorPagina";
+$sql = "SELECT * FROM productos ORDER BY id DESC LIMIT $offset, $productosPorPagina";
 $result = $conn->query($sql);
 ?>
 
@@ -37,48 +37,7 @@ $result = $conn->query($sql);
   <?php endif; ?>
 </nav>
 
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-    // Incrementar vista
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const input = card.querySelector('input[name="id"]');
-        if(input){
-            const id = input.value;
-            fetch('incrementar_vista.php', {
-                method: 'POST',
-                headers: {'Content-Type':'application/x-www-form-urlencoded'},
-                body: 'id=' + encodeURIComponent(id)
-            }).catch(()=>{});
-        }
-    });
-
-    // AJAX para agregar al carrito y mostrar botón Ver carrito
-    document.querySelectorAll('.form-agregar-carrito').forEach(form => {
-        const btnAdd = form.querySelector('.btn-card');
-        const btnVer = form.querySelector('.btn-ver-carrito');
-        btnAdd.addEventListener('click', function(){
-            const formData = new FormData(form);
-            fetch('agregar_carrito.php', {
-                method: 'POST',
-                body: formData
-            }).then(res => res.ok ? res.text() : Promise.reject()).then(() => {
-                btnAdd.style.display = 'none';
-                btnVer.style.display = 'inline-block';
-            });
-        });
-        btnVer.addEventListener('click', function(){
-            window.location.href = 'carrito.php';
-        });
-    });
-});
-</script>
-
-
-
-
+<!-- ✅ NOTA: eliminé tu primer <script> duplicado porque causaba doble submit y "da la vuelta" -->
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -101,13 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnVer) btnVer.style.display = 'inline-flex';
     };
 
-    btnAdd.addEventListener('click', async () => {
+    btnAdd.addEventListener('click', async (e) => {
+      e.preventDefault(); // ✅ evita que el form recargue la página ("da la vuelta")
+
       try{
         btnAdd.disabled = true;
         btnAdd.innerHTML = 'Agregando...';
 
         const formData = new FormData(form);
         const res = await fetch('agregar_carrito.php', { method:'POST', body: formData });
+        const text = await res.text();
+
+        // ✅ si el backend pide login (porque fetch no sigue Location como navegación)
+        if (text.trim() === '__LOGIN_REQUIRED__') {
+          window.location.href = 'login.php';
+          return;
+        }
 
         if(!res.ok) throw new Error('Error al agregar');
 
@@ -120,7 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (btnVer){
-      btnVer.addEventListener('click', () => {
+      btnVer.addEventListener('click', (e) => {
+        e.preventDefault();
         window.location.href = 'carrito.php';
       });
     }
@@ -143,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnVer.className = 'btn-ver-carrito';
     btnVer.innerHTML = '<i class="fa-solid fa-check"></i> Añadido &nbsp; <span style="font-weight:600; color:#2e8bff;">|</span> &nbsp; Ver carrito';
     btnVer.style.marginLeft = '10px';
+    btnVer.style.display = 'none';
     btnAdd.insertAdjacentElement('afterend', btnVer);
 
     const setAddedUI = () => {
@@ -155,12 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Interceptamos submit (para que no recargue)
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       try{
         btnAdd.disabled = true;
         btnAdd.innerHTML = 'Agregando...';
 
         const formData = new FormData(form);
         const res = await fetch('agregar_carrito.php', { method:'POST', body: formData });
+        const text = await res.text();
+
+        // ✅ si el backend pide login, redirigimos
+        if (text.trim() === '__LOGIN_REQUIRED__') {
+          window.location.href = 'login.php';
+          return;
+        }
 
         if(!res.ok) throw new Error('Error al agregar');
 
@@ -173,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    btnVer.addEventListener('click', () => {
+    btnVer.addEventListener('click', (e) => {
+      e.preventDefault();
       window.location.href = 'carrito.php';
     });
   });
@@ -181,18 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- CATEGORÍAS ADICIONALES -->
-<!-- MÁS PRODUCTOS DE FACTURACIÓN ELECTRÓNICA (DINÁMICO) -->
+<!-- PRODUCTOS DE FACTURACIÓN ELECTRÓNICA (DINÁMICO) -->
 <section class="productos-section">
   <h2>PRODUCTOS DE FACTURACIÓN ELECTRÓNICA</h2>
   <div class="cards">
   <?php
-  // Mostrar todos los productos de la base de datos en tarjetas
-  $res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
-  if($res && $res->num_rows > 0):
-    while($row = $res->fetch_assoc()):
+  if($result && $result->num_rows > 0):
+    while($row = $result->fetch_assoc()):
       $img = !empty($row['imagen']) ? $row['imagen'] : 'https://via.placeholder.com/300x200?text=Sin+Imagen';
-      // Verificar si el archivo existe en la carpeta correcta
       if (!empty($row['imagen']) && strpos($row['imagen'], 'assets/img/productos/') === 0) {
         $img_path = __DIR__ . '/' . $row['imagen'];
         if (!file_exists($img_path)) {
@@ -200,21 +175,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
   ?>
-    <div class="card card-visual">
-      <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
-      <div class="card-body">
-        <h3><?= htmlspecialchars($row['nombre']) ?></h3>
-        <p><?= htmlspecialchars($row['descripcion']) ?></p>
-        <p><strong>Precio: S/ <?= number_format($row['precio'],2) ?></strong></p>
-        <form method="post" action="agregar_carrito.php">
-          <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                    <input type="number" name="cantidad" value="1" min="1" max="<?= intval($row['stock']) ?>" class="input-cantidad" style="width:60px; margin-right:8px; border-radius:6px; border:1px solid #bcd; padding:6px 10px; font-size:1.1em; text-align:center; box-shadow:0 1px 3px #0001; transition:border-color .2s; outline:none;">
-          <button type="submit" class="btn-card">Añadir al carrito 🛒</button>
-        </form>
+      <div class="card card-visual producto-card">
+        <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
+        <div class="card-body">
+          <h3 class="producto-card-text-marquee" title="<?= htmlspecialchars($row['nombre']) ?>">
+            <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['nombre']) ?></span>
+          </h3>
+          <p class="producto-card-text-marquee" title="<?= htmlspecialchars($row['descripcion']) ?>">
+            <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['descripcion']) ?></span>
+          </p>
+          <p><strong>Precio: S/ <?= number_format($row['precio'],2) ?></strong></p>
+          <div class="producto-card-buttons">
+            <?php if ((int)$row['stock'] > 0): ?>
+            <form method="post" action="agregar_carrito.php">
+              <input type="hidden" name="id" value="<?= $row['id'] ?>">
+              <input type="number" name="cantidad" value="1" min="1" max="<?= intval($row['stock']) ?>" class="input-cantidad">
+              <span class="stock-info">Stock: <?= intval($row['stock']) ?></span>
+              <button type="submit" class="btn-card">Añadir al carrito 🛒</button>
+            </form>
+            <?php else: ?>
+              <div class="agotado-watermark">AGOTADO</div>
+            <?php endif; ?>
+          </div>
+        </div>
       </div>
-    </div>
   <?php endwhile; endif; ?>
   </div>
 </section>
+
 <?php include("includes/social.php"); ?>
 <?php include("includes/footer.php"); ?>

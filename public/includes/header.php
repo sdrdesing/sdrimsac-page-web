@@ -7,9 +7,13 @@ if (session_status() === PHP_SESSION_NONE) {
 <?php
 // Intentamos cargar la conexión a la base si existe (para contar productos en carrito DB)
 $dbLoaded = false;
-if(file_exists(__DIR__ . '/../config/database.php')){
+
+// ✅ FIX: ruta correcta desde public/includes/header.php hacia config/database.php
+$pathDb = dirname(__DIR__, 2) . '/config/database.php';
+
+if(file_exists($pathDb)){
     try {
-        require_once __DIR__ . '/../config/database.php';
+        require_once $pathDb;
         $dbLoaded = isset($conn);
     } catch(Throwable $e){
         $dbLoaded = false;
@@ -106,6 +110,8 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                 if ($resPend && $resPend->num_rows > 0) {
                     $noti = true;
                     while($c = $resPend->fetch_assoc()) {
+                        // Agregar campo 'mensaje' personalizado
+                        $c['mensaje'] = 'Tu pedido está pendiente. Código: ' . $c['codigo_compra'];
                         $noti_compras[] = $c + ['tipo'=>'pendiente'];
                     }
                 }
@@ -115,6 +121,12 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                 if ($res && $res->num_rows > 0) {
                     $noti = true;
                     while($c = $res->fetch_assoc()) {
+                        // Agregar campo 'mensaje' personalizado
+                        if($c['estado']==='validada'){
+                            $c['mensaje'] = '¡Tu pedido fue validado! Código: ' . $c['codigo_compra'];
+                        } else if($c['estado']==='rechazada'){
+                            $c['mensaje'] = 'Tu pedido fue rechazado. Código: ' . $c['codigo_compra'];
+                        }
                         $noti_compras[] = $c + ['tipo'=>'resuelta'];
                     }
                 }
@@ -132,13 +144,13 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                     <div style="font-weight:600;color:#2a2aee;margin-bottom:7px;">Tus notificaciones de compras:</div>
                     <?php foreach($noti_compras as $nc): ?>
                         <div style="margin-bottom:8px;">
-                            <span style="font-weight:600;">Compra <?= htmlspecialchars($nc['codigo_compra']) ?>:</span>
+                            <span style="font-weight:600;"><?= htmlspecialchars($nc['mensaje']) ?></span>
                             <?php if($nc['estado']==='pendiente'): ?>
-                                <span style="color:#2255a4;font-weight:600;">Pendiente de validación ⏳</span>
+                                <span style="color:#2255a4;font-weight:600;"> ⏳</span>
                             <?php elseif($nc['estado']==='validada'): ?>
-                                <span style="color:#2a8e2a;font-weight:600;">Validada 🎉</span>
+                                <span style="color:#2a8e2a;font-weight:600;"> 🎉</span>
                             <?php elseif($nc['estado']==='rechazada'): ?>
-                                <span style="color:#e53935;font-weight:600;">Rechazada ❌</span>
+                                <span style="color:#e53935;font-weight:600;"> ❌</span>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
@@ -227,22 +239,11 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
         <a href="carrito.php" class="cart-icon" title="Carrito">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-count"><?php
-                // Si la conexión a DB está disponible, sumar cantidades desde la tabla `carrito` solo del usuario logueado
+                // Si la conexión a DB está disponible, sumar cantidades desde la tabla `carrito`
                 $count = 0;
                 if($dbLoaded){
-                    if(isset($_SESSION['usuario'])){
-                        // Buscar el id del usuario
-                        $nombre = $conn->real_escape_string($_SESSION['usuario']);
-                        $qUser = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
-                        if($qUser && $rowUser = $qUser->fetch_assoc()){
-                            $usuario_id = intval($rowUser['id']);
-                            $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito WHERE usuario_id = $usuario_id");
-                        } else {
-                            $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
-                        }
-                    } else {
-                        $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito");
-                    }
+                    $usuario_id = isset($_SESSION['usuario_id']) ? intval($_SESSION['usuario_id']) : 0;
+                    $q = $conn->query("SELECT SUM(cantidad) AS total FROM carrito WHERE usuario_id = $usuario_id");
                     if($q){
                         $r = $q->fetch_assoc();
                         $count = intval($r['total']) ?: 0;
