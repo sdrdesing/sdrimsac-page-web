@@ -137,9 +137,7 @@
         </div>
     </div>
     <div class="cafeteria-faq-img">
-        <img src="assets/img/cafeteria_faq.jpg" alt="Cafetería Preguntas Frecuentes" />
-        <img src="assets/img/cafeteria_app.jpg" alt="Cafetería App" />
-        <img src="assets/img/cafeteria_staff.jpg" alt="Cafetería Staff" />
+        <img src="assets/img/dragonCafeteria.png" alt="Cafetería Preguntas Frecuentes" />
     </div>
 </div>
 
