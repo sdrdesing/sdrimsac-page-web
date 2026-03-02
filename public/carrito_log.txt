@@ -1,0 +1,6 @@
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 36 | Cantidad: 1
+Producto: 21 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío

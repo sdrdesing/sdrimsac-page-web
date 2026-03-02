@@ -17,7 +17,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])){
     $conn->query("DELETE FROM productos WHERE id=$id");
 }
 
-$res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
+$productosPorPagina = 10;
+$totalProductos = $conn->query("SELECT COUNT(*) as total FROM productos")->fetch_assoc()['total'];
+$totalPaginas = ceil($totalProductos / $productosPorPagina);
+$paginaActual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
+$offset = ($paginaActual - 1) * $productosPorPagina;
+$res = $conn->query("SELECT * FROM productos ORDER BY id ASC LIMIT $productosPorPagina OFFSET $offset");
 ?>
 <link rel="stylesheet" href="assets/css/productos.css">
 <section class="productos-section">
@@ -55,6 +60,18 @@ $res = $conn->query("SELECT * FROM productos ORDER BY id DESC");
         <?php endwhile; ?>
         </tbody>
     </table>
+
+        <div class="pagination">
+            <?php if($paginaActual > 1): ?>
+                <a href="?pagina=<?= $paginaActual-1 ?>">&laquo; Anterior</a>
+            <?php endif; ?>
+            <?php for($i=1; $i<=$totalPaginas; $i++): ?>
+                <a href="?pagina=<?= $i ?>" class="<?= $i==$paginaActual ? 'active' : '' ?>"> <?= $i ?> </a>
+            <?php endfor; ?>
+            <?php if($paginaActual < $totalPaginas): ?>
+                <a href="?pagina=<?= $paginaActual+1 ?>">Siguiente &raquo;</a>
+            <?php endif; ?>
+        </div>
 </section>
 
 

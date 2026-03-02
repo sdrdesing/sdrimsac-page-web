@@ -27,7 +27,7 @@ $errors = [];
 if (!in_array($tipo_doc, ["DNI","RUC"], true)) $errors[] = "Tipo de documento inválido";
 if ($tipo_doc === "DNI" && strlen($doc) !== 8) $errors[] = "DNI debe tener 8 dígitos";
 if ($tipo_doc === "RUC" && strlen($doc) !== 11) $errors[] = "RUC debe tener 11 dígitos";
-if (strlen(onlyDigits($telefono)) < 9) $errors[] = "Teléfono inválido";
+if (strlen(onlyDigits($telefono)) !== 9) $errors[] = "Teléfono inválido: debe tener 9 dígitos";
 if ($empresa === "") $errors[] = "Empresa es obligatoria";
 if ($mensaje === "") $errors[] = "Mensaje es obligatorio";
 

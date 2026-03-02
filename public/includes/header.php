@@ -291,17 +291,3 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
     </div>
 </nav>
 
-<?php
-// Forzar logout si el usuario está bloqueado
-if (isset($_SESSION['usuario']) && $dbLoaded) {
-    $nombre = $_SESSION['usuario'];
-    $q = $conn->query("SELECT is_blocked FROM usuarios WHERE nombre='".$conn->real_escape_string($nombre)."' LIMIT 1");
-    if ($q && $row = $q->fetch_assoc()) {
-        if (isset($row['is_blocked']) && intval($row['is_blocked']) === 1) {
-            session_destroy();
-            header('Location: login.php?error=bloqueado');
-            exit;
-        }
-    }
-}
-?>

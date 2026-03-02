@@ -192,9 +192,7 @@ Array
     [payload] => Array
         (
             [dni] => 76424676
-        )
-
-    [http_code] => 500
+        )[http_code] => 500
     [curl_error] => 
     [response] => <!DOCTYPE html>
 <html lang="en">
@@ -410,9 +408,7 @@ Array
     [curl_error] => 
     [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07186293601989746}
     [timestamp] => 2026-03-02 15:29:35
-)
-
----
+)---
 Array
 (
     [url] => https://apiperu.dev/api/ruc
@@ -635,6 +631,573 @@ Array
     [curl_error] => 
     [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.10961508750915527}
     [timestamp] => 2026-03-02 15:43:50
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05453085899353027}
+    [timestamp] => 2026-03-02 16:12:59
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.09918379783630371}
+    [timestamp] => 2026-03-02 16:13:20
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0804131031036377}
+    [timestamp] => 2026-03-02 16:20:23
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.0750739574432373}
+    [timestamp] => 2026-03-02 16:29:22
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05929398536682129}
+    [timestamp] => 2026-03-02 16:46:19
+)---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.10834312438964844}
+    [timestamp] => 2026-03-02 16:47:06
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07676410675048828}
+    [timestamp] => 2026-03-02 16:49:47
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.059339046478271484}
+    [timestamp] => 2026-03-02 16:58:06
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05454206466674805}
+    [timestamp] => 2026-03-02 16:59:42
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.0692291259765625}
+    [timestamp] => 2026-03-02 16:59:53
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.07141709327697754}
+    [timestamp] => 2026-03-02 17:03:29
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07164502143859863}
+    [timestamp] => 2026-03-02 17:03:35
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.055339813232421875}
+    [timestamp] => 2026-03-02 18:14:02
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07011985778808594}
+    [timestamp] => 2026-03-02 18:14:26
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05562400817871094}
+    [timestamp] => 2026-03-02 18:38:04
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06696414947509766}
+    [timestamp] => 2026-03-02 22:26:01
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06066012382507324}
+    [timestamp] => 2026-03-02 22:50:08
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.07091808319091797}
+    [timestamp] => 2026-03-02 22:50:09
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06051993370056152}
+    [timestamp] => 2026-03-02 22:50:18
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.07678794860839844}
+    [timestamp] => 2026-03-02 22:50:19
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06657695770263672}
+    [timestamp] => 2026-03-02 22:52:47
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0571599006652832}
+    [timestamp] => 2026-03-02 22:53:00
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07089805603027344}
+    [timestamp] => 2026-03-02 22:53:46
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07121014595031738}
+    [timestamp] => 2026-03-02 22:53:46
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05772113800048828}
+    [timestamp] => 2026-03-02 22:56:11
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.057930946350097656}
+    [timestamp] => 2026-03-02 22:56:12
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05807089805603027}
+    [timestamp] => 2026-03-02 23:09:57
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.055673837661743164}
+    [timestamp] => 2026-03-02 23:14:00
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.055586814880371094}
+    [timestamp] => 2026-03-02 23:43:44
+)
+
+---Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0689082145690918}
+    [timestamp] => 2026-03-02 23:53:24
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.06895208358764648}
+    [timestamp] => 2026-03-02 23:53:35
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05786585807800293}
+    [timestamp] => 2026-03-02 23:54:00
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07291316986083984}
+    [timestamp] => 2026-03-02 23:54:27
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05951404571533203}
+    [timestamp] => 2026-03-02 23:54:48
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0594179630279541}
+    [timestamp] => 2026-03-02 23:54:49
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.052403926849365234}
+    [timestamp] => 2026-03-02 23:54:50
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06839609146118164}
+    [timestamp] => 2026-03-02 23:55:56
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06013083457946777}
+    [timestamp] => 2026-03-02 23:55:56
 )
 
 ---

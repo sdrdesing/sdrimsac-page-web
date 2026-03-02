@@ -1,49 +1,134 @@
 /* admin/reportes.css - Estilos para la sección de reportes */
+
+/* Sección principal */
 .reportes-section {
-  max-width: 700px;
+  max-width: 800px;
   margin: 40px auto;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #0002;
-  padding: 2em 2.5em;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 2.5em 3em;
+  font-family: 'DM Sans', Arial, sans-serif;
 }
 .reportes-section h2 {
   color: #1a237e;
-  font-size: 2em;
-  margin-bottom: 0.5em;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.02em;
 }
 .reportes-section ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 2em;
 }
 .reportes-section li {
   margin-bottom: 1.2em;
 }
-.reportes-section a {
-  display: inline-block;
-  background: #1a237e;
+.reportes-section .report-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg,#1a237e 60%,#3949ab 100%);
   color: #fff;
-  padding: 0.6em 1.4em;
-  border-radius: 6px;
+  padding: 0.7em 1.6em;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background .2s, color .2s;
-  box-shadow: 0 1px 4px #0001;
+  font-weight: 600;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px #0001;
+  transition: background .2s, color .2s, transform .18s;
+  text-align: left;
+  letter-spacing: 0.01em;
 }
-.reportes-section a:hover {
+.reportes-section .report-btn:hover {
   background: #3949ab;
   color: #ffb300;
+  transform: translateY(-2px) scale(1.03);
 }
+
+/* Tabla profesional */
 .reportes-section table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: 1.5em;
+  background: #f8faff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #0001;
 }
 .reportes-section th, .reportes-section td {
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0.5em 0.7em;
+  padding: 13px 16px;
   text-align: left;
+  font-size: 15px;
 }
 .reportes-section th {
   background: #e8eaf6;
+  color: #1a237e;
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 2px solid #d1d5db;
+}
+.reportes-section tr {
+  transition: background 0.18s;
+}
+.reportes-section tr:hover {
+  background: #f0f4ff;
+}
+.reportes-section td {
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+.reportes-section td:first-child {
+  color: #3949ab;
+  font-weight: 600;
+}
+
+/* Paginación moderna */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 0 0;
+  gap: 8px;
+}
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #e8eaf6;
+  color: #1a237e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.pagination a:hover {
+  background: #3949ab;
+  color: #fff;
+}
+.pagination .active, .pagination a.active {
+  background: #3949ab;
+  color: #fff;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .reportes-section {
+    padding: 1em 0.5em;
+  }
+  .reportes-section th, .reportes-section td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+  .reportes-section .report-btn {
+    padding: 0.6em 1em;
+    font-size: 0.98em;
+  }
+  .pagination a, .pagination span {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
 }

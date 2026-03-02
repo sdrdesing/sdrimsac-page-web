@@ -27,7 +27,7 @@
             <label>Nombre* <input type="text" name="nombre" required></label>
             <label>Apellido* <input type="text" name="apellido" required></label>
             <label>Correo electrónico* <input type="email" name="email" required></label>
-            <label>Teléfono* <input type="tel" name="telefono" required></label>
+            <label>Teléfono* <input type="tel" name="telefono" inputmode="numeric" maxlength="9" pattern="\d{9}" required></label>
             <label>RUC <input type="text" name="ruc"></label>
             <label>Nombre de tu negocio <input type="text" name="negocio"></label>
             <label>Seleccione el sistema que deseas:

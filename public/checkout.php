@@ -11,7 +11,10 @@ if(!isset($_SESSION['usuario'])){
 // Calculate cart total
 $total = 0;
 $items = [];
-$q = $conn->query("SELECT * FROM carrito");
+
+// Filtrar carrito por usuario actual
+$usuario_id = isset($_SESSION['usuario_id']) ? intval($_SESSION['usuario_id']) : 0;
+$q = $conn->query("SELECT * FROM carrito WHERE usuario_id = $usuario_id");
 if($q){
     while($r = $q->fetch_assoc()){
         $r['subtotal'] = $r['precio'] * $r['cantidad'];

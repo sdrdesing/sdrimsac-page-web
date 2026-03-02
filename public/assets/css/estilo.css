@@ -170,6 +170,34 @@ img { display: block; max-width: 100%; }
     transition: all var(--trans);
     box-shadow: 0 4px 14px rgba(26, 58, 110, 0.22);
 }
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-left: 14px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+.icons > * { flex: 0 0 auto; }
+.account-icon .account-text {
+    white-space: nowrap;
+}
+.cart-icon {
+    position: relative;
+}
+.cart-count {
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgba(255,255,255,0.22);
+}
 .icons a:hover {
     background: var(--azul-medio);
     transform: translateY(-1px);
@@ -596,6 +624,23 @@ img { display: block; max-width: 100%; }
     margin-bottom: 13px; outline: none;
     transition: border-color var(--trans), box-shadow var(--trans);
 }
+.formulario .doc-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 13px;
+}
+.formulario .doc-row input {
+    margin-bottom: 0;
+}
+.formulario .doc-row button {
+    width: auto;
+    min-width: 46px;
+    padding: 0 14px;
+    border-radius: var(--radio);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 .formulario input::placeholder,
 .formulario textarea::placeholder { color: #b0bccf; }
 .formulario input:focus,
@@ -797,6 +842,11 @@ img { display: block; max-width: 100%; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+    .navbar { padding: 0 20px; }
+    .menu a { padding: 8px 10px; }
+    .icons { gap: 8px; }
+    .icons a { padding: 9px 14px; }
+    .account-icon .account-text { display: none; }
     .showcase-inner { grid-template-columns: 1fr; gap: 32px; }
     .showcase-inner.reverse { direction: ltr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -806,6 +856,8 @@ img { display: block; max-width: 100%; }
 @media (max-width: 768px) {
     .navbar { padding: 0 18px; }
     .menu  { display: none; }
+    .icons { margin-left: 8px; gap: 6px; }
+    .icons a { padding: 8px 10px; }
     /* On small screens we hide desktop submenu; implement a mobile menu separately if needed */
     .topbar { padding: 7px 18px; }
     .partners-bar { padding: 14px 18px; }

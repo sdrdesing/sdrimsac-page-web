@@ -82,7 +82,57 @@ if($conn){
             file_put_contents(__DIR__.'/ultimo_mail_enviado.txt', "To: $email\nSubject: $asunto\n\n$mensaje");
         }
 
-        // Redirigir a confirmacion.php para evitar reenvío de formulario
+        // Descontar stock y actualizar vendidos antes de redirigir
+        $usuario_id_pago = isset($_SESSION['usuario_id']) ? intval($_SESSION['usuario_id']) : 0;
+        // LOG: Mostrar productos en el carrito antes de pagar
+        $log = "\n--- Carrito antes de pagar (usuario_id: $usuario_id_pago) ---\n";
+        $carrito_log = $conn->query("SELECT id_producto, cantidad FROM carrito WHERE usuario_id = $usuario_id_pago");
+        if($carrito_log && $carrito_log->num_rows > 0){
+            while($item = $carrito_log->fetch_assoc()){
+                $log .= "Producto: " . $item['id_producto'] . " | Cantidad: " . $item['cantidad'] . "\n";
+            }
+        } else {
+            $log .= "Carrito vacío\n";
+        }
+        file_put_contents(__DIR__.'/carrito_log.txt', $log, FILE_APPEND);
+        $carrito = $conn->query("SELECT id_producto, cantidad FROM carrito WHERE usuario_id = $usuario_id_pago");
+        $sin_stock = [];
+        if($carrito && $carrito->num_rows > 0){
+            while($item = $carrito->fetch_assoc()){
+                $idp = intval($item['id_producto']);
+                $cant = intval($item['cantidad']);
+                $conn->query("UPDATE productos SET stock = GREATEST(stock - $cant, 0) WHERE id = $idp");
+                $conn->query("UPDATE productos SET vendidos = vendidos + $cant WHERE id = $idp");
+                $qstock = $conn->query("SELECT nombre, stock FROM productos WHERE id = $idp");
+                if($qstock && $rowstock = $qstock->fetch_assoc()){
+                    if(intval($rowstock['stock']) == 0){
+                        $sin_stock[] = $rowstock['nombre'];
+                    }
+                }
+            }
+        }
+        // Limpiar solo el carrito del usuario actual
+        $conn->query("DELETE FROM carrito WHERE usuario_id = $usuario_id_pago");
+        // LOG: Mostrar productos en el carrito después de pagar
+        $log = "--- Carrito después de pagar (usuario_id: $usuario_id_pago) ---\n";
+        $carrito_log = $conn->query("SELECT id_producto, cantidad FROM carrito WHERE usuario_id = $usuario_id_pago");
+        if($carrito_log && $carrito_log->num_rows > 0){
+            while($item = $carrito_log->fetch_assoc()){
+                $log .= "Producto: " . $item['id_producto'] . " | Cantidad: " . $item['cantidad'] . "\n";
+            }
+        } else {
+            $log .= "Carrito vacío\n";
+        }
+        file_put_contents(__DIR__.'/carrito_log.txt', $log, FILE_APPEND);
+        // Registrar pago en la tabla pagos
+        if ($usuario_id_pago > 0) {
+            $metodo_pago = $conn->real_escape_string($metodo);
+            $total_pago = $conn->real_escape_string($total);
+            $codigo_pago = $conn->real_escape_string($codigo_pedido);
+            $conn->query("INSERT INTO pagos (usuario_id, codigo_pago, metodo, total, fecha) VALUES ('$usuario_id_pago', '$codigo_pago', '$metodo_pago', '$total_pago', NOW())");
+        }
+        $_SESSION['pedido_pendiente'] = true;
+        // Ahora sí redirigir
         header('Location: confirmacion.php');
         exit;
     }
@@ -98,6 +148,8 @@ if($conn){
             $idp = intval($item['id_producto']);
             $cant = intval($item['cantidad']);
             $conn->query("UPDATE productos SET stock = GREATEST(stock - $cant, 0) WHERE id = $idp");
+                // Actualizar vendidos
+                $conn->query("UPDATE productos SET vendidos = vendidos + $cant WHERE id = $idp");
             // Verificar si quedó sin stock
             $qstock = $conn->query("SELECT nombre, stock FROM productos WHERE id = $idp");
             if($qstock && $rowstock = $qstock->fetch_assoc()){

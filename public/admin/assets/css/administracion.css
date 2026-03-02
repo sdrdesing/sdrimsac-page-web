@@ -1,67 +1,366 @@
-/* admin/administracion.css - Estilos para la sección de administración */
+/* administracion.css — Diseño profesional y elegante */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --primary:       #1a2e6e;
+  --primary-light: #2a4cbf;
+  --accent:        #f0a500;
+  --bg:            #f0f2f8;
+  --card:          #ffffff;
+  --text:          #1a1d2e;
+  --muted:         #6b7280;
+  --border:        #e4e8f0;
+  --success:       #059669;
+  --danger:        #dc2626;
+  --shadow:        0 4px 24px rgba(26,46,110,0.10);
+  --radius:        16px;
+}
+
+/* ── SECTION WRAPPER ──────────────────────────────────── */
 .admin-section {
-  max-width: 700px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #0002;
-  padding: 2em 2.5em;
+  max-width: 860px;
+  margin: 40px auto 60px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
 }
-.admin-section h2 {
-  color: #1a237e;
-  font-size: 2em;
-  margin-bottom: 0.5em;
+
+.admin-section > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.admin-section ul {
+
+.admin-section > h2::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 26px;
+  background: linear-gradient(180deg, var(--primary-light), var(--accent));
+  border-radius: 4px;
+}
+
+.admin-section > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+  margin-left: 15px;
+}
+
+/* ── NAV LINKS ────────────────────────────────────────── */
+.admin-section > ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
 }
-.admin-section li {
-  margin-bottom: 1.2em;
+
+.admin-section > ul li {
+  margin: 0;
 }
-.admin-section a {
-  display: inline-block;
-  background: #1a237e;
-  color: #fff;
-  padding: 0.6em 1.4em;
-  border-radius: 6px;
+
+.admin-section > ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--card);
+  color: var(--primary);
+  padding: 10px 22px;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background .2s, color .2s;
-  box-shadow: 0 1px 4px #0001;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 8px rgba(26,46,110,0.07);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
 }
-.admin-section a:hover {
-  background: #3949ab;
-  color: #ffb300;
+
+.admin-section > ul a:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px rgba(26,46,110,0.18);
+  transform: translateY(-2px);
 }
+
+/* ── ADMIN BOX ────────────────────────────────────────── */
 .admin-section .admin-box {
-  background: #f4f6fa;
-  border-radius: 8px;
-  padding: 1.2em 1.5em;
-  margin-bottom: 1.5em;
-  box-shadow: 0 1px 6px #0001;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
+
+.admin-section .admin-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.admin-section .admin-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── TABLE ────────────────────────────────────────────── */
+.admin-section table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  font-size: 13.5px;
+  margin-bottom: 20px;
+}
+
+.admin-section table tr th {
+  background: var(--primary);
+  color: #fff;
+  padding: 11px 14px;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: left;
+}
+
+.admin-section table tr th:first-child { border-radius: 8px 0 0 8px; }
+.admin-section table tr th:last-child  { border-radius: 0 8px 8px 0; }
+
+.admin-section table tbody tr {
+  background: var(--card);
+  transition: background 0.18s, box-shadow 0.18s;
+}
+
+.admin-section table tbody tr:hover {
+  background: #f4f7ff;
+  box-shadow: 0 2px 10px rgba(26,46,110,0.08);
+}
+
+.admin-section table tbody td {
+  padding: 11px 14px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text);
+}
+
+.admin-section table tbody td:first-child {
+  border-left: 1px solid var(--border);
+  border-radius: 8px 0 0 8px;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.admin-section table tbody td:last-child {
+  border-right: 1px solid var(--border);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── INLINE FORM BUTTONS (bloquear/desbloquear) ───────── */
+.admin-section table button {
+  border: none;
+  border-radius: 7px;
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.18s, transform 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.admin-section table button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ── FORMS ────────────────────────────────────────────── */
 .admin-section label {
-  font-weight: 500;
-  margin-right: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-right: 14px;
+  margin-bottom: 12px;
+  gap: 5px;
 }
-.admin-section input, .admin-section select {
-  padding: 0.4em 0.8em;
-  border-radius: 4px;
-  border: 1px solid #bcd;
-  margin-bottom: 0.7em;
-  font-size: 1em;
+
+.admin-section input[type="text"],
+.admin-section input[type="email"],
+.admin-section input[type="password"],
+.admin-section input[type="number"],
+.admin-section select {
+  padding: 9px 13px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  font-size: 13.5px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.18s, box-shadow 0.18s;
+  outline: none;
+  min-width: 180px;
+  margin-bottom: 0;
 }
-.admin-section button {
-  background: #1a237e;
+
+.admin-section input:focus,
+.admin-section select:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(42,76,191,0.12);
+  background: #fff;
+}
+
+/* ── MAIN SUBMIT BUTTON ───────────────────────────────── */
+.admin-section .admin-form button,
+.admin-section .admin-box > form > button {
+  background: var(--primary);
   color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 0.5em 1.2em;
-  font-size: 1em;
+  border-radius: 9px;
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background .2s;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 12px rgba(26,46,110,0.18);
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
 }
-.admin-section button:hover {
-  background: #3949ab;
+
+.admin-section .admin-form button:hover,
+.admin-section .admin-box > form > button:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,46,110,0.22);
+}
+
+/* ── FEEDBACK MESSAGES ────────────────────────────────── */
+.admin-section div[style*="color:green"],
+.admin-section div[style*="color:#b30000"],
+.admin-section div[style*="color:#2a2aee"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  margin-top: 14px !important;
+}
+
+.admin-section div[style*="color:green"] {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+.admin-section div[style*="color:#b30000"] {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+  border: 1px solid #fecaca !important;
+}
+
+.admin-section div[style*="color:#2a2aee"] {
+  background: #eff6ff !important;
+  color: var(--primary-light) !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+.admin-section div a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ── PERMISSIONS LIST ─────────────────────────────────── */
+.admin-section .admin-box ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.admin-section .admin-box ul li {
+  padding: 9px 14px;
+  margin-bottom: 6px;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 13.5px;
+  border-left: 3px solid var(--primary-light);
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 720px) {
+  .admin-section {
+    margin: 20px 14px 40px;
+  }
+
+  .admin-section .admin-box {
+    padding: 22px 18px;
+  }
+
+  .admin-section > ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-section > ul a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-section table thead { display: none; }
+
+  .admin-section table tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .admin-section table tbody td {
+    display: block;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .admin-section table tbody td:last-child { border-bottom: none; }
+
+  .admin-section label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .admin-section input,
+  .admin-section select {
+    width: 100% !important;
+  }
 }

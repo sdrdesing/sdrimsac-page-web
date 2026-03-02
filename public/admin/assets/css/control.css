@@ -1,61 +1,314 @@
-/* admin/control.css - Estilos para la sección de control */
+/* control.css — Diseño profesional y elegante para Panel de Control */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --primary:       #1a2e6e;
+  --primary-light: #2a4cbf;
+  --accent:        #f0a500;
+  --bg:            #f0f2f8;
+  --card:          #ffffff;
+  --text:          #1a1d2e;
+  --muted:         #6b7280;
+  --border:        #e4e8f0;
+  --shadow:        0 4px 24px rgba(26,46,110,0.10);
+  --radius:        16px;
+
+  /* Category colors */
+  --ventas:    #2a4cbf;
+  --productos: #059669;
+  --usuarios:  #7c3aed;
+  --seguridad: #dc2626;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── SECTION WRAPPER ──────────────────────────────────── */
 .control-section {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #0002;
-  padding: 2em 2.5em;
+  max-width: 900px;
+  margin: 40px auto 60px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  padding: 0 16px;
 }
-.control-section h2 {
-  color: #1a237e;
-  font-size: 2em;
-  margin-bottom: 0.5em;
+
+/* ── MAIN TITLE ───────────────────────────────────────── */
+.control-section > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.control-section h3 {
-  color: #3949ab;
-  margin-top: 1.5em;
+
+.control-section > h2::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--primary-light), var(--accent));
+  border-radius: 4px;
+  flex-shrink: 0;
 }
-.control-section ul {
+
+.control-section > h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── CATEGORY GROUPS ──────────────────────────────────── */
+.control-section > h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--muted);
+  margin: 32px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-section > h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── LINK GRID ────────────────────────────────────────── */
+.control-section > ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5em;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.control-section li {
-  margin-bottom: 1em;
-}
-.control-section a {
-  display: inline-block;
-  background: #3949ab;
-  color: #fff;
-  padding: 0.5em 1.2em;
-  border-radius: 6px;
+
+.control-section > ul li { margin: 0; }
+
+.control-section > ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--card);
+  color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background .2s, color .2s;
-  box-shadow: 0 1px 4px #0001;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 8px rgba(26,46,110,0.06);
+  transition: all 0.22s cubic-bezier(.4,0,.2,1);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
 }
-.control-section a:hover {
-  background: #1a237e;
-  color: #ffb300;
+
+.control-section > ul a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.22s;
+  z-index: 0;
 }
+
+.control-section > ul a:hover::before { opacity: 1; }
+.control-section > ul a:hover {
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px rgba(26,46,110,0.20);
+  transform: translateY(-2px);
+}
+
+.control-section > ul a span,
+.control-section > ul a * { position: relative; z-index: 1; }
+.control-section > ul a { position: relative; }
+.control-section > ul a:hover { color: #fff; }
+
+/* Category-colored left pip on hover via nth-child groups */
+/* Ventas group */
+.control-section > ul:nth-of-type(1) a { border-left: 3px solid var(--ventas); }
+.control-section > ul:nth-of-type(2) a { border-left: 3px solid var(--productos); }
+.control-section > ul:nth-of-type(2) a::before { background: var(--productos); }
+.control-section > ul:nth-of-type(2) a:hover { border-color: var(--productos); }
+.control-section > ul:nth-of-type(3) a { border-left: 3px solid var(--usuarios); }
+.control-section > ul:nth-of-type(3) a::before { background: var(--usuarios); }
+.control-section > ul:nth-of-type(3) a:hover { border-color: var(--usuarios); }
+.control-section > ul:nth-of-type(4) a { border-left: 3px solid var(--seguridad); }
+.control-section > ul:nth-of-type(4) a::before { background: var(--seguridad); }
+.control-section > ul:nth-of-type(4) a:hover { border-color: var(--seguridad); }
+
+/* ── HR DIVIDER ───────────────────────────────────────── */
+.control-section > hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 36px 0 28px;
+  position: relative;
+}
+
+.control-section > hr::before {
+  content: '▼ Resultados';
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  padding: 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── CONTROL BOX ──────────────────────────────────────── */
 .control-section .control-box {
-  background: #f4f6fa;
-  border-radius: 8px;
-  padding: 1.2em 1.5em;
-  margin-bottom: 1.5em;
-  box-shadow: 0 1px 6px #0001;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.35s cubic-bezier(.4,0,.2,1) both;
 }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.control-section .control-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.control-section .control-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── TABLES IN CONTROL BOX ────────────────────────────── */
 .control-section table {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1em;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  font-size: 13.5px;
+  margin-bottom: 4px;
 }
-.control-section th, .control-section td {
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0.5em 0.7em;
+
+.control-section table tr th {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
   text-align: left;
 }
-.control-section th {
-  background: #e8eaf6;
+
+.control-section table tr th:first-child { border-radius: 8px 0 0 8px; }
+.control-section table tr th:last-child  { border-radius: 0 8px 8px 0; }
+
+.control-section table tr td {
+  padding: 10px 16px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  transition: background 0.15s;
+}
+
+.control-section table tbody tr:hover td { background: #f4f7ff; }
+
+.control-section table tr td:first-child {
+  border-left: 1px solid var(--border);
+  border-radius: 8px 0 0 8px;
+  font-weight: 600;
+}
+
+.control-section table tr td:last-child {
+  border-right: 1px solid var(--border);
+  border-radius: 0 8px 8px 0;
+}
+
+/* stock badge on second column */
+.control-section table tr td:last-child:not(:first-child) {
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+/* ── EMPTY STATE ──────────────────────────────────────── */
+.control-section .control-box p {
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-section .control-box p::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 680px) {
+  .control-section {
+    margin: 20px 0 40px;
+    padding: 0 12px;
+  }
+
+  .control-section > ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .control-section > ul a {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .control-section .control-box {
+    padding: 20px 16px;
+  }
+
+  .control-section table thead { display: none; }
+  .control-section table tbody tr { display: block; margin-bottom: 8px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .control-section table tbody td { display: block; padding: 8px 12px; border: none; border-bottom: 1px solid var(--border); }
+  .control-section table tbody td:last-child { border-bottom: none; border-radius: 0; }
+  .control-section table tbody td:first-child { border-radius: 0; border-left: none; }
 }

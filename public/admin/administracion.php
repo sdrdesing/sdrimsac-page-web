@@ -58,15 +58,25 @@ include __DIR__ . '/includes/header_admin.php';
         echo '</div>';
     }
     if($seccion === 'configuracion'){
+        // Leer la URL actual desde archivo de configuración simple
+        $whatsapp_url = '';
+        $config_file = __DIR__ . '/../../config/whatsapp_url.txt';
+        if(file_exists($config_file)) {
+            $whatsapp_url = trim(file_get_contents($config_file));
+        }
         echo '<div class="admin-box"><h3>Configuración general</h3>';
         echo '<form method="post">';
         echo '<label>Nombre de la empresa: <input type="text" name="empresa" value="SDRIMSAC"></label><br>';
         echo '<label>Correo de contacto: <input type="email" name="correo" value="contacto@sdrimsac.com"></label><br>';
+        echo '<label>URL de WhatsApp/API: <input type="text" name="whatsapp_url" value="'.htmlspecialchars($whatsapp_url).'" style="width:350px;"></label><br>';
         echo '<button type="submit" name="guardar_config">Guardar configuración</button>';
         echo '</form>';
         if(isset($_POST['guardar_config'])){
-            // Aquí guardarías la configuración en la base de datos o archivo
-            echo '<div style="color:green;margin-top:1em;">Configuración guardada (simulado).</div>';
+            // Guardar la URL en el archivo de configuración
+            if(isset($_POST['whatsapp_url'])) {
+                file_put_contents($config_file, trim($_POST['whatsapp_url']));
+            }
+            echo '<div style="color:green;margin-top:1em;">Configuración guardada correctamente.</div>';
         }
         echo '</div>';
     }

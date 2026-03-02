@@ -3,6 +3,23 @@ include("includes/header.php");
 include(__DIR__ . "/../config/database.php"); 
 ?>
 <link rel="stylesheet" href="assets/css/productos.css">
+<script>
+function marcarFavorito(productoId) {
+  fetch('marcar_favorito.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: 'id=' + productoId
+  })
+  .then(res => res.text())
+  .then(txt => {
+    if(txt.trim() === 'OK') {
+      alert('¡Producto marcado como favorito!');
+    } else {
+      alert('Error al marcar favorito: ' + txt);
+    }
+  });
+}
+</script>
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -188,8 +205,36 @@ document.addEventListener('DOMContentLoaded', () => {
             <form method="post" action="agregar_carrito.php">
               <input type="hidden" name="id" value="<?= $row['id'] ?>">
               <input type="number" name="cantidad" value="1" min="1" max="<?= intval($row['stock']) ?>" class="input-cantidad">
-              <span class="stock-info">Stock: <?= intval($row['stock']) ?></span>
+              <span class="stock-info" style="display:inline-flex; align-items:center; gap:6px;">Stock: <?= intval($row['stock']) ?>
+                <button type="button" class="btn-fav" data-id="<?= $row['id'] ?>" aria-label="Favorito" style="background:none; border:none; outline:none; cursor:pointer; font-size:1.5em; color:#bbb; padding:0; margin:0;">
+                  <span class="fav-star" style="transition:color 0.2s;">★</span>
+                </button>
+              </span>
               <button type="submit" class="btn-card">Añadir al carrito 🛒</button>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              document.querySelectorAll('.btn-fav').forEach(btn => {
+                btn.addEventListener('click', function() {
+                  const id = btn.getAttribute('data-id');
+                  const star = btn.querySelector('.fav-star');
+                  const isFav = btn.style.color === 'rgb(255, 215, 0)' || btn.style.color === '#FFD700';
+                  fetch(isFav ? 'quitar_favorito.php' : 'marcar_favorito.php', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: 'id=' + id
+                  })
+                  .then(res => res.text())
+                  .then(txt => {
+                    if(txt.trim() === 'OK') {
+                      btn.style.color = isFav ? '#bbb' : '#FFD700';
+                    } else {
+                      alert('Error: ' + txt);
+                    }
+                  });
+                });
+              });
+            });
+            </script>
             </form>
             <?php else: ?>
               <div class="agotado-watermark">AGOTADO</div>

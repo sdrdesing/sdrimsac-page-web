@@ -9,56 +9,39 @@ if(!$r || $r->num_rows == 0 || intval($r->fetch_assoc()['is_admin']) !== 1){ hea
 
 include __DIR__ . '/includes/header_admin.php';
 
-$top_vistos = $conn->query("SELECT id,nombre,vistas FROM productos ORDER BY vistas DESC LIMIT 10");
-$top_vendidos = $conn->query("SELECT id,nombre,vendidos FROM productos ORDER BY vendidos DESC LIMIT 10");
-$top_favs = $conn->query("SELECT id,nombre,favoritos FROM productos ORDER BY favoritos DESC LIMIT 10");
+$top_vendidos = $conn->query("SELECT id, nombre, vendidos FROM productos WHERE vendidos > 0 ORDER BY vendidos DESC LIMIT 10");
+$top_favs = $conn->query("SELECT p.id, p.nombre, COUNT(f.id) AS total_favoritos FROM productos p JOIN favoritos f ON p.id = f.producto_id GROUP BY p.id, p.nombre HAVING total_favoritos > 0 ORDER BY total_favoritos DESC LIMIT 10");
 ?>
 <link rel="stylesheet" href="../assets/css/dashboard.css">
 <link rel="stylesheet" href="assets/css/compras_historial.css">
 <link rel="stylesheet" href="assets/css/compras_pendientes.css">
+<link rel="stylesheet" href="admin/assets/css/compras_scroll.css">
 
 <section class="dashboard-page">
     <div class="dashboard-container">
-        <div class="dashboard-title">BIENVENIDO</div>
-        <div class="dashboard-btns">
-            <button onclick="location.href='producto_form.php'">Agregar Producto</button>
-            <button onclick="location.href='productos.php'">Editar Productos</button>
-            <button onclick="location.href='productos.php'">Actualizar Precios</button>
-            <button onclick="location.href='productos.php'">Visualizar Productos</button>
-            <button onclick="location.href='productos.php'">Gestionar Productos</button>
+      <div class="dashboard-title">BIENVENIDO</div>
+      <div class="dashboard-metrics" style="display:flex; gap:40px;">
+        <div class="dashboard-metric" style="flex:1;">
+          <h3>Más vendidos</h3>
+          <ol>
+          <?php if($top_vendidos && $top_vendidos->num_rows>0){ while($r = $top_vendidos->fetch_assoc()): ?>
+            <li><?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['vendidos']) ?></li>
+          <?php endwhile; } else { ?>
+            <li>No hay productos.</li>
+          <?php } ?>
+          </ol>
         </div>
-        <div class="dashboard-metrics">
-            <div class="dashboard-metric">
-                <h3>Más vistos</h3>
-                <ol>
-                <?php if($top_vistos && $top_vistos->num_rows>0){ while($r = $top_vistos->fetch_assoc()): ?>
-                    <li><?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['vistas']) ?></li>
-                <?php endwhile; } else { ?>
-                    <li>No hay productos.</li>
-                <?php } ?>
-                </ol>
-            </div>
-            <div class="dashboard-metric">
-                <h3>Más vendidos</h3>
-                <ol>
-                <?php if($top_vendidos && $top_vendidos->num_rows>0){ while($r = $top_vendidos->fetch_assoc()): ?>
-                    <li><?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['vendidos']) ?></li>
-                <?php endwhile; } else { ?>
-                    <li>No hay productos.</li>
-                <?php } ?>
-                </ol>
-            </div>
-            <div class="dashboard-metric">
-                <h3>Favoritos</h3>
-                <ol>
-                <?php if($top_favs && $top_favs->num_rows>0){ while($r = $top_favs->fetch_assoc()): ?>
-                    <li><?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['favoritos']) ?></li>
-                <?php endwhile; } else { ?>
-                    <li>No hay productos.</li>
-                <?php } ?>
-                </ol>
-            </div>
+        <div class="dashboard-metric" style="flex:1;">
+          <h3 style="color:#2a2ed6;">Favoritos <span style="color:#FFD700; font-size:1.2em;">★</span></h3>
+          <ol>
+          <?php if($top_favs && $top_favs->num_rows>0){ while($r = $top_favs->fetch_assoc()): ?>
+            <li><span style="color:#FFD700; font-size:1.1em;">★</span> <?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['total_favoritos']) ?></li>
+          <?php endwhile; } else { ?>
+            <li>No hay productos.</li>
+          <?php } ?>
+          </ol>
         </div>
+      </div>
     </div>
 </section>
 
@@ -73,18 +56,29 @@ if (isset($_SESSION['usuario'])) {
                 JOIN usuarios u ON c.usuario_id = u.id
                 WHERE c.estado = 'pendiente'
                 ORDER BY c.fecha DESC";
-        $result = $conn->query($sql);
+          // PAGINACIÓN
+          $itemsPorPagina = 5;
+          $paginaActual = isset($_GET['pendientes_page']) ? max(1, intval($_GET['pendientes_page'])) : 1;
+          $sqlCount = "SELECT COUNT(*) as total FROM compras WHERE estado = 'pendiente'";
+          $totalRows = $conn->query($sqlCount)->fetch_assoc()['total'];
+          $totalPaginas = ceil($totalRows / $itemsPorPagina);
+          $offset = ($paginaActual - 1) * $itemsPorPagina;
+          $sqlPaginado = $sql . " LIMIT $itemsPorPagina OFFSET $offset";
+          $result = $conn->query($sqlPaginado);
         ?>
         <section class="compras-pendientes">
           <h2>Compras Pendientes de Validación</h2>
           <table>
-            <tr>
-              <th>Código</th>
-              <th>Usuario</th>
-              <th>Fecha</th>
-              <th>Total</th>
-              <th>Acción</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Usuario</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
               <td><?= htmlspecialchars($row['codigo_compra']) ?></td>
@@ -100,7 +94,18 @@ if (isset($_SESSION['usuario'])) {
               </td>
             </tr>
             <?php endwhile; ?>
+            </tbody>
           </table>
+            <!-- PAGINACIÓN -->
+            <div style="text-align:center; margin-top:15px;">
+              <?php if($totalPaginas > 1): ?>
+                <?php for($i=1; $i<=$totalPaginas; $i++): ?>
+                  <a href="?pendientes_page=<?= $i ?>" style="padding:6px 12px; margin:2px; background:<?= $i==$paginaActual?'#2a2ed6':'#eee' ?>; color:<?= $i==$paginaActual?'#fff':'#333' ?>; border-radius:4px; text-decoration:none; font-weight:bold;">
+                    <?= $i ?>
+                  </a>
+                <?php endfor; ?>
+              <?php endif; ?>
+            </div>
         </section>
         <?php
     }
@@ -115,18 +120,29 @@ if (isset($_SESSION['usuario'])) {
                 FROM compras c
                 JOIN usuarios u ON c.usuario_id = u.id
                 ORDER BY c.fecha DESC";
-        $result = $conn->query($sql);
+          // PAGINACIÓN HISTORIAL
+          $itemsPorPaginaHist = 5;
+          $paginaActualHist = isset($_GET['historial_page']) ? max(1, intval($_GET['historial_page'])) : 1;
+          $sqlCountHist = "SELECT COUNT(*) as total FROM compras";
+          $totalRowsHist = $conn->query($sqlCountHist)->fetch_assoc()['total'];
+          $totalPaginasHist = ceil($totalRowsHist / $itemsPorPaginaHist);
+          $offsetHist = ($paginaActualHist - 1) * $itemsPorPaginaHist;
+          $sqlPaginadoHist = $sql . " LIMIT $itemsPorPaginaHist OFFSET $offsetHist";
+          $result = $conn->query($sqlPaginadoHist);
         ?>
         <section class="compras-historial">
           <h2>Historial de Compras</h2>
           <table>
-            <tr>
-              <th>Código</th>
-              <th>Usuario</th>
-              <th>Fecha</th>
-              <th>Total</th>
-              <th>Estado</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Usuario</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
               <td><?= htmlspecialchars($row['codigo_compra']) ?></td>
@@ -138,7 +154,18 @@ if (isset($_SESSION['usuario'])) {
               </td>
             </tr>
             <?php endwhile; ?>
+            </tbody>
           </table>
+            <!-- PAGINACIÓN HISTORIAL -->
+            <div style="text-align:center; margin-top:15px;">
+              <?php if($totalPaginasHist > 1): ?>
+                <?php for($i=1; $i<=$totalPaginasHist; $i++): ?>
+                  <a href="?historial_page=<?= $i ?>" style="padding:6px 12px; margin:2px; background:<?= $i==$paginaActualHist?'#2a2ed6':'#eee' ?>; color:<?= $i==$paginaActualHist?'#fff':'#333' ?>; border-radius:4px; text-decoration:none; font-weight:bold;">
+                    <?= $i ?>
+                  </a>
+                <?php endfor; ?>
+              <?php endif; ?>
+            </div>
         </section>
         <?php
     }

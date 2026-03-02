@@ -19,6 +19,21 @@ if ($q && $row = $q->fetch_assoc()) {
     // Marcar todas las compras validadas/rechazadas como notificadas
     $sql = "UPDATE compras SET notificado=1 WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=0";
     $conn->query($sql);
+
+    // Insertar notificación solo para el usuario actual
+    $comprasNotif = $conn->query("SELECT codigo_compra, estado FROM compras WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=1");
+    if($comprasNotif && $comprasNotif->num_rows > 0){
+        while($rowNotif = $comprasNotif->fetch_assoc()){
+            $codigo = $conn->real_escape_string($rowNotif['codigo_compra']);
+            $estado = $conn->real_escape_string($rowNotif['estado']);
+            $mensaje = ($estado === 'validada') ? "Tu compra $codigo fue validada." : "Tu compra $codigo fue rechazada.";
+            // Evitar duplicados: solo insertar si no existe notificación para ese código y usuario
+            $qExiste = $conn->query("SELECT id FROM notificaciones WHERE usuario_id=$usuario_id AND codigo_compra='$codigo' AND estado='$estado' LIMIT 1");
+            if(!$qExiste || $qExiste->num_rows === 0){
+                $conn->query("INSERT INTO notificaciones (usuario_id, mensaje, estado, codigo_compra, fecha) VALUES ($usuario_id, '$mensaje', 'nueva', '$codigo', NOW())");
+            }
+        }
+    }
     // Limpiar notificación de pedido pendiente en sesión si ya no hay compras pendientes
     $qPend = $conn->query("SELECT COUNT(*) as pendientes FROM compras WHERE usuario_id=$usuario_id AND estado='pendiente'");
     if ($qPend && $rowPend = $qPend->fetch_assoc()) {

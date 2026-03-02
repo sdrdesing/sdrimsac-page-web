@@ -462,16 +462,12 @@ if(file_exists(__DIR__ . '/config/database.php')){
             <i class="fa fa-search"></i>
           </button>
         </div>
-        <input type="text" name="nombres" id="asesor-nombres" placeholder="Nombres" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="nombres" id="asesor-nombres" placeholder="Nombres" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="apellidos" id="asesor-apellidos" placeholder="Apellidos" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="razon_social" id="asesor-razon-social" placeholder="Razón Social" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="text" name="telefono" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="text" name="empresa" placeholder="Nombre de la empresa" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <textarea name="mensaje" placeholder="Mensaje" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
-        <div style="margin-bottom:8px;">
-          <input type="checkbox" id="not-robot">
-          <label for="not-robot">No soy un robot</label>
-        </div>
+        <input type="text" name="telefono" placeholder="Teléfono" inputmode="numeric" maxlength="9" pattern="\d{9}" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="empresa" placeholder="Nombre de la empresa" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea name="mensaje" placeholder="Mensaje" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
         <button type="submit" style="background:#28a745;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1.2em;display:flex;align-items:center;gap:8px;cursor:pointer;">
           <i class="fa-brands fa-whatsapp"></i> Contactar
         </button>
@@ -499,16 +495,30 @@ if(file_exists(__DIR__ . '/config/database.php')){
             <i class="fa fa-search"></i>
           </button>
         </div>
-        <input type="text" name="nombres" id="demo-nombres" placeholder="Nombres" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="nombres" id="demo-nombres" placeholder="Nombres" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="apellidos" id="demo-apellidos" placeholder="Apellidos" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="razon_social" id="demo-razon-social" placeholder="Razón Social" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="text" name="telefono" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="text" name="empresa" placeholder="Nombre de la empresa" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <textarea name="mensaje" placeholder="Mensaje" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
-        <div style="margin-bottom:8px;">
-          <input type="checkbox" id="demo-not-robot">
-          <label for="demo-not-robot">No soy un robot</label>
-        </div>
+        <input type="text" name="telefono" placeholder="Teléfono" inputmode="numeric" maxlength="9" pattern="\d{9}" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <select name="rubro" id="demo-rubro" class="demo-rubro-control demo-rubro-select" size="1" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+          <option value="">SELECCIONA UN RUBRO</option>
+          <option value="CHIFA">CHIFA</option>
+          <option value="CAFETERÍA">CAFETERÍA</option>
+          <option value="CEVICHERÍA">CEVICHERÍA</option>
+          <option value="KARAOKE">KARAOKE</option>
+          <option value="PIZZERÍA">PIZZERÍA</option>
+          <option value="RESTAURANT">RESTAURANT</option>
+          <option value="RECREOS">RECREOS</option>
+          <option value="HOSPITAL">HOSPITAL</option>
+          <option value="FARMACIA">FARMACIA</option>
+          <option value="HOTELES">HOTELES</option>
+          <option value="ESCOLAR">ESCOLAR</option>
+          <option value="CRÉDITOS">CRÉDITOS</option>
+          <option value="FERRETERÍA">FERRETERÍA</option>
+          <option value="OTROS">OTROS</option>
+        </select>
+        <input type="text" name="rubro_otro" id="demo-rubro-otro" class="demo-rubro-control" placeholder="Especifica tu rubro" style="display:none;width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="empresa" placeholder="Nombre de la empresa" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea name="mensaje" placeholder="Mensaje" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
         <button type="submit" style="background:#18376b;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1.2em;display:flex;align-items:center;gap:8px;cursor:pointer;">
           <i class="fa-solid fa-rocket"></i> Solicitar Demo
         </button>
@@ -519,6 +529,8 @@ if(file_exists(__DIR__ . '/config/database.php')){
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const whatsappNumber = '51995764963';
+
   // --- Validación dinámica de longitud para DNI/RUC en ambos formularios ---
   function setDocInputMaxLength(tipoDocSelectId, docInputId) {
     const tipoDoc = document.getElementById(tipoDocSelectId);
@@ -543,11 +555,176 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   setDocInputMaxLength('asesor-tipo-doc', 'asesor-doc');
   setDocInputMaxLength('demo-tipo-doc', 'demo-doc');
+
+  function configurarCamposPorTipo(prefix) {
+    const tipoDoc = document.getElementById(`${prefix}-tipo-doc`);
+    const doc = document.getElementById(`${prefix}-doc`);
+    const nombres = document.getElementById(`${prefix}-nombres`);
+    const apellidos = document.getElementById(`${prefix}-apellidos`);
+    const razonSocial = document.getElementById(`${prefix}-razon-social`);
+    const form = document.getElementById(`${prefix}-form`);
+    const empresa = form.querySelector('input[name="empresa"]');
+    const telefono = form.querySelector('input[name="telefono"]');
+
+    function setCampoVisible(campo, visible) {
+      campo.style.display = visible ? 'block' : 'none';
+    }
+
+    function aplicarReglas() {
+      const esDni = tipoDoc.value === 'DNI';
+
+      telefono.required = true;
+      telefono.maxLength = 9;
+      telefono.pattern = '\\d{9}';
+
+      nombres.required = false;
+      apellidos.required = false;
+      razonSocial.required = false;
+      empresa.required = false;
+
+      razonSocial.disabled = esDni;
+      empresa.disabled = esDni;
+      nombres.disabled = !esDni;
+      apellidos.disabled = !esDni;
+
+      setCampoVisible(nombres, esDni);
+      setCampoVisible(apellidos, esDni);
+      setCampoVisible(razonSocial, !esDni);
+      setCampoVisible(empresa, !esDni);
+
+      if (esDni) {
+        razonSocial.value = '';
+        empresa.value = '';
+      } else {
+        nombres.value = '';
+        apellidos.value = '';
+      }
+    }
+
+    tipoDoc.addEventListener('change', function() {
+      doc.value = '';
+      nombres.value = '';
+      apellidos.value = '';
+      razonSocial.value = '';
+      empresa.value = '';
+      nombres.readOnly = false;
+      apellidos.readOnly = false;
+      razonSocial.readOnly = false;
+      aplicarReglas();
+    });
+
+    doc.addEventListener('input', function() {
+      nombres.readOnly = false;
+      apellidos.readOnly = false;
+      razonSocial.readOnly = false;
+
+      if (this.value.trim() === '') {
+        nombres.value = '';
+        apellidos.value = '';
+        razonSocial.value = '';
+      }
+    });
+
+    telefono.addEventListener('input', function() {
+      this.value = this.value.replace(/\D/g, '').slice(0, 9);
+    });
+
+    aplicarReglas();
+  }
+
+  configurarCamposPorTipo('asesor');
+  configurarCamposPorTipo('demo');
+
+  function valorCampo(form, selector) {
+    const campo = form.querySelector(selector);
+    if (!campo || campo.disabled) return '';
+    return (campo.value || '').trim();
+  }
+
+  function redirigirWhatsapp(form, titulo, nuevaPestana = false) {
+    const tipo = valorCampo(form, '[name="tipo_doc"]');
+    const doc = valorCampo(form, '[name="doc"]');
+    const telefono = valorCampo(form, '[name="telefono"]');
+    const telefonoDigitos = telefono.replace(/\D/g, '');
+
+    if (telefonoDigitos.length !== 9) {
+      alert('El teléfono es obligatorio y debe tener exactamente 9 dígitos.');
+      return;
+    }
+
+    const nombres = valorCampo(form, '[name="nombres"]');
+    const apellidos = valorCampo(form, '[name="apellidos"]');
+    const razonSocial = valorCampo(form, '[name="razon_social"]');
+    const empresa = valorCampo(form, '[name="empresa"]');
+    const mensaje = valorCampo(form, '[name="mensaje"]');
+    const rubroCampo = form.querySelector('[name="rubro"]');
+    const rubroOtroCampo = form.querySelector('[name="rubro_otro"]');
+    let rubro = '';
+
+    if (rubroCampo) {
+      rubro = (rubroCampo.value || '').trim();
+      if (!rubro) {
+        alert('Selecciona un rubro para solicitar demo.');
+        return;
+      }
+
+      if (rubro === 'OTROS') {
+        const rubroOtro = (rubroOtroCampo?.value || '').trim();
+        if (!rubroOtro) {
+          alert('Especifica tu rubro en la opción Otros.');
+          return;
+        }
+        rubro = `OTROS: ${rubroOtro}`;
+      }
+    }
+
+    const lineas = [
+      titulo,
+      `Tipo de documento: ${tipo}`,
+      `Documento: ${doc}`,
+      `Teléfono: ${telefono}`
+    ];
+
+    if (nombres) lineas.push(`Nombres: ${nombres}`);
+    if (apellidos) lineas.push(`Apellidos: ${apellidos}`);
+    if (razonSocial) lineas.push(`Razón Social: ${razonSocial}`);
+    if (empresa) lineas.push(`Empresa: ${empresa}`);
+    if (rubro) lineas.push(`Rubro: ${rubro}`);
+    if (mensaje) lineas.push(`Mensaje: ${mensaje}`);
+
+    const texto = encodeURIComponent(lineas.join('\n'));
+    const urlWhatsapp = `https://wa.me/${whatsappNumber}?text=${texto}`;
+
+    if (nuevaPestana) {
+      window.open(urlWhatsapp, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    window.location.href = urlWhatsapp;
+  }
+
   // --- API PERU DOC AUTOFILL PARA MODAL ASESOR ---
+  function setAutofillReadonly(prefix, tipo, bloqueado) {
+    const nombres = document.getElementById(`${prefix}-nombres`);
+    const apellidos = document.getElementById(`${prefix}-apellidos`);
+    const razonSocial = document.getElementById(`${prefix}-razon-social`);
+
+    if (tipo === 'DNI') {
+      nombres.readOnly = bloqueado;
+      apellidos.readOnly = bloqueado;
+      razonSocial.readOnly = false;
+    } else {
+      razonSocial.readOnly = bloqueado;
+      nombres.readOnly = false;
+      apellidos.readOnly = false;
+    }
+  }
+
   function limpiarCamposAsesor() {
     document.getElementById('asesor-nombres').value = '';
     document.getElementById('asesor-apellidos').value = '';
     document.getElementById('asesor-razon-social').value = '';
+    setAutofillReadonly('asesor', document.getElementById('asesor-tipo-doc').value, false);
   }
   document.getElementById('asesor-buscar').addEventListener('click', function() {
     const tipo = document.getElementById('asesor-tipo-doc').value;
@@ -564,14 +741,19 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if(tipo === 'RUC') {
               document.getElementById('asesor-razon-social').value = data.data.nombre_o_razon_social || data.data.razon_social || '';
             }
+            setAutofillReadonly('asesor', tipo, true);
           } else {
+            setAutofillReadonly('asesor', tipo, false);
             let msg = 'No se encontraron datos para el documento ingresado.';
             if(data.mensaje_api) msg += '\nMotivo: ' + data.mensaje_api;
             else if(data.error) msg += '\nMotivo: ' + data.error;
             alert(msg);
           }
         })
-        .catch(() => alert('Error consultando el documento.'));
+        .catch(() => {
+          setAutofillReadonly('asesor', tipo, false);
+          alert('Error consultando el documento.');
+        });
     }
   });
 
@@ -580,6 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('demo-nombres').value = '';
     document.getElementById('demo-apellidos').value = '';
     document.getElementById('demo-razon-social').value = '';
+    setAutofillReadonly('demo', document.getElementById('demo-tipo-doc').value, false);
   }
   document.getElementById('demo-buscar').addEventListener('click', function() {
     const tipo = document.getElementById('demo-tipo-doc').value;
@@ -596,13 +779,59 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if(tipo === 'RUC') {
               document.getElementById('demo-razon-social').value = data.data.nombre_o_razon_social || data.data.razon_social || '';
             }
+            setAutofillReadonly('demo', tipo, true);
           } else {
+            setAutofillReadonly('demo', tipo, false);
             alert('No se encontraron datos para el documento ingresado.');
           }
         })
-        .catch(() => alert('Error consultando el documento.'));
+        .catch(() => {
+          setAutofillReadonly('demo', tipo, false);
+          alert('Error consultando el documento.');
+        });
     }
   });
+
+  const demoRubro = document.getElementById('demo-rubro');
+  const demoRubroOtro = document.getElementById('demo-rubro-otro');
+
+  function expandirRubro() {
+    demoRubro.size = 10;
+    demoRubro.classList.add('expanded');
+  }
+
+  function colapsarRubro() {
+    demoRubro.size = 1;
+    demoRubro.classList.remove('expanded');
+  }
+
+  function actualizarRubroDemo() {
+    const esOtros = demoRubro.value === 'OTROS';
+    demoRubroOtro.style.display = esOtros ? 'block' : 'none';
+    demoRubroOtro.required = esOtros;
+    if (!esOtros) {
+      demoRubroOtro.value = '';
+    }
+  }
+
+  demoRubro.addEventListener('change', actualizarRubroDemo);
+  demoRubro.addEventListener('focus', expandirRubro);
+  demoRubro.addEventListener('blur', colapsarRubro);
+  demoRubro.addEventListener('mousedown', function(e) {
+    if (demoRubro.size === 1) {
+      e.preventDefault();
+      expandirRubro();
+      demoRubro.focus();
+    }
+  });
+  demoRubro.addEventListener('change', function() {
+    setTimeout(colapsarRubro, 0);
+  });
+
+  demoRubroOtro.addEventListener('input', function() {
+    this.value = this.value.toUpperCase();
+  });
+  actualizarRubroDemo();
   const contactBtn = document.getElementById('contact-asesor-btn');
   const modal = document.getElementById('contact-asesor-modal');
   const closeBtn = document.getElementById('close-modal-btn');
@@ -621,7 +850,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = modal.querySelector('form');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    window.location.href = 'https://wa.me/51995764963';
+    redirigirWhatsapp(form, 'Hola, quiero contactar con un asesor.');
   });
 
   // Solicitar Demo modal logic
@@ -642,10 +871,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const demoForm = demoModal.querySelector('form');
   demoForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    window.location.href = 'https://wa.me/51995764963';
+    redirigirWhatsapp(demoForm, 'Hola, quiero solicitar una demo.', true);
   });
 });
 </script>
+
+<style>
+.demo-rubro-control {
+  text-transform: uppercase;
+}
+.demo-rubro-select {
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.demo-rubro-select.expanded {
+  overflow-y: auto;
+}
+.demo-rubro-select option {
+  padding: 6px 8px;
+}
+</style>
 
 <?php include("includes/social.php"); ?>
 <?php include("includes/footer.php"); ?>
