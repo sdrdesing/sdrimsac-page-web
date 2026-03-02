@@ -1,3 +1,114 @@
+/* FAQ PROFESIONAL Y BONITO */
+.recreos-faq-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(24, 55, 107, 0.08);
+  padding: 40px 32px 32px 32px;
+  max-width: 1100px;
+  margin: 48px auto 48px auto;
+  align-items: flex-start;
+}
+.recreos-faq {
+  flex: 2;
+  min-width: 320px;
+}
+.recreos-faq h2 {
+  color: #218a3a;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+.recreos-faq-item {
+  background: #f8fcf8;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(33,138,58,0.04);
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s;
+  border: 1.5px solid #e0f0e0;
+  overflow: hidden;
+}
+.recreos-faq-item.active {
+  box-shadow: 0 4px 16px rgba(33,138,58,0.10);
+  border-color: #218a3a;
+}
+.recreos-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #218a3a;
+  cursor: pointer;
+  font-size: 1.13rem;
+  padding: 20px 24px 20px 18px;
+  border-bottom: 1px solid #e0f0e0;
+  background: transparent;
+  transition: background 0.2s;
+}
+.recreos-faq-item.active .recreos-faq-question {
+  background: #f3fff3;
+}
+.recreos-faq-toggle {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-left: 16px;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.recreos-faq-toggle::before {
+  content: '';
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  border-right: 3.5px solid #218a3a;
+  border-bottom: 3.5px solid #218a3a;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 0 1px 2px #fff6;
+}
+.recreos-faq-item.active .recreos-faq-toggle {
+  transform: rotate(90deg) scale(1.1);
+}
+.recreos-faq-answer {
+  color: #1a3a23;
+  font-size: 1.05rem;
+  padding: 18px 24px 18px 24px;
+  background: #fff;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 1px 4px rgba(33,138,58,0.03);
+  display: none;
+  animation: faqFadeIn 0.35s;
+}
+@keyframes faqFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recreos-faq-img {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.recreos-faq-img img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(33,138,58,0.10);
+  object-fit: cover;
+  background: #fff;
+}
 /* Estilos para facturacionrecreos.php */
 
 .recreos-banner {

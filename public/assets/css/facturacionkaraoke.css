@@ -1,3 +1,35 @@
+/* FAQ Arrow Toggle Styles */
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-arrow {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  background: none;
+  position: relative;
+}
+.faq-arrow::before {
+  content: '';
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 3px solid #18376b;
+  border-bottom: 3px solid #18376b;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.faq-item.active .faq-arrow {
+  transform: rotate(90deg);
+}
 /* Estilos para facturacionkaraoke.php */
 
 .karaoke-banner {

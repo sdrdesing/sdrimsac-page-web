@@ -113,38 +113,56 @@
     <div style="flex:2;">
         <h2 style="color:#18376b;text-align:left;font-size:1.5rem;font-weight:700;margin-bottom:18px;">Preguntas Frecuentes</h2>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cómo puede ayudar la facturación electrónica a mi negocio de karaoke?</div>
+            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
+                <span class="faq-arrow"></span>
+                ¿Cómo puede ayudar la facturación electrónica a mi negocio de karaoke?
+            </div>
             <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica facilita la gestión de las facturas, reduce errores y costos asociados con el manejo de documentos físicos, y cumple con los requisitos fiscales establecidos. También puede ayudar a mejorar el flujo de caja y simplificar la contabilidad.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cómo implemento un sistema de facturación electrónica para mi negocio de karaoke?</div>
+            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
+                <span class="faq-arrow"></span>
+                ¿Cómo implemento un sistema de facturación electrónica para mi negocio de karaoke?
+            </div>
             <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Para implementar un sistema de facturación electrónica, es recomendable contar con un software especializado que se adapte a las necesidades de tu negocio y cumpla con las normativas fiscales vigentes. Nuestro equipo puede asesorarte en todo el proceso de instalación y capacitación.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cómo garantizo que las facturas electrónicas sean válidas y cumplan con las normativas fiscales?</div>
+            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
+                <span class="faq-arrow"></span>
+                ¿Cómo garantizo que las facturas electrónicas sean válidas y cumplan con las normativas fiscales?
+            </div>
             <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Utilizando un software certificado y actualizado, que realice los envíos automáticos a SUNAT y genere comprobantes con todos los requisitos legales. Además, es importante mantener el sistema actualizado ante cambios normativos.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué beneficios adicionales ofrece la facturación electrónica para mi negocio de karaoke?</div>
+            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
+                <span class="faq-arrow"></span>
+                ¿Qué beneficios adicionales ofrece la facturación electrónica para mi negocio de karaoke?
+            </div>
             <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica contribuye a la modernización y digitalización del negocio, mejora la eficiencia operativa, reduce el uso de papel y facilita el acceso a reportes y estadísticas en tiempo real.</div>
         </div>
     </div>
     <div style="flex:1;text-align:center;">
-        <img src="assets/img/karaoke_faq.jpg" alt="Karaoke Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
-        <img src="assets/img/karaoke_laptop.jpg" alt="Karaoke Laptop" style="max-width:100%;border-radius:12px;margin-top:16px;">
+        <img src="assets/img/dragonKaraoke.png" alt="Karaoke Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
+       
     </div>
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable: cada pregunta muestra su respuesta, una a la vez
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var answer = item.querySelector('.faq-answer');
-            var isOpen = answer.style.display === 'block';
-            document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
-            if (!isOpen) answer.style.display = 'block';
+            var isOpen = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.display = 'none';
+            });
+            if (!isOpen) {
+                item.classList.add('active');
+                answer.style.display = 'block';
+            }
         });
     });
 });

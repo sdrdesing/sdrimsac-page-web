@@ -1,5 +1,6 @@
 <?php include("includes/header.php"); ?>
 <link rel="stylesheet" href="assets/css/servicios.css">
+<link rel="stylesheet" href="assets/css/facturacionfarmacia.css">
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -65,42 +66,66 @@
     <div style="flex:2;">
         <h2 style="color:#18376b;text-align:left;font-size:1.5rem;font-weight:700;margin-bottom:18px;">Preguntas Frecuentes</h2>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué es la facturación electrónica en el contexto de una farmacia?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica en una farmacia se refiere al proceso de emitir y recibir facturas de manera digital, cumpliendo con las normativas fiscales vigentes. Esto incluye la generación, validación, y almacenamiento de documentos de facturación de forma electrónica.</div>
+            <div class="faq-question">
+                ¿Qué es la facturación electrónica en el contexto de una farmacia?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">La facturación electrónica en una farmacia se refiere al proceso de emitir y recibir facturas de manera digital, cumpliendo con las normativas fiscales vigentes. Esto incluye la generación, validación, y almacenamiento de documentos de facturación de forma electrónica.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cómo afecta la facturación electrónica a la gestión de inventarios en una farmacia?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica permite un control más preciso del inventario, ya que cada venta y movimiento de productos queda registrado automáticamente, facilitando la actualización de existencias y la detección de faltantes o vencimientos.</div>
+            <div class="faq-question">
+                ¿Cómo afecta la facturación electrónica a la gestión de inventarios en una farmacia?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">La facturación electrónica permite un control más preciso del inventario, ya que cada venta y movimiento de productos queda registrado automáticamente, facilitando la actualización de existencias y la detección de faltantes o vencimientos.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué beneficios ofrece la facturación electrónica para una farmacia?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica ofrece mayor eficiencia operativa, reducción de errores, cumplimiento normativo, integración con proveedores y clientes, y mejora la atención al cliente al agilizar procesos de venta y facturación.</div>
+            <div class="faq-question">
+                ¿Qué beneficios ofrece la facturación electrónica para una farmacia?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">La facturación electrónica ofrece mayor eficiencia operativa, reducción de errores, cumplimiento normativo, integración con proveedores y clientes, y mejora la atención al cliente al agilizar procesos de venta y facturación.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Es necesario capacitar al personal en el uso del sistema de facturación electrónica?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Sí, es recomendable capacitar al personal para asegurar un uso correcto del sistema, aprovechar todas sus funcionalidades y evitar errores en la emisión de comprobantes.</div>
+            <div class="faq-question">
+                ¿Es necesario capacitar al personal en el uso del sistema de facturación electrónica?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">Sí, es recomendable capacitar al personal para asegurar un uso correcto del sistema, aprovechar todas sus funcionalidades y evitar errores en la emisión de comprobantes.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cuáles son los costos asociados con la implementación de un sistema de facturación electrónica?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Los costos pueden variar según el proveedor y las funcionalidades requeridas, pero generalmente incluyen la adquisición del software, capacitación, soporte técnico y posibles actualizaciones.</div>
+            <div class="faq-question">
+                ¿Cuáles son los costos asociados con la implementación de un sistema de facturación electrónica?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">Los costos pueden variar según el proveedor y las funcionalidades requeridas, pero generalmente incluyen la adquisición del software, capacitación, soporte técnico y posibles actualizaciones.</div>
         </div>
     </div>
     <div style="flex:1;text-align:center;">
-        <img src="assets/img/farmacia_faq.png" alt="Farmacia Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
+        <img src="assets/img/dragonFarmacia.png" alt="Farmacia Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
     </div>
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable con flecha animada y respuesta
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-        q.addEventListener('click', function() {
-            var item = this.parentElement;
-            var answer = item.querySelector('.faq-answer');
-            var isOpen = answer.style.display === 'block';
-            document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
-            if (!isOpen) answer.style.display = 'block';
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        var question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            var wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.display = 'none';
+            });
+            if (!wasActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-answer').style.display = 'block';
+            }
         });
+    });
+    // Inicialmente ocultar todas las respuestas
+    document.querySelectorAll('.faq-answer').forEach(function(ans) {
+        ans.style.display = 'none';
     });
 });
 </script>

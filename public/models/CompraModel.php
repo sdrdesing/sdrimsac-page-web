@@ -10,7 +10,8 @@ class CompraModel {
     }
 
     private function getConnection() {
-        return include __DIR__ . '/../config/database.php';
+        include __DIR__ . '/../../config/database.php';
+        return $conn;
     }
 
     public function obtenerPorUsuario($usuario_id) {
@@ -25,5 +26,13 @@ class CompraModel {
         return $compras;
     }
 
-    // Puedes agregar más métodos: registrarCompra, obtenerPorId, etc.
+    // Método para registrar una compra con PIN
+    public function registrarCompra($usuario_id, $codigo_compra, $total, $observaciones = null, $pin) {
+        $stmt = $this->conn->prepare("INSERT INTO compras (usuario_id, codigo_compra, total, observaciones, pin) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("isdss", $usuario_id, $codigo_compra, $total, $observaciones, $pin);
+        $stmt->execute();
+        return $this->conn->insert_id;
+    }
+
+    // Puedes agregar más métodos: obtenerPorId, etc.
 }

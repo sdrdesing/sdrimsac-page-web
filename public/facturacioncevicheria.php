@@ -91,48 +91,50 @@
 
 </section>
 
+
 <!-- PREGUNTAS FRECUENTES -->
-<section class="faq-section">
-    <h2>Preguntas Frecuentes</h2>
-
-    <div class="faq-item">
-        <button class="faq-question">
-            ¿Cómo debo almacenar y conservar las facturas electrónicas?
-        </button>
-        <div class="faq-answer">
-            Debes almacenarlas en formato digital seguro (PDF y XML),
-            con respaldo en la nube o servidor seguro.
+<section class="faq-section" style="display:flex;gap:40px;align-items:flex-start;justify-content:center;">
+    <div style="flex:2;min-width:280px;">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Cómo debo almacenar y conservar las facturas electrónicas?
+            </button>
+            <div class="faq-answer">
+                Debes almacenarlas en formato digital seguro (PDF y XML),
+                con respaldo en la nube o servidor seguro.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Cómo puedo proporcionar copias a mis clientes?
+            </button>
+            <div class="faq-answer">
+                Puedes enviarlas por correo electrónico o WhatsApp directamente
+                desde el sistema.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Qué información debe incluir la factura electrónica?
+            </button>
+            <div class="faq-answer">
+                Datos del cliente, RUC, detalle de productos, IGV,
+                método de pago y validación SUNAT.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Cómo evitar pérdida de datos?
+            </button>
+            <div class="faq-answer">
+                Implementando copias de seguridad automáticas
+                y almacenamiento en la nube.
+            </div>
         </div>
     </div>
-
-    <div class="faq-item">
-        <button class="faq-question">
-            ¿Cómo puedo proporcionar copias a mis clientes?
-        </button>
-        <div class="faq-answer">
-            Puedes enviarlas por correo electrónico o WhatsApp directamente
-            desde el sistema.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <button class="faq-question">
-            ¿Qué información debe incluir la factura electrónica?
-        </button>
-        <div class="faq-answer">
-            Datos del cliente, RUC, detalle de productos, IGV,
-            método de pago y validación SUNAT.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <button class="faq-question">
-            ¿Cómo evitar pérdida de datos?
-        </button>
-        <div class="faq-answer">
-            Implementando copias de seguridad automáticas
-            y almacenamiento en la nube.
-        </div>
+    <div style="flex:1;min-width:200px;max-width:320px;display:flex;justify-content:center;">
+        <img src="assets/img/dragonCevicheria.png" alt="Cevichería Preguntas Frecuentes" style="width:100%;max-width:260px;height:auto;border-radius:18px;box-shadow:0 2px 12px #0002;" />
     </div>
 </section>
 

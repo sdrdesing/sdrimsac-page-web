@@ -105,46 +105,68 @@
     <div class="pizzeria-faq">
         <h2>Preguntas Frecuentes</h2>
         <div class="pizzeria-faq-item">
-            <div class="pizzeria-faq-question">¿Es obligatorio utilizar facturación electrónica en mi país?<span class="pizzeria-faq-toggle">&#9654;</span></div>
+            <div class="pizzeria-faq-question">
+                ¿Es obligatorio utilizar facturación electrónica en mi país?
+                <span class="pizzeria-faq-toggle"></span>
+            </div>
             <div class="pizzeria-faq-answer">
                 La obligatoriedad puede variar según la legislación local. En muchos lugares, las empresas están obligadas a adoptar la facturación electrónica, especialmente para ciertos tipos de transacciones o tamaños de empresa.
             </div>
         </div>
         <div class="pizzeria-faq-item">
-            <div class="pizzeria-faq-question">¿Qué requisitos debo cumplir para emitir facturas electrónicas?<span class="pizzeria-faq-toggle">&#9654;</span></div>
+            <div class="pizzeria-faq-question">
+                ¿Qué requisitos debo cumplir para emitir facturas electrónicas?
+                <span class="pizzeria-faq-toggle"></span>
+            </div>
             <div class="pizzeria-faq-answer">
                 Debes contar con un RUC activo, un certificado digital válido y un sistema de facturación electrónica autorizado por la SUNAT u organismo fiscal correspondiente.
             </div>
         </div>
         <div class="pizzeria-faq-item">
-            <div class="pizzeria-faq-question">¿Qué debo hacer si un cliente no recibe su factura electrónica?<span class="pizzeria-faq-toggle">&#9654;</span></div>
+            <div class="pizzeria-faq-question">
+                ¿Qué debo hacer si un cliente no recibe su factura electrónica?
+                <span class="pizzeria-faq-toggle"></span>
+            </div>
             <div class="pizzeria-faq-answer">
                 Verifica que el correo electrónico del cliente esté correctamente registrado y que no haya problemas de envío. Puedes reenviar la factura desde el sistema o proporcionar un enlace de descarga.
             </div>
         </div>
         <div class="pizzeria-faq-item">
-            <div class="pizzeria-faq-question">¿Qué beneficios ofrece la facturación electrónica para una pizzería?<span class="pizzeria-faq-toggle">&#9654;</span></div>
+            <div class="pizzeria-faq-question">
+                ¿Qué beneficios ofrece la facturación electrónica para una pizzería?
+                <span class="pizzeria-faq-toggle"></span>
+            </div>
             <div class="pizzeria-faq-answer">
                 Ofrece mayor control, reducción de errores, acceso rápido a reportes y cumplimiento normativo, además de mejorar la experiencia del cliente y la gestión interna.
             </div>
         </div>
     </div>
     <div class="pizzeria-faq-img">
-        <img src="assets/img/PIZZA.jpg" alt="Pizzería Preguntas Frecuentes" />
-        <img src="assets/img/pizzeria_phone.jpg" alt="Pizzería App" />
+        <img src="assets/img/dragonPizzeria.png" alt="Pizzería Preguntas Frecuentes" />
+        
     </div>
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable con flecha animada y respuesta
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-        q.addEventListener('click', function() {
-            var item = this.parentElement;
+    document.querySelectorAll('.pizzeria-faq-item').forEach(function(item) {
+        var question = item.querySelector('.pizzeria-faq-question');
+        question.addEventListener('click', function() {
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
-            if (!wasActive) item.classList.add('active');
+            document.querySelectorAll('.pizzeria-faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.pizzeria-faq-answer').style.display = 'none';
+            });
+            if (!wasActive) {
+                item.classList.add('active');
+                item.querySelector('.pizzeria-faq-answer').style.display = 'block';
+            }
         });
+    });
+    // Inicialmente ocultar todas las respuestas
+    document.querySelectorAll('.pizzeria-faq-answer').forEach(function(ans) {
+        ans.style.display = 'none';
     });
 });
 </script>

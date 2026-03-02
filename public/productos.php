@@ -51,40 +51,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnVer = form.querySelector('.btn-ver-carrito');
 
     const setAddedUI = () => {
-      // Convertir "Añadir" en "Añadido ✓"
       btnAdd.classList.add('is-added');
       btnAdd.innerHTML = '<i class="fa-solid fa-check"></i> Añadido';
       btnAdd.disabled = true;
-
-      // Mostrar botón Ver carrito
       if (btnVer) btnVer.style.display = 'inline-flex';
     };
 
-    btnAdd.addEventListener('click', async (e) => {
-      e.preventDefault(); // ✅ evita que el form recargue la página ("da la vuelta")
-
+    // Interceptar SIEMPRE el submit del formulario (click o Enter)
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       try{
         btnAdd.disabled = true;
         btnAdd.innerHTML = 'Agregando...';
-
         const formData = new FormData(form);
         const res = await fetch('agregar_carrito.php', { method:'POST', body: formData });
         const text = await res.text();
-
-        // ✅ si el backend pide login (porque fetch no sigue Location como navegación)
         if (text.trim() === '__LOGIN_REQUIRED__') {
           window.location.href = 'login.php';
           return;
         }
-
         if(!res.ok) throw new Error('Error al agregar');
-
         setAddedUI();
       }catch(e){
         btnAdd.disabled = false;
         btnAdd.innerHTML = '<i class="fa-solid fa-cart-plus"></i> Añadir al carrito';
         console.error(e);
       }
+    });
+
+    // Por compatibilidad, también interceptamos el click (opcional, pero seguro)
+    btnAdd.addEventListener('click', (e) => {
+      e.preventDefault();
+      form.requestSubmit(); // dispara el submit JS, no el tradicional
     });
 
     if (btnVer){

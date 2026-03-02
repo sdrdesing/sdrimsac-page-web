@@ -1,0 +1,70 @@
+/* FAQ PROFESIONAL Y DINÁMICO PARA FARMACIA */
+.faq-item {
+  background: #f8fafd;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(24,55,107,0.04);
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s;
+  border: 1.5px solid #e0e8f0;
+  overflow: hidden;
+}
+.faq-item.active {
+  box-shadow: 0 4px 16px rgba(24,55,107,0.10);
+  border-color: #1e8a5a;
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #1e8a5a;
+  cursor: pointer;
+  font-size: 1.13rem;
+  padding: 20px 24px 20px 18px;
+  border-bottom: 1px solid #e0e8f0;
+  background: transparent;
+  transition: background 0.2s;
+}
+.faq-item.active .faq-question {
+  background: #f3fff3;
+}
+.faq-arrow {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-left: 16px;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.faq-arrow::before {
+  content: '';
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  border-right: 3.5px solid #1e8a5a;
+  border-bottom: 3.5px solid #1e8a5a;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 0 1px 2px #fff6;
+}
+.faq-item.active .faq-arrow {
+  transform: rotate(90deg) scale(1.1);
+}
+.faq-answer {
+  color: #225a3a;
+  font-size: 1.05rem;
+  padding: 18px 24px 18px 24px;
+  background: #fff;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 1px 4px rgba(24,55,107,0.03);
+  display: none;
+  animation: faqFadeIn 0.35s;
+}
+@keyframes faqFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

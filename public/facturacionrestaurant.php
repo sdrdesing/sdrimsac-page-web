@@ -124,8 +124,8 @@
         </div>
     </div>
     <div class="restaurant-faq-img">
-        <img src="assets/img/restaurant_faq.jpg" alt="Restaurant Preguntas Frecuentes" />
-        <img src="assets/img/restaurant_staff.jpg" alt="Restaurant Staff" />
+        <img src="assets/img/dragonRestaurante.png" alt="Restaurant Preguntas Frecuentes" />
+    
     </div>
 </div>
 

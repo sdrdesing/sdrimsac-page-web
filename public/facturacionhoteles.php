@@ -76,30 +76,35 @@
 
 <div class="hoteles-faq-section">
     <h2>Preguntas Frecuentes</h2>
-    <div class="hoteles-faq">
-        <div class="hoteles-faq-item">
-            <div class="hoteles-faq-question">¿Por qué es importante la facturación electrónica en el sector hotelero?<span class="hoteles-faq-toggle">&#9654;</span></div>
-            <div class="hoteles-faq-answer">
-                La facturación electrónica simplifica el proceso administrativo, reduce errores, acelera la gestión de pagos y facilita el cumplimiento de las normativas fiscales.
+    <div style="display:flex;align-items:flex-start;gap:32px;">
+        <div class="hoteles-faq" style="flex:2;">
+            <div class="hoteles-faq-item">
+                <div class="hoteles-faq-question">¿Por qué es importante la facturación electrónica en el sector hotelero?<span class="hoteles-faq-toggle">&#9654;</span></div>
+                <div class="hoteles-faq-answer">
+                    La facturación electrónica simplifica el proceso administrativo, reduce errores, acelera la gestión de pagos y facilita el cumplimiento de las normativas fiscales.
+                </div>
+            </div>
+            <div class="hoteles-faq-item">
+                <div class="hoteles-faq-question">¿Qué información debe contener una factura electrónica hotelera?<span class="hoteles-faq-toggle">&#9654;</span></div>
+                <div class="hoteles-faq-answer">
+                    Debe contener datos del huésped, detalles de la habitación, servicios consumidos, impuestos aplicados y método de pago.
+                </div>
+            </div>
+            <div class="hoteles-faq-item">
+                <div class="hoteles-faq-question">¿Qué beneficios ofrece la facturación electrónica para los hoteles?<span class="hoteles-faq-toggle">&#9654;</span></div>
+                <div class="hoteles-faq-answer">
+                    Ofrece mayor control, reducción de errores, acceso rápido a reportes y cumplimiento normativo, además de mejorar la experiencia del huésped y la gestión interna.
+                </div>
+            </div>
+            <div class="hoteles-faq-item">
+                <div class="hoteles-faq-question">¿Qué es el Housekeeper?<span class="hoteles-faq-toggle">&#9654;</span></div>
+                <div class="hoteles-faq-answer">
+                    Es el personal encargado de la limpieza y mantenimiento de las habitaciones, asegurando que estén en óptimas condiciones para los huéspedes.
+                </div>
             </div>
         </div>
-        <div class="hoteles-faq-item">
-            <div class="hoteles-faq-question">¿Qué información debe contener una factura electrónica hotelera?<span class="hoteles-faq-toggle">&#9654;</span></div>
-            <div class="hoteles-faq-answer">
-                Debe contener datos del huésped, detalles de la habitación, servicios consumidos, impuestos aplicados y método de pago.
-            </div>
-        </div>
-        <div class="hoteles-faq-item">
-            <div class="hoteles-faq-question">¿Qué beneficios ofrece la facturación electrónica para los hoteles?<span class="hoteles-faq-toggle">&#9654;</span></div>
-            <div class="hoteles-faq-answer">
-                Ofrece mayor control, reducción de errores, acceso rápido a reportes y cumplimiento normativo, además de mejorar la experiencia del huésped y la gestión interna.
-            </div>
-        </div>
-        <div class="hoteles-faq-item">
-            <div class="hoteles-faq-question">¿Qué es el Housekeeper?<span class="hoteles-faq-toggle">&#9654;</span></div>
-            <div class="hoteles-faq-answer">
-                Es el personal encargado de la limpieza y mantenimiento de las habitaciones, asegurando que estén en óptimas condiciones para los huéspedes.
-            </div>
+        <div class="hoteles-faq-img" style="flex:1;text-align:center;">
+            <img src="assets/img/dragonHotel.png" alt="Hoteles Preguntas Frecuentes" style="max-width:220px;width:100%;border-radius:14px;box-shadow:0 2px 12px rgba(24,55,107,0.10);object-fit:cover;background:#fff;">
         </div>
     </div>
 </div>

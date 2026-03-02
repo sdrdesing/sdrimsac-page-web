@@ -1,0 +1,115 @@
+/* Centrado del contenedor principal */
+.herramientas-main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 32px;
+}
+.herramientas-menu-bar {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin-bottom: 18px;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.herramientas-cards-content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* Botones menú superior */
+.btn-herramientas-menu {
+	background: #fff;
+	color: #1a237e;
+	padding: 8px 18px;
+	border-radius: 8px;
+	border: 2px solid #1a237e;
+	font-weight: 600;
+	font-size: 16px;
+	margin: 0 2px;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+.btn-herramientas-menu.active,
+.btn-herramientas-menu:hover {
+	background: #1a237e;
+	color: #fff;
+}
+
+/* Grid de tarjetas */
+.herramientas-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 24px;
+	max-width: 1100px;
+	width: 100%;
+	background: #fff;
+	padding: 32px 18px;
+	border-radius: 18px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Tarjeta individual */
+.herramientas-card {
+	border: 3px solid #1a237e;
+	border-radius: 14px;
+	padding: 18px 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #f8faff;
+	transition: box-shadow 0.2s, transform 0.2s;
+}
+.herramientas-card:hover {
+	box-shadow: 0 4px 18px rgba(26,35,126,0.13);
+	transform: translateY(-3px) scale(1.025);
+}
+.herramientas-card h3 {
+	color: #1a237e;
+	font-weight: 700;
+	margin-bottom: 8px;
+	font-size: 20px;
+	text-align: center;
+}
+.herramientas-card img {
+	width: 70px;
+	height: 70px;
+	object-fit: contain;
+	margin-bottom: 10px;
+}
+.herramientas-card p {
+	text-align: center;
+	font-size: 15px;
+	margin: 0;
+}
+.herramientas-card .btn-herramienta {
+	background: #1a237e;
+	color: #fff;
+	padding: 7px 18px;
+	border-radius: 7px;
+	font-weight: 600;
+	font-size: 15px;
+	text-decoration: none;
+	border: none;
+	margin: 0 2px;
+	transition: background 0.2s, color 0.2s, border 0.2s;
+	display: inline-block;
+	cursor: pointer;
+}
+.herramientas-card .btn-herramienta:hover {
+	background: #3949ab;
+	color: #fff;
+}
+.herramientas-card .btn-herramienta:last-child {
+	background: #fff;
+	color: #1a237e;
+	border: 2px solid #1a237e;
+}
+.herramientas-card .btn-herramienta:last-child:hover {
+	background: #e3e7fa;
+	color: #1a237e;
+}

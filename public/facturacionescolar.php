@@ -74,25 +74,71 @@
 
 <!-- Preguntas Frecuentes -->
 <div style="max-width:900px;margin:40px auto 40px auto;padding:32px 24px 24px 24px;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:flex-start;gap:32px;">
-    <div style="flex:2;">
-        <h2 style="color:#18376b;text-align:left;font-size:1.5rem;font-weight:700;margin-bottom:18px;">Preguntas Frecuentes</h2>
-        <div style="background:#f8fafd;border-radius:12px;padding:18px 18px 18px 18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué es la facturación electrónica escolar?</div>
-            <div style="margin-top:8px;color:#222;">La facturación electrónica escolar se refiere al proceso de emitir y recibir facturas electrónicas en el entorno educativo, como en escuelas o instituciones educativas, para gestionar pagos y otros trámites administrativos de manera digital.</div>
+    <div class="faq-escolar" style="flex:2;">
+        <h2 class="faq-title">Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Qué es la facturación electrónica escolar?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">
+                La facturación electrónica escolar se refiere al proceso de emitir y recibir facturas electrónicas en el entorno educativo, como en escuelas o instituciones educativas, para gestionar pagos y otros trámites administrativos de manera digital.
+            </div>
         </div>
-        <div style="background:#f8fafd;border-radius:12px;padding:18px 18px 18px 18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div style="font-weight:600;color:#18376b;cursor:pointer;">¿Por qué es importante implementar la facturación electrónica en las escuelas?</div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Por qué es importante implementar la facturación electrónica en las escuelas?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">
+                Permite mayor eficiencia administrativa, reducción de errores, cumplimiento normativo, integración con sistemas de gestión escolar y mejora la atención a padres y alumnos al agilizar procesos de cobro y facturación.
+            </div>
         </div>
-        <div style="background:#f8fafd;border-radius:12px;padding:18px 18px 18px 18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué información debe incluir una factura electrónica escolar?</div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Qué información debe incluir una factura electrónica escolar?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">
+                Debe incluir datos del colegio, datos del alumno o apoderado, concepto de pago, monto, fecha, número de comprobante, y cumplir con los requisitos fiscales vigentes.
+            </div>
         </div>
-        <div style="background:#f8fafd;border-radius:12px;padding:18px 18px 18px 18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué ventajas tiene la facturación electrónica para los padres o tutores?</div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Qué ventajas tiene la facturación electrónica para los padres o tutores?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">
+                Facilita el acceso a comprobantes, reduce trámites presenciales, permite pagos en línea y mejora la transparencia y control de los pagos escolares.
+            </div>
         </div>
     </div>
-    <div style="flex:1;text-align:center;">
-        <img src="assets/img/escolar_faq.png" alt="Escolar Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
+    <div class="faq-img-escolar" style="flex:1;text-align:center;">
+        <img src="assets/img/dragonEscolar.png" alt="Escolar Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
     </div>
+<script>
+// FAQ escolar desplegable con flecha animada y respuesta
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        var question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            var wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.display = 'none';
+            });
+            if (!wasActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-answer').style.display = 'block';
+            }
+        });
+    });
+    // Inicialmente ocultar todas las respuestas
+    document.querySelectorAll('.faq-answer').forEach(function(ans) {
+        ans.style.display = 'none';
+    });
+});
+</script>
 </div>
 <?php include("includes/footer.php"); ?>
 </body>

@@ -36,8 +36,8 @@
 </div>
 
 <!-- Roles y Funcionalidades -->
-<div class="creditos-roles-grid">
-    <div class="creditos-rol-card">
+<div class="creditos-roles-grid" style="display: flex; gap: 24px; max-width: 1200px; margin: 40px auto 0 auto; flex-wrap: wrap;">
+    <div class="creditos-rol-card" style="flex:1 1 25%; min-width:320px; max-width: 420px;">
         <h3><span class="creditos-rol-icon"><i class="fa-solid fa-user-gear"></i></span> ADMINISTRADOR</h3>
         <ul>
             <li>Mantenimiento de Usuarios, Clientes, Categorías, Marcas, Registro de número de Cuentas de Banco</li>
@@ -59,7 +59,7 @@
             <li>Contabilidad (Compras y Ventas)</li>
         </ul>
     </div>
-    <div class="creditos-rol-card">
+    <div class="creditos-rol-card" style="flex:1 1 25%; min-width:320px; max-width: 420px;">
         <h3><span class="creditos-rol-icon"><i class="fa-solid fa-cash-register"></i></span> CAJA ADMIN</h3>
         <ul>
             <li>Realiza Créditos Efectivo / Hogar con tasa de porcentaje variante, abonos, generando pagos diarios / semanal / quincenal / mensual / pago único; con tiempo de pago desde 1 mes en adelante</li>
@@ -79,7 +79,7 @@
             <li>Recepciona traslado de efectivo por parte de Usuario Arca</li>
         </ul>
     </div>
-    <div class="creditos-rol-card">
+    <div class="creditos-rol-card" style="flex:1 1 25%; min-width:320px; max-width: 420px;">
         <h3><span class="creditos-rol-icon"><i class="fa-solid fa-user-tie"></i></span> ANALISTA</h3>
         <ul>
             <li>Realiza Créditos Efectivo / Hogar con tasa de porcentaje variante, abonos, generando pagos diarios / semanal / quincenal / mensual / pago único; con tiempo de pago desde 1 mes en adelante</li>
@@ -97,7 +97,7 @@
             <li>Recepciona traslado de efectivo por parte de Usuario Arca</li>
         </ul>
     </div>
-    <div class="creditos-rol-card">
+    <div class="creditos-rol-card" style="flex:1 1 25%; min-width:320px; max-width: 420px;">
         <h3><span class="creditos-rol-icon"><i class="fa-solid fa-cash-register"></i></span> CAJERO</h3>
         <ul>
             <li>Puede visualizar Cronograma de Pagos del prestatario</li>
@@ -116,38 +116,43 @@
 <!-- Preguntas Frecuentes -->
 <div class="creditos-faq-section">
     <h2>Preguntas Frecuentes</h2>
-    <div class="creditos-faq-list">
-        <div class="creditos-faq-item active">
-            <div class="creditos-faq-question">¿Qué es la facturación electrónica de créditos?</div>
-            <div class="creditos-faq-answer">La facturación electrónica de créditos es el proceso de emitir y gestionar facturas electrónicas para las operaciones de crédito, en lugar de utilizar documentos en papel. Esto incluye la generación, transmisión y almacenamiento de facturas de forma digital.</div>
+    <div style="display:flex;align-items:flex-start;gap:32px;">
+        <div class="creditos-faq-list" style="flex:2;">
+            <div class="creditos-faq-item active">
+                <div class="creditos-faq-question">¿Qué es la facturación electrónica de créditos?</div>
+                <div class="creditos-faq-answer">La facturación electrónica de créditos es el proceso de emitir y gestionar facturas electrónicas para las operaciones de crédito, en lugar de utilizar documentos en papel. Esto incluye la generación, transmisión y almacenamiento de facturas de forma digital.</div>
+            </div>
+            <div class="creditos-faq-item">
+                <div class="creditos-faq-question">¿Cuáles son los beneficios de usar facturación electrónica para créditos?</div>
+                <div class="creditos-faq-answer">Permite mayor eficiencia, cumplimiento fiscal, reducción de errores y mejor experiencia para el cliente.</div>
+            </div>
+            <div class="creditos-faq-item">
+                <div class="creditos-faq-question">¿Cómo se realiza el seguimiento y control de las facturas electrónicas de crédito?</div>
+                <div class="creditos-faq-answer">A través de reportes, filtros y cronogramas de pagos integrados en el sistema, que permiten monitorear el estado de cada crédito y sus comprobantes asociados.</div>
+            </div>
+            <div class="creditos-faq-item">
+                <div class="creditos-faq-question">¿Cómo se archivan y conservan las facturas electrónicas de crédito?</div>
+                <div class="creditos-faq-answer">El sistema almacena digitalmente todas las facturas, permitiendo su consulta, descarga y respaldo seguro en la nube o localmente.</div>
+            </div>
+            <div class="creditos-faq-item">
+                <div class="creditos-faq-question">¿Qué son notas de venta?</div>
+                <div class="creditos-faq-answer">Son documentos que respaldan operaciones comerciales previas a la emisión de una factura o boleta electrónica, útiles para control interno y seguimiento de ventas a crédito.</div>
+            </div>
         </div>
-        <div class="creditos-faq-item">
-            <div class="creditos-faq-question">¿Cuáles son los beneficios de usar facturación electrónica para créditos?</div>
-            <div class="creditos-faq-answer">Permite mayor eficiencia, cumplimiento fiscal, reducción de errores y mejor experiencia para el cliente.</div>
-        </div>
-        <div class="creditos-faq-item">
-            <div class="creditos-faq-question">¿Cómo se realiza el seguimiento y control de las facturas electrónicas de crédito?</div>
-            <div class="creditos-faq-answer">A través de reportes, filtros y cronogramas de pagos integrados en el sistema, que permiten monitorear el estado de cada crédito y sus comprobantes asociados.</div>
-        </div>
-        <div class="creditos-faq-item">
-            <div class="creditos-faq-question">¿Cómo se archivan y conservan las facturas electrónicas de crédito?</div>
-            <div class="creditos-faq-answer">El sistema almacena digitalmente todas las facturas, permitiendo su consulta, descarga y respaldo seguro en la nube o localmente.</div>
-        </div>
-        <div class="creditos-faq-item">
-            <div class="creditos-faq-question">¿Qué son notas de venta?</div>
-            <div class="creditos-faq-answer">Son documentos que respaldan operaciones comerciales previas a la emisión de una factura o boleta electrónica, útiles para control interno y seguimiento de ventas a crédito.</div>
+        <div class="creditos-faq-img" style="flex:1;text-align:center;">
+            <img src="assets/img/dragonCredito.png" alt="Créditos Preguntas Frecuentes" style="max-width:220px;width:100%;border-radius:14px;box-shadow:0 2px 12px rgba(24,55,107,0.10);object-fit:cover;background:#fff;">
         </div>
     </div>
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable para sección de créditos
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
+    document.querySelectorAll('.creditos-faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+            document.querySelectorAll('.creditos-faq-item').forEach(function(i) { i.classList.remove('active'); });
             if (!wasActive) item.classList.add('active');
         });
     });

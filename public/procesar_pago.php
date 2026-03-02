@@ -21,6 +21,10 @@ $total = isset($_POST['total']) ? floatval($_POST['total']) : 0;
 
 $usuario = $_SESSION['usuario'];
 
+// Incluir helper para PIN
+require_once __DIR__ . '/helpers/PinHelper.php';
+require_once __DIR__ . '/models/CompraModel.php';
+
 // Guardar orden simple en tabla `ordenes` si existe (no obligatorio)
 if($conn){
     $cliente = $conn->real_escape_string($usuario);
@@ -52,14 +56,17 @@ if($conn){
     // Insertar solo si se encontró el usuario
     if ($usuario_id > 0) {
         $codigo_compra = $codigo_pedido; // Usa el mismo código generado
-        $sql = "INSERT INTO compras (usuario_id, codigo_compra, total) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("isd", $usuario_id, $codigo_compra, $total);
-        $stmt->execute();
+        $pin = PinHelper::generarPin();
+        // Guardar compra con PIN usando el modelo
+        $compraModel = new CompraModel();
+        $compra_id = $compraModel->registrarCompra($usuario_id, $codigo_compra, $total, null, $pin);
 
         // Notificación interna: marcar pedido pendiente en sesión
         $_SESSION['pedido_pendiente'] = true;
         $_SESSION['codigo_pedido'] = $codigo_compra;
+        $_SESSION['pin_compra'] = $pin;
+        $_SESSION['total_compra'] = $total;
+        $_SESSION['metodo_pago'] = $metodo;
 
         // Notificación por email (simulada)
         $email = '';
@@ -69,11 +76,15 @@ if($conn){
         }
         if ($email) {
             $asunto = "Tu compra en SDRIMSAC: Código $codigo_compra";
-            $mensaje = "Hola $usuario,\n\nGracias por tu compra. Tu código de validación es: $codigo_compra.\n\nTotal: S/ $total\n\nGuarda este código y preséntalo al recoger tu producto.\n\nSaludos,\nSDRIMSAC";
+            $mensaje = "Hola $usuario,\n\nGracias por tu compra. Tu código de validación es: $codigo_compra.\n\nPIN de recogida: $pin\nTotal: S/ $total\n\nGuarda este PIN y preséntalo al recoger tu producto.\n\nSaludos,\nSDRIMSAC";
             // mail($email, $asunto, $mensaje); // Descomentar en producción
             // Para pruebas, puedes guardar el mensaje en un archivo o mostrarlo en pantalla
             file_put_contents(__DIR__.'/ultimo_mail_enviado.txt', "To: $email\nSubject: $asunto\n\n$mensaje");
         }
+
+        // Redirigir a confirmacion.php para evitar reenvío de formulario
+        header('Location: confirmacion.php');
+        exit;
     }
     // --- FIN BLOQUE COMPRAS ---
 
@@ -108,27 +119,3 @@ if($conn){
     // Activar notificación de pedido pendiente para el usuario
     $_SESSION['pedido_pendiente'] = true;
 }
-
-// Mostrar confirmación simple
-include('includes/header.php');
-?>
-
-
-<section class="contenido">
-    <h2>Pago exitoso</h2>
-    <p>Gracias, <?= htmlspecialchars($usuario) ?>. Tu pago (<?= htmlspecialchars($metodo) ?>) por S/ <?= number_format($total,2) ?> se ha registrado correctamente.</p>
-    <div style="background:#f7f8fc;border:2px dashed #2a2aee;padding:16px 0;margin:18px 0 18px 0;border-radius:12px;font-size:1.15em;letter-spacing:1px;max-width:340px;margin-left:auto;margin-right:auto;text-align:center;">
-        <span style="color:#2a2aee;font-weight:700;">Tu código de pedido:</span><br>
-        <span style="font-size:1.4em;font-weight:900;letter-spacing:2px;"> <?= htmlspecialchars($codigo_pedido) ?> </span>
-        <br><span style="font-size:0.98em;color:#444;">Guárdalo y preséntalo al recoger tu producto.</span>
-    </div>
-    <?php if(!empty($sin_stock)): ?>
-        <div style="background:#ffeaea;color:#b30000;padding:14px 18px;border-radius:8px;margin:18px 0 10px 0;font-weight:600;">
-            <span>¡Atención!</span> Los siguientes productos se han quedado sin stock:<br>
-            <?= htmlspecialchars(implode(', ', $sin_stock)) ?>
-        </div>
-    <?php endif; ?>
-    <p>Recibirás un correo con los detalles (simulado). <a href="index.php">Volver al inicio</a></p>
-</section>
-
-<?php include('includes/footer.php'); ?>

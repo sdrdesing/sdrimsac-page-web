@@ -303,8 +303,13 @@ if(file_exists(__DIR__ . '/config/database.php')){
 <!-- SECCIÓN SOMOS SDRIMSAC SOLUTIONS -->
 <section class="somos-section">
     <div class="somos-inner">
-        <div class="somos-img">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="SDRIMSAC Facturación" />
+        <div class="somos-img" style="display:flex;flex-direction:column;gap:18px;align-items:center;">
+          <div style="width:100%;max-width:440px;background:#fff;border-radius:22px;box-shadow:0 6px 32px #0002, 0 1.5px 8px #0001;padding:18px 18px 12px 18px;display:flex;justify-content:center;margin-bottom:28px;">
+            <video src="assets/video/Sdrimsac - 01 ok.mp4" controls muted playsinline style="width:100%;border-radius:16px;box-shadow:0 2px 12px #0001;object-fit:cover;" alt="SDRIMSAC Video 2"></video>
+          </div>
+          <div style="width:100%;max-width:440px;background:#fff;border-radius:22px;box-shadow:0 6px 32px #0002, 0 1.5px 8px #0001;padding:18px 18px 12px 18px;display:flex;justify-content:center;">
+            <video src="assets/video/Funcionamiento de Rubro Consumo.mp4" controls muted playsinline style="width:100%;border-radius:16px;box-shadow:0 2px 12px #0001;object-fit:cover;" alt="SDRIMSAC Facturación"></video>
+          </div>
         </div>
         <div class="somos-info">
             <span class="somos-label">SOMOS</span>
@@ -424,12 +429,15 @@ if(file_exists(__DIR__ . '/config/database.php')){
       <h2 class="section-title"><i class="fa-solid fa-rocket"></i> ¿Listo para digitalizar tu empresa?</h2>
       <p>Únete a más de 500 empresas que ya emiten comprobantes electrónicos con sdrimsac.</p>
       <a href="register.php" class="btn-hero-primary">Crear cuenta gratis</a>
-      <div class="cta-social" style="margin-top:28px; display:flex; gap:28px; justify-content:center; align-items:center;">
-        <a href="https://www.facebook.com/sdrimsacsolutions/#" target="_blank" title="Facebook SDRIMSAC" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0001;transition:box-shadow .2s,transform .2s; font-size:2.1em; color:#1877f3; border:2px solid #e6e6e6;">
+      <div class="cta-social">
+        <a href="https://www.facebook.com/sdrimsacsolutions/#" target="_blank" title="Facebook SDRIMSAC" class="cta-social-icon cta-fb">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://www.tiktok.com/@sdrimsac" target="_blank" title="TikTok SDRIMSAC" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0001;transition:box-shadow .2s,transform .2s; font-size:2.1em; color:#000; border:2px solid #e6e6e6;">
+        <a href="https://www.tiktok.com/@sdrimsac" target="_blank" title="TikTok SDRIMSAC" class="cta-social-icon cta-tiktok">
           <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://maps.google.com/?q=SDRIMSAC+Solutions,+Lima,+Peru" target="_blank" title="Ubicación SDRIMSAC" class="cta-social-icon cta-location">
+          <i class="fa-solid fa-location-dot"></i>
         </a>
       </div>
     </div>
@@ -443,11 +451,23 @@ if(file_exists(__DIR__ . '/config/database.php')){
       <button id="close-modal-btn" style="position:absolute;top:16px;right:16px;background:#ffc107;border:none;border-radius:50%;width:32px;height:32px;font-size:1.5em;cursor:pointer;">&times;</button>
       <h2 style="color:#d00;font-weight:bold;">CONTACTA UN ASESOR</h2>
       <p>Favor completar los siguientes datos para poder contactar a un asesor</p>
-      <form>
-        <input type="text" placeholder="Nombre" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="text" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="email" placeholder="Correo electrónico" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <textarea placeholder="QUIERO CONTACTAR UN ASESOR" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+      <form id="asesor-form">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+          <select name="tipo_doc" id="asesor-tipo-doc" required style="padding:8px;border-radius:6px;border:1px solid #ccc;">
+            <option value="DNI">DNI</option>
+            <option value="RUC">RUC</option>
+          </select>
+          <input type="text" name="doc" id="asesor-doc" placeholder="DNI o RUC" required style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc;">
+          <button type="button" id="asesor-buscar" style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#eee;cursor:pointer;">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <input type="text" name="nombres" id="asesor-nombres" placeholder="Nombres" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="apellidos" id="asesor-apellidos" placeholder="Apellidos" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="razon_social" id="asesor-razon-social" placeholder="Razón Social" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="telefono" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="empresa" placeholder="Nombre de la empresa" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea name="mensaje" placeholder="Mensaje" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
         <div style="margin-bottom:8px;">
           <input type="checkbox" id="not-robot">
           <label for="not-robot">No soy un robot</label>
@@ -468,11 +488,23 @@ if(file_exists(__DIR__ . '/config/database.php')){
       <button id="close-demo-modal-btn" style="position:absolute;top:16px;right:16px;background:#18376b;border:none;border-radius:50%;width:32px;height:32px;font-size:1.5em;color:#fff;cursor:pointer;">&times;</button>
       <h2 style="color:#18376b;font-weight:bold;">SOLICITAR DEMO</h2>
       <p>Completa los datos para solicitar una demo gratuita</p>
-      <form>
-        <input type="text" placeholder="Nombre" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="email" placeholder="Correo electrónico" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <input type="tel" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <textarea placeholder="¿Qué sistema te interesa?" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+      <form id="demo-form">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+          <select name="tipo_doc" id="demo-tipo-doc" required style="padding:8px;border-radius:6px;border:1px solid #ccc;">
+            <option value="DNI">DNI</option>
+            <option value="RUC">RUC</option>
+          </select>
+          <input type="text" name="doc" id="demo-doc" placeholder="DNI o RUC" required style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc;">
+          <button type="button" id="demo-buscar" style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#eee;cursor:pointer;">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <input type="text" name="nombres" id="demo-nombres" placeholder="Nombres" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="apellidos" id="demo-apellidos" placeholder="Apellidos" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="razon_social" id="demo-razon-social" placeholder="Razón Social" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="telefono" placeholder="Teléfono" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <input type="text" name="empresa" placeholder="Nombre de la empresa" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        <textarea name="mensaje" placeholder="Mensaje" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
         <div style="margin-bottom:8px;">
           <input type="checkbox" id="demo-not-robot">
           <label for="demo-not-robot">No soy un robot</label>
@@ -487,6 +519,90 @@ if(file_exists(__DIR__ . '/config/database.php')){
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // --- Validación dinámica de longitud para DNI/RUC en ambos formularios ---
+  function setDocInputMaxLength(tipoDocSelectId, docInputId) {
+    const tipoDoc = document.getElementById(tipoDocSelectId);
+    const docInput = document.getElementById(docInputId);
+    function updateMaxLength() {
+      if(tipoDoc.value === 'DNI') {
+        docInput.maxLength = 8;
+        docInput.value = docInput.value.slice(0, 8);
+        docInput.pattern = '\\d{8}';
+      } else {
+        docInput.maxLength = 11;
+        docInput.value = docInput.value.slice(0, 11);
+        docInput.pattern = '\\d{11}';
+      }
+    }
+    tipoDoc.addEventListener('change', updateMaxLength);
+    docInput.addEventListener('input', function() {
+      // Solo permitir números
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+    updateMaxLength();
+  }
+  setDocInputMaxLength('asesor-tipo-doc', 'asesor-doc');
+  setDocInputMaxLength('demo-tipo-doc', 'demo-doc');
+  // --- API PERU DOC AUTOFILL PARA MODAL ASESOR ---
+  function limpiarCamposAsesor() {
+    document.getElementById('asesor-nombres').value = '';
+    document.getElementById('asesor-apellidos').value = '';
+    document.getElementById('asesor-razon-social').value = '';
+  }
+  document.getElementById('asesor-buscar').addEventListener('click', function() {
+    const tipo = document.getElementById('asesor-tipo-doc').value;
+    const doc = document.getElementById('asesor-doc').value.trim();
+    limpiarCamposAsesor();
+    if((tipo === 'DNI' && doc.length === 8) || (tipo === 'RUC' && doc.length === 11)) {
+      fetch(`helpers/apiperu.php?tipo=${tipo.toLowerCase()}&numero=${doc}`)
+        .then(r => r.json())
+        .then(data => {
+          if(data.ok && data.data) {
+            if(tipo === 'DNI') {
+              document.getElementById('asesor-nombres').value = data.data.nombres || '';
+              document.getElementById('asesor-apellidos').value = (data.data.apellido_paterno || '') + ' ' + (data.data.apellido_materno || '');
+            } else if(tipo === 'RUC') {
+              document.getElementById('asesor-razon-social').value = data.data.razon_social || '';
+            }
+          } else {
+            let msg = 'No se encontraron datos para el documento ingresado.';
+            if(data.mensaje_api) msg += '\nMotivo: ' + data.mensaje_api;
+            else if(data.error) msg += '\nMotivo: ' + data.error;
+            alert(msg);
+          }
+        })
+        .catch(() => alert('Error consultando el documento.'));
+    }
+  });
+
+  // --- API PERU DOC AUTOFILL PARA MODAL DEMO ---
+  function limpiarCamposDemo() {
+    document.getElementById('demo-nombres').value = '';
+    document.getElementById('demo-apellidos').value = '';
+    document.getElementById('demo-razon-social').value = '';
+  }
+  document.getElementById('demo-buscar').addEventListener('click', function() {
+    const tipo = document.getElementById('demo-tipo-doc').value;
+    const doc = document.getElementById('demo-doc').value.trim();
+    limpiarCamposDemo();
+    if((tipo === 'DNI' && doc.length === 8) || (tipo === 'RUC' && doc.length === 11)) {
+      fetch(`helpers/apiperu.php?tipo=${tipo.toLowerCase()}&numero=${doc}`)
+        .then(r => r.json())
+        .then(data => {
+          if(data.ok && data.data) {
+            if(tipo === 'DNI') {
+              document.getElementById('demo-nombres').value = data.data.nombres || '';
+              document.getElementById('demo-apellidos').value = (data.data.apellido_paterno || '') + ' ' + (data.data.apellido_materno || '');
+            } else if(tipo === 'RUC') {
+              document.getElementById('demo-razon-social').value = data.data.razon_social || '';
+            }
+          } else {
+            alert('No se encontraron datos para el documento ingresado.');
+          }
+        })
+        .catch(() => alert('Error consultando el documento.'));
+    }
+  });
   const contactBtn = document.getElementById('contact-asesor-btn');
   const modal = document.getElementById('contact-asesor-modal');
   const closeBtn = document.getElementById('close-modal-btn');

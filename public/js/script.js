@@ -1,3 +1,40 @@
+// --- Marcar notificaciones como leídas sin recargar ---
+document.addEventListener('DOMContentLoaded', function() {
+    const formMarcarLeido = document.getElementById('formMarcarLeido');
+    const marcarLeidoBtn = document.getElementById('marcarLeidoBtn');
+    if (formMarcarLeido && marcarLeidoBtn) {
+        formMarcarLeido.addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
+        marcarLeidoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('marcar_notificaciones.php', {
+                method: 'POST',
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('No autenticado');
+                return res.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    // Quitar negrita de los mensajes de notificación
+                    document.querySelectorAll('#notiPanel span[style*="font-weight:600"]').forEach(el => {
+                        el.style.fontWeight = 'normal';
+                    });
+                    // Quitar el punto rojo de la campana
+                    const notiDot = document.querySelector('.noti-dot');
+                    if (notiDot) notiDot.remove();
+                } else {
+                    // Opcional: podrías mostrar un mensaje de error visual, pero no alert
+                }
+            })
+            .catch(err => {
+                // alert('Debes iniciar sesión para marcar como leído'); // Silenciado para no molestar al usuario
+            });
+        });
+    }
+});
 // Modular script.js for SDRIMSAC
 
 // Social menu toggle
@@ -206,7 +243,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (notiBell && notiPanel) {
         notiBell.addEventListener('click', function(e) {
             e.stopPropagation();
-            notiPanel.style.display = (notiPanel.style.display === 'block') ? 'none' : 'block';
+            const isOpen = notiPanel.style.display === 'block';
+            notiPanel.style.display = isOpen ? 'none' : 'block';
+            if (!isOpen) {
+                // Al abrir, forzar scroll arriba
+                const notiScroll = document.getElementById('notiScroll');
+                if (notiScroll) notiScroll.scrollTop = 0;
+            }
         });
         document.addEventListener('click', function(e) {
             if (notiPanel.style.display === 'block' && !notiBell.contains(e.target)) {
@@ -222,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch('ocultar_noti.php', { method: 'POST' }).then(() => {
                     notiPanel.style.display = 'none';
                     location.reload();
-                });
+                }); 
             });
         }
     }

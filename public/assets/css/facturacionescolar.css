@@ -1,0 +1,238 @@
+/* ================================================================
+   ESTILO FACTURACIÓN ESCOLAR - SDRIMSAC
+   ================================================================ */
+
+/* 1. Configuración Base */
+:root {
+    --primary: #18376b;
+    --secondary: #3a7be0;
+    --accent: #764ba2;
+    --bg-light: #f4f7fa;
+    --text-dark: #2c3e50;
+    --text-muted: #5d6a7a;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(24, 55, 107, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 2. Header y Banners */
+.servicios-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
+    padding: 80px 20px;
+    clip-path: ellipse(150% 100% at 50% 0%);
+    text-align: center;
+    color: var(--white);
+}
+
+.servicios-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.container-card {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid #eef2f6;
+    transition: var(--transition);
+}
+
+.banner-principal {
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Seccion Roles (Admin y Caja) */
+.roles-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--white);
+}
+
+.role-column {
+    flex: 1 1 50%;
+    padding: 45px;
+}
+
+.role-column:first-child {
+    border-right: 1px solid #f0f4f8;
+}
+
+.role-title {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.role-title i {
+    background: #eef4ff;
+    padding: 15px;
+    border-radius: 14px;
+    margin-right: 15px;
+    color: var(--secondary);
+    font-size: 1.4rem;
+}
+
+.list-style {
+    list-style: none;
+    padding: 0;
+}
+
+.list-style li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.list-style li::before {
+    content: "\f00c"; /* Icono Check */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* 4. FAQ Dinámico (Preguntas Frecuentes) */
+.faq-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.faq-title {
+    color: var(--primary);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 18px;
+    margin-bottom: 18px;
+    border: 2px solid #f0f4f8;
+    transition: var(--transition);
+    counter-increment: faq-count; /* Numeración automática */
+}
+
+.faq-item:hover {
+    border-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.faq-item.active {
+    border-color: var(--secondary);
+    background: #f9fbff;
+}
+
+.faq-question {
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.15rem;
+    user-select: none;
+}
+
+/* El Número de la pregunta */
+.faq-question::before {
+    content: counter(faq-count, decimal-leading-zero);
+    margin-right: 18px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(58, 123, 224, 0.3);
+}
+
+.faq-arrow {
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
+    background: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.faq-arrow::after {
+    content: '\f107';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.faq-item.active .faq-arrow {
+    background: var(--secondary);
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px 25px 75px; /* Alineado para que no choque con el número */
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    display: none; /* Controlado por JS */
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-img-escolar img {
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
+
+/* 5. Responsive */
+@media (max-width: 850px) {
+    .roles-container, .faq-section {
+        flex-direction: column;
+    }
+    .role-column {
+        border-right: none;
+        border-bottom: 1px solid #f0f4f8;
+        padding: 30px;
+    }
+    .faq-img-escolar {
+        order: -1;
+        margin: 0 auto 30px auto;
+    }
+    .servicios-header h1 {
+        font-size: 2.2rem;
+    }
+}

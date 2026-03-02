@@ -77,8 +77,8 @@
 <!-- Preguntas Frecuentes -->
 <div class="ferreteria-faq-section">
     <div class="ferreteria-faq-img">
-        <img src="assets/img/ferreteria_faq.jpg" alt="Ferretería Preguntas Frecuentes" />
-        <img src="assets/img/ferreteria_staff.jpg" alt="Ferretería Staff" />
+        <img src="assets/img/ferr.png" alt="Ferretería Preguntas Frecuentes" />
+        
     </div>
     <div class="ferreteria-faq">
         <h2>Preguntas Frecuentes</h2>
@@ -110,15 +110,13 @@
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable para sección ferretería
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-        q.addEventListener('click', function() {
-            var item = this.parentElement;
+    document.querySelectorAll('.ferreteria-faq-question, .ferreteria-faq-toggle').forEach(function(q) {
+        q.addEventListener('click', function(e) {
+            var item = this.closest('.ferreteria-faq-item');
             var wasActive = item.classList.contains('active');
-            // Cerrar todas las respuestas
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
-            // Activar solo si no estaba activa
+            document.querySelectorAll('.ferreteria-faq-item').forEach(function(i) { i.classList.remove('active'); });
             if (!wasActive) item.classList.add('active');
         });
     });

@@ -104,32 +104,46 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
             $q = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
             if ($q && $row = $q->fetch_assoc()) {
                 $usuario_id = intval($row['id']);
-                // Mostrar notificación por compras pendientes
-                $sqlPend = "SELECT codigo_compra, estado FROM compras WHERE usuario_id=$usuario_id AND estado='pendiente' ORDER BY fecha DESC LIMIT 5";
+                // Eliminar notificaciones de compras con más de 1 mes
+                $conn->query("DELETE FROM compras WHERE usuario_id=$usuario_id AND fecha < DATE_SUB(NOW(), INTERVAL 1 MONTH)");
+
+                // Unificar todas las notificaciones y ordenarlas por fecha DESC
+                $notificaciones = [];
+                // Pendientes
+                $sqlPend = "SELECT codigo_compra, estado, fecha, pin FROM compras WHERE usuario_id=$usuario_id AND estado='pendiente'";
                 $resPend = $conn->query($sqlPend);
                 if ($resPend && $resPend->num_rows > 0) {
                     $noti = true;
                     while($c = $resPend->fetch_assoc()) {
-                        // Agregar campo 'mensaje' personalizado
-                        $c['mensaje'] = 'Tu pedido está pendiente. Código: ' . $c['codigo_compra'];
-                        $noti_compras[] = $c + ['tipo'=>'pendiente'];
+                        $c['mensaje'] = 'Tu pedido está pendiente. Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
+                        $c['pin'] = $c['pin'];
+                        $c['leido'] = false;
+                        $c['tipo'] = 'pendiente';
+                        $notificaciones[] = $c;
                     }
                 }
-                // Mostrar notificación por compras validadas/rechazadas no notificadas
-                $sql = "SELECT codigo_compra, estado FROM compras WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=0 ORDER BY fecha DESC LIMIT 5";
+                // Validadas/Rechazadas no notificadas
+                $sql = "SELECT codigo_compra, estado, fecha, pin FROM compras WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=0";
                 $res = $conn->query($sql);
                 if ($res && $res->num_rows > 0) {
                     $noti = true;
                     while($c = $res->fetch_assoc()) {
-                        // Agregar campo 'mensaje' personalizado
                         if($c['estado']==='validada'){
-                            $c['mensaje'] = '¡Tu pedido fue validado! Código: ' . $c['codigo_compra'];
+                            $c['mensaje'] = '¡Tu pedido fue validado! Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
                         } else if($c['estado']==='rechazada'){
-                            $c['mensaje'] = 'Tu pedido fue rechazado. Código: ' . $c['codigo_compra'];
+                            $c['mensaje'] = 'Tu pedido fue rechazado. Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
                         }
-                        $noti_compras[] = $c + ['tipo'=>'resuelta'];
+                        $c['pin'] = $c['pin'];
+                        $c['leido'] = true;
+                        $c['tipo'] = 'resuelta';
+                        $notificaciones[] = $c;
                     }
                 }
+                // Ordenar todas las notificaciones por fecha DESC
+                usort($notificaciones, function($a, $b) {
+                    return strtotime($b['fecha']) - strtotime($a['fecha']);
+                });
+                $noti_compras = $notificaciones;
             }
         }
         ?>
@@ -139,26 +153,45 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
             <?php if($noti): ?>
             <span class="noti-dot"></span>
             <?php endif; ?>
-            <div id="notiPanel" style="display:none;position:absolute;right:0;top:36px;min-width:260px;max-width:320px;background:#fff;border:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(26,58,110,0.13);border-radius:12px;padding:18px 18px 14px 18px;z-index:9999;">
+            <div id="notiPanel" style="display:none;position:absolute;right:0;top:36px;min-width:260px;max-width:320px;background:#fff;border:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(26,58,110,0.13);border-radius:12px;padding:0;z-index:9999;overflow:hidden;">
                 <?php if($noti && count($noti_compras)>0): ?>
-                    <div style="font-weight:600;color:#2a2aee;margin-bottom:7px;">Tus notificaciones de compras:</div>
-                    <?php foreach($noti_compras as $nc): ?>
-                        <div style="margin-bottom:8px;">
-                            <span style="font-weight:600;"><?= htmlspecialchars($nc['mensaje']) ?></span>
-                            <?php if($nc['estado']==='pendiente'): ?>
-                                <span style="color:#2255a4;font-weight:600;"> ⏳</span>
-                            <?php elseif($nc['estado']==='validada'): ?>
-                                <span style="color:#2a8e2a;font-weight:600;"> 🎉</span>
-                            <?php elseif($nc['estado']==='rechazada'): ?>
-                                <span style="color:#e53935;font-weight:600;"> ❌</span>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
-                    <form method="post" action="marcar_notificaciones.php">
-                        <button type="submit" name="marcar_leido" value="1" style="background:#2a2aee;color:#fff;padding:7px 18px;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Marcar como leído</button>
+                    <div style="font-weight:600;color:#2a2aee;margin:18px 18px 7px 18px;text-align:center;text-transform:uppercase;">Tus notificaciones de compras:</div>
+                    <div id="notiScroll" style="max-height:220px;overflow-y:auto;padding:0 18px 0 18px;">
+                        <?php foreach($noti_compras as $nc): ?>
+                            <?php
+                                $bg = '';
+                                if ($nc['estado'] === 'validada') {
+                                    $bg = 'background:rgba(42,142,42,0.12);';
+                                } elseif ($nc['estado'] === 'rechazada') {
+                                    $bg = 'background:rgba(229,57,53,0.12);';
+                                }
+                            ?>
+                            <div style="margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #e2e8f0;<?= $bg ?>">
+                                <span style="font-weight:<?= isset($nc['leido']) && $nc['leido'] ? 'normal' : '600' ?>;display:block;"><?= htmlspecialchars($nc['mensaje']) ?></span>
+                                <?php if (!empty($nc['codigo_compra']) && !empty($nc['pin'])): ?>
+                                    <img src="generar_qr.php?codigo=<?= urlencode($nc['codigo_compra']) ?>&pin=<?= urlencode($nc['pin']) ?>" alt="QR Pedido" style="margin:8px auto 4px auto;display:block;max-width:90px;">
+                                    <div style="text-align:center;">
+                                        <a href="generar_qr.php?codigo=<?= urlencode($nc['codigo_compra']) ?>&pin=<?= urlencode($nc['pin']) ?>&download=1" download="qr_<?= htmlspecialchars($nc['codigo_compra']) ?>.png" style="display:inline-block;margin-bottom:4px;padding:3px 10px;background:#2a2aee;color:#fff;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">Descargar QR</a>
+                                    </div>
+                                <?php endif; ?>
+                                <span style="font-size:0.92em;color:#888;display:block;margin-top:2px;">
+                                    <?= date('d/m/Y H:i', strtotime($nc['fecha'])) ?>
+                                </span>
+                                <?php if($nc['estado']==='pendiente'): ?>
+                                    <span style="color:#2255a4;font-weight:600;"> ⏳</span>
+                                <?php elseif($nc['estado']==='validada'): ?>
+                                    <span style="color:#2a8e2a;font-weight:600;"> 🎉</span>
+                                <?php elseif($nc['estado']==='rechazada'): ?>
+                                    <span style="color:#e53935;font-weight:600;"> ❌</span>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <form id="formMarcarLeido" method="post" action="marcar_notificaciones.php" style="position:sticky;bottom:0;left:0;width:100%;background:#fff;padding:12px 18px 14px 18px;box-shadow:0 -2px 12px #2231;z-index:2;">
+                        <button type="button" id="marcarLeidoBtn" name="marcar_leido" value="1" style="background:#2a2aee;color:#fff;padding:7px 18px;border:none;border-radius:8px;font-weight:600;cursor:pointer;width:100%;">Marcar como leído</button>
                     </form>
                 <?php else: ?>
-                    <div style="font-size:1em;color:#888;">No tienes notificaciones nuevas.</div>
+                    <div style="font-size:1em;color:#888;padding:18px;">No tienes notificaciones nuevas.</div>
                 <?php endif; ?>
             </div>
         </span>

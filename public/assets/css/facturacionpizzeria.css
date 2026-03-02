@@ -1,3 +1,156 @@
+/* FAQ PROFESIONAL Y BONITO */
+.pizzeria-faq-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(168,35,35,0.08);
+  padding: 40px 32px 32px 32px;
+  max-width: 1100px;
+  margin: 48px auto 48px auto;
+  align-items: flex-start;
+}
+.pizzeria-faq {
+  flex: 2;
+  min-width: 320px;
+}
+.pizzeria-faq h2 {
+  color: #a82323;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+.pizzeria-faq-item {
+  background: #f9f6f4;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(168,35,35,0.04);
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s;
+  border: 1.5px solid #f0e0e0;
+  overflow: hidden;
+}
+.pizzeria-faq-item.active {
+  box-shadow: 0 4px 16px rgba(168,35,35,0.10);
+  border-color: #a82323;
+}
+.pizzeria-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #a82323;
+  cursor: pointer;
+  font-size: 1.13rem;
+  padding: 20px 24px 20px 18px;
+  border-bottom: 1px solid #f0e0e0;
+  background: transparent;
+  transition: background 0.2s;
+}
+.pizzeria-faq-item.active .pizzeria-faq-question {
+  background: #fff3f3;
+}
+.pizzeria-faq-toggle {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-left: 16px;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.pizzeria-faq-toggle::before {
+  content: '';
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  border-right: 3.5px solid #a82323;
+  border-bottom: 3.5px solid #a82323;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 0 1px 2px #fff6;
+}
+.pizzeria-faq-item.active .pizzeria-faq-toggle {
+  transform: rotate(90deg) scale(1.1);
+}
+.pizzeria-faq-answer {
+  color: #3a2323;
+  font-size: 1.05rem;
+  padding: 18px 24px 18px 24px;
+  background: #fff;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 1px 4px rgba(168,35,35,0.03);
+  display: none;
+  animation: faqFadeIn 0.35s;
+}
+@keyframes faqFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.pizzeria-faq-img {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pizzeria-faq-img img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(168,35,35,0.10);
+  object-fit: cover;
+  background: #fff;
+}
+/* FAQ desplegable con flecha animada */
+.pizzeria-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #a82323;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 18px 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+.pizzeria-faq-toggle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.pizzeria-faq-toggle::before {
+  content: '';
+  display: block;
+  width: 0.7em;
+  height: 0.7em;
+  border-right: 3px solid #a82323;
+  border-bottom: 3px solid #a82323;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.pizzeria-faq-item.active .pizzeria-faq-toggle {
+  transform: rotate(90deg);
+}
+.pizzeria-faq-answer {
+  color: #333;
+  font-size: 1rem;
+  padding: 12px 0 18px 0;
+  display: none;
+}
 /* Estilos para facturacionpizzeria.php */
 
 .pizzeria-banner {

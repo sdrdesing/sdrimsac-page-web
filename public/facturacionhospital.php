@@ -1,5 +1,6 @@
 <?php include("includes/header.php"); ?>
 <link rel="stylesheet" href="assets/css/servicios.css">
+<link rel="stylesheet" href="assets/css/facturacionhospital.css">
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -76,38 +77,59 @@
     <div style="flex:2;">
         <h2 style="color:#18376b;text-align:left;font-size:1.5rem;font-weight:700;margin-bottom:18px;">Preguntas Frecuentes</h2>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué es la facturación electrónica en el ámbito hospitalario?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica en hospitales se refiere al proceso de generar, enviar y recibir facturas de forma digital en lugar de en papel. Este proceso incluye la emisión de facturas para servicios médicos, pruebas diagnósticas y otros servicios proporcionados a los pacientes.</div>
+            <div class="faq-question">
+                ¿Qué es la facturación electrónica en el ámbito hospitalario?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">La facturación electrónica en hospitales se refiere al proceso de generar, enviar y recibir facturas de forma digital en lugar de en papel. Este proceso incluye la emisión de facturas para servicios médicos, pruebas diagnósticas y otros servicios proporcionados a los pacientes.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Cuáles son los beneficios de implementar la facturación electrónica en un hospital?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Permite mayor eficiencia administrativa, reducción de errores, cumplimiento normativo, integración con sistemas clínicos y mejora la atención al paciente al agilizar procesos de facturación y cobro.</div>
+            <div class="faq-question">
+                ¿Cuáles son los beneficios de implementar la facturación electrónica en un hospital?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">Permite mayor eficiencia administrativa, reducción de errores, cumplimiento normativo, integración con sistemas clínicos y mejora la atención al paciente al agilizar procesos de facturación y cobro.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué medidas de seguridad son necesarias para proteger la información de las facturas electrónicas?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Es fundamental contar con sistemas de seguridad informática, cifrado de datos, copias de seguridad y controles de acceso para proteger la información sensible de los pacientes y las facturas.</div>
+            <div class="faq-question">
+                ¿Qué medidas de seguridad son necesarias para proteger la información de las facturas electrónicas?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">Es fundamental contar con sistemas de seguridad informática, cifrado de datos, copias de seguridad y controles de acceso para proteger la información sensible de los pacientes y las facturas.</div>
         </div>
         <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">¿Qué tipo de soporte técnico es necesario para implementar y mantener un sistema de facturación electrónica?</div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Se requiere soporte técnico especializado para la instalación, configuración, capacitación y mantenimiento del sistema, así como para resolver incidencias y garantizar la continuidad operativa.</div>
+            <div class="faq-question">
+                ¿Qué tipo de soporte técnico es necesario para implementar y mantener un sistema de facturación electrónica?
+                <span class="faq-arrow"></span>
+            </div>
+            <div class="faq-answer">Se requiere soporte técnico especializado para la instalación, configuración, capacitación y mantenimiento del sistema, así como para resolver incidencias y garantizar la continuidad operativa.</div>
         </div>
     </div>
     <div style="flex:1;text-align:center;">
-        <img src="assets/img/hospital_faq.png" alt="Hospital Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
+        <img src="assets/img/dragonFarmacia.png" alt="Hospital Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
     </div>
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable con flecha animada y respuesta
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-        q.addEventListener('click', function() {
-            var item = this.parentElement;
-            var answer = item.querySelector('.faq-answer');
-            var isOpen = answer.style.display === 'block';
-            document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
-            if (!isOpen) answer.style.display = 'block';
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        var question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            var wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.display = 'none';
+            });
+            if (!wasActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-answer').style.display = 'block';
+            }
         });
+    });
+    // Inicialmente ocultar todas las respuestas
+    document.querySelectorAll('.faq-answer').forEach(function(ans) {
+        ans.style.display = 'none';
     });
 });
 </script>

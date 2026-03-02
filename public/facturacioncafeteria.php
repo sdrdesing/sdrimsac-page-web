@@ -11,13 +11,13 @@
 <body>
 <?php include("includes/header.php"); ?>
 <section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
-    <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Facturación Cafetería</h1>
+    <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Aplicativo de Facturación Electrónica - Cafetería</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
     <div style="font-size:1.1rem;color:#cfd8e3;">Servicios <span style="color:#fff;">:</span> Facturación Cafetería</div>
 </section>
 <!-- Banner principal -->
 <div class="cafeteria-banner">
-    <img src="assets/img/cafeteria_banner.jpg" alt="App Cafetería Facturación Electrónica" />
+    <img src="assets/img/cafeteria.png" alt="App Cafetería Facturación Electrónica" />
 </div>
 
 <!-- Desarrollo de Facturación Electrónica -->
@@ -142,13 +142,13 @@
 </div>
 
 <script>
-// FAQ desplegable
+// FAQ desplegable (todas las preguntas funcionan igual)
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
+    document.querySelectorAll('.cafeteria-faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+            document.querySelectorAll('.cafeteria-faq-item').forEach(function(i) { i.classList.remove('active'); });
             if (!wasActive) item.classList.add('active');
         });
     });
