@@ -233,3 +233,408 @@ Array
 )
 
 ---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0617828369140625}
+    [timestamp] => 2026-03-02 15:27:38
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05621814727783203}
+    [timestamp] => 2026-03-02 15:28:02
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05465292930603027}
+    [timestamp] => 2026-03-02 15:28:02
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05649900436401367}
+    [timestamp] => 2026-03-02 15:28:03
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.060890913009643555}
+    [timestamp] => 2026-03-02 15:28:04
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0569920539855957}
+    [timestamp] => 2026-03-02 15:28:05
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0670938491821289}
+    [timestamp] => 2026-03-02 15:28:21
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.06959295272827148}
+    [timestamp] => 2026-03-02 15:28:57
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 10764246760
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"","direccion_completa":"","ruc":"10764246760","nombre_o_razon_social":"LAZO PICHARDO SMITH RIKSON","estado":"ACTIVO","condicion":"HABIDO","departamento":"","provincia":"","distrito":"","ubigeo_sunat":"","ubigeo":[null,null,null],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.09459805488586426}
+    [timestamp] => 2026-03-02 15:29:01
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.08250594139099121}
+    [timestamp] => 2026-03-02 15:29:30
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.09539198875427246}
+    [timestamp] => 2026-03-02 15:29:32
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07186293601989746}
+    [timestamp] => 2026-03-02 15:29:35
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.08052992820739746}
+    [timestamp] => 2026-03-02 15:29:36
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.08220791816711426}
+    [timestamp] => 2026-03-02 15:29:37
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.11172986030578613}
+    [timestamp] => 2026-03-02 15:29:37
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.08482813835144043}
+    [timestamp] => 2026-03-02 15:29:38
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0577089786529541}
+    [timestamp] => 2026-03-02 15:30:48
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.06960201263427734}
+    [timestamp] => 2026-03-02 15:30:57
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.0799410343170166}
+    [timestamp] => 2026-03-02 15:31:07
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07869696617126465}
+    [timestamp] => 2026-03-02 15:31:08
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 20613607
+        )
+
+    [http_code] => 500
+    [curl_error] => 
+    [response] => {"success":false,"message":"No se encontraron resultados","time":0.061868906021118164}
+    [timestamp] => 2026-03-02 15:40:47
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 20613607
+        )
+
+    [http_code] => 500
+    [curl_error] => 
+    [response] => {"success":false,"message":"No se encontraron resultados","time":0.09026098251342773}
+    [timestamp] => 2026-03-02 15:41:08
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07202887535095215}
+    [timestamp] => 2026-03-02 15:41:25
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.08224606513977051}
+    [timestamp] => 2026-03-02 15:43:07
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 20613607
+        )
+
+    [http_code] => 500
+    [curl_error] => 
+    [response] => {"success":false,"message":"No se encontraron resultados","time":0.06120705604553223}
+    [timestamp] => 2026-03-02 15:43:15
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06028604507446289}
+    [timestamp] => 2026-03-02 15:43:24
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.10961508750915527}
+    [timestamp] => 2026-03-02 15:43:50
+)
+
+---

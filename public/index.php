@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
               document.getElementById('asesor-nombres').value = data.data.nombres || '';
               document.getElementById('asesor-apellidos').value = (data.data.apellido_paterno || '') + ' ' + (data.data.apellido_materno || '');
             } else if(tipo === 'RUC') {
-              document.getElementById('asesor-razon-social').value = data.data.razon_social || '';
+              document.getElementById('asesor-razon-social').value = data.data.nombre_o_razon_social || data.data.razon_social || '';
             }
           } else {
             let msg = 'No se encontraron datos para el documento ingresado.';
@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function() {
               document.getElementById('demo-nombres').value = data.data.nombres || '';
               document.getElementById('demo-apellidos').value = (data.data.apellido_paterno || '') + ' ' + (data.data.apellido_materno || '');
             } else if(tipo === 'RUC') {
-              document.getElementById('demo-razon-social').value = data.data.razon_social || '';
+              document.getElementById('demo-razon-social').value = data.data.nombre_o_razon_social || data.data.razon_social || '';
             }
           } else {
             alert('No se encontraron datos para el documento ingresado.');
