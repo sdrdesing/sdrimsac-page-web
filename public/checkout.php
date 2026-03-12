@@ -56,8 +56,7 @@ include('includes/header.php');
             <form method="POST" action="procesar_pago.php">
                 <input type="hidden" name="total" value="<?= htmlspecialchars($total) ?>">
 
-                <label><input type="radio" name="metodo" value="tarjeta" required> Pago con Tarjeta (simulado)</label><br>
-                <label><input type="radio" name="metodo" value="transferencia"> Depósito / Transferencia</label><br>
+                <label><input type="radio" name="metodo" value="transferencia"> Depósito / Transferencia / yape/ plin </label><br>
                 <label><input type="radio" name="metodo" value="contra"> Pagar en Tienda (contra entrega)</label>
 
                 <div id="tarjeta-campos" style="margin-top:12px;display:none;">

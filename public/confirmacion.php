@@ -14,8 +14,33 @@ $metodo = isset($_SESSION['metodo_pago']) ? $_SESSION['metodo_pago'] : '';
 <?php include('includes/header.php'); ?>
 
 <section class="contenido">
-    <h2>Pago exitoso</h2>
-    <p>Gracias, <?= htmlspecialchars($usuario) ?>. Tu pago (<?= htmlspecialchars($metodo) ?>) por S/ <?= number_format($total,2) ?> se ha registrado correctamente.</p>
+    <?php
+        $metodo_lower = strtolower($metodo);
+        if (
+            $metodo_lower === 'transferencia' ||
+            $metodo_lower === 'depósito' ||
+            $metodo_lower === 'deposito' ||
+            $metodo_lower === 'depósito / transferencia' ||
+            $metodo_lower === 'deposito / transferencia'
+        ) {
+    ?>
+        <h2>Pedido registrado, pendiente de pago</h2>
+        <p>Gracias, <?= htmlspecialchars($usuario) ?>. Tu pedido por S/ <?= number_format($total,2) ?> ha sido registrado.<br>
+        Por favor realiza la transferencia bancaria y envía el comprobante (voucher) al WhatsApp <b>995764963</b> o al correo <b>ventas@tudominio.com</b>.<br>
+        El pago será verificado antes de procesar tu pedido.</p>
+    <?php
+        } else if (
+            strpos($metodo_lower, 'tienda') !== false ||
+            strpos($metodo_lower, 'contra') !== false
+        ) {
+    ?>
+        <h2>Pedido registrado, paga al recibir el producto</h2>
+        <p>Gracias, <?= htmlspecialchars($usuario) ?>. Tu pedido por S/ <?= number_format($total,2) ?> ha sido registrado.<br>
+        El pago se realizará en tienda o al momento de la entrega.</p>
+    <?php } else { ?>
+        <h2>Pago exitoso</h2>
+        <p>Gracias, <?= htmlspecialchars($usuario) ?>. Tu pago (<?= htmlspecialchars($metodo) ?>) por S/ <?= number_format($total,2) ?> se ha registrado correctamente.</p>
+    <?php } ?>
     <div style="background:#f7f8fc;border:2px dashed #2a2aee;padding:16px 0;margin:18px 0 18px 0;border-radius:12px;font-size:1.15em;letter-spacing:1px;max-width:340px;margin-left:auto;margin-right:auto;text-align:center;">
         <span style="color:#2a2aee;font-weight:700;">Tu código de pedido:</span><br>
         <span style="font-size:1.4em;font-weight:900;letter-spacing:2px;"> <?= htmlspecialchars($codigo_pedido) ?> </span>
@@ -30,7 +55,7 @@ $metodo = isset($_SESSION['metodo_pago']) ? $_SESSION['metodo_pago'] : '';
             <a href="generar_qr.php?codigo=<?= urlencode($codigo_pedido) ?>&pin=<?= urlencode($pin_compra) ?>&download=1" download="qr_<?= htmlspecialchars($codigo_pedido) ?>.png" style="display:inline-block;margin-top:8px;padding:7px 18px;background:#2a2aee;color:#fff;border-radius:8px;font-weight:600;text-decoration:none;">Descargar QR</a>
         </div>
     </div>
-    <p>Recibirás un correo con los detalles (simulado). <a href="index.php">Volver al inicio</a></p>
+    <p>Recibirás un correo con los detalles . <a href="index.php">Volver al inicio</a></p>
 </section>
 
 <?php include('includes/footer.php'); ?>

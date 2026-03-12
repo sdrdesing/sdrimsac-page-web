@@ -1,6 +1,8 @@
 <?php
 // Plantilla básica para Tiendas Virtuales
-?><!DOCTYPE html>
+include("includes/header.php");
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<?php include("includes/header.php"); ?>
+
 
 <!-- BANNER -->
 <div class="page-banner">
@@ -56,18 +58,7 @@
                         <li>Reporte de Métodos de Pago</li>
                         <li>Reporte de Kardex</li>
                         <li>Contabilidad (Compras y Ventas)</li>
-                    </ul>
-                </div>
-                <div class="manual-col">
-                    <div class="manual-icon"><i class="fa-solid fa-cash-register"></i></div>
-                    <div class="manual-title">CAJA</div>
-                    <ul class="manual-list">
-                        <li>Emisión de comprobantes electrónicos ilimitados libre de IGV con envíos directos al WhatsApp del cliente</li>
-                        <li>Emisión de comprobantes electrónicos ilimitados con diferentes métodos de pago</li>
-                        <li>Campo de observaciones</li>
-                        <li>Toma de pedidos por mesa</li>
-                        <li>Delivery</li>
-                        <li>Cambio de mesa</li>
+                    
                         <li>Unión de mesas</li>
                         <li>Cancelación de orden (con PIN de seguridad y motivo de cancelación)</li>
                         <li>Emisión de documentos por Variación, sin afectar el Stock de platos y productos</li>
@@ -110,10 +101,7 @@
                 </div>
             </div>
         </div>
-        <p style="text-align:center;margin-top:32px;font-size:1.1rem;">¡Descubre la experiencia que transformará tu negocio! Pide tu demo ya y comprueba cómo podemos ayudarte a alcanzar tus objetivos. No te quedes atrás, ¡solicítala hoy mismo!</p>
-        <div style="text-align:center;margin-top:18px;">
-            <a href="demo.php" class="chifa-demo-btn">Demo</a>
-        </div>
+        
     </div>
 </section>
 <?php include("includes/footer.php"); ?>

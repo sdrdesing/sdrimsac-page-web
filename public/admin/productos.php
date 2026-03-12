@@ -1,7 +1,6 @@
-
 <?php
 require_once __DIR__ . '/../../config/database.php';
-session_start();
+include __DIR__ . '/includes/header_admin.php';
 
 // Admin check
 if(!isset($_SESSION['usuario'])){ header('Location: ../login.php'); exit; }
@@ -9,14 +8,11 @@ $nombre = $conn->real_escape_string($_SESSION['usuario']);
 $r = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='$nombre' LIMIT 1");
 if(!$r || $r->num_rows == 0 || intval($r->fetch_assoc()['is_admin']) !== 1){ header('Location: ../index.php'); exit; }
 
-include __DIR__ . '/includes/header_admin.php';
-
 // Handle delete action POST
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])){
     $id = intval($_POST['delete_id']);
     $conn->query("DELETE FROM productos WHERE id=$id");
 }
-
 $productosPorPagina = 10;
 $totalProductos = $conn->query("SELECT COUNT(*) as total FROM productos")->fetch_assoc()['total'];
 $totalPaginas = ceil($totalProductos / $productosPorPagina);
@@ -60,18 +56,50 @@ $res = $conn->query("SELECT * FROM productos ORDER BY id ASC LIMIT $productosPor
         <?php endwhile; ?>
         </tbody>
     </table>
+    
 
-        <div class="pagination">
+        <nav class="paginacion">
+            <style>
+                .paginacion {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    margin-top: 20px;
+                }
+                .paginacion-btn {
+                    display: inline-block;
+                    padding: 8px 16px;
+                    margin: 0 2px;
+                    border-radius: 6px;
+                    background: #f5f5f5;
+                    color: #333;
+                    text-decoration: none;
+                    font-weight: 500;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+                }
+                .paginacion-btn:hover {
+                    background: #e0e0e0;
+                    color: #007bff;
+                    box-shadow: 0 4px 12px rgba(0,123,255,0.08);
+                }
+                .paginacion-btn.activa {
+                    background: #007bff;
+                    color: #fff;
+                    font-weight: 700;
+                    box-shadow: 0 4px 12px rgba(0,123,255,0.15);
+                }
+            </style>
             <?php if($paginaActual > 1): ?>
-                <a href="?pagina=<?= $paginaActual-1 ?>">&laquo; Anterior</a>
+                <a href="?pagina=<?= $paginaActual-1 ?>" class="paginacion-btn">&laquo; Anterior</a>
             <?php endif; ?>
             <?php for($i=1; $i<=$totalPaginas; $i++): ?>
-                <a href="?pagina=<?= $i ?>" class="<?= $i==$paginaActual ? 'active' : '' ?>"> <?= $i ?> </a>
+                <a href="?pagina=<?= $i ?>" class="paginacion-btn <?= $i==$paginaActual ? 'activa' : '' ?>"> <?= $i ?> </a>
             <?php endfor; ?>
             <?php if($paginaActual < $totalPaginas): ?>
-                <a href="?pagina=<?= $paginaActual+1 ?>">Siguiente &raquo;</a>
+                <a href="?pagina=<?= $paginaActual+1 ?>" class="paginacion-btn">Siguiente &raquo;</a>
             <?php endif; ?>
-        </div>
+        </nav>
 </section>
 
 

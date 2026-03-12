@@ -1,1 +1,0 @@
-<h2>POS DRIVER BIENEX</h2><p>Driver para impresora POS BIENEX.</p>

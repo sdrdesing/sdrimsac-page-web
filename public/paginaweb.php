@@ -1,47 +1,59 @@
-<?php
-// Iniciar sesión solo si no hay una sesión activa (evita Notice por doble session_start)
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-<?php
-// Intentamos cargar la conexión a la base si existe (para contar productos en carrito DB)
-$dbLoaded = false;
-if(file_exists(__DIR__ . '/../config/database.php')){
-    try {
-        require_once __DIR__ . '/../config/database.php';
-        $dbLoaded = isset($conn);
-    } catch(Throwable $e){
-        $dbLoaded = false;
-    }
-}
-?>
-
 <?php include("includes/header.php"); ?>
+<link rel="stylesheet" href="assets/css/servicios.css">
+
+<!-- BANNER -->
+<div class="page-banner">
+    <img src="https://www.efact.pe/img-apps/noticias/facturacion-electronica-3.jpg" alt="Servicios SDRIMSAC">
+    <div class="page-banner-overlay">
+        <h1>Páginas Web</h1>
+    
+        
+    </div>
+</div>
 
 <link rel="stylesheet" href="assets/css/paginaweb.css">
 
-<section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
-    <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Páginas Web</h1>
-    <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
-    <div style="font-size:1.1rem;color:#cfd8e3;">Servicios <span style="color:#fff;">:</span> Páginas Web</div>
-</section>
 
-<div class="paginaweb-intro-card">
-    <h2>Descubre sobre Páginas Web</h2>
-    <p>Especializada en el desarrollo y diseño web, y nuestra misión es transformar las ideas y visiones de nuestros clientes en experiencias web funcionales, atractivas y efectivas. Entendemos que una página web es la ventana principal de una empresa en el mundo digital, por lo que nos esforzamos por crear soluciones web de alta calidad que generen impacto y resultados tangibles.</p>
-    <div class="paginaweb-list-grid">
-        <ul class="paginaweb-list">
-            <li><i class="fa-solid fa-circle-check"></i> Diseño Web Creativos</li>
-            <li><i class="fa-solid fa-circle-check"></i> Desarrollo Web Personalizado</li>
-            <li><i class="fa-solid fa-circle-check"></i> Optimización para Móviles y Responsividad</li>
-        </ul>
-        <ul class="paginaweb-list">
-            <li><i class="fa-solid fa-circle-check"></i> Seguridad y Protección</li>
-            <li><i class="fa-solid fa-circle-check"></i> Gestión y Contenido</li>
-            <li><i class="fa-solid fa-circle-check"></i> Analíticas Web y Seguimiento</li>
-        </ul>
+<div class="paginaweb-flex">
+
+    <div class="paginaweb-img-box">
+        <img src="assets/img/paginaweb.png" alt="Web ejemplo izquierda" class="paginaweb-img">
     </div>
+
+    <div class="paginaweb-content">
+
+        <div class="paginaweb-intro-card">
+
+            <h2>Descubre sobre Páginas Web</h2>
+
+            <p>
+            Especializada en el desarrollo y diseño web, y nuestra misión es transformar las ideas y visiones de nuestros clientes en experiencias web funcionales, atractivas y efectivas. Entendemos que una página web es la ventana principal de una empresa en el mundo digital, por lo que nos esforzamos por crear soluciones web de alta calidad que generen impacto y resultados tangibles.
+            </p>
+
+            <div class="paginaweb-list-grid">
+
+                <ul class="paginaweb-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Diseño Web Creativos</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Desarrollo Web Personalizado</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Optimización para Móviles y Responsividad</li>
+                </ul>
+
+                <ul class="paginaweb-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Seguridad y Protección</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Gestión y Contenido</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Analíticas Web y Seguimiento</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="paginaweb-img-box">
+        <img src="assets/img/dragonpagina.png" alt="Web ejemplo derecha" class="paginaweb-img">
+    </div>
+
 </div>
 
 <section class="paginaweb-beneficios-section">

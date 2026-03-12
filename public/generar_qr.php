@@ -5,21 +5,31 @@ use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
 
+
+$url = $_GET['url'] ?? '';
 $codigo = $_GET['codigo'] ?? '';
 $pin = $_GET['pin'] ?? '';
 
-if (!$codigo || !$pin) {
-    http_response_code(400);
-    echo 'Faltan datos para generar el QR.';
+if ($url) {
+    // Generar QR de la URL
+    $qr = QrCode::create($url)
+        ->setErrorCorrectionLevel(new ErrorCorrectionLevelHigh());
+    $result = (new PngWriter())->write($qr);
+    header('Content-Type: image/png');
+    echo $result->getString();
     exit;
 }
 
-$data = "Pedido: $codigo\nPIN: $pin";
-$qr = QrCode::create($data)
-    ->setErrorCorrectionLevel(new ErrorCorrectionLevelHigh());
+if ($codigo && $pin) {
+    $data = "Pedido: $codigo\nPIN: $pin";
+    $qr = QrCode::create($data)
+        ->setErrorCorrectionLevel(new ErrorCorrectionLevelHigh());
+    $result = (new PngWriter())->write($qr);
+    header('Content-Type: image/png');
+    echo $result->getString();
+    exit;
+}
 
-$result = (new PngWriter())->write($qr);
-
-header('Content-Type: image/png');
-echo $result->getString();
+http_response_code(400);
+echo 'Faltan datos para generar el QR.';
 exit;

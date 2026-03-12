@@ -291,5 +291,56 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.addEventListener('mouseleave', () => {
             menuTimeout = setTimeout(() => menu.classList.remove('active'), 200);
         });
+
+
+
+        // ===============================
+// CARRUSEL EMPRESAS POR RUBRO
+// SOLO "TODOS" EN 2 FILAS
+// ===============================
+document.addEventListener('DOMContentLoaded', function () {
+    const botonesRubros = document.querySelectorAll('.rubro-btn');
+    const carruselTodos = document.getElementById('carruselTodos');
+    const carruselRubros = document.getElementById('carruselRubros');
+    const cardsRubros = document.querySelectorAll('#carruselRubros .empresa-card');
+
+    if (!botonesRubros.length || !carruselTodos || !carruselRubros) return;
+
+    botonesRubros.forEach(boton => {
+        boton.addEventListener('click', function () {
+            const rubro = this.getAttribute('data-rubro');
+
+            botonesRubros.forEach(btn => btn.classList.remove('activo'));
+            this.classList.add('activo');
+
+            if (rubro === 'todos') {
+                carruselTodos.style.display = 'block';
+                carruselRubros.style.display = 'none';
+
+                cardsRubros.forEach(card => {
+                    card.style.display = 'none';
+                });
+            } else {
+                carruselTodos.style.display = 'none';
+                carruselRubros.style.display = 'block';
+
+                cardsRubros.forEach(card => {
+                    const cardRubro = card.getAttribute('data-rubro');
+
+                    if (cardRubro === rubro) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+
+    const btnTodos = document.querySelector('.rubro-btn[data-rubro="todos"]');
+    if (btnTodos) {
+        btnTodos.click();
+    }
+});
     }
 });

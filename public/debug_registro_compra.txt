@@ -1,0 +1,3 @@
+registrarCompra: usuario_id=9, codigo_compra=PED000090, total=35, pin=452683, estado=pendiente, notificado=0, resultado_id=64
+registrarCompra: usuario_id=9, codigo_compra=PED000091, total=35, pin=838930, estado=pendiente, notificado=0, resultado_id=65
+registrarCompra: usuario_id=9, codigo_compra=PED000092, total=35, pin=920949, estado=pendiente, notificado=0, resultado_id=66

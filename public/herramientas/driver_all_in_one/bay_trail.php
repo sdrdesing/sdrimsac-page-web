@@ -1,1 +1,0 @@
-<h2>BAY TRAIL</h2><p>Procesador Intel de bajo consumo.</p>

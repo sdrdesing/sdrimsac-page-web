@@ -1,6 +1,9 @@
 <?php
-// Plantilla básica para Tiendas Virtuales
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -156,7 +159,7 @@
             </div>
         </div>
         <div class="md-faq-img">
-            <img src="assets/img/marketingfaq.png" alt="Marketing FAQ" style="max-width:320px;width:100%;">
+            <img src="assets/img/dragon.png" alt="Marketing FAQ" style="max-width:320px;width:100%;">
         </div>
     </div>
 </section>

@@ -1,12 +1,12 @@
-To: 122@gmail.com
-Subject: Tu compra en SDRIMSAC: Código PED000060
+To: admin@correo.com
+Subject: Tu compra en SDRIMSAC: Código PED000122
 
-Hola gema vasquez,
+Hola admin,
 
-Gracias por tu compra. Tu código de validación es: PED000060.
+Gracias por tu compra. Tu código de validación es: PED000122.
 
-PIN de recogida: 344556
-Total: S/ 771
+PIN de recogida: 349837
+Total: S/ 75
 
 Guarda este PIN y preséntalo al recoger tu producto.
 

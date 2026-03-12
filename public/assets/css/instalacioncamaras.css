@@ -1,201 +1,386 @@
-/* Estilos exclusivos y llamativos para instalacioncamaras.php */
-.cam-main {
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-    padding: 0 12px 48px 12px;
+/* =========================================================
+   INSTALACIÓN DE CÁMARAS - ESTILO PREMIUM Y PROFESIONAL
+   Pegar al final del CSS actual
+   ========================================================= */
+
+:root{
+  --cam-primary: #173a78;
+  --cam-primary-2: #2e6bff;
+  --cam-accent: #6d5dfc;
+  --cam-soft: #f5f8ff;
+  --cam-soft-2: #eaf1ff;
+  --cam-white: #ffffff;
+  --cam-text: #1f2937;
+  --cam-muted: #5b6678;
+  --cam-line: rgba(46,107,255,0.14);
+  --cam-shadow-sm: 0 10px 24px rgba(24,55,107,0.08);
+  --cam-shadow-md: 0 18px 42px rgba(24,55,107,0.12);
+  --cam-shadow-lg: 0 24px 58px rgba(24,55,107,0.16);
+  --cam-radius-xl: 24px;
+  --cam-radius-lg: 18px;
+  --cam-radius-md: 14px;
 }
-.cam-info {
-    background: #fff;
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
+.cam-main{
+  max-width: 1260px;
+  margin: 42px auto 0 auto;
+  padding: 0 20px 56px 20px;
+}
+
+/* =========================
+   BLOQUE INTRO
+========================= */
+
+.cam-info{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: var(--cam-radius-xl);
+  box-shadow: var(--cam-shadow-md);
+  padding: 40px 34px 34px 34px;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 1px solid var(--cam-line);
+}
+
+.cam-info::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(320px 140px at 15% 10%, rgba(46,107,255,.10), transparent 60%),
+    radial-gradient(280px 140px at 85% 15%, rgba(109,93,252,.08), transparent 55%);
+  pointer-events: none;
+}
+
+.cam-info h2{
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--cam-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cam-info h2::after{
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cam-primary-2), var(--cam-accent));
+}
+
+.cam-info p{
+  font-size: 1.08rem;
+  color: var(--cam-text);
+  margin: 0 auto 24px auto;
+  max-width: 920px;
+  line-height: 1.85;
+}
+
+/* =========================
+   LISTA INTRO
+========================= */
+
+.cam-list{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  justify-content: center;
+  gap: 14px 18px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 900px;
+  font-size: 1rem;
+}
+
+.cam-list li{
+  background: linear-gradient(135deg, var(--cam-soft) 0%, var(--cam-soft-2) 100%);
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 700;
+  color: var(--cam-primary);
+  box-shadow: 0 6px 18px rgba(24,55,107,0.06);
+  border: 1px solid rgba(46,107,255,0.10);
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+  text-align: center;
+}
+
+.cam-list li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(24,55,107,0.12);
+  background: #ffffff;
+}
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.cam-beneficios{
+  margin-bottom: 42px;
+}
+
+.cam-beneficios h2{
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--cam-primary);
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.cam-beneficios-desc{
+  text-align: center;
+  font-size: 1.06rem;
+  color: var(--cam-muted);
+  margin: 0 auto 26px auto;
+  font-weight: 500;
+  line-height: 1.75;
+  max-width: 880px;
+}
+
+.cam-beneficios-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 36px;
+  align-items: stretch;
+}
+
+.cam-beneficio{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(247,250,255,.98) 100%);
+  border-radius: 20px;
+  box-shadow: var(--cam-shadow-sm);
+  padding: 28px 20px 24px 20px;
+  text-align: center;
+  border: 1px solid rgba(46,107,255,0.12);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cam-beneficio::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(240px 120px at 15% 8%, rgba(46,107,255,.08), transparent 60%);
+  pointer-events: none;
+}
+
+.cam-beneficio:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--cam-shadow-lg);
+  border-color: rgba(46,107,255,0.22);
+}
+
+.cam-icon{
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  margin-bottom: 14px;
+  border-radius: 22px;
+  color: var(--cam-primary);
+  background: linear-gradient(135deg, rgba(46,107,255,.14), rgba(109,93,252,.10));
+  box-shadow: 0 10px 22px rgba(46,107,255,.10);
+}
+
+.cam-title{
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--cam-primary);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.cam-text{
+  font-size: 1rem;
+  color: var(--cam-text);
+  line-height: 1.75;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.cam-galeria{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 38px 0 40px 0;
+}
+
+.cam-galeria-img{
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--cam-shadow-sm);
+  border: 1px solid rgba(46,107,255,0.12);
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.cam-galeria-img:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--cam-shadow-lg);
+  border-color: rgba(46,107,255,0.22);
+}
+
+.cam-galeria-img img{
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform .28s ease;
+}
+
+.cam-galeria-img:hover img{
+  transform: scale(1.04);
+}
+
+/* =========================
+   FAQ TÍTULO
+========================= */
+
+.cam-faq-title{
+  font-size: clamp(1.8rem, 2.8vw, 2.35rem);
+  font-weight: 900;
+  color: var(--cam-primary);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+/* =========================
+   FAQ LAYOUT
+========================= */
+
+.cam-faq{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+.cam-faq-list{
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 22px;
+  box-shadow: var(--cam-shadow-sm);
+  padding: 30px 22px;
+  min-width: 320px;
+  max-width: 520px;
+  width: 100%;
+  border: 1px solid rgba(46,107,255,0.12);
+}
+
+.cam-faq-item{
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--cam-soft), #f9fbff);
+  padding: 12px 14px;
+  border: 1px solid rgba(46,107,255,0.08);
+}
+
+.cam-faq-q{
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--cam-primary-2);
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: color .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.cam-faq-q:hover{
+  color: var(--cam-primary);
+}
+
+.cam-faq-a{
+  font-size: .97rem;
+  color: var(--cam-text);
+  margin-bottom: 0;
+  padding-left: 4px;
+  display: none;
+  line-height: 1.75;
+}
+
+.cam-faq-item.active .cam-faq-a{
+  display: block;
+}
+
+.cam-faq-img{
+  text-align: center;
+  margin-top: 4px;
+}
+
+.cam-faq-img img{
+  border-radius: 22px;
+  box-shadow: var(--cam-shadow-md);
+  max-width: 340px;
+  width: 100%;
+  border: 1px solid rgba(46,107,255,0.10);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px){
+  .cam-beneficios-grid,
+  .cam-galeria{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px){
+  .cam-list{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .cam-main{
+    padding: 0 10px 30px 10px;
+  }
+
+  .cam-info{
+    padding: 24px 16px 20px 16px;
     border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(24,55,107,0.12);
-    padding: 36px 28px 28px 28px;
-    text-align: center;
-    margin-bottom: 36px;
-    border: 2px solid #2a2aee;
-}
-.cam-info h2 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-    color: #2a2aee;
-    letter-spacing: 1px;
-}
-.cam-info p {
-    font-size: 1.15rem;
-    color: #222;
-    margin-bottom: 22px;
-}
-.cam-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1.18rem;
-    color: #18376b;
-}
-.cam-list li {
-    background: #e3eaff;
-    border-radius: 8px;
-    padding: 10px 22px;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(24,55,107,0.08);
-    border: 1px solid #2a2aee;
-}
-.cam-beneficios {
-    margin-bottom: 36px;
-}
-.cam-beneficios h2 {
-    font-size: 2.1rem;
-    font-weight: 800;
-    color: #222;
-    margin-bottom: 10px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-.cam-beneficios-desc {
-    text-align: center;
-    font-size: 1.15rem;
-    color: #2a2aee;
-    margin-bottom: 22px;
-    font-weight: 600;
-}
-.cam-beneficios-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 36px;
-}
-.cam-beneficio {
-    background: linear-gradient(135deg,#fff 60%,#e3eaff 100%);
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
-    padding: 28px 18px;
-    text-align: center;
-    border: 2px solid #2a2aee;
-    transition: transform 0.2s;
-}
-.cam-beneficio:hover {
-    transform: scale(1.04);
-    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
-}
-.cam-icon {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-    color: #2a2aee;
-}
-.cam-title {
-    font-size: 1.22rem;
-    font-weight: 700;
-    color: #18376b;
-    margin-bottom: 10px;
-}
-.cam-text {
-    font-size: 1.05rem;
-    color: #222;
-}
-.cam-galeria {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin: 36px 0 36px 0;
-}
-.cam-galeria-img {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
-    border: 2px solid #2a2aee;
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-.cam-galeria-img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 4px 24px rgba(42,42,238,0.18);
-}
-.cam-galeria-img img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-@media (max-width: 900px) {
-    .cam-beneficios-grid, .cam-galeria {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (max-width: 600px) {
-    .cam-main {
-        padding: 0 4px 24px 4px;
-    }
-    .cam-info {
-        padding: 12px 6px;
-    }
-    .cam-beneficios-grid, .cam-galeria {
-        grid-template-columns: 1fr;
-    }
-}
-.cam-faq-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #222;
-    margin-bottom: 24px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-.cam-faq {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 32px;
-}
-.cam-faq-list {
-    background: #fff;
+  }
+
+  .cam-beneficios-grid,
+  .cam-galeria{
+    grid-template-columns: 1fr;
+  }
+
+  .cam-faq-list{
+    padding: 22px 16px;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(24,55,107,0.08);
-    padding: 28px 18px;
-    min-width: 320px;
-    max-width: 480px;
-    width: 100%;
-    border: 2px solid #2a2aee;
-}
-.cam-faq-item {
-    margin-bottom: 18px;
-}
-.cam-faq-q {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #2a2aee;
-    margin-bottom: 6px;
-    cursor: pointer;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.cam-faq-q:hover {
-    color: #18376b;
-}
-.cam-faq-a {
-    font-size: 1rem;
-    color: #222;
-    margin-bottom: 8px;
-    padding-left: 8px;
-    display: none;
-}
-.cam-faq-item.active .cam-faq-a {
-    display: block;
-}
-.cam-faq-img {
-    text-align: center;
-    margin-top: 12px;
-}
-.cam-faq-img img {
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(24,55,107,0.12);
-    max-width: 320px;
-    width: 100%;
+  }
+
+  .cam-info h2,
+  .cam-beneficios h2,
+  .cam-faq-title{
+    font-size: 1.6rem;
+  }
+
+  .cam-galeria-img img{
+    height: 210px;
+  }
 }

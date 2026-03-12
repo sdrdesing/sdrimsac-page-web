@@ -1,0 +1,43 @@
+services:
+  app:
+    build: .
+    container_name: sdrimsac_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.11
+    container_name: sdrimsac_db
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root123
+      MARIADB_DATABASE: sdrimsac
+      MARIADB_USER: sdrimsac_user
+      MARIADB_PASSWORD: sdrimsac_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: sdrimsac_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    ports:
+      - "8081:80"
+
+volumes:
+  mariadb_data:

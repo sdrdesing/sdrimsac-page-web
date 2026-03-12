@@ -15,7 +15,7 @@ include(__DIR__ . '/includes/header.php');
 <section class="nosotros-main">
     <div class="nosotros-main-inner">
         <div class="nosotros-img">
-            <img src="assets/img/nosotros_persona.png" alt="SDRIMSAC persona" style="width:340px;height:340px;object-fit:cover;border-radius:50%;box-shadow:0 4px 32px rgba(42,42,238,0.12);">
+            <img src="assets/img/demo.png" alt="SDRIMSAC persona" style="width:340px;height:340px;object-fit:cover;border-radius:50%;box-shadow:0 4px 32px rgba(42,42,238,0.12);">
         </div>
         <div class="nosotros-info">
             <h2>¿Quiénes somos?</h2>
@@ -102,8 +102,7 @@ include(__DIR__ . '/includes/header.php');
         <button class="equipo-tab" data-tab="administrator">ADMINISTRATOR</button>
         <button class="equipo-tab" data-tab="programmer">PROGRAMMER</button>
         <button class="equipo-tab" data-tab="designer">GRAPHIC DESIGNER</button>
-        <button class="equipo-tab" data-tab="web1">WEB DESIGNER</button>
-        <button class="equipo-tab" data-tab="web2">WEB DESIGNER</button>
+        
     </div>
     <div class="equipo-content">
         <div class="equipo-profile equipo-profile-active" data-profile="manager">
@@ -153,10 +152,10 @@ include(__DIR__ . '/includes/header.php');
         </div>
         <div class="equipo-profile" data-profile="designer" style="display:none;">
             <div class="equipo-img-box">
-                <img src="assets/img/designer.png" alt="Graphic Designer" class="equipo-img">
+                <img src="assets/img/maik.png" alt="Graphic Designer" class="equipo-img">
             </div>
             <div class="equipo-info-box">
-                <h3 class="equipo-nombre">MARÍA GÓMEZ</h3>
+                <h3 class="equipo-nombre">Barrientos Chamorro Mayk</h3>
                 <span class="equipo-cargo"><a href="#" class="equipo-cargo-link">Graphic Designer</a></span>
                 <p class="equipo-desc">Crea diseños visuales atractivos y funcionales, aportando creatividad y profesionalismo a la imagen de la empresa y sus productos.</p>
                 <div class="equipo-social">
@@ -171,8 +170,7 @@ include(__DIR__ . '/includes/header.php');
                 <img src="assets/img/webdesigner1.png" alt="Web Designer" class="equipo-img">
             </div>
             <div class="equipo-info-box">
-                <h3 class="equipo-nombre">CARLOS RAMOS</h3>
-                <span class="equipo-cargo"><a href="#" class="equipo-cargo-link">Web Designer</a></span>
+                
                 <p class="equipo-desc">Especialista en diseño y experiencia de usuario web, optimizando la navegación y la estética de los sitios desarrollados.</p>
                 <div class="equipo-social">
                     <a href="#" class="equipo-social-link"><i class="fab fa-facebook"></i> <span class="sr-only">Facebook</span></a>

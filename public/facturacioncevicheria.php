@@ -1,5 +1,9 @@
 <?php
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -134,7 +138,7 @@
         </div>
     </div>
     <div style="flex:1;min-width:200px;max-width:320px;display:flex;justify-content:center;">
-        <img src="assets/img/dragonCevicheria.png" alt="Cevichería Preguntas Frecuentes" style="width:100%;max-width:260px;height:auto;border-radius:18px;box-shadow:0 2px 12px #0002;" />
+        <img src="assets/img/dagronCevicheria.png" alt="Cevichería Preguntas Frecuentes" style="width:100%;max-width:260px;height:auto;border-radius:18px;box-shadow:0 2px 12px #0002;" />
     </div>
 </section>
 

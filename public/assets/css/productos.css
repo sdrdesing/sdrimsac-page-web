@@ -1,451 +1,261 @@
-/* Stock info y marca de agua agotado */
-.stock-info {
-  font-size: 0.98em;
-  color: #2e8b57;
-  font-weight: 600;
-  margin-left: 8px;
-}
-.agotado-watermark {
-  color: #fff;
-  background: #e53935;
-  font-weight: bold;
-  font-size: 1.2em;
-  padding: 10px 24px;
-  border-radius: 8px;
-  opacity: 0.92;
-  text-align: center;
-  box-shadow: 0 2px 8px #e5393533;
-  letter-spacing: 2px;
-  margin: 0 auto;
-  user-select: none;
-}
-/* Imagen de producto: siempre completa y centrada */
-.producto-card-img {
-  width: 100%;
-  max-width: 240px;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 12px;
-  margin: 0 auto 12px auto;
-  display: block;
-  background: #f7f8fc;
-  box-shadow: 0 2px 12px rgba(42,42,238,0.07);
-}
-.producto-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 18px 18px 22px 18px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(42,42,238,0.07);
-  border: 1px solid #e1e1e1;
-  transition: box-shadow 0.22s, transform 0.22s;
-  min-width: 280px;
-  max-width: 340px;
-  min-height: 340px;
-}
-  /* Alinear botones y contenedores */
-  .producto-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+/* ===============================
+   SECCION PRODUCTOS
+================================ */
 
-  .producto-card-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 12px;
-  }
-
-  /* Texto truncado con '...' por defecto, animación marquee solo al hover */
-  .producto-card-text-marquee {
-    max-width: 220px;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    display: block;
-    text-overflow: ellipsis;
-    cursor: pointer;
-    font-weight: 700;
-    color: #223366;
-    text-align: center;
-  }
-  .producto-card-text-marquee-inner {
-    display: inline-block;
-    min-width: 100%;
-    box-sizing: border-box;
-    transition: color 0.2s;
-  }
-  .producto-card-text-marquee.marquee-hover .producto-card-text-marquee-inner {
-    padding-left: 100%;
-    animation: marquee-text 8s linear infinite;
-    color: #2a2aee;
-    text-align: left;
-  }
-  @keyframes marquee-text {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  /* fallback para textos cortos: sin animación, sin elipsis */
-  .producto-card-text-marquee:not(.marquee-active) {
-    white-space: normal;
-    text-overflow: unset;
-    overflow: visible;
-    cursor: default;
-  }
-  .producto-card-text-marquee:not(.marquee-active) .producto-card-text-marquee-inner {
-    animation: none;
-    padding-left: 0;
-    transform: none;
-    color: inherit;
-  }
-
-/* Imagen adaptada completamente al contenedor */
-.producto-card-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 0 auto 12px auto;
-  display: block;
-  background: #f7f8fc;
-  box-shadow: 0 2px 12px rgba(42,42,238,0.07);
-}
-.producto-card:hover {
-  box-shadow: 0 18px 48px rgba(42,42,238,0.18);
-  transform: scale(1.03);
-}
-@media (max-width: 900px) {
-  .producto-card-img {
-    max-width: 100%;
-    height: 120px;
-  }
-  .producto-card {
-    min-width: 160px;
-    max-width: 100%;
-    min-height: 220px;
-  }
-}
-/* Estilo bonito para el input de cantidad */
-.input-cantidad {
-  width: 60px;
-  margin-right: 8px;
-  border-radius: 6px;
-  border: 1px solid #bcd;
-  padding: 6px 10px;
-  font-size: 1.1em;
-  text-align: center;
-  box-shadow: 0 1px 3px #0001;
-  transition: border-color .2s;
-  outline: none;
-}
-.input-cantidad:focus {
-  border-color: #2e8bff;
-  box-shadow: 0 2px 8px #2e8bff22;
-}
-/* ============================================================
-   Productos / Proyectos recientes — versión mejorada (PRO)
-   - Cards modernas (borde + blur suave)
-   - Hover elegante
-   - Botón "Añadir al carrito" premium
-   - Totalmente responsive
-   ============================================================ */
-
-
-
-/* Títulos */
-.productos-title{
-  font-size: clamp(1.8rem, 3vw, 2.35rem);
-  font-weight: 900;
-  margin-bottom: 14px;
-  color: var(--text);
-  letter-spacing: .2px;
+.productos-section{
+  padding:60px 20px;
+  text-align:center;
 }
 
-.productos-sub{
-  margin-bottom: 34px;
-  padding: 0 14px;
+.productos-section h2{
+  font-size:32px;
+  font-weight:800;
+  color:#1f3c74;
+  margin-bottom:40px;
 }
 
-.productos-label{
-  color: var(--brand2);
-  font-weight: 800;
-  letter-spacing: 3px;
-  font-size: .95rem;
-  margin-bottom: 10px;
-  display: inline-block;
-  text-transform: uppercase;
+/* GRID */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
 }
 
-.productos-main-title{
-  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
-  font-weight: 900;
-  color: #23236a;
-  margin-bottom: 8px;
-}
+/* CARD */
 
-.productos-desc{
-  color: var(--muted);
-  font-size: 1.08rem;
-  margin: 0 auto;
-  max-width: 820px;
-  line-height: 1.55;
-}
-
-/* Grid: mejor en CSS Grid */
-.productos-grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-  gap: 28px;
-  max-width: 1100px;
-  margin: 34px auto 0;
-  padding: 0 18px;
-}
-
-/* Card */
 .producto-card{
-  background: rgba(255,255,255,0.90);
-  border-radius: var(--radius-lg);
-  border: var(--border);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  backdrop-filter: blur(6px);
-  position: relative;
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:all .25s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-/* Brillito arriba */
-.producto-card::before{
-  content:"";
-  position:absolute;
-  inset: 0;
-  background: radial-gradient(320px 140px at 20% 8%, rgba(42,42,238,0.10), transparent 60%);
-  pointer-events:none;
-}
-
-/* Hover elegante */
 .producto-card:hover{
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(42,42,238,0.22);
+  transform:translateY(-5px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* Imagen */
-.producto-card img{
-  width: 100%;
-  height: 230px;         /* un poquito más grande */
-  object-fit: cover;
-  display: block;
+/* ===============================
+   CONTENEDOR DE IMAGEN
+================================ */
+
+.producto-imagen-box{
+
+  width:100%;
+  height:200px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f4f7fc;
+  border-radius:14px;
+  padding:15px;
+
+  margin-bottom:18px;
 }
 
-/* Contenido */
-.producto-card-title{
-  font-size: 1.15rem;
-  font-weight: 900;
-  color: #23236a;
-  padding: 16px 16px 8px;
-  text-align: left;
+/* ===============================
+   IMAGEN DEL PRODUCTO
+================================ */
+
+.producto-card-img{
+
+  max-width:100%;
+  max-height:100%;
+
+  width:auto;
+  height:auto;
+
+  object-fit:contain;
+
+  display:block;
 }
 
-.producto-card-body{
-  padding: 0 16px 14px;
-  text-align: left;
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.45;
+/* ===============================
+   TITULO
+================================ */
+
+.producto-card-text-marquee{
+  font-size:16px;
+  font-weight:700;
+  color:#1f3c74;
+  line-height:1.4;
+  margin-bottom:10px;
+  min-height:60px;
 }
 
-/* Acciones */
-.producto-card-actions{
-  padding: 14px 16px 18px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, #fff 100%);
-}
+/* ===============================
+   PRECIO
+================================ */
 
-/* Precio opcional (si lo usas) */
 .producto-precio{
-  font-weight: 900;
-  color: var(--text);
-  font-size: 1.05rem;
+  font-weight:700;
+  margin-bottom:12px;
+  color:#333;
 }
 
-/* BOTÓN AÑADIR CARRITO — bonito */
-.btn-carrito{
-  border: 0;
-  cursor: pointer;
-  padding: 12px 14px;
-  border-radius: 14px;
-  font-weight: 900;
-  font-size: 0.98rem;
-  color: #fff;
-  background: linear-gradient(90deg, var(--brand) 0%, var(--brand2) 100%);
-  box-shadow: 0 14px 30px rgba(24,55,107,0.22);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, opacity .15s ease;
-  user-select: none;
-  white-space: nowrap;
+/* ===============================
+   STOCK
+================================ */
+
+.stock-info{
+  font-size:14px;
+  font-weight:600;
+  color:#2e8b57;
+  background:#e8f7ef;
+  padding:6px 12px;
+  border-radius:20px;
 }
 
-.btn-carrito::before{
-  content: "🛒";
-  font-size: 1.05rem;
+/* ===============================
+   INPUT CANTIDAD
+================================ */
+
+.input-cantidad{
+  width:60px;
+  padding:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  text-align:center;
 }
 
-.btn-carrito:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(24,55,107,0.28);
-  filter: brightness(1.04);
-}
+/* ===============================
+   BOTON CARRITO
+================================ */
 
-.btn-carrito:active{
-  transform: translateY(0px) scale(0.99);
-  box-shadow: 0 10px 24px rgba(24,55,107,0.22);
-}
-
-/* Focus accesible (teclado) */
-.btn-carrito:focus-visible{
-  outline: 3px solid rgba(42,42,238,0.25);
-  outline-offset: 3px;
-}
-
-/* Estado deshabilitado (si lo usas) */
-.btn-carrito:disabled{
-  opacity: .55;
-  cursor: not-allowed;
-  filter: grayscale(0.2);
-  box-shadow: none;
-}
-
-/* BOTÓN AÑADIR CARRITO — más grande, visual, con icono */
 .btn-card{
-  border: 0;
-  cursor: pointer;
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-weight: 900;
-  font-size: 1.08rem;
-  color: #fff;
-  background: linear-gradient(90deg, var(--brand) 0%, var(--brand2) 100%);
-  box-shadow: 0 14px 30px rgba(24,55,107,0.22);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, opacity .15s ease;
-  user-select: none;
-  white-space: nowrap;
-}
 
-.btn-card i{
-  font-size: 1.2rem;
-  margin-right: 6px;
+  margin-top:14px;
+
+  background:linear-gradient(90deg,#2e6edc,#3b8cff);
+
+  border:none;
+  color:#fff;
+
+  padding:12px 18px;
+
+  font-weight:700;
+  border-radius:10px;
+
+  cursor:pointer;
+
+  transition:.2s;
 }
 
 .btn-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(24,55,107,0.28);
-  filter: brightness(1.04);
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
-.btn-card:active{
-  transform: translateY(0px) scale(0.99);
-  box-shadow: 0 10px 24px rgba(24,55,107,0.22);
-}
+/* ===============================
+   AGOTADO
+================================ */
 
-.btn-card:focus-visible{
-  outline: 3px solid rgba(42,42,238,0.25);
-  outline-offset: 3px;
-}
-
-/* Responsive */
-@media (max-width: 1050px){
-  .productos-grid{
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-
-@media (max-width: 700px){
-  .productos-grid{
-    grid-template-columns: 1fr;
-    padding: 0 14px;
-  }
-  .producto-card img{
-    height: 220px;
-  }
-}
-
-/* Paginación */
-.paginacion {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: 32px 0 24px 0;
-}
-.paginacion-btn {
-  background: #fff;
-  color: var(--brand, #18376b);
-  border: 2px solid var(--brand2, #2e8bff);
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background .15s, color .15s, border .15s;
-}
-.paginacion-btn:hover, .paginacion-btn.activa {
-  background: var(--brand2, #2e8bff);
-  color: #fff;
-  border-color: var(--brand2, #2e8bff);
+.agotado-watermark{
+  background:#e53935;
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  font-weight:700;
 }
 
 
 
+/* ===============================
+   FAVORITOS (ESTRELLA)
+================================ */
 
-/* Estado "Añadido" + botón Ver carrito (sin tocar HTML) */
-.form-agregar-carrito {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.btn-fav{
+  background:none;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  padding:0;
+  margin-left:6px;
+  font-size:1.4rem;
+  color:#bbb;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .2s ease;
 }
 
-.btn-ver-carrito{
-  display: none;              /* lo activamos por JS */
-  border: 0;
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 0.95rem;
-  background: #ffffff;
-  color: #18376b;
-  box-shadow: 0 10px 22px rgba(24,55,107,0.12);
-  border: 1px solid rgba(24,55,107,0.15);
-  transition: transform .15s ease, box-shadow .15s ease;
+.btn-fav:hover{
+  transform:scale(1.15);
 }
 
-.btn-ver-carrito:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(24,55,107,0.18);
+.fav-star{
+  transition:color .2s ease, transform .2s ease;
 }
 
-.btn-card.is-added{
-  background: linear-gradient(90deg, #1f7a3f 0%, #2bb673 100%);
-  color: #fff !important;
-  border: 0;
-  box-shadow: 0 14px 30px rgba(31,122,63,0.22);
+.btn-fav:hover .fav-star{
+  color:#FFD700;
+}
+
+
+
+/* ===============================
+   PAGINACIÓN
+================================ */
+
+.paginacion{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:32px 0 24px;
+}
+
+.paginacion-btn{
+  background:#ffffff;
+  color:#18376b;
+  border:2px solid #2e8bff;
+  padding:8px 16px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:1rem;
+  text-decoration:none;
+  transition:all .2s ease;
+}
+
+.paginacion-btn:hover{
+  background:#2e8bff;
+  color:#fff;
+  border-color:#2e8bff;
+}
+
+.paginacion-btn.activa{
+  background:#2e8bff;
+  color:#fff;
+  border-color:#2e8bff;
+  box-shadow:0 6px 14px rgba(46,139,255,0.25);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width:1000px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:600px){
+
+.cards{
+grid-template-columns:1fr;
+}
+
 }

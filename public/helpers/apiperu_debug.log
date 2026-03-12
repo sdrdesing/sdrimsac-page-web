@@ -1201,3 +1201,753 @@ Array
 )
 
 ---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.05313706398010254}
+    [timestamp] => 2026-03-03 00:08:24
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06303787231445312}
+    [timestamp] => 2026-03-03 00:13:23
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 76424676
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"76424676","nombre_completo":"LAZO PICHARDO, SMITH RIKSON","nombres":"SMITH RIKSON","apellido_paterno":"LAZO","apellido_materno":"PICHARDO","codigo_verificacion":0,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0659339427947998}
+    [timestamp] => 2026-03-03 00:13:24
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0736229419708252}
+    [timestamp] => 2026-03-03 00:19:28
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0625309944152832}
+    [timestamp] => 2026-03-03 00:19:41
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.09115099906921387}
+    [timestamp] => 2026-03-03 17:44:21
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.0618288516998291}
+    [timestamp] => 2026-03-03 22:15:31
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 78718846
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"78718846","nombre_completo":"HUAMAN PEZO, JOSE OCTAVIO","nombres":"JOSE OCTAVIO","apellido_paterno":"HUAMAN","apellido_materno":"PEZO","codigo_verificacion":5,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06496596336364746}
+    [timestamp] => 2026-03-03 22:15:52
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.09659910202026367}
+    [timestamp] => 2026-03-03 22:16:07
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06848406791687012}
+    [timestamp] => 2026-03-03 22:20:52
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06255698204040527}
+    [timestamp] => 2026-03-03 22:45:21
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.057591915130615234}
+    [timestamp] => 2026-03-03 22:47:35
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06426000595092773}
+    [timestamp] => 2026-03-03 22:49:27
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06503891944885254}
+    [timestamp] => 2026-03-03 22:49:28
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"numero":"72296318","nombre_completo":"VASQUEZ YUPANQUI, GEMA","nombres":"GEMA","apellido_paterno":"VASQUEZ","apellido_materno":"YUPANQUI","codigo_verificacion":6,"direccion":"","direccion_completa":"","ubigeo_reniec":"","ubigeo_sunat":"","ubigeo":[null,null,null]},"time":0.06175589561462402}
+    [timestamp] => 2026-03-03 22:56:48
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07006192207336426}
+    [timestamp] => 2026-03-03 22:56:55
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 200
+    [curl_error] => 
+    [response] => {"success":true,"data":{"direccion":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI","direccion_completa":"AV. MICAELA BASTIDAS NRO. 284 URB. PICHANAQUI, JUNIN - CHANCHAMAYO - PICHANAQUI","ruc":"20613607383","nombre_o_razon_social":"INVERSIONES ROJAS IMPORTS E.I.R.L","estado":"ACTIVO","condicion":"HABIDO","departamento":"JUNIN","provincia":"CHANCHAMAYO","distrito":"PICHANAQUI","ubigeo_sunat":"120303","ubigeo":["12","1203","120303"],"es_agente_de_retencion":"NO","es_agente_de_percepcion":"NO","es_agente_de_percepcion_combustible":"NO","es_buen_contribuyente":"NO"},"time":0.07219910621643066}
+    [timestamp] => 2026-03-03 22:57:08
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:01:49
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:01:53
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:31:31
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:31:39
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:31:47
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:31:59
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-03 23:32:06
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:24:49
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:24:57
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:25:03
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:31:56
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:45:53
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 00:47:45
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 14:20:55
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 14:21:06
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 15:18:54
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-04 21:46:30
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-05 14:11:58
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-05 14:52:19
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-05 16:36:19
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-06 15:47:51
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-06 15:48:14
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-06 18:59:39
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/ruc
+    [payload] => Array
+        (
+            [ruc] => 20613607383
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-06 18:59:49
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 01:19:48
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 21:08:30
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 23:27:49
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 20613607
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 23:27:57
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 23:28:06
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 23:28:12
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-10 23:48:43
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-11 00:27:52
+)
+
+---
+Array
+(
+    [url] => https://apiperu.dev/api/dni
+    [payload] => Array
+        (
+            [dni] => 72296318
+        )
+
+    [http_code] => 403
+    [curl_error] => 
+    [response] => {"success":false,"message":"Supera el límite de consultas mensuales disponibles para tu plan.","cycle_start":"2026-03-01 00:00:00","cycle_end":"2026-03-31 00:00:00","limit":100,"used":100,"remaining":0,"plan_id":"free","unlimited":false,"plan_cycle_id":28183}
+    [timestamp] => 2026-03-11 14:41:46
+)
+
+---

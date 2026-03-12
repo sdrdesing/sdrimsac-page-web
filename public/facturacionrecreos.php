@@ -1,5 +1,9 @@
 <?php
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">

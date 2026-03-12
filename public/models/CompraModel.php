@@ -36,3 +36,5 @@ class CompraModel {
 
     // Puedes agregar más métodos: obtenerPorId, etc.
 }
+
+

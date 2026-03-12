@@ -3,8 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-?>
-<?php
+// ...existing code...
 // Intentamos cargar la conexión a la base si existe (para contar productos en carrito DB)
 $dbLoaded = false;
 
@@ -43,7 +42,8 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
 <nav class="navbar">
     <div class="logo">
         <a href="index.php" aria-label="sdrimsac">
-            <img src="assets/img/SDRIMSAC.png" alt="sdrimsac logo">
+            <img src="assets/img/Animacion-de-Logo-SDRIM-SAC-GIF.gif" alt="sdrimsac logo">
+            
         </a>
     </div>
 
@@ -80,6 +80,7 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                         <li><a href="facturacionescolar.php">Facturación Escolar</a></li>
                         <li><a href="facturacioncreditos.php">Facturación Créditos</a></li>
                         <li><a href="facturacionferreteria.php">Facturación Ferretería</a></li>
+                        <li><a href="facturacionapafa.php">Facturación Apafa</a></li>
                     </ul>
                 </li>
             </ul>
@@ -98,7 +99,8 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
         <?php
         // Notificación: mostrar punto rojo si hay compras pendientes o validadas/rechazadas no notificadas
         $noti = false;
-        $noti_compras = [];
+$tiene_no_leidas = false;
+$noti_compras = [];
         if ($dbLoaded && isset($_SESSION['usuario'])) {
             $nombre = $conn->real_escape_string($_SESSION['usuario']);
             $q = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
@@ -110,7 +112,7 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                 // Unificar todas las notificaciones y ordenarlas por fecha DESC
                 $notificaciones = [];
                 // Pendientes
-                $sqlPend = "SELECT codigo_compra, estado, fecha, pin FROM compras WHERE usuario_id=$usuario_id AND estado='pendiente'";
+                $sqlPend = "SELECT codigo_compra, estado, fecha, pin FROM compras WHERE usuario_id=$usuario_id AND estado='pendiente' AND notificado=0";
                 $resPend = $conn->query($sqlPend);
                 if ($resPend && $resPend->num_rows > 0) {
                     $noti = true;
@@ -146,12 +148,59 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                 $noti_compras = $notificaciones;
             }
         }
+            // Notificación
+            $noti = false;
+            $tiene_no_leidas = false;
+            $noti_compras = [];
+
+            if ($dbLoaded && isset($_SESSION['usuario'])) {
+                $nombre = $conn->real_escape_string($_SESSION['usuario']);
+                $q = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
+
+                if ($q && $row = $q->fetch_assoc()) {
+                    $usuario_id = intval($row['id']);
+
+                    // Eliminar compras muy antiguas
+                    $conn->query("DELETE FROM compras WHERE usuario_id=$usuario_id AND fecha < DATE_SUB(NOW(), INTERVAL 1 MONTH)");
+
+                    // 1) CONSULTA SOLO PARA EL PUNTO ROJO
+                    $sqlNoLeidas = "\n                    SELECT id\n                    FROM compras\n                    WHERE usuario_id = $usuario_id\n                      AND estado IN ('pendiente','validada','rechazada')\n                      AND notificado = 0\n                    LIMIT 1\n                ";
+                    $resNoLeidas = $conn->query($sqlNoLeidas);
+                    if ($resNoLeidas && $resNoLeidas->num_rows > 0) {
+                        $tiene_no_leidas = true;
+                    }
+
+                    // 2) CONSULTA PARA MOSTRAR TODAS LAS NOTIFICACIONES EN EL PANEL
+                    $sqlTodas = "\n                    SELECT codigo_compra, estado, fecha, pin, notificado\n                    FROM compras\n                    WHERE usuario_id = $usuario_id\n                      AND estado IN ('pendiente','validada','rechazada')\n                    ORDER BY fecha DESC\n                ";
+                    $resTodas = $conn->query($sqlTodas);
+
+                    if ($resTodas && $resTodas->num_rows > 0) {
+                        $noti = true;
+
+                        while ($c = $resTodas->fetch_assoc()) {
+                            if ($c['estado'] === 'pendiente') {
+                                $c['mensaje'] = 'Tu pedido está pendiente. Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
+                                $c['tipo'] = 'pendiente';
+                            } elseif ($c['estado'] === 'validada') {
+                                $c['mensaje'] = '¡Tu pedido fue validado! Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
+                                $c['tipo'] = 'resuelta';
+                            } elseif ($c['estado'] === 'rechazada') {
+                                $c['mensaje'] = 'Tu pedido fue rechazado. Código: ' . $c['codigo_compra'] . ' | PIN: ' . $c['pin'];
+                                $c['tipo'] = 'resuelta';
+                            }
+
+                            $c['leido'] = intval($c['notificado']) === 1;
+                            $noti_compras[] = $c;
+                        }
+                    }
+                }
+            }
         ?>
 
         <span class="noti-bell" id="notiBell" title="Notificaciones" tabindex="0" style="position:relative;cursor:pointer;">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#223" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-            <?php if($noti): ?>
-            <span class="noti-dot"></span>
+            <?php if($tiene_no_leidas): ?>
+       <span class="noti-dot"></span>
             <?php endif; ?>
             <div id="notiPanel" style="display:none;position:absolute;right:0;top:36px;min-width:260px;max-width:320px;background:#fff;border:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(26,58,110,0.13);border-radius:12px;padding:0;z-index:9999;overflow:hidden;">
                 <?php if($noti && count($noti_compras)>0): ?>
@@ -188,7 +237,7 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                         <?php endforeach; ?>
                     </div>
                     <form id="formMarcarLeido" method="post" action="marcar_notificaciones.php" style="position:sticky;bottom:0;left:0;width:100%;background:#fff;padding:12px 18px 14px 18px;box-shadow:0 -2px 12px #2231;z-index:2;">
-                        <button type="button" id="marcarLeidoBtn" name="marcar_leido" value="1" style="background:#2a2aee;color:#fff;padding:7px 18px;border:none;border-radius:8px;font-weight:600;cursor:pointer;width:100%;">Marcar como leído</button>
+                        <button type="submit" id="marcarLeidoBtn" name="marcar_leido" value="1" style="background:#2a2aee;color:#fff;padding:7px 18px;border:none;border-radius:8px;font-weight:600;cursor:pointer;width:100%;">Marcar como leído</button>
                     </form>
                 <?php else: ?>
                     <div style="font-size:1em;color:#888;padding:18px;">No tienes notificaciones nuevas.</div>
@@ -252,22 +301,7 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
 }
 </style>
 
-        <?php
-        // Mostrar botón cerrar sesión solo si es admin
-        if (isset($_SESSION['usuario'])) {
-            $nombre = $_SESSION['usuario'];
-            $is_admin = 0;
-            if ($dbLoaded) {
-                $q = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='".$conn->real_escape_string($nombre)."' LIMIT 1");
-                if ($q && $row = $q->fetch_assoc()) {
-                    $is_admin = intval($row['is_admin']);
-                }
-            }
-            if ($is_admin === 1) {
-                echo '<a href="logout.php" title="Cerrar sesión"><i class="fa-solid fa-sign-out-alt"></i></a>';
-            }
-        }
-        ?>
+       
 
         <a href="carrito.php" class="cart-icon" title="Carrito">
             <i class="fa-solid fa-cart-shopping"></i>
@@ -288,6 +322,12 @@ $cssPath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? '../assets/css/
                 echo $count;
             ?></span>
         </a>
+        <?php
+        // Mostrar botón cerrar sesión para cualquier usuario logueado
+        if (isset($_SESSION['usuario'])) {
+            echo '<a href="logout.php" title="Cerrar sesión" style="margin-left:8px;"><i class="fa-solid fa-sign-out-alt"></i></a>';
+        }
+        ?>
     </div>
 </nav>
 

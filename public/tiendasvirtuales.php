@@ -1,6 +1,9 @@
 <?php
-// Plantilla básica para Tiendas Virtuales
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -68,7 +71,14 @@
                 <div class="tv-title">Flexibilidad y Escalabilidad</div>
                 <div class="tv-text">Puedes probar nuevas estrategias de marketing, ajustar precios y lanzar nuevos productos con rapidez sin los desafíos físicos de reconfigurar una tienda física.</div>
             </div>
+            <div class="tv-beneficio tv-beneficio-img">
+    <img src="assets/img/dragontienda.png" alt="Tienda Virtual">
+</div>
         </div>
+
+        <link rel="stylesheet" href="assets/css/tiendasvirtuales.css">
+
+        
     </div>
     <h2 class="tv-planes-title">Descubre nuestros planes para una Tienda Virtual</h2>
     <div class="tv-planes">

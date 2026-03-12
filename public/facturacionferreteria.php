@@ -1,5 +1,9 @@
 <?php
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -10,7 +14,7 @@
 </head>
 <body>
 <?php include("includes/header.php"); ?>
-<section class="servicios-header" style="background:#b97a1a; color:#fff; padding:60px 0 40px 0; text-align:center;">
+<section class="servicios-header" style="background:rgba(4, 21, 75, 0.85); color:#fff; padding:60px 0 40px 0; text-align:center;">
     <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Aplicativo para Facturación Electrónica - Ferretería</h1>
     <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
 </section>

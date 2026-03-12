@@ -17,8 +17,7 @@ $q = $conn->query("SELECT id FROM usuarios WHERE nombre='$nombre' LIMIT 1");
 if ($q && $row = $q->fetch_assoc()) {
     $usuario_id = intval($row['id']);
     // Marcar todas las compras validadas/rechazadas como notificadas
-    $sql = "UPDATE compras SET notificado=1 WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=0";
-    $conn->query($sql);
+$sql = "UPDATE compras SET notificado=1 WHERE usuario_id=$usuario_id AND estado IN ('pendiente','validada','rechazada') AND notificado=0";    $conn->query($sql);
 
     // Insertar notificación solo para el usuario actual
     $comprasNotif = $conn->query("SELECT codigo_compra, estado FROM compras WHERE usuario_id=$usuario_id AND estado IN ('validada','rechazada') AND notificado=1");
@@ -41,6 +40,8 @@ if ($q && $row = $q->fetch_assoc()) {
             unset($_SESSION['pedido_pendiente']);
         }
     }
+        // Marcar todas las notificaciones del usuario como leídas
+        $conn->query("UPDATE notificaciones SET estado='leida' WHERE usuario_id=$usuario_id AND estado='nueva'");
 }
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
     header('Content-Type: application/json');

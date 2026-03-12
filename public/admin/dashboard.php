@@ -23,7 +23,7 @@ $top_favs = $conn->query("SELECT p.id, p.nombre, COUNT(f.id) AS total_favoritos 
       <div class="dashboard-metrics" style="display:flex; gap:40px;">
         <div class="dashboard-metric" style="flex:1;">
           <h3>Más vendidos</h3>
-          <ol>
+          <ol class="scroll-list">
           <?php if($top_vendidos && $top_vendidos->num_rows>0){ while($r = $top_vendidos->fetch_assoc()): ?>
             <li><?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['vendidos']) ?></li>
           <?php endwhile; } else { ?>
@@ -33,7 +33,7 @@ $top_favs = $conn->query("SELECT p.id, p.nombre, COUNT(f.id) AS total_favoritos 
         </div>
         <div class="dashboard-metric" style="flex:1;">
           <h3 style="color:#2a2ed6;">Favoritos <span style="color:#FFD700; font-size:1.2em;">★</span></h3>
-          <ol>
+          <ol class="scroll-list">
           <?php if($top_favs && $top_favs->num_rows>0){ while($r = $top_favs->fetch_assoc()): ?>
             <li><span style="color:#FFD700; font-size:1.1em;">★</span> <?= htmlspecialchars($r['nombre']) ?> — <?= intval($r['total_favoritos']) ?></li>
           <?php endwhile; } else { ?>
@@ -161,6 +161,66 @@ if (isset($_SESSION['usuario'])) {
               <?php if($totalPaginasHist > 1): ?>
                 <?php for($i=1; $i<=$totalPaginasHist; $i++): ?>
                   <a href="?historial_page=<?= $i ?>" style="padding:6px 12px; margin:2px; background:<?= $i==$paginaActualHist?'#2a2ed6':'#eee' ?>; color:<?= $i==$paginaActualHist?'#fff':'#333' ?>; border-radius:4px; text-decoration:none; font-weight:bold;">
+                    <?= $i ?>
+                  </a>
+                <?php endfor; ?>
+              <?php endif; ?>
+            </div>
+        </section>
+        <?php
+    }
+}
+
+// Sección: Comentarios pendientes de aprobación
+if (isset($_SESSION['usuario'])) {
+    $nombre = $conn->real_escape_string($_SESSION['usuario']);
+    $r = $conn->query("SELECT is_admin FROM usuarios WHERE nombre='$nombre' LIMIT 1");
+    if ($r && $r->num_rows > 0 && intval($r->fetch_assoc()['is_admin']) === 1) {
+        $sql = "SELECT c.id, c.nombre, c.comentario, c.fecha, n.titulo FROM comentarios_noticias c JOIN noticias n ON c.noticia_id = n.id WHERE c.estado = 'pendiente' ORDER BY c.fecha DESC";
+        $itemsPorPaginaCom = 5;
+        $paginaActualCom = isset($_GET['comentarios_page']) ? max(1, intval($_GET['comentarios_page'])) : 1;
+        $sqlCountCom = "SELECT COUNT(*) as total FROM comentarios_noticias WHERE estado = 'pendiente'";
+        $totalRowsCom = $conn->query($sqlCountCom)->fetch_assoc()['total'];
+        $totalPaginasCom = ceil($totalRowsCom / $itemsPorPaginaCom);
+        $offsetCom = ($paginaActualCom - 1) * $itemsPorPaginaCom;
+        $sqlPaginadoCom = $sql . " LIMIT $itemsPorPaginaCom OFFSET $offsetCom";
+        $resultCom = $conn->query($sqlPaginadoCom);
+        ?>
+        <section class="comentarios-pendientes">
+          <h2>Comentarios Pendientes de Moderación</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Noticia</th>
+                <th>Usuario</th>
+                <th>Comentario</th>
+                <th>Fecha</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php while($row = $resultCom->fetch_assoc()): ?>
+            <tr>
+              <td><?= htmlspecialchars($row['titulo']) ?></td>
+              <td><?= htmlspecialchars($row['nombre']) ?></td>
+              <td><?= nl2br(htmlspecialchars($row['comentario'])) ?></td>
+              <td><?= date('Y-m-d H:i', $row['fecha']) ?></td>
+              <td>
+                <form method="post" action="validar_comentario.php" style="display:inline;">
+                  <input type="hidden" name="comentario_id" value="<?= $row['id'] ?>">
+                  <button type="submit" name="accion" value="aprobar">Aprobar</button>
+                  <button type="submit" name="accion" value="rechazar">Rechazar</button>
+                </form>
+              </td>
+            </tr>
+            <?php endwhile; ?>
+            </tbody>
+          </table>
+            <!-- PAGINACIÓN -->
+            <div style="text-align:center; margin-top:15px;">
+              <?php if($totalPaginasCom > 1): ?>
+                <?php for($i=1; $i<=$totalPaginasCom; $i++): ?>
+                  <a href="?comentarios_page=<?= $i ?>" style="padding:6px 12px; margin:2px; background:<?= $i==$paginaActualCom?'#2a2ed6':'#eee' ?>; color:<?= $i==$paginaActualCom?'#fff':'#333' ?>; border-radius:4px; text-decoration:none; font-weight:bold;">
                     <?= $i ?>
                   </a>
                 <?php endfor; ?>

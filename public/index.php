@@ -24,6 +24,7 @@ if(file_exists(__DIR__ . '/config/database.php')){
 <link rel="stylesheet" href="assets/css/carousel.css">
 <link rel="stylesheet" href="assets/css/somos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/noticias-carousel.css">
 
 <script src="js/script.js" defer></script>
 </head>
@@ -33,11 +34,10 @@ if(file_exists(__DIR__ . '/config/database.php')){
     <span>📞 +51 995 764 963</span>
     <span>✉ contacto@sdrimsac.com</span>
 </div>
-
 <nav class="navbar">
     <div class="logo">
         <a href="index.php" aria-label="sdrimsac">
-            <img src="assets/img/SDRIMSAC.png" alt="sdrimsac logo">
+            <img src="assets/img/LOGO.gif" 20200Palt="sdrimsac logo">
         </a>
     </div>
 
@@ -74,6 +74,7 @@ if(file_exists(__DIR__ . '/config/database.php')){
                         <li><a href="facturacionescolar.php">Facturación Escolar</a></li>
                         <li><a href="facturacioncreditos.php">Facturación Créditos</a></li>
                         <li><a href="facturacionferreteria.php">Facturación Ferretería</a></li>
+                        <li><a href="facturacionapafa.php">Facturación Apafa</a></li>
                     </ul>
                 </li>
             </ul>
@@ -126,50 +127,58 @@ if(file_exists(__DIR__ . '/config/database.php')){
     </div>
 </section>
 
+<!-- Carrusel de Noticias Dinámico -->
+<?php include 'noticias_carousel.php'; ?>
+
+<?php include 'comentarios_noticia.php'; ?>
+
 <section class="carousel-section">
   <div class="carousel-wrapper">
 
-    <!-- IZQUIERDA: CARRUSEL -->
+    <!-- IZQUIERDA -->
     <div class="carousel-left">
+
       <div class="section-head">
         <h2>Nuestros Servicios</h2>
         <p>Soluciones tecnológicas para empresas en Perú</p>
       </div>
 
+      <div class="compat-strip hero-strip">
+        <span class="compat-title">
+          Digitaliza tu empresa hoy: Facturación electrónica rápida, segura y sin complicaciones.
+        </span>
+        <div class="compat-logos"></div>
+      </div>
 
-      <div class="carousel-left">
-    <div class="compat-strip">
-        <span class="compat-title">Digitaliza tu empresa hoy: Facturación electrónica rápida, segura y sin complicaciones.</span>
-        <div class="compat-logos"> 
-            </div>
-    </div>
-
-    <div class="beneficios-clave-container">
+      <div class="beneficios-clave-container">
         <h2 class="beneficios-clave-title">Beneficios Clave de Nuestra Facturación Electrónica</h2>
+
         <div class="beneficios-clave-grid">
-            <div class="beneficio-item">
-                <i class="fa-solid fa-stopwatch-20 icon-blue"></i> <h3>Rapidez Increíble</h3>
-                <p>Emite tus comprobantes en segundos, no minutos.</p>
-            </div>
-            <div class="beneficio-item">
-                <i class="fa-solid fa-shield-halved icon-blue"></i>
-                <h3>Seguridad Total</h3>
-                <p>Tus datos están protegidos con cifrado de nivel bancario.</p>
-            </div>
-            <div class="beneficio-item">
-                <i class="fa-solid fa-coins icon-blue"></i>
-                <h3>Ahorro de Costos</h3>
-                <p>Reduce gastos operativos y de papel significativamente.</p>
-            </div>
-            <div class="beneficio-item">
-                <i class="fa-solid fa-laptop-medical icon-blue"></i>
-                <h3>Acceso Multiplataforma</h3>
-                <p>Gestiona tu negocio desde cualquier dispositivo y lugar.</p>
-            </div>
+          <div class="beneficio-item">
+            <i class="fa-solid fa-stopwatch-20 icon-blue"></i>
+            <h3>Rapidez Increíble</h3>
+            <p>Emite tus comprobantes en segundos, no minutos.</p>
+          </div>
+
+          <div class="beneficio-item">
+            <i class="fa-solid fa-shield-halved icon-blue"></i>
+            <h3>Seguridad Total</h3>
+            <p>Tus datos están protegidos con cifrado de nivel bancario.</p>
+          </div>
+
+          <div class="beneficio-item">
+            <i class="fa-solid fa-coins icon-blue"></i>
+            <h3>Ahorro de Costos</h3>
+            <p>Reduce gastos operativos y de papel significativamente.</p>
+          </div>
+
+          <div class="beneficio-item">
+            <i class="fa-solid fa-laptop-medical icon-blue"></i>
+            <h3>Acceso Multiplataforma</h3>
+            <p>Gestiona tu negocio desde cualquier dispositivo y lugar.</p>
+          </div>
         </div>
-    </div>
-</div> <div class="carousel-right">
-    </div>
+      </div>
 
       <div class="carousel-multi-container">
         <button class="carousel-btn prev" onclick="moveMultiCarousel(-1)">&#10094;</button>
@@ -253,7 +262,6 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <button class="carousel-btn next" onclick="moveMultiCarousel(1)">&#10095;</button>
       </div>
 
-      <!-- COMPATIBLE CON -->
       <div class="compat-strip">
         <span class="compat-title">Compatible con</span>
         <div class="compat-logos">
@@ -264,22 +272,21 @@ if(file_exists(__DIR__ . '/config/database.php')){
           <span class="compat-logo">Efact</span>
         </div>
       </div>
-      
 
     </div>
 
-    <!-- DERECHA: PANEL DRAGÓN PRO -->
+    <!-- DERECHA -->
     <div class="carousel-right">
       <div class="promo-card">
-                <div style="position:relative;width:100%;">
-                    <video src="assets/img/video.mp4" autoplay loop muted style="width:100%;border-radius:16px;"></video>
-                        <img src="assets/img/2.png" alt="Sticker" style="position:absolute;top: -120px;right:-70px;width:270px;z-index:2;">
-                </div>
+        <div class="promo-media">
+          <video src="assets/img/video.mp4" autoplay loop muted playsinline></video>
+          <img src="assets/img/2.png" alt="Sticker SDRIMSAC" class="promo-sticker">
+        </div>
 
         <div class="promo-content">
           <span class="promo-badge">Soporte 24/7</span>
           <h3>Impulsa tu negocio con SDRIMSAC</h3>
-          <p>Facturación electrónica lista para SUNAT + soporte real. Implementación rápida y segura.</p>
+          <p>Facturación electrónica lista para SUNAT, con soporte real, implementación rápida y operación segura.</p>
 
           <div class="promo-actions">
             <a class="btn-primary" href="https://wa.me/51995764963" target="_blank">WhatsApp</a>
@@ -294,27 +301,31 @@ if(file_exists(__DIR__ . '/config/database.php')){
         </div>
       </div>
     </div>
-    
 
   </div>
-
 </section>
 
 <!-- SECCIÓN SOMOS SDRIMSAC SOLUTIONS -->
 <section class="somos-section">
     <div class="somos-inner">
-        <div class="somos-img" style="display:flex;flex-direction:column;gap:18px;align-items:center;">
-          <div style="width:100%;max-width:440px;background:#fff;border-radius:22px;box-shadow:0 6px 32px #0002, 0 1.5px 8px #0001;padding:18px 18px 12px 18px;display:flex;justify-content:center;margin-bottom:28px;">
-            <video src="assets/video/Sdrimsac - 01 ok.mp4" controls muted playsinline style="width:100%;border-radius:16px;box-shadow:0 2px 12px #0001;object-fit:cover;" alt="SDRIMSAC Video 2"></video>
-          </div>
-          <div style="width:100%;max-width:440px;background:#fff;border-radius:22px;box-shadow:0 6px 32px #0002, 0 1.5px 8px #0001;padding:18px 18px 12px 18px;display:flex;justify-content:center;">
-            <video src="assets/video/Funcionamiento de Rubro Consumo.mp4" controls muted playsinline style="width:100%;border-radius:16px;box-shadow:0 2px 12px #0001;object-fit:cover;" alt="SDRIMSAC Facturación"></video>
-          </div>
+        <div class="somos-img">
+            <div class="somos-video-card">
+                <video src="assets/video/Sdrimsac - 01 ok.mp4" controls muted playsinline class="somos-video"></video>
+            </div>
+
+            <div class="somos-video-card">
+                <video src="assets/video/Funcionamiento de Rubro Consumo.mp4" controls muted playsinline class="somos-video"></video>
+            </div>
         </div>
+
         <div class="somos-info">
             <span class="somos-label">SOMOS</span>
             <h2 class="somos-title">SDRIMSAC SOLUTIONS</h2>
-            <p class="somos-desc">Somos especialistas en el mundo tecnológico (informática) que desarrolla Sistemas de Facturación Electrónica personalizados.</p>
+            <p class="somos-desc">
+                Somos especialistas en el mundo tecnológico (informática) que desarrolla
+                Sistemas de Facturación Electrónica personalizados.
+            </p>
+
             <div class="somos-cards">
                 <div class="somos-card">
                     <div class="somos-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
@@ -323,46 +334,62 @@ if(file_exists(__DIR__ . '/config/database.php')){
                         <div class="somos-card-desc">Personal capacitado y eficiente</div>
                     </div>
                 </div>
+
                 <div class="somos-card">
                     <div class="somos-card-icon"><i class="fa-solid fa-headset"></i></div>
                     <div>
                         <strong>Soporte</strong>
-                        <div class="somos-card-desc">Atención continua y Oportuna</div>
+                        <div class="somos-card-desc">Atención continua y oportuna</div>
                     </div>
                 </div>
             </div>
-            <p class="somos-mision">Partimos desde la idea de simplificarle la vida a los comerciantes de todo el territorio peruano, brindando herramientas tecnológicas necesarias</p>
-            <a href="nosotros.php" class="somos-btn">LEER MÁS <i class="fa-solid fa-arrow-right"></i></a>
+
+            <p class="somos-mision">
+                Partimos desde la idea de simplificarle la vida a los comerciantes de todo el territorio peruano,
+                brindando herramientas tecnológicas necesarias.
+            </p>
+
+            <a href="nosotros.php" class="somos-btn">
+                LEER MÁS <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 </section>
 
 <!-- BENEFICIOS - ¿Por qué elegirnos? -->
 <section class="beneficios-section">
-    <h2 class="beneficios-title">¿Por qué Elegirnos?</h2>
-    <div class="beneficios-grid">
-        <div class="beneficio-card">
-            <div class="beneficio-icon"><i class="fa-solid fa-lightbulb"></i></div>
-            <h3>Innovación Constante</h3>
-            <p>Mantenemos nuestras soluciones tecnológicas actualizadas para que tu empresa siempre esté a la vanguardia.</p>
-        </div>
-        <div class="beneficio-card">
-            <div class="beneficio-icon"><i class="fa-solid fa-user-graduate"></i></div>
-            <h3>Experiencia</h3>
-            <p>Contamos con un equipo altamente calificado y con experiencia en el sector de servicios tecnológicos y facturación electrónica.</p>
-        </div>
-        <div class="beneficio-card">
-            <div class="beneficio-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Seguridad de Datos</h3>
-            <p>Seguridad de tus datos y de tu empresa. Implementamos medidas de seguridad informática para proteger tus registros y transacciones.</p>
-        </div>
-        <div class="beneficio-card">
-            <div class="beneficio-icon"><i class="fa-solid fa-headset"></i></div>
-            <h3>Asesoría Técnica</h3>
-            <p>Contarás con un equipo de atención al cliente siempre dispuesto a responder a tus preguntas y resolver cualquier problema que puedas tener.</p>
+    <div class="beneficios-wrap">
+        <h2 class="beneficios-title">¿Por qué Elegirnos?</h2>
+
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>Innovación Constante</h3>
+                <p>Mantenemos nuestras soluciones tecnológicas actualizadas para que tu empresa siempre esté a la vanguardia.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <h3>Experiencia</h3>
+                <p>Contamos con un equipo altamente calificado y con experiencia en el sector de servicios tecnológicos y facturación electrónica.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Seguridad de Datos</h3>
+                <p>Seguridad de tus datos y de tu empresa. Implementamos medidas de seguridad informática para proteger tus registros y transacciones.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>Asesoría Técnica</h3>
+                <p>Contarás con un equipo de atención al cliente siempre dispuesto a responder a tus preguntas y resolver cualquier problema que puedas tener.</p>
+            </div>
         </div>
     </div>
 </section>
+
+<?php include 'carrusel_empresas.php'; ?>
 
 <!-- SHOWCASE -->
 <section class="showcase-section">
@@ -380,9 +407,110 @@ if(file_exists(__DIR__ . '/config/database.php')){
             <a href="servicios.php" class="btn-hero-primary" style="display:inline-block;margin-top:24px;">Ver todos los servicios</a>
         </div>
         <div class="showcase-img">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Sistema de gestión">
+            <img src="assets/img/facturacion1.jpg" alt="Sistema de gestión">
         </div>
     </div>
+</section>
+
+
+<link rel="stylesheet" href="assets/css/planes.css"> 
+<!-- PLANES FACTURACION -->
+<link rel="stylesheet" href="assets/css/planes.css">
+
+<!-- PLANES FACTURACION -->
+<section class="planes-section">
+  <div class="planes-inner">
+
+    <h2 class="planes-title">Planes de Facturación Electrónica</h2>
+
+    <p class="planes-subtitle">
+      Elige la solución ideal para tu tipo de negocio
+    </p>
+
+    <div class="planes-grid">
+
+      <!-- PLAN EMPRENDEDOR -->
+      <div class="plan-card">
+        <div class="plan-img-wrap">
+          <img src="assets/img/emprendedor.png" alt="Plan Emprendedor">
+        </div>
+
+        <h3>Emprendedor</h3>
+
+        <p>Perfecto para pequeños negocios que están iniciando con facturación electrónica.</p>
+
+        <ul class="plan-features">
+          <li>✓ Facturas electrónicas</li>
+          <li>✓ Boletas electrónicas</li>
+          <li>✓ Registro de clientes</li>
+          <li>✓ Soporte básico</li>
+        </ul>
+
+        <a href="https://wa.me/51995764963" target="_blank" class="plan-btn"></a>
+      </div>
+
+      <!-- PLAN BASICO -->
+      <div class="plan-card">
+        <div class="plan-img-wrap">
+          <img src="assets/img/basico.png" alt="Plan Básico">
+        </div>
+
+        <h3>Básico</h3>
+
+        <p>Ideal para negocios que necesitan control de ventas y facturación rápida.</p>
+
+        <ul class="plan-features">
+          <li>✓ Facturas y boletas</li>
+          <li>✓ Control de productos</li>
+          <li>✓ Reportes de ventas</li>
+          <li>✓ Soporte técnico</li>
+        </ul>
+
+        <a href="https://wa.me/51995764963" target="_blank" class="plan-btn"></a>
+      </div>
+
+      <!-- PLAN EMPRESARIAL -->
+      <div class="plan-card">
+        <div class="plan-img-wrap">
+          <img src="assets/img/empresarial.png" alt="Plan Empresarial">
+        </div>
+
+        <h3>Empresarial</h3>
+
+        <p>Diseñado para empresas que requieren mayor control administrativo.</p>
+
+        <ul class="plan-features">
+          <li>✓ Control de inventario</li>
+          <li>✓ Reportes financieros</li>
+          <li>✓ Gestión de clientes</li>
+          <li>✓ Soporte prioritario</li>
+        </ul>
+
+        <a href="https://wa.me/51995764963" target="_blank" class="plan-btn"></a>
+      </div>
+
+      <!-- PLAN PREMIUM -->
+      <div class="plan-card">
+        <div class="plan-img-wrap">
+          <img src="assets/img/premium.png" alt="Plan Premium">
+        </div>
+
+        <h3>Premium</h3>
+
+        <p>La solución más completa con soporte avanzado y personalización.</p>
+
+        <ul class="plan-features">
+          <li>✓ Sistema completo</li>
+          <li>✓ Integración con SUNAT</li>
+          <li>✓ Capacitación incluida</li>
+          <li>✓ Soporte 24/7</li>
+        </ul>
+
+        <a href="https://wa.me/51995764963" target="_blank" class="plan-btn"></a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- TESTIMONIOS -->
@@ -439,6 +567,12 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <a href="https://maps.google.com/?q=SDRIMSAC+Solutions,+Lima,+Peru" target="_blank" title="Ubicación SDRIMSAC" class="cta-social-icon cta-location">
           <i class="fa-solid fa-location-dot"></i>
         </a>
+          <a href="https://www.youtube.com/@sdrimsac" target="_blank" title="YouTube SDRIMSAC" class="cta-social-icon cta-youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/sdrimsacsolutions/" target="_blank" title="Instagram SDRIMSAC" class="cta-social-icon cta-instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
       </div>
     </div>
 </section>
@@ -499,23 +633,25 @@ if(file_exists(__DIR__ . '/config/database.php')){
         <input type="text" name="apellidos" id="demo-apellidos" placeholder="Apellidos" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="razon_social" id="demo-razon-social" placeholder="Razón Social" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="telefono" placeholder="Teléfono" inputmode="numeric" maxlength="9" pattern="\d{9}" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-        <select name="rubro" id="demo-rubro" class="demo-rubro-control demo-rubro-select" size="1" required style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
-          <option value="">SELECCIONA UN RUBRO</option>
-          <option value="CHIFA">CHIFA</option>
-          <option value="CAFETERÍA">CAFETERÍA</option>
-          <option value="CEVICHERÍA">CEVICHERÍA</option>
-          <option value="KARAOKE">KARAOKE</option>
-          <option value="PIZZERÍA">PIZZERÍA</option>
-          <option value="RESTAURANT">RESTAURANT</option>
-          <option value="RECREOS">RECREOS</option>
-          <option value="HOSPITAL">HOSPITAL</option>
-          <option value="FARMACIA">FARMACIA</option>
-          <option value="HOTELES">HOTELES</option>
-          <option value="ESCOLAR">ESCOLAR</option>
-          <option value="CRÉDITOS">CRÉDITOS</option>
-          <option value="FERRETERÍA">FERRETERÍA</option>
-          <option value="OTROS">OTROS</option>
-        </select>
+        <div class="demo-rubro-wrap">
+          <select name="rubro" id="demo-rubro" class="demo-rubro-control demo-rubro-select" size="1" required style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;">
+            <option value="">SELECCIONA UN RUBRO</option>
+            <option value="CHIFA">CHIFA</option>
+            <option value="CAFETERÍA">CAFETERÍA</option>
+            <option value="CEVICHERÍA">CEVICHERÍA</option>
+            <option value="KARAOKE">KARAOKE</option>
+            <option value="PIZZERÍA">PIZZERÍA</option>
+            <option value="RESTAURANT">RESTAURANT</option>
+            <option value="RECREOS">RECREOS</option>
+            <option value="HOSPITAL">HOSPITAL</option>
+            <option value="FARMACIA">FARMACIA</option>
+            <option value="HOTELES">HOTELES</option>
+            <option value="ESCOLAR">ESCOLAR</option>
+            <option value="CRÉDITOS">CRÉDITOS</option>
+            <option value="FERRETERÍA">FERRETERÍA</option>
+            <option value="OTROS">OTROS</option>
+          </select>
+        </div>
         <input type="text" name="rubro_otro" id="demo-rubro-otro" class="demo-rubro-control" placeholder="Especifica tu rubro" style="display:none;width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <input type="text" name="empresa" placeholder="Nombre de la empresa" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;">
         <textarea name="mensaje" placeholder="Mensaje" style="width:100%;margin-bottom:8px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
@@ -678,21 +814,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    const lineas = [
-      titulo,
-      `Tipo de documento: ${tipo}`,
-      `Documento: ${doc}`,
-      `Teléfono: ${telefono}`
-    ];
 
-    if (nombres) lineas.push(`Nombres: ${nombres}`);
-    if (apellidos) lineas.push(`Apellidos: ${apellidos}`);
-    if (razonSocial) lineas.push(`Razón Social: ${razonSocial}`);
-    if (empresa) lineas.push(`Empresa: ${empresa}`);
-    if (rubro) lineas.push(`Rubro: ${rubro}`);
-    if (mensaje) lineas.push(`Mensaje: ${mensaje}`);
+    // Mensaje concatenado en una sola frase
+    let mensajeFinal = `${titulo}`;
+    if (nombres || apellidos) {
+      mensajeFinal += ` Mi nombre es ${nombres ? nombres : ''}${apellidos ? ' ' + apellidos : ''}.`;
+    }
+    if (tipo && doc) {
+      mensajeFinal += ` Mi documento (${tipo}) es ${doc}.`;
+    }
+    if (telefono) {
+      mensajeFinal += ` Mi teléfono es ${telefono}.`;
+    }
+    if (razonSocial) {
+      mensajeFinal += ` Razón social: ${razonSocial}.`;
+    }
+    if (empresa) {
+      mensajeFinal += ` Empresa: ${empresa}.`;
+    }
+    if (rubro) {
+      mensajeFinal += ` Mi rubro es ${rubro}.`;
+    }
+    if (mensaje) {
+      mensajeFinal += ` Mensaje: ${mensaje}.`;
+    }
 
-    const texto = encodeURIComponent(lineas.join('\n'));
+    const texto = encodeURIComponent(mensajeFinal);
     const urlWhatsapp = `https://wa.me/${whatsappNumber}?text=${texto}`;
 
     if (nuevaPestana) {
@@ -880,13 +1027,26 @@ document.addEventListener('DOMContentLoaded', function() {
 .demo-rubro-control {
   text-transform: uppercase;
 }
+.demo-rubro-wrap {
+  position: relative;
+  margin-bottom: 8px;
+  min-height: 40px;
+}
 .demo-rubro-select {
   background: #fff;
   cursor: pointer;
   font-weight: 600;
+  width: 100%;
+  margin-bottom: 0;
 }
 .demo-rubro-select.expanded {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  width: 100%;
   overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 .demo-rubro-select option {
   padding: 6px 8px;

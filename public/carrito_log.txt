@@ -4,3 +4,321 @@ Producto: 36 | Cantidad: 1
 Producto: 21 | Cantidad: 1
 --- Carrito después de pagar (usuario_id: 16) ---
 Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 42 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 42 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 44 | Cantidad: 2
+Producto: 41 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 44 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 44 | Cantidad: 1
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 49 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 51 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 51 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 48 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 47 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 51 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 48 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 48 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 50 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 47 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 47 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 11) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 11) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 46 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 0) ---
+Producto: 51 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 0) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 54 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 54 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 59 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 49 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 47 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 51 | Cantidad: 2
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 64 | Cantidad: 1
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 64 | Cantidad: 1
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 64 | Cantidad: 1
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 64 | Cantidad: 2
+Producto: 63 | Cantidad: 2
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 65 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Carrito vacío
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 65 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 64 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 64 | Cantidad: 1
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Carrito vacío
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 61 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 64 | Cantidad: 1
+Producto: 61 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 61 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 64 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 61 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 61 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío

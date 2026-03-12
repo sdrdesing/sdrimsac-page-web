@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/sdrimsac-page-web/public/assets/css/social.css" />
+<link rel="stylesheet" href="assets/css/social.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="/sdrimsac-page-web/public/js/script.js" defer></script>
+<script src="js/script.js" defer></script>
 <div class="float-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end;">
     <button class="float-btn" id="socialBtn" aria-label="Abrir menú de redes sociales">💬</button>
     <div class="social-menu" id="socialMenu">
@@ -31,3 +31,7 @@
         </a>
     </div>
 </div>
+
+
+
+ 

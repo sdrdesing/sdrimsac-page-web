@@ -1,0 +1,1 @@
+http://localhost/sdrimsac-page-web/public/admin/administracion.php?seccion=configuracion

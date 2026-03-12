@@ -1,18 +1,7 @@
-
 <?php
 require_once __DIR__ . '/../../config/database.php';
-session_start();
 
-// Admin check
-include __DIR__ . '/includes/header_admin.php';
-
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$producto = ['nombre'=>'','descripcion'=>'','precio'=>0,'stock'=>0,'imagen'=>''];
-if($id){
-    $q = $conn->query("SELECT * FROM productos WHERE id=$id LIMIT 1");
-    if($q && $q->num_rows) $producto = $q->fetch_assoc();
-}
-
+// Procesar formulario antes de enviar cualquier HTML
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nombrep = $conn->real_escape_string($_POST['nombre']);
     $descripcion = $conn->real_escape_string($_POST['descripcion']);
@@ -32,14 +21,29 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if(!empty($_POST['id'])){
         $idup = intval($_POST['id']);
-        $conn->query("UPDATE productos SET nombre='$nombrep', descripcion='$descripcion', precio=$precio, stock=$stock, imagen='$imagen' WHERE id=$idup");
-        header('Location: productos.php'); exit;
+        if(!$conn->query("UPDATE productos SET nombre='$nombrep', descripcion='$descripcion', precio=$precio, stock=$stock, imagen='$imagen' WHERE id=$idup")) {
+            echo "<div style='color:red;'>Error al actualizar: " . $conn->error . "</div>";
+        } else {
+            header('Location: productos.php'); exit;
+        }
     } else {
-        $conn->query("INSERT INTO productos (nombre,descripcion,precio,stock,imagen) VALUES ('$nombrep','$descripcion',$precio,$stock,'$imagen')");
-        header('Location: productos.php'); exit;
+        if(!$conn->query("INSERT INTO productos (nombre,descripcion,precio,stock,imagen) VALUES ('$nombrep','$descripcion',$precio,$stock,'$imagen')")) {
+            echo "<div style='color:red;'>Error al insertar: " . $conn->error . "</div>";
+        } else {
+            header('Location: productos.php'); exit;
+        }
     }
 }
 
+// Admin check
+include __DIR__ . '/includes/header_admin.php';
+
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$producto = ['nombre'=>'','descripcion'=>'','precio'=>0,'stock'=>0,'imagen'=>''];
+if($id){
+    $q = $conn->query("SELECT * FROM productos WHERE id=$id LIMIT 1");
+    if($q && $q->num_rows) $producto = $q->fetch_assoc();
+}
 ?>
 <?php if($id): ?>
 <link rel="stylesheet" href="assets/css/editar_producto.css">

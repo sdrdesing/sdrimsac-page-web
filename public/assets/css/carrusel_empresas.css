@@ -1,0 +1,203 @@
+.empresas-seccion {
+  padding: 20px 0 40px;
+}
+
+.empresas-titulo {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1d3c6a;
+  margin-bottom: 24px;
+}
+
+.empresas-rubros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.rubro-btn {
+  border: none;
+  background: #fff;
+  color: #1d3c6a;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.rubro-btn:hover,
+.rubro-btn.activo,
+.rubro-btn.active {
+  background: #2d4d78;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(27, 48, 77, 0.22);
+}
+
+/* TODOS */
+.empresas-carrusel-todos {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+  display: block;
+}
+
+.logos-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: max-content;
+}
+
+.fila-derecha .logos-track {
+  animation: moverDerecha 80s linear infinite;
+}
+
+.fila-izquierda .logos-track {
+  animation: moverIzquierda 80s linear infinite;
+}
+
+@keyframes moverDerecha {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes moverIzquierda {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.empresas-carrusel-todos .empresa-card {
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.empresas-carrusel-todos .empresa-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.empresas-carrusel-todos:hover .logos-track {
+  animation-play-state: paused;
+}
+
+/* RUBROS */
+/* RUBROS */
+.empresas-carrusel-rubros {
+  width: 100%;
+  margin-top: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.empresas-grid-rubros {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  margin: 0;
+  animation: moverRubros 28s linear infinite;
+  transform: translateX(0);
+}
+
+.empresas-carrusel-rubros:hover .empresas-grid-rubros {
+  animation-play-state: paused;
+}
+
+/* FORZAR TAMAÑO REAL DE CADA LOGO */
+#carruselRubros .empresa-card {
+  width: 180px !important;
+  height: 180px !important;
+  min-width: 180px !important;
+  max-width: 180px !important;
+  min-height: 180px !important;
+  max-height: 180px !important;
+  flex: 0 0 180px !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+#carruselRubros .empresa-logo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: 50% !important;
+  display: block;
+}
+
+/* CUANDO HAY POCOS LOGOS */
+.empresas-carrusel-rubros.modo-centrado {
+  overflow: visible !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.empresas-carrusel-rubros.modo-centrado .empresas-grid-rubros {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+  align-items: center !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+@keyframes moverRubros {
+  from { transform: translateX(0); }
+  to { transform: translateX(-35%); }
+}
+/* responsive */
+@media (max-width: 992px) {
+  #carruselRubros .empresa-card {
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+    flex: 0 0 150px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #carruselRubros .empresa-card {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    min-height: 120px !important;
+    max-height: 120px !important;
+    flex: 0 0 120px !important;
+  }
+}

@@ -1,8 +1,27 @@
 <?php 
 include("includes/header.php"); 
 include(__DIR__ . "/../config/database.php"); 
+$usuarioLogueado = isset($_SESSION['usuario']) && !empty($_SESSION['usuario']);
 ?>
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+function mostrarAlertaSesion() {
+  Swal.fire({
+    title: 'Error',
+    text: 'Debes iniciar sesión',
+    icon: 'warning',
+    confirmButtonText: 'Aceptar'
+  });
+}
+<?php if(!$usuarioLogueado): ?>
+// Llama a la función solo cuando el usuario no ha iniciado sesión
+mostrarAlertaSesion();
+<?php endif; ?>
+</script>
 <link rel="stylesheet" href="assets/css/productos.css">
+
 <script>
 function marcarFavorito(productoId) {
   fetch('marcar_favorito.php', {
@@ -19,9 +38,17 @@ function marcarFavorito(productoId) {
     }
   });
 }
+
+function actualizarContadorCarrito() {
+  fetch('carrito_count.php')
+    .then(res => res.text())
+    .then(num => {
+      var cartCount = document.getElementById('cart-count');
+      if (cartCount) cartCount.textContent = num;
+    });
+}
 </script>
 
-<!-- BANNER -->
 <div class="page-banner">
     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=80" alt="Tienda SDRIM">
     <div class="page-banner-overlay">
@@ -30,9 +57,7 @@ function marcarFavorito(productoId) {
     </div>
 </div>
 
-<!-- PAGINACIÓN -->
 <?php
-// Paginación
 $productosPorPagina = 6;
 $totalProductos = $conn->query("SELECT COUNT(*) as total FROM productos")->fetch_assoc()['total'];
 $totalPaginas = ceil($totalProductos / $productosPorPagina);
@@ -47,21 +72,18 @@ $result = $conn->query($sql);
     <a href="?pagina=<?php echo $paginaActual-1; ?>" class="paginacion-btn">&laquo; Anterior</a>
   <?php endif; ?>
   <?php for($i=1; $i<=$totalPaginas; $i++): ?>
-    <a href="?pagina=<?php echo $i; ?>" class="paginacion-btn <?php if($i==$paginaActual) echo 'activa'; ?>"> <?php echo $i; ?> </a>
+    <a href="?pagina=<?php echo $i; ?>" class="paginacion-btn <?php if($i==$paginaActual) echo 'activa'; ?>"><?php echo $i; ?></a>
   <?php endfor; ?>
   <?php if($paginaActual < $totalPaginas): ?>
     <a href="?pagina=<?php echo $paginaActual+1; ?>" class="paginacion-btn">Siguiente &raquo;</a>
   <?php endif; ?>
 </nav>
 
-<!-- ✅ NOTA: eliminé tu primer <script> duplicado porque causaba doble submit y "da la vuelta" -->
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1) Manejo para las cards del loop (ya tienes btnAdd y btnVer)
   document.querySelectorAll('.form-agregar-carrito').forEach(form => {
-    if (form.dataset.ready === "1") return; // evita doble listener
+    if (form.dataset.ready === "1") return;
     form.dataset.ready = "1";
 
     const btnAdd = form.querySelector('.btn-card');
@@ -74,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnVer) btnVer.style.display = 'inline-flex';
     };
 
-    // Interceptar SIEMPRE el submit del formulario (click o Enter)
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       try{
@@ -89,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if(!res.ok) throw new Error('Error al agregar');
         setAddedUI();
+        actualizarContadorCarrito();
       }catch(e){
         btnAdd.disabled = false;
         btnAdd.innerHTML = '<i class="fa-solid fa-cart-plus"></i> Añadir al carrito';
@@ -96,10 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Por compatibilidad, también interceptamos el click (opcional, pero seguro)
     btnAdd.addEventListener('click', (e) => {
       e.preventDefault();
-      form.requestSubmit(); // dispara el submit JS, no el tradicional
+      form.requestSubmit();
     });
 
     if (btnVer){
@@ -110,10 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2) Para los forms que NO tienen btn-ver-carrito (segunda sección)
-  //    No tocamos tu HTML: creamos el botón "Ver carrito" con JS.
   document.querySelectorAll('form[action="agregar_carrito.php"]').forEach(form => {
-    // Si ya es .form-agregar-carrito, ya lo manejamos arriba
     if (form.classList.contains('form-agregar-carrito')) return;
     if (form.dataset.ready === "1") return;
     form.dataset.ready = "1";
@@ -121,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAdd = form.querySelector('.btn-card, button[type="submit"]');
     if (!btnAdd) return;
 
-    // Creamos botón "Ver carrito" al lado sin tocar tu HTML
     const btnVer = document.createElement('button');
     btnVer.type = 'button';
     btnVer.className = 'btn-ver-carrito';
@@ -137,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btnVer.style.display = 'inline-flex';
     };
 
-    // Interceptamos submit (para que no recargue)
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -149,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const res = await fetch('agregar_carrito.php', { method:'POST', body: formData });
         const text = await res.text();
 
-        // ✅ si el backend pide login, redirigimos
         if (text.trim() === '__LOGIN_REQUIRED__') {
           window.location.href = 'login.php';
           return;
@@ -158,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!res.ok) throw new Error('Error al agregar');
 
         setAddedUI();
+        actualizarContadorCarrito();
       }catch(err){
         btnAdd.disabled = false;
-        // si tu botón tenía emoji, lo dejamos
         btnAdd.innerHTML = 'Añadir al carrito 🛒';
         console.error(err);
       }
@@ -175,9 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- PRODUCTOS DE FACTURACIÓN ELECTRÓNICA (DINÁMICO) -->
 <section class="productos-section">
-  <h2>PRODUCTOS DE FACTURACIÓN ELECTRÓNICA</h2>
+  <div class="productos-heading">
+    <span class="productos-kicker">Catálogo empresarial</span>
+    <h2>PRODUCTOS DE FACTURACIÓN ELECTRÓNICA</h2>
+    <p>Equipos y suministros confiables para puntos de venta, control comercial y operación diaria.</p>
+  </div>
+
   <div class="cards">
   <?php
   if($result && $result->num_rows > 0):
@@ -191,50 +210,66 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   ?>
       <div class="card card-visual producto-card">
-        <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
-        <div class="card-body">
+  <div class="producto-imagen-box">
+    <a href="detalle_producto.php?id=<?= $row['id'] ?>">
+      <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
+    </a>
+  </div>
+  <div class="card-body producto-card-body">
           <h3 class="producto-card-text-marquee" title="<?= htmlspecialchars($row['nombre']) ?>">
-            <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['nombre']) ?></span>
+            <a href="detalle_producto.php?id=<?= $row['id'] ?>" style="color:inherit;text-decoration:none;">
+              <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['nombre']) ?></span>
+            </a>
           </h3>
-          <p class="producto-card-text-marquee" title="<?= htmlspecialchars($row['descripcion']) ?>">
-            <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['descripcion']) ?></span>
-          </p>
-          <p><strong>Precio: S/ <?= number_format($row['precio'],2) ?></strong></p>
+
+          <p class="producto-precio"><strong>Precio: S/ <?= number_format($row['precio'],2) ?></strong></p>
+
           <div class="producto-card-buttons">
             <?php if ((int)$row['stock'] > 0): ?>
-            <form method="post" action="agregar_carrito.php">
+            <form method="post" action="agregar_carrito.php" class="form-agregar-carrito">
               <input type="hidden" name="id" value="<?= $row['id'] ?>">
-              <input type="number" name="cantidad" value="1" min="1" max="<?= intval($row['stock']) ?>" class="input-cantidad">
-              <span class="stock-info" style="display:inline-flex; align-items:center; gap:6px;">Stock: <?= intval($row['stock']) ?>
-                <button type="button" class="btn-fav" data-id="<?= $row['id'] ?>" aria-label="Favorito" style="background:none; border:none; outline:none; cursor:pointer; font-size:1.5em; color:#bbb; padding:0; margin:0;">
-                  <span class="fav-star" style="transition:color 0.2s;">★</span>
-                </button>
-              </span>
+
+              <div class="producto-meta-row">
+                <input type="number" name="cantidad" value="1" min="1" max="<?= intval($row['stock']) ?>" class="input-cantidad">
+
+                <span class="stock-info">
+                  Stock: <?= intval($row['stock']) ?>
+                  <button type="button" class="btn-fav" data-id="<?= $row['id'] ?>" aria-label="Favorito">
+                    <span class="fav-star">★</span>
+                  </button>
+                </span>
+              </div>
+
               <button type="submit" class="btn-card">Añadir al carrito 🛒</button>
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              document.querySelectorAll('.btn-fav').forEach(btn => {
-                btn.addEventListener('click', function() {
-                  const id = btn.getAttribute('data-id');
-                  const star = btn.querySelector('.fav-star');
-                  const isFav = btn.style.color === 'rgb(255, 215, 0)' || btn.style.color === '#FFD700';
-                  fetch(isFav ? 'quitar_favorito.php' : 'marcar_favorito.php', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    body: 'id=' + id
-                  })
-                  .then(res => res.text())
-                  .then(txt => {
-                    if(txt.trim() === 'OK') {
-                      btn.style.color = isFav ? '#bbb' : '#FFD700';
-                    } else {
-                      alert('Error: ' + txt);
-                    }
+
+              <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.btn-fav').forEach(btn => {
+                  btn.addEventListener('click', function() {
+                    const id = btn.getAttribute('data-id');
+                    const isFav = btn.style.color === 'rgb(255, 215, 0)' || btn.style.color === '#FFD700';
+
+                    fetch(isFav ? 'quitar_favorito.php' : 'marcar_favorito.php', {
+                      method: 'POST',
+                      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                      body: 'id=' + id
+                    })
+                    .then(res => res.text())
+                    .then(txt => {
+                      if(txt.trim() === 'OK') {
+                        btn.style.color = isFav ? '#b8bfd1' : '#FFD700';
+                      } else {
+                        if(txt.trim() === 'Debes iniciar sesión') {
+                          mostrarAlertaSesion();
+                        } else {
+                          alert('Error: ' + txt);
+                        }
+                      }
+                    });
                   });
                 });
               });
-            });
-            </script>
+              </script>
             </form>
             <?php else: ?>
               <div class="agotado-watermark">AGOTADO</div>

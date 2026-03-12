@@ -21,6 +21,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
+  /* Scroll interno para listas de Más vendidos y Favoritos */
+  .scroll-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
   background: var(--bg);
   font-family: 'DM Sans', sans-serif;
   color: var(--text);
@@ -403,4 +409,140 @@ body {
     border-radius: 10px;
     overflow: hidden;
   }
+}
+
+/* Mejora visual para la tabla de comentarios pendientes */
+.comentarios-pendientes {
+  max-width: 950px;
+  margin: 32px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(34,57,106,0.08);
+  padding: 32px 40px;
+}
+.comentarios-pendientes h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  color: #22396a;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+.comentarios-pendientes h2::before {
+  content: "📝";
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+.comentarios-pendientes table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.comentarios-pendientes th, .comentarios-pendientes td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e3e6f0;
+}
+.comentarios-pendientes th {
+  background: #22396a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+}
+.comentarios-pendientes tr:last-child td {
+  border-bottom: none;
+}
+.comentarios-pendientes td {
+  font-size: 0.98em;
+  color: #22396a;
+}
+.comentarios-pendientes button {
+  background: linear-gradient(90deg, #2a2ed6 60%, #22396a 100%);
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 6px;
+  margin: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  box-shadow: 0 2px 6px rgba(34,57,106,0.08);
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.02em;
+}
+.comentarios-pendientes button:hover {
+  background: linear-gradient(90deg, #22396a 60%, #2a2ed6 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+.comentarios-pendientes td {
+  vertical-align: middle;
+}
+.comentarios-pendientes td:first-child {
+  font-weight: 500;
+  color: #2a2ed6;
+}
+.comentarios-pendientes td:nth-child(2) {
+  font-weight: 500;
+  color: #22396a;
+}
+.comentarios-pendientes td:nth-child(3) {
+  font-style: italic;
+  color: #444;
+}
+.comentarios-pendientes td:nth-child(4) {
+  color: #888;
+  font-size: 0.95em;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+}
+.comentarios-pendientes td:nth-child(5) {
+  text-align: center;
+}
+.comentarios-pendientes .comentario-emoji {
+  font-size: 1.1em;
+  margin-right: 4px;
+}
+/* Separar botones de acción en la tabla de comentarios pendientes, igual que en la tabla de compras */
+.comentarios-pendientes td:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.comentarios-pendientes button {
+  min-width: 110px;
+}
+.comentarios-pendientes button[name="accion"][value="aprobar"] {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  box-shadow: 0 2px 6px rgba(34,57,106,0.08);
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.02em;
+}
+.comentarios-pendientes button[name="accion"][value="aprobar"]:hover {
+  background: #16a34a;
+}
+.comentarios-pendientes button[name="accion"][value="rechazar"] {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  box-shadow: 0 2px 6px rgba(34,57,106,0.08);
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.02em;
+}
+.comentarios-pendientes button[name="accion"][value="rechazar"]:hover {
+  background: #dc2626;
 }

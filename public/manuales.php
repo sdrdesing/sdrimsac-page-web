@@ -154,7 +154,7 @@ echo '</section>';
             </details>
         </div>
         <div class="faq-img">
-            <img src="assets/img/manuales/faq-ilustracion.png" alt="FAQ Ilustración" style="max-width:220px;">
+            <img src="assets/img/manuales.png" alt="FAQ Ilustración" style="max-width:220px;">
         </div>
     </div>
 </section>

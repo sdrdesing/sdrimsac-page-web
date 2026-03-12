@@ -1,1 +1,0 @@
-<h2>AUDIO</h2><p>Driver de audio para el sistema operativo.</p>

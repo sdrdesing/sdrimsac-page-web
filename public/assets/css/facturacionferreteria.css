@@ -30,7 +30,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #b97a1a;
+  color: #08267ade;
 }
 .ferreteria-desarrollo p {
   font-size: 1.1rem;
@@ -60,7 +60,7 @@
 .ferreteria-rol-card h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #b97a1a;
+  color: #0d1e9b;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@
 }
 .ferreteria-rol-icon {
   font-size: 1.7rem;
-  color: #b97a1a;
+  color: #061d78;
 }
 
 .ferreteria-faq-section {

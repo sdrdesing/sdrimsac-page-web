@@ -1,16 +1,4 @@
 <?php
-include("includes/header.php");
-include("../config/database.php");
-
-if (!function_exists('h')) {
-    function h($value) {
-        return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
-    }
-}
-
-$statusMessage = "";
-$statusType = "";
-
 if(isset($_POST['enviar'])){
     $dni = trim($_POST['dni'] ?? '');
     $nombres = trim($_POST['nombres'] ?? '');
@@ -37,34 +25,30 @@ if(isset($_POST['enviar'])){
     }
 
     if (empty($errors)) {
-        $nombre = trim($nombres . ' ' . $apellidos);
-        $correoGuardar = $correo !== '' ? $correo : 'sin-correo@sdrimsac.local';
-        $mensajeGuardar = "DNI: {$dni}\nTeléfono: {$telefono}";
-        if ($mensaje !== '') {
-            $mensajeGuardar .= "\nMensaje: {$mensaje}";
-        }
-
-        $stmt = $conn->prepare("INSERT INTO mensajes (nombre, correo, mensaje) VALUES (?, ?, ?)");
-        if ($stmt) {
-            $stmt->bind_param('sss', $nombre, $correoGuardar, $mensajeGuardar);
-            if ($stmt->execute()) {
-                $statusType = 'success';
-                $statusMessage = 'Mensaje enviado correctamente';
-                $_POST = [];
-            } else {
-                $statusType = 'error';
-                $statusMessage = 'No se pudo enviar el mensaje. Inténtalo nuevamente.';
-            }
-            $stmt->close();
-        } else {
-            $statusType = 'error';
-            $statusMessage = 'No se pudo preparar el envío. Inténtalo nuevamente.';
-        }
-    } else {
+        $nombreCompleto = $nombres . ' ' . $apellidos;
+        $texto = "DNI: $dni%0ANombre: $nombreCompleto%0ATeléfono: $telefono";
+        if ($correo !== '') $texto .= "%0ACorreo: $correo";
+        if ($mensaje !== '') $texto .= "%0AMensaje: $mensaje";
+        $whatsapp = "https://wa.me/51995764963?text=" . urlencode($texto);
+        header("Location: $whatsapp");
+        exit;
+    } else if (!empty($errors)) {
         $statusType = 'error';
         $statusMessage = implode(' ', $errors);
     }
 }
+
+include("includes/header.php");
+include("../config/database.php");
+
+if (!function_exists('h')) {
+    function h($value) {
+        return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+    }
+}
+
+$statusMessage = $statusMessage ?? "";
+$statusType = $statusType ?? "";
 ?>
 
 <!-- IMAGEN BANNER ADICIONAL -->
@@ -122,7 +106,7 @@ if(isset($_POST['enviar'])){
         <div class="info-card">
             <span class="info-icon">📍</span>
             <h4>Ubicación</h4>
-            <p>Lima, Perú</p>
+            <p>Junin, Chanchamayo</p>
             <p>Atención presencial y remota</p>
         </div>
     </div>

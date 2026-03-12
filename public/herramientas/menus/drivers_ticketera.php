@@ -1,4 +1,51 @@
 <style>
+/* Modal Xprinter */
+#modalXprinter {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.25);
+    justify-content: center;
+    align-items: center;
+}
+#modalXprinter.active, #modalXprinter[style*="display: flex"] {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<script>
+function openXprinterModal() {
+    document.getElementById('modalXprinter').style.display = 'flex';
+}
+function closeXprinterModal() {
+    document.getElementById('modalXprinter').style.display = 'none';
+}
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeXprinterModal();
+    }
+});
+window.addEventListener('click', function(e) {
+    var modal = document.getElementById('modalXprinter');
+    if (e.target === modal) {
+        closeXprinterModal();
+    }
+});
+// Evita el parpadeo solo en el botón SELECCIONAR de POS DRIVER BIENEX
+document.addEventListener('DOMContentLoaded', function() {
+    var btnBienex = document.getElementById('btnBienex');
+    if (btnBienex) {
+        btnBienex.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            document.getElementById('modalBienex').style.display = 'flex';
+        });
+    }
+});
+</script>
+<style>
 .drivers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -61,10 +108,14 @@
     -webkit-box-orient: vertical;
 }
 .herramientas-card img {
-    width: 60px;
-    height: 50px;
+    width: 160px;
+    height: 90px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: #f4f7ff;
+    box-shadow: 0 2px 8px rgba(24,18,109,0.07);
+    padding: 8px;
 }
 .herramientas-card .btns-row {
     display: flex;
@@ -170,164 +221,132 @@
 
 <div class="drivers-grid">
     <div class="herramientas-card">
-        <h3>EPSON TM-U220</h3>
-        <p>Driver para impresoras de tickets Epson TM-U220, ampliamente utilizadas en puntos de venta y sistemas de facturación.</p>
-        <img src="assets/img/epson.png" alt="Epson TM-U220">
+        <h3>POS DRIVER CBX</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca CBX, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/03/imagen_2025-03-03_114035992-e1741020060471-768x339.png" alt="CBX">
         <div class="btns-row">
-            <a href="#" class="btn-herramienta">SELECCIONAR</a>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
-        </div>
-    </div>
-    <div class="herramientas-card">
-        <h3>BIXOLON SRP-350</h3>
-        <p>Driver para impresoras térmicas Bixolon SRP-350, ideales para impresión rápida de tickets y recibos en comercios.</p>
-        <img src="assets/img/bixolon.png" alt="Bixolon SRP-350">
-        <div class="btns-row">
-            <a href="#" class="btn-herramienta">SELECCIONAR</a>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
-        </div>
-    </div>
-    <div class="herramientas-card">
-        <h3>POS-80</h3>
-        <p>Driver genérico para impresoras POS-80, compatibles con una amplia gama de impresoras térmicas de 80mm.</p>
-        <img src="assets/img/pos80.png" alt="POS-80">
-        <div class="btns-row">
-            <a href="#" class="btn-herramienta">SELECCIONAR</a>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
-        </div>
-    </div>
-    <div class="herramientas-card">
-        <h3>HASAR</h3>
-        <p>Driver para impresoras fiscales y de tickets Hasar, utilizadas en soluciones de facturación electrónica y puntos de venta.</p>
-        <img src="assets/img/hasar.png" alt="Hasar">
-        <div class="btns-row">
-            <a href="#" class="btn-herramienta">SELECCIONAR</a>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
-        </div>
-    </div>
-    <div class="herramientas-card">
-        <h3>RONGTA</h3>
-        <p>Driver para impresoras térmicas Rongta, reconocidas por su compatibilidad y rendimiento en comercios y restaurantes.</p>
-        <img src="assets/img/rongta.png" alt="Rongta">
-        <div class="btns-row">
-            <a href="#" class="btn-herramienta">SELECCIONAR</a>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
+            <a href="herramientas/driver/HPRT-POS-Printer-Driver-v2.7.4.3-1 (4).zip" class="btn-herramienta" download>DESCARGAR</a>
         </div>
     </div>
     <div class="herramientas-card">
         <h3>POS DRIVER ADVANCE</h3>
-        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca ADVANCE, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora.</p>
-        <img src="assets/img/advance.png" alt="Advance">
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca ADVANCE, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/04/Diseno-sin-titulo-_8_-768x339.webp" alt="Advance">
         <div class="btns-row">
-            <button class="btn-herramienta" onclick="document.getElementById('modalAdvance').classList.add('active')">SELECCIONAR</button>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
+            <a href="#" class="btn-herramienta" onclick="document.getElementById('modalAdvance').classList.add('active'); return false;">SELECCIONAR</a>
         </div>
     </div>
-    <!-- Tarjeta POS DRIVER VILLACORP dentro del grid -->
+    <div class="herramientas-card">
+        <h3>POS DRIVER BIXOLON</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca BIXOLON, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/04/Diseno-sin-titulo-_9_-768x339.webp" alt="Bixolon">
+        <div class="btns-row">
+            <a href="herramientas/driver/BIXOLON.zip" class="btn-herramienta" download>DESCARGAR</a>
+        </div>
+    </div>
     <div class="herramientas-card">
         <h3>POS DRIVER VILLACORP</h3>
-        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca VILLACORP, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora.</p>
-        <img src="assets/img/villacorp.png" alt="Villacorp">
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca VILLACORP, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="/assets/img/store.png" alt="Villacorp">
         <div class="btns-row">
-            <button class="btn-herramienta" id="btnVillacorp">SELECCIONAR</button>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
+                  <a href="#" class="btn-herramienta" onclick="document.getElementById('modalVillacorp').style.display = 'flex'; return false;">SELECCIONAR</a>
         </div>
     </div>
-    <!-- Tarjeta POS DRIVER 3NSTAR con botón SELECCIONAR que abre un modal con los modelos y botones de descarga, igual al ejemplo de la imagen -->
     <div class="herramientas-card">
         <h3>POS DRIVER 3NSTAR</h3>
-        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca 3NSTART, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora.</p>
-        <img src="assets/img/3nstar.png" alt="3nStar">
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca 3NSTART, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/05/Diseno-sin-titulo-_19_-768x339.webp" alt="3nStar">
         <div class="btns-row">
-            <button class="btn-herramienta" id="btn3nstar">SELECCIONAR</button>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
+                  <a href="#" class="btn-herramienta" onclick="document.getElementById('modal3nstar').style.display = 'flex'; return false;">SELECCIONAR</a>
         </div>
     </div>
-    <!-- Tarjeta POS DRIVER LOGIC con botón SELECCIONAR que abre un modal centrado con la opción SP 700, y que el modal muestre la imagen de la marca en la parte superior, igual al ejemplo de la imagen -->
+    <div class="herramientas-card">
+        <h3>POS DRIVER EPSON</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca EPSON, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/05/Diseno-sin-titulo-_20_-768x339.webp" alt="Epson">
+        <div class="btns-row">
+                  <a href="#" class="btn-herramienta" onclick="document.getElementById('modalEpson').style.display = 'flex'; return false;">SELECCIONAR</a>
+        </div>
+    </div>
+    <div class="herramientas-card">
+        <h3>POS DRIVER XPRINTER</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca XPRINTER, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/05/Diseno-sin-titulo-_21_-768x339.webp" alt="Xprinter">
+        <div class="btns-row">
+                  <a href="#" class="btn-herramienta" onclick="document.getElementById('modalXprinter').style.display = 'flex'; return false;">SELECCIONAR</a>
+        </div>
+    </div>
+    <div class="herramientas-card">
+        <h3>POS DRIVER ELITRONIC</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca ELITRONIC, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/05/Diseno-sin-titulo-_22_-768x339.webp" alt="Elitronic">
+        <div class="btns-row">
+                         <a href="#" class="btn-herramienta" id="btnElitronic">SELECCIONAR</a>
+
+        </div>
+    
+    </div>
+    <div class="herramientas-card">
+        <h3>POS DRIVER BIENEX</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca BIENEX, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/06/Diseno-sin-titulo-_23_-768x339.webp" alt="Bienex">
+        <div class="btns-row">
+              <a href="#" class="btn-herramienta" id="btnBienexNuevo">SELECCIONAR</a>
+        </div>
+        
+    </div>
+    <div class="herramientas-card">
+        <h3>POS DRIVER STAR</h3>
+        <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca STAR, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/09/Diseno-sin-titulo-_2_-768x339.webp" alt="Star">
+        <div class="btns-row">
+              <a href="#" class="btn-herramienta" id="btnStar">SELECCIONAR</a>
+        </div>
+     
+    </div>
     <div class="herramientas-card">
         <h3>POS DRIVER LOGIC</h3>
         <p>Es un driver de impresora POS que es compatible con cualquier impresora de ticketera térmica de la marca logic, es un programa de software que actúa de intermediario entre el sistema operativo y la impresora</p>
-        <img src="assets/img/star.png" alt="Star Micronics">
+        <img src="https://sdrimsac.com/wp-content/uploads/2025/09/Diseno-sin-titulo-_2_-768x339.webp" alt="Logic">
         <div class="btns-row">
-            <button class="btn-herramienta" id="btnLogic">SELECCIONAR</button>
-            <a href="#" class="btn-herramienta">VER TUTORIAL</a>
+            <a href="#" class="btn-herramienta" onclick="document.getElementById('modalLogic').style.display = 'flex'; return false;">SELECCIONAR</a>
         </div>
     </div>
 </div>
 <!-- Modal Advance -->
-<div id="modalAdvance">
-    <div class="modal-content-advance">
-        <button class="close-modal-advance" onclick="document.getElementById('modalAdvance').classList.remove('active')">&times;</button>
-        <h2>Seleccione el modelo de la Ticketera</h2>
-        <div class="advance-models-grid">
-            <div class="advance-model-card">
-                <span>ADV7011N</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-            <div class="advance-model-card">
-                <span>ADV8009N</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-            <div class="advance-model-card">
-                <span>ADV8010N</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-            <div class="advance-model-card">
-                <span>ADV9010N</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Villacorp (fuera del grid, al final del archivo) -->
-<div id="modalVillacorp" style="display:none;">
-    <div class="modal-content-advance">
-        <button class="close-modal-advance" onclick="closeVillacorpModal()">&times;</button>
-        <h2>Drivers de Villacorp</h2>
-        <div class="advance-models-grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="advance-model-card" style="min-width:180px;">
-                <span>Etiquetadora</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-            <div class="advance-model-card" style="min-width:180px;">
-                <span>Ticketera</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal 3nStar (fuera del grid, al final del archivo) -->
-<div id="modal3nstar" style="display:none;">
-    <div class="modal-content-advance">
-        <button class="close-modal-advance" onclick="close3nstarModal()">&times;</button>
-        <h2>Drivers de 3nStart</h2>
-        <div class="advance-models-grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="advance-model-card"><span>RPI007 / RPI007E</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT001</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT004</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT005 / RPT005E</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT006 S/B/W</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT008</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT010</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-            <div class="advance-model-card"><span>RPT015</span><a href="#" class="btn-herramienta">DESCARGAR</a></div>
-        </div>
-    </div>
-</div>
-<!-- Modal Logic (fuera del grid, al final del archivo) -->
-<div id="modalLogic" style="display:none;">
-    <div class="modal-content-advance">
-        <button class="close-modal-advance" onclick="closeLogicModal()">&times;</button>
-        <img src="assets/img/star.png" alt="Star Micronics" style="width:120px; margin-bottom:10px; margin-top:10px;">
-        <h2 style="margin-bottom:18px;">DRIVER STAR</h2>
-        <div class="advance-models-grid" style="grid-template-columns: 1fr;">
-            <div class="advance-model-card" style="min-width:220px;">
-                <span>SP 700</span>
-                <a href="#" class="btn-herramienta">DESCARGAR</a>
-            </div>
-        </div>
-    </div>
-</div>
+<?php include __DIR__ . '/modals/modalAdvance.php'; ?>
+<!-- Modal Villacorp -->
+<?php include __DIR__ . '/modals/modalVillacorp.php'; ?>
+<!-- Modal 3nStar -->
+<?php include __DIR__ . '/modals/modal3nstar.php'; ?>
+<!-- Modal Elitronic -->
+<?php include __DIR__ . '/modals/modalElitronic.php'; ?>
+<!-- Modal Star -->
+<?php include __DIR__ . '/modals/modalStar.php'; ?>
+<!-- Modal Bienex Nuevo -->
+<?php include __DIR__ . '/modals/modalBienexNuevo.php'; ?>
+<!-- Modal Logic -->
+<?php include __DIR__ . '/modals/modalLogic.php'; ?>
+<!-- Modal Epson -->
+<?php include __DIR__ . '/modals/modalEpson.php'; ?>
+<!-- Modal Xprinter (fuera del grid, al final del archivo) -->
+<?php include __DIR__ . '/modals/modalXprinter.php'; ?>
 <style>
+/* Modal Epson */
+#modalEpson {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.25);
+    justify-content: center;
+    align-items: center;
+}
+#modalEpson.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #modalVillacorp {
     display: none;
     position: fixed;

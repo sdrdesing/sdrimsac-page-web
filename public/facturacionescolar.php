@@ -1,5 +1,9 @@
 <?php
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -72,6 +76,8 @@
     </div>
 </div>
 
+
+<link rel="stylesheet" href="assets/css/facturacionescolar.css">
 <!-- Preguntas Frecuentes -->
 <div style="max-width:900px;margin:40px auto 40px auto;padding:32px 24px 24px 24px;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:flex-start;gap:32px;">
     <div class="faq-escolar" style="flex:2;">

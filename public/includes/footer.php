@@ -2,7 +2,7 @@
     <div class="footer-bg"></div>
     <div class="footer-content">
         <div class="footer-col footer-logo-desc">
-            <img src="assets/img/SDRIMSAC.png" alt="SDRIMSAC Logo" class="footer-logo-img">
+            <img src="assets/img/logoSdrimsac.png" alt="SDRIMSAC Logo" class="footer-logo-img">
             <div class="footer-desc">
                 <strong>SDRIMSAC SOLUTIONS</strong> es una empresa de especialización en el mundo tecnológico <span title="💻">💻</span> (informática) que desarrolla Sistemas de Facturación Electrónica personalizados.
             </div>

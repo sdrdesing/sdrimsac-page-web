@@ -1,6 +1,10 @@
 <?php
-// Plantilla básica para Tiendas Virtuales
-?><!DOCTYPE html>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -111,7 +115,7 @@
             </div>
             <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); padding: 12px; display: flex; flex-direction: column; align-items: center; width: 190px;">
                 <img src="assets/img/ilu2.jpg" alt="Luminaria solar 2" style="width: 160px; height: 100px; object-fit: cover; border-radius: 8px;">
-                <div style="margin-top: 8px; font-size: 14px; color: #333;">Luminaria solar 2</div>
+                <div style="margin-top: 8px; font-size: 14px; color: #333;"></div>
             </div>
             <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); padding: 12px; display: flex; flex-direction: column; align-items: center; width: 190px;">
                 <img src="assets/img/ilu3.jpg" alt="Luminaria solar 3" style="width: 160px; height: 100px; object-fit: cover; border-radius: 8px;">
