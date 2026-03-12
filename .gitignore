@@ -1,0 +1,24 @@
+# Dependencias
+/vendor/
+
+# Drivers pesados
+/public/herramientas/driver/
+/public/herramientas/driverModel/
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+
+# Logs
+*.log
+
+# Archivos de entorno
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Docker temporales
+docker-data/
