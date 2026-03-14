@@ -1,70 +1,534 @@
-/* FAQ PROFESIONAL Y DINÁMICO PARA HOSPITAL */
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.hospital-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eef5ff;
+    color: #18376b;
+    border: 1px solid #d5e3fb;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hospital-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.hospital-section-heading h3 {
+    font-size: 2.2rem;
+    color: #18376b;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.hospital-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.hospital-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
+}
+
+.hospital-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hospital-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.hospital-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.hospital-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.hospital-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.hospital-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.hospital-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
+}
+
+.hospital-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hospital-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #18376b;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.hospital-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.hospital-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #e0e8f0;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
+}
+
+.feature i {
+    color: #18376b;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.hospital-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hospital-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
+
+.hospital-banner {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+}
+
+.hospital-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* =========================
+   ROLES
+========================= */
+.hospital-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef4ff 100%);
+}
+
+.hospital-roles-grid {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+}
+
+.hospital-role-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    padding: 26px 22px;
+    border: 1px solid #e0e8f0;
+}
+
+.hospital-role-large {
+    min-height: 100%;
+}
+
+.role-icon {
+    text-align: center;
+    font-size: 2rem;
+    color: #18376b;
+    margin-bottom: 10px;
+}
+
+.hospital-role-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #18376b;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.hospital-role-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hospital-role-card ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
+}
+
+.hospital-role-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #18376b;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
+/* =========================
+   FAQ
+========================= */
+.hospital-faq-wrapper {
+    padding: 0 0 90px;
+    background: #eef4ff;
+}
+
+.hospital-faq-section {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    padding: 32px 24px 24px 24px;
+    border: 1px solid #e0e8f0;
+}
+
+.hospital-faq {
+    min-width: 0;
+}
+
+.hospital-faq h2 {
+    color: #18376b;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* FAQ dinámico */
 .faq-item {
-  background: #f8fafd;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(24,55,107,0.04);
-  margin-bottom: 18px;
-  transition: box-shadow 0.3s;
-  border: 1.5px solid #e0e8f0;
-  overflow: hidden;
+    background: #f8fafd;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(24,55,107,0.04);
+    margin-bottom: 18px;
+    transition: box-shadow 0.3s;
+    border: 1.5px solid #e0e8f0;
+    overflow: hidden;
 }
+
 .faq-item.active {
-  box-shadow: 0 4px 16px rgba(24,55,107,0.10);
-  border-color: #18376b;
+    box-shadow: 0 4px 16px rgba(24,55,107,0.10);
+    border-color: #18376b;
 }
+
 .faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 700;
-  color: #18376b;
-  cursor: pointer;
-  font-size: 1.13rem;
-  padding: 20px 24px 20px 18px;
-  border-bottom: 1px solid #e0e8f0;
-  background: transparent;
-  transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #18376b;
+    cursor: pointer;
+    font-size: 1.13rem;
+    padding: 20px 24px 20px 18px;
+    background: transparent;
+    transition: background 0.2s;
+    gap: 14px;
 }
+
 .faq-item.active .faq-question {
-  background: #f3f7ff;
+    background: #f3f7ff;
 }
+
 .faq-arrow {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  margin-left: 16px;
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 16px;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    flex-shrink: 0;
 }
+
 .faq-arrow::before {
-  content: '';
-  display: block;
-  width: 0.8em;
-  height: 0.8em;
-  border-right: 3.5px solid #18376b;
-  border-bottom: 3.5px solid #18376b;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  box-shadow: 0 1px 2px #fff6;
+    content: '';
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 3.5px solid #18376b;
+    border-bottom: 3.5px solid #18376b;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    box-shadow: 0 1px 2px #fff6;
 }
+
 .faq-item.active .faq-arrow {
-  transform: rotate(90deg) scale(1.1);
+    transform: rotate(90deg) scale(1.1);
 }
+
 .faq-answer {
-  color: #223a5a;
-  font-size: 1.05rem;
-  padding: 18px 24px 18px 24px;
-  background: #fff;
-  border-radius: 0 0 14px 14px;
-  box-shadow: 0 1px 4px rgba(24,55,107,0.03);
-  display: none;
-  animation: faqFadeIn 0.35s;
+    color: #223a5a;
+    font-size: 1.05rem;
+    padding: 18px 24px 18px 24px;
+    background: #fff;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 1px 4px rgba(24,55,107,0.03);
+    display: none;
+    animation: faqFadeIn 0.35s;
+    line-height: 1.7;
 }
+
 @keyframes faqFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hospital-faq-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hospital-faq-img img {
+    max-width: 260px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(24,55,107,0.10);
+    background: #fff;
+    padding: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .hospital-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hospital-hero-text {
+        text-align: center;
+    }
+
+    .hospital-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hospital-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .hospital-roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hospital-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hospital-faq-img {
+        order: -1;
+    }
+
+    .hospital-faq h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hospital-banner-modern {
+        min-height: 320px;
+    }
+
+    .hospital-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hospital-banner-content p {
+        font-size: 1rem;
+    }
+
+    .hospital-hero {
+        padding: 60px 0 40px;
+    }
+
+    .hospital-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hospital-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .hospital-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .hospital-banner-container {
+        padding: 12px;
+    }
+
+    .hospital-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .hospital-faq-section {
+        padding: 24px 18px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hospital-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hospital-badge,
+    .hospital-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .hospital-hero-container,
+    .hospital-roles-grid,
+    .hospital-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .hospital-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .hospital-role-card {
+        padding: 18px 14px;
+    }
+
+    .hospital-role-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .hospital-role-card ul li,
+    .faq-answer,
+    .faq-question {
+        font-size: 0.95rem;
+    }
 }

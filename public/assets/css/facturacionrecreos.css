@@ -1,300 +1,550 @@
-/* FAQ PROFESIONAL Y BONITO */
-.recreos-faq-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(24, 55, 107, 0.08);
-  padding: 40px 32px 32px 32px;
-  max-width: 1100px;
-  margin: 48px auto 48px auto;
-  align-items: flex-start;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
 }
-.recreos-faq {
-  flex: 2;
-  min-width: 320px;
+
+.recreos-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eefaf1;
+    color: #1A3A6B;
+    border: 1px solid #94b9f4;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
 }
-.recreos-faq h2 {
-  color: #218a3a;
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 24px;
-  text-align: left;
-  letter-spacing: -1px;
+
+.recreos-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
 }
-.recreos-faq-item {
-  background: #f8fcf8;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(33,138,58,0.04);
-  margin-bottom: 18px;
-  transition: box-shadow 0.3s;
-  border: 1.5px solid #e0f0e0;
-  overflow: hidden;
+
+.recreos-section-heading h3 {
+    font-size: 2.2rem;
+    color: #1A3A6B;
+    margin-bottom: 14px;
+    font-weight: 800;
 }
-.recreos-faq-item.active {
-  box-shadow: 0 4px 16px rgba(33,138,58,0.10);
-  border-color: #218a3a;
+
+.recreos-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
 }
-.recreos-faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 700;
-  color: #218a3a;
-  cursor: pointer;
-  font-size: 1.13rem;
-  padding: 20px 24px 20px 18px;
-  border-bottom: 1px solid #e0f0e0;
-  background: transparent;
-  transition: background 0.2s;
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.recreos-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
 }
-.recreos-faq-item.active .recreos-faq-question {
-  background: #f3fff3;
+
+.recreos-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.recreos-faq-toggle {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  margin-left: 16px;
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  position: relative;
+
+.recreos-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
 }
-.recreos-faq-toggle::before {
-  content: '';
-  display: block;
-  width: 0.8em;
-  height: 0.8em;
-  border-right: 3.5px solid #218a3a;
-  border-bottom: 3.5px solid #218a3a;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  box-shadow: 0 1px 2px #fff6;
+
+.recreos-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
 }
-.recreos-faq-item.active .recreos-faq-toggle {
-  transform: rotate(90deg) scale(1.1);
+
+.recreos-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
 }
-.recreos-faq-answer {
-  color: #1a3a23;
-  font-size: 1.05rem;
-  padding: 18px 24px 18px 24px;
-  background: #fff;
-  border-radius: 0 0 14px 14px;
-  box-shadow: 0 1px 4px rgba(33,138,58,0.03);
-  display: none;
-  animation: faqFadeIn 0.35s;
+
+.recreos-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
 }
-@keyframes faqFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.recreos-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
 }
-.recreos-faq-img {
-  flex: 1;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start;
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.recreos-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
 }
-.recreos-faq-img img {
-  max-width: 220px;
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(33,138,58,0.10);
-  object-fit: cover;
-  background: #fff;
+
+.recreos-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
-/* Estilos para facturacionrecreos.php */
+
+.recreos-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #1A3A6B;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.recreos-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.recreos-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #9cb9db;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(28,122,58,0.06);
+}
+
+.feature i {
+    color: #1A3A6B;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.recreos-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.recreos-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 720px;
+    width: 100%;
+}
 
 .recreos-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0 auto;
-  max-width: 900px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
-  background: #fff;
-}
-.recreos-banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
 }
 
-.recreos-desarrollo {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 32px auto 0 auto;
-  padding: 32px 24px 24px 24px;
-  text-align: center;
+.recreos-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 560px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
 }
-.recreos-desarrollo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #1c7a3a;
-}
-.recreos-desarrollo p {
-  font-size: 1.1rem;
-  color: #333;
+
+/* =========================
+   ROLES
+========================= */
+.recreos-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #1A3A6B 100%);
 }
 
 .recreos-roles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 24px;
 }
+
 .recreos-rol-card {
-  flex: 1 1 300px;
-  background: #f6fdf8;
-  border-radius: 16px;
-  box-shadow: 0 1px 8px rgba(28,122,58,0.07);
-  padding: 28px 20px 20px 20px;
-  min-width: 280px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(28,122,58,0.08);
+    padding: 26px 22px;
+    border: 1px solid #d6e8f5;
 }
+
+.recreos-rol-large {
+    min-height: 100%;
+}
+
 .recreos-rol-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1c7a3a;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1A3A6B;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 .recreos-rol-card ul {
-  padding-left: 18px;
-  color: #222;
-  font-size: 1rem;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .recreos-rol-card ul li {
-  margin-bottom: 7px;
-  list-style: disc;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
 }
+
+.recreos-rol-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #1A3A6B;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
 .recreos-rol-icon {
-  font-size: 1.7rem;
-  color: #1c7a3a;
+    font-size: 1.4rem;
+    color: #1A3A6B;
 }
 
 .recreos-roles-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 32px auto 0 auto;
-  max-width: 700px;
+    width: min(900px, calc(100% - 40px));
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
-.recreos-roles-bottom .recreos-rol-card {
-  min-width: 200px;
-  max-width: 260px;
-  padding: 20px 12px 16px 12px;
+
+/* =========================
+   FAQ
+========================= */
+.recreos-faq-wrapper {
+    padding: 0 0 90px;
+    background: #c6d5eb;
 }
 
 .recreos-faq-section {
-  max-width: 1100px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 0.6fr 1.2fr;
+    gap: 36px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(24, 55, 107, 0.08);
+    padding: 40px 32px 32px 32px;
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    align-items: start;
+    border: 1px solid #1A3A6B;
 }
+
 .recreos-faq {
-  flex: 2 1 400px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 32px 24px;
+    min-width: 0;
 }
+
 .recreos-faq h2 {
-  color: #1c7a3a;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-align: center;
+    color: #1A3A6B;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: left;
+    letter-spacing: -1px;
 }
+
 .recreos-faq-item {
-  margin-bottom: 18px;
-  border-bottom: 1px solid #d6f5e3;
+    background: #b4cce7;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(33,138,58,0.04);
+    margin-bottom: 18px;
+    transition: box-shadow 0.3s;
+    border: 1.5px solid #318df7;
+    overflow: hidden;
 }
+
+.recreos-faq-item.active {
+    box-shadow: 0 4px 16px rgba(33,138,58,0.10);
+    border-color: #1A3A6B;
+}
+
 .recreos-faq-question {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #1c7a3a;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #1A3A6B;
+    cursor: pointer;
+    font-size: 1.13rem;
+    padding: 20px 24px 20px 18px;
+    background: transparent;
+    transition: background 0.2s;
+    gap: 14px;
 }
-.recreos-faq-question:hover {
-  color: #2e9c5a;
+
+.recreos-faq-item.active .recreos-faq-question {
+    background: #73a3ee;
 }
-.recreos-faq-answer {
-  font-size: 1rem;
-  color: #222;
-  padding: 0 0 10px 0;
-  display: none;
-  animation: fadeIn 0.3s;
-}
-.recreos-faq-item.active .recreos-faq-answer {
-  display: block;
-}
+
 .recreos-faq-toggle {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: transform 0.2s;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 16px;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    flex-shrink: 0;
 }
+
+.recreos-faq-toggle::before {
+    content: '';
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 3.5px solid #1A3A6B;
+    border-bottom: 3.5px solid #1A3A6B;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
 .recreos-faq-item.active .recreos-faq-toggle {
-  transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.recreos-faq-answer {
+    color: #1A3A6B;
+    font-size: 1.05rem;
+    padding: 18px 24px 18px 24px;
+    background: #fff;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 1px 4px rgba(33,138,58,0.03);
+    display: none;
+    animation: faqFadeIn 0.35s;
+    line-height: 1.7;
+}
+
+.recreos-faq-answer ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+@keyframes faqFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .recreos-faq-img {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-.recreos-faq-img img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(28,122,58,0.10);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@media (max-width: 900px) {
-  .recreos-banner, .recreos-desarrollo, .recreos-roles, .recreos-faq-section {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .recreos-roles {
+    display: flex;
     flex-direction: column;
+    gap: 18px;
     align-items: center;
-  }
-  .recreos-faq-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    justify-content: flex-start;
+}
+
+.recreos-faq-img img {
+    max-width: 260px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,138,58,0.10);
+    object-fit: cover;
+    background: #fff;
+    padding: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .recreos-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .recreos-hero-text {
+        text-align: center;
+    }
+
+    .recreos-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .recreos-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .recreos-roles {
+        grid-template-columns: 1fr;
+    }
+
+    .recreos-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .recreos-faq-img {
+        order: -1;
+    }
+
+    .recreos-faq h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .recreos-banner-modern {
+        min-height: 320px;
+    }
+
+    .recreos-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .recreos-banner-content p {
+        font-size: 1rem;
+    }
+
+    .recreos-hero {
+        padding: 60px 0 40px;
+    }
+
+    .recreos-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .recreos-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .recreos-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .recreos-roles-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .recreos-banner-container {
+        padding: 12px;
+    }
+
+    .recreos-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .recreos-faq-section {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recreos-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .recreos-badge,
+    .recreos-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .recreos-hero-container,
+    .recreos-roles,
+    .recreos-roles-bottom,
+    .recreos-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .recreos-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .recreos-rol-card {
+        padding: 18px 14px;
+    }
+
+    .recreos-rol-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .recreos-rol-card ul li,
+    .recreos-faq-answer,
+    .recreos-faq-question {
+        font-size: 0.95rem;
+    }
 }

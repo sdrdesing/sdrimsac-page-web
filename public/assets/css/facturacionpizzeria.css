@@ -1,342 +1,545 @@
-/* FAQ PROFESIONAL Y BONITO */
-.pizzeria-faq-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(168,35,35,0.08);
-  padding: 40px 32px 32px 32px;
-  max-width: 1100px;
-  margin: 48px auto 48px auto;
-  align-items: flex-start;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
 }
-.pizzeria-faq {
-  flex: 2;
-  min-width: 320px;
+
+.pizzeria-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #6d9cee;
+    color: #051f75;
+    border: 1px solid #6f9df3;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
 }
-.pizzeria-faq h2 {
-  color: #a82323;
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 24px;
-  text-align: left;
-  letter-spacing: -1px;
+
+.pizzeria-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
 }
-.pizzeria-faq-item {
-  background: #f9f6f4;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(168,35,35,0.04);
-  margin-bottom: 18px;
-  transition: box-shadow 0.3s;
-  border: 1.5px solid #f0e0e0;
-  overflow: hidden;
+
+.pizzeria-section-heading h3 {
+    font-size: 2.2rem;
+    color: #0b298b;
+    margin-bottom: 14px;
+    font-weight: 800;
 }
-.pizzeria-faq-item.active {
-  box-shadow: 0 4px 16px rgba(168,35,35,0.10);
-  border-color: #a82323;
+
+.pizzeria-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
 }
-.pizzeria-faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 700;
-  color: #a82323;
-  cursor: pointer;
-  font-size: 1.13rem;
-  padding: 20px 24px 20px 18px;
-  border-bottom: 1px solid #f0e0e0;
-  background: transparent;
-  transition: background 0.2s;
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.pizzeria-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
 }
-.pizzeria-faq-item.active .pizzeria-faq-question {
-  background: #fff3f3;
+
+.pizzeria-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.pizzeria-faq-toggle {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  margin-left: 16px;
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  position: relative;
+
+.pizzeria-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
 }
-.pizzeria-faq-toggle::before {
-  content: '';
-  display: block;
-  width: 0.8em;
-  height: 0.8em;
-  border-right: 3.5px solid #a82323;
-  border-bottom: 3.5px solid #a82323;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  box-shadow: 0 1px 2px #fff6;
+
+.pizzeria-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
 }
-.pizzeria-faq-item.active .pizzeria-faq-toggle {
-  transform: rotate(90deg) scale(1.1);
+
+.pizzeria-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
 }
-.pizzeria-faq-answer {
-  color: #3a2323;
-  font-size: 1.05rem;
-  padding: 18px 24px 18px 24px;
-  background: #fff;
-  border-radius: 0 0 14px 14px;
-  box-shadow: 0 1px 4px rgba(168,35,35,0.03);
-  display: none;
-  animation: faqFadeIn 0.35s;
+
+.pizzeria-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
 }
-@keyframes faqFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.pizzeria-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
 }
-.pizzeria-faq-img {
-  flex: 1;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start;
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.pizzeria-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
 }
-.pizzeria-faq-img img {
-  max-width: 220px;
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(168,35,35,0.10);
-  object-fit: cover;
-  background: #fff;
+
+.pizzeria-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
-/* FAQ desplegable con flecha animada */
-.pizzeria-faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  color: #a82323;
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 18px 0;
-  border-bottom: 1px solid #e2e2e2;
+
+.pizzeria-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #092287e4;
+    margin: 0 0 20px;
+    font-weight: 800;
 }
-.pizzeria-faq-toggle {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-left: 10px;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  position: relative;
+
+.pizzeria-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
 }
-.pizzeria-faq-toggle::before {
-  content: '';
-  display: block;
-  width: 0.7em;
-  height: 0.7em;
-  border-right: 3px solid #a82323;
-  border-bottom: 3px solid #a82323;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+
+.pizzeria-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
 }
-.pizzeria-faq-item.active .pizzeria-faq-toggle {
-  transform: rotate(90deg);
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #93b9ef;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(161,28,28,0.06);
 }
-.pizzeria-faq-answer {
-  color: #333;
-  font-size: 1rem;
-  padding: 12px 0 18px 0;
-  display: none;
+
+.feature i {
+    color: #081f7d;
+    font-size: 1rem;
 }
-/* Estilos para facturacionpizzeria.php */
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.pizzeria-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.pizzeria-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
 
 .pizzeria-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0 auto;
-  max-width: 900px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
-  background: #fff;
-}
-.pizzeria-banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
 }
 
-.pizzeria-desarrollo {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 32px auto 0 auto;
-  padding: 32px 24px 24px 24px;
-  text-align: center;
+.pizzeria-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
 }
-.pizzeria-desarrollo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #a11c1c;
-}
-.pizzeria-desarrollo p {
-  font-size: 1.1rem;
-  color: #333;
+
+/* =========================
+   ROLES
+========================= */
+.pizzeria-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #1A3A6B 100%);
 }
 
 .pizzeria-roles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 24px;
 }
+
 .pizzeria-rol-card {
-  flex: 1 1 300px;
-  background: #fdf6f6;
-  border-radius: 16px;
-  box-shadow: 0 1px 8px rgba(161,28,28,0.07);
-  padding: 28px 20px 20px 20px;
-  min-width: 280px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(161,28,28,0.08);
+    padding: 26px 22px;
+    border: 1px solid #f3dede;
 }
+
+.pizzeria-rol-large {
+    min-height: 100%;
+}
+
 .pizzeria-rol-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #a11c1c;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #091a88e7;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 .pizzeria-rol-card ul {
-  padding-left: 18px;
-  color: #222;
-  font-size: 1rem;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .pizzeria-rol-card ul li {
-  margin-bottom: 7px;
-  list-style: disc;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
 }
+
+.pizzeria-rol-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #0b2477e5;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
 .pizzeria-rol-icon {
-  font-size: 1.7rem;
-  color: #a11c1c;
+    font-size: 1.4rem;
+    color: #05115f;
 }
 
 .pizzeria-roles-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 32px auto 0 auto;
-  max-width: 700px;
+    width: min(900px, calc(100% - 40px));
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
-.pizzeria-roles-bottom .pizzeria-rol-card {
-  min-width: 200px;
-  max-width: 260px;
-  padding: 20px 12px 16px 12px;
+
+/* =========================
+   FAQ
+========================= */
+.pizzeria-faq-wrapper {
+    padding: 0 0 90px;
+    background: #fff5f5;
 }
 
 .pizzeria-faq-section {
-  max-width: 1100px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 36px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(168,35,35,0.08);
+    padding: 40px 32px 32px 32px;
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    align-items: start;
+    border: 1px solid #f3dede;
 }
+
 .pizzeria-faq {
-  flex: 2 1 400px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 32px 24px;
+    min-width: 0;
 }
+
 .pizzeria-faq h2 {
-  color: #a11c1c;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-align: center;
+    color: #081284c1;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: left;
+    letter-spacing: -1px;
 }
+
 .pizzeria-faq-item {
-  margin-bottom: 18px;
-  border-bottom: 1px solid #f3dede;
+    background: #f9f6f4;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(168,35,35,0.04);
+    margin-bottom: 18px;
+    transition: box-shadow 0.3s;
+    border: 1.5px solid #f0e0e0;
+    overflow: hidden;
 }
+
+.pizzeria-faq-item.active {
+    box-shadow: 0 4px 16px rgba(168,35,35,0.10);
+    border-color: #021471;
+}
+
 .pizzeria-faq-question {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #a11c1c;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #03215d;
+    cursor: pointer;
+    font-size: 1.08rem;
+    padding: 20px 24px 20px 18px;
+    background: transparent;
+    transition: background 0.2s;
+    gap: 14px;
 }
-.pizzeria-faq-question:hover {
-  color: #d32f2f;
+
+.pizzeria-faq-item.active .pizzeria-faq-question {
+    background: #fff3f3;
 }
-.pizzeria-faq-answer {
-  font-size: 1rem;
-  color: #222;
-  padding: 0 0 10px 0;
-  display: none;
-  animation: fadeIn 0.3s;
-}
-.pizzeria-faq-item.active .pizzeria-faq-answer {
-  display: block;
-}
+
 .pizzeria-faq-toggle {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: transform 0.2s;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 16px;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    flex-shrink: 0;
 }
+
+.pizzeria-faq-toggle::before {
+    content: '';
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 3.5px solid #021a5be3;
+    border-bottom: 3.5px solid #041949;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
 .pizzeria-faq-item.active .pizzeria-faq-toggle {
-  transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.pizzeria-faq-answer {
+    color: #3a2323;
+    font-size: 1.02rem;
+    padding: 18px 24px 18px 24px;
+    background: #fff;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 1px 4px rgba(168,35,35,0.03);
+    display: none;
+    animation: faqFadeIn 0.35s;
+    line-height: 1.7;
+}
+
+@keyframes faqFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .pizzeria-faq-img {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-.pizzeria-faq-img img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(161,28,28,0.10);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@media (max-width: 900px) {
-  .pizzeria-banner, .pizzeria-desarrollo, .pizzeria-roles, .pizzeria-faq-section {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .pizzeria-roles {
+    display: flex;
     flex-direction: column;
+    gap: 18px;
     align-items: center;
-  }
-  .pizzeria-faq-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    justify-content: flex-start;
+}
+
+.pizzeria-faq-img img {
+    max-width: 260px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(168,35,35,0.10);
+    object-fit: cover;
+    background: #fff;
+    padding: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .pizzeria-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .pizzeria-hero-text {
+        text-align: center;
+    }
+
+    .pizzeria-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pizzeria-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .pizzeria-roles {
+        grid-template-columns: 1fr;
+    }
+
+    .pizzeria-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .pizzeria-faq-img {
+        order: -1;
+    }
+
+    .pizzeria-faq h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .pizzeria-banner-modern {
+        min-height: 320px;
+    }
+
+    .pizzeria-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .pizzeria-banner-content p {
+        font-size: 1rem;
+    }
+
+    .pizzeria-hero {
+        padding: 60px 0 40px;
+    }
+
+    .pizzeria-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .pizzeria-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .pizzeria-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .pizzeria-roles-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .pizzeria-banner-container {
+        padding: 12px;
+    }
+
+    .pizzeria-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .pizzeria-faq-section {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pizzeria-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .pizzeria-badge,
+    .pizzeria-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .pizzeria-hero-container,
+    .pizzeria-roles,
+    .pizzeria-roles-bottom,
+    .pizzeria-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .pizzeria-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .pizzeria-rol-card {
+        padding: 18px 14px;
+    }
+
+    .pizzeria-rol-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .pizzeria-rol-card ul li,
+    .pizzeria-faq-answer,
+    .pizzeria-faq-question {
+        font-size: 0.95rem;
+    }
 }

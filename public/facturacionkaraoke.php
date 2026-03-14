@@ -4,42 +4,90 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Aplicativo para Facturación Electrónica - Karaoke</title>
-<link rel="stylesheet" href="assets/css/estilo.css">
-<link rel="stylesheet" href="assets/css/facturacionkaraoke.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Aplicativo para Facturación Electrónica - Karaoke</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/facturacionkaraoke.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
 <?php include("includes/header.php"); ?>
-<section class="servicios-header" style="background:#18376b; color:#fff; padding:60px 0 40px 0; text-align:center;">
-    <h1 style="font-size:3rem;font-weight:700;margin-bottom:12px;">Aplicativo para Facturación Electrónica - Karaoke</h1>
-    <div style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">Sdrim S.A.C.</div>
-    <div style="font-size:1.1rem;color:#cfd8e3;">Servicios <span style="color:#fff;">:</span> Facturación Karaoke</div>
+
+<!-- BANNER MODERNO -->
+<section class="karaoke-banner-modern">
+    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80" alt="Banner Karaoke">
+    <div class="karaoke-banner-overlay"></div>
+
+    <div class="karaoke-banner-content">
+        <span class="karaoke-badge">Solución especializada para Karaoke</span>
+        <h1>Aplicativo para Facturación Electrónica - Karaoke</h1>
+        <p>Sdrim S.A.C. · Servicios · Facturación Electrónica para Karaoke</p>
+    </div>
 </section>
-<!-- Banner principal -->
 
-<!-- Banner Créditos -->
-<div style="max-width:900px;margin:40px auto 0 auto;padding:0;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-    <img src="assets/img/karaoke.jpg" alt="Sistema de Créditos" style="width:100%;border-radius:18px 18px 0 0;">
-</div>
+<!-- HERO PRINCIPAL -->
+<section class="karaoke-hero">
+    <div class="karaoke-hero-container">
 
+        <div class="karaoke-hero-text">
+            <span class="karaoke-tag">Solución integral</span>
 
-<!-- Desarrollo de Facturación Electrónica -->
-<div style="max-width:900px;margin:40px auto 0 auto;padding:32px 24px 24px 24px;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-    <h2 style="color:#18376b;text-align:center;font-size:2rem;font-weight:700;margin-bottom:18px;">DESARROLLO DE FACTURACIÓN ELECTRÓNICA</h2>
-    <p style="font-size:1.15rem;text-align:center;">Se instala un software de facturación electrónica en el sistema informático del karaoke. Este software está diseñado para generar facturas electrónicas de manera automatizada y asegurarse de que cumplan con todos los requisitos legales y fiscales. Además, contribuye a la modernización y digitalización de la operación del karaoke, lo que puede aumentar la eficiencia y la satisfacción del cliente.</p>
-</div>
+            <h2>Desarrollo de Facturación Electrónica</h2>
 
-<!-- Roles y Funcionalidades -->
-<div style="max-width:1200px;margin:40px auto 0 auto;padding:0;background:#f7faff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-    <div style="display:flex;flex-wrap:wrap;gap:0;">
-        <div style="flex:1 1 33%;padding:32px 24px 24px 24px;border-right:2px solid #1e3a8a;min-width:220px;">
-            <div style="font-size:2rem;color:#1e3a8a;text-align:center;margin-bottom:8px;"><i class="fa-solid fa-user-gear"></i></div>
-            <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;text-align:center;">ADMINISTRADOR</h3>
-            <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
+            <p>
+                Se instala un software de facturación electrónica en el sistema informático del karaoke.
+                Este software está diseñado para generar facturas electrónicas de manera automatizada
+                y asegurarse de que cumplan con todos los requisitos legales y fiscales.
+                Además, contribuye a la modernización y digitalización de la operación del karaoke,
+                lo que puede aumentar la eficiencia y la satisfacción del cliente.
+            </p>
+
+            <div class="karaoke-features">
+                <div class="feature">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Emisión rápida de comprobantes electrónicos</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Control de caja, ventas y atención</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Envío directo de comprobantes a SUNAT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="karaoke-hero-image">
+            <div class="karaoke-banner-container">
+                <img src="assets/img/banerkaraoke.png" alt="Sistema Karaoke" class="karaoke-banner">
+                <img src="assets/img/karaoke.jpg" alt="App Karaoke" class="karaoke-card">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="karaoke-roles-section">
+    <div class="karaoke-section-heading">
+        <span class="karaoke-tag">Funciones principales</span>
+        <h3>Módulos del sistema</h3>
+        <p>
+            Organiza la operación del karaoke con herramientas para administración, caja, atención, cocina y barra.
+        </p>
+    </div>
+
+    <div class="karaoke-roles-grid">
+        <div class="karaoke-role-card karaoke-role-large">
+            <div class="role-icon"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>ADMINISTRADOR</h3>
+            <ul>
                 <li>Mantenimiento de Usuarios, Clientes, Categorías, Marcas, Registro de número de Cuentas de Banco</li>
                 <li>Compras – Listado de Compras</li>
                 <li>Creación de Recetas, Productos y Servicios</li>
@@ -59,10 +107,11 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li>Contabilidad (Compras y Ventas)</li>
             </ul>
         </div>
-        <div style="flex:1 1 33%;padding:32px 24px 24px 24px;border-right:2px solid #1e3a8a;min-width:220px;">
-            <div style="font-size:2rem;color:#1e3a8a;text-align:center;margin-bottom:8px;"><i class="fa-solid fa-cash-register"></i></div>
-            <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;text-align:center;">CAJA</h3>
-            <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
+
+        <div class="karaoke-role-card">
+            <div class="role-icon"><i class="fa-solid fa-cash-register"></i></div>
+            <h3>CAJA</h3>
+            <ul>
                 <li>Emisión de comprobantes electrónicos ilimitados libre de IGV (Factura, Boleta y Nota de Venta)</li>
                 <li>Emisión de comprobantes electrónicos ilimitados con diferentes métodos de pago</li>
                 <li>Campo de observaciones</li>
@@ -80,10 +129,11 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li>Reporte de ventas diarias en pdf más documento Excel con stock de productos</li>
             </ul>
         </div>
-        <div style="flex:1 1 33%;padding:32px 24px 24px 24px;min-width:220px;">
-            <div style="font-size:2rem;color:#1e3a8a;text-align:center;margin-bottom:8px;"><i class="fa-solid fa-clock"></i></div>
-            <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;text-align:center;">MOZO</h3>
-            <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
+
+        <div class="karaoke-role-card">
+            <div class="role-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>MOZO</h3>
+            <ul>
                 <li>Toma de pedidos por mesa (individual o pagos en grupo)</li>
                 <li>Envíos directos a cocina a través de Pantalla o impresión de comandas con ticketera</li>
                 <li>Unión de mesas</li>
@@ -92,77 +142,103 @@ if (session_status() === PHP_SESSION_NONE) {
             </ul>
         </div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:0;margin-top:24px;">
-        <div style="flex:1 1 50%;padding:32px 24px 24px 24px;border-right:2px solid #1e3a8a;min-width:220px;">
-            <div style="font-size:2rem;color:#1e3a8a;text-align:center;margin-bottom:8px;"><i class="fa-solid fa-utensils"></i></div>
-            <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;text-align:center;">COCINA</h3>
-            <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
+
+    <div class="karaoke-roles-bottom">
+        <div class="karaoke-role-card">
+            <div class="role-icon"><i class="fa-solid fa-utensils"></i></div>
+            <h3>COCINA</h3>
+            <ul>
                 <li>Recepción de pedidos con Pc (sonido), Laptop, Tablet y/o Ticket</li>
                 <li>Check en pedido listo</li>
             </ul>
         </div>
-        <div style="flex:1 1 50%;padding:32px 24px 24px 24px;min-width:220px;">
-            <div style="font-size:2rem;color:#1e3a8a;text-align:center;margin-bottom:8px;"><i class="fa-solid fa-table-cells-large"></i></div>
-            <h3 style="color:#18376b;font-size:1.5rem;font-weight:700;margin-bottom:12px;text-align:center;">BARRA</h3>
-            <ul style="font-size:1rem;line-height:1.7;color:#222;padding-left:18px;">
+
+        <div class="karaoke-role-card">
+            <div class="role-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+            <h3>BARRA</h3>
+            <ul>
                 <li>Recepción de pedidos con Pc (sonido), Laptop, Tablet y/o Ticket</li>
                 <li>Pedido listo</li>
             </ul>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Preguntas Frecuentes -->
-<div style="max-width:1100px;margin:40px auto 40px auto;padding:32px 24px 24px 24px;background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:flex-start;gap:32px;">
-    <div style="flex:2;">
-        <h2 style="color:#18376b;text-align:left;font-size:1.5rem;font-weight:700;margin-bottom:18px;">Preguntas Frecuentes</h2>
-        <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
-                <span class="faq-arrow"></span>
-                ¿Cómo puede ayudar la facturación electrónica a mi negocio de karaoke?
+<!-- FAQ -->
+<section class="karaoke-faq-wrapper">
+    <div class="karaoke-faq-section">
+        <div class="karaoke-faq">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span class="faq-question-left">
+                        <span class="faq-arrow"></span>
+                        ¿Cómo puede ayudar la facturación electrónica a mi negocio de karaoke?
+                    </span>
+                </div>
+                <div class="faq-answer" style="display:block;">
+                    La facturación electrónica facilita la gestión de las facturas, reduce errores y costos asociados con el manejo de documentos físicos, y cumple con los requisitos fiscales establecidos. También puede ayudar a mejorar el flujo de caja y simplificar la contabilidad.
+                </div>
             </div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica facilita la gestión de las facturas, reduce errores y costos asociados con el manejo de documentos físicos, y cumple con los requisitos fiscales establecidos. También puede ayudar a mejorar el flujo de caja y simplificar la contabilidad.</div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-question-left">
+                        <span class="faq-arrow"></span>
+                        ¿Cómo implemento un sistema de facturación electrónica para mi negocio de karaoke?
+                    </span>
+                </div>
+                <div class="faq-answer">
+                    Para implementar un sistema de facturación electrónica, es recomendable contar con un software especializado que se adapte a las necesidades de tu negocio y cumpla con las normativas fiscales vigentes. Nuestro equipo puede asesorarte en todo el proceso de instalación y capacitación.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-question-left">
+                        <span class="faq-arrow"></span>
+                        ¿Cómo garantizo que las facturas electrónicas sean válidas y cumplan con las normativas fiscales?
+                    </span>
+                </div>
+                <div class="faq-answer">
+                    Utilizando un software certificado y actualizado, que realice los envíos automáticos a SUNAT y genere comprobantes con todos los requisitos legales. Además, es importante mantener el sistema actualizado ante cambios normativos.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-question-left">
+                        <span class="faq-arrow"></span>
+                        ¿Qué beneficios adicionales ofrece la facturación electrónica para mi negocio de karaoke?
+                    </span>
+                </div>
+                <div class="faq-answer">
+                    La facturación electrónica contribuye a la modernización y digitalización del negocio, mejora la eficiencia operativa, reduce el uso de papel y facilita el acceso a reportes y estadísticas en tiempo real.
+                </div>
+            </div>
         </div>
-        <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
-                <span class="faq-arrow"></span>
-                ¿Cómo implemento un sistema de facturación electrónica para mi negocio de karaoke?
-            </div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Para implementar un sistema de facturación electrónica, es recomendable contar con un software especializado que se adapte a las necesidades de tu negocio y cumpla con las normativas fiscales vigentes. Nuestro equipo puede asesorarte en todo el proceso de instalación y capacitación.</div>
-        </div>
-        <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
-                <span class="faq-arrow"></span>
-                ¿Cómo garantizo que las facturas electrónicas sean válidas y cumplan con las normativas fiscales?
-            </div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">Utilizando un software certificado y actualizado, que realice los envíos automáticos a SUNAT y genere comprobantes con todos los requisitos legales. Además, es importante mantener el sistema actualizado ante cambios normativos.</div>
-        </div>
-        <div class="faq-item" style="background:#f8fafd;border-radius:12px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:12px;">
-            <div class="faq-question" style="font-weight:600;color:#18376b;cursor:pointer;">
-                <span class="faq-arrow"></span>
-                ¿Qué beneficios adicionales ofrece la facturación electrónica para mi negocio de karaoke?
-            </div>
-            <div class="faq-answer" style="margin-top:8px;color:#222;display:none;">La facturación electrónica contribuye a la modernización y digitalización del negocio, mejora la eficiencia operativa, reduce el uso de papel y facilita el acceso a reportes y estadísticas en tiempo real.</div>
+
+        <div class="karaoke-faq-img">
+            <img src="assets/img/dragonKaraoke.png" alt="Karaoke Preguntas Frecuentes">
         </div>
     </div>
-    <div style="flex:1;text-align:center;">
-        <img src="assets/img/dragonKaraoke.png" alt="Karaoke Preguntas Frecuentes" style="max-width:100%;border-radius:12px;">
-       
-    </div>
-</div>
+</section>
 
 <script>
-// FAQ desplegable: cada pregunta muestra su respuesta, una a la vez
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.faq-question').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
             var answer = item.querySelector('.faq-answer');
             var isOpen = item.classList.contains('active');
+
             document.querySelectorAll('.faq-item').forEach(function(i) {
                 i.classList.remove('active');
-                i.querySelector('.faq-answer').style.display = 'none';
+                var ans = i.querySelector('.faq-answer');
+                if (ans) ans.style.display = 'none';
             });
+
             if (!isOpen) {
                 item.classList.add('active');
                 answer.style.display = 'block';
@@ -171,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
 <?php include("includes/footer.php"); ?>
 </body>
 </html>

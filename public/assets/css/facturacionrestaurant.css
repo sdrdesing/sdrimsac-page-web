@@ -1,189 +1,509 @@
-/* Estilos para facturacionrestaurant.php */
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.restaurant-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #fff1e6;
+    color: #1A3A6B;
+    border: 1px solid #0a2e7d;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.restaurant-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.restaurant-section-heading h3 {
+    font-size: 2.2rem;
+    color: #1A3A6B;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.restaurant-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.restaurant-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
+}
+
+.restaurant-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.restaurant-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.restaurant-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.restaurant-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.restaurant-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.restaurant-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
+}
+
+.restaurant-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.restaurant-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #1A3A6B;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.restaurant-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.restaurant-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #0a2e7d;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(201,92,12,0.06);
+}
+
+.feature i {
+    color: #1A3A6B;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.restaurant-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.restaurant-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
 
 .restaurant-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0 auto;
-  max-width: 900px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
-  background: #fff;
-}
-.restaurant-banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
 }
 
-.restaurant-desarrollo {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 32px auto 0 auto;
-  padding: 32px 24px 24px 24px;
-  text-align: center;
+.restaurant-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
 }
-.restaurant-desarrollo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #c95c0c;
-}
-.restaurant-desarrollo p {
-  font-size: 1.1rem;
-  color: #333;
+
+/* =========================
+   ROLES
+========================= */
+.restaurant-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #fff8f2 100%);
 }
 
 .restaurant-roles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 24px;
 }
+
 .restaurant-rol-card {
-  flex: 1 1 300px;
-  background: #fff8f2;
-  border-radius: 16px;
-  box-shadow: 0 1px 8px rgba(201,92,12,0.07);
-  padding: 28px 20px 20px 20px;
-  min-width: 280px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(201,92,12,0.08);
+    padding: 26px 22px;
+    border: 1px solid #1A3A6B;
 }
+
+.restaurant-rol-large {
+    min-height: 100%;
+}
+
 .restaurant-rol-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #c95c0c;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1A3A6B;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 .restaurant-rol-card ul {
-  padding-left: 18px;
-  color: #222;
-  font-size: 1rem;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .restaurant-rol-card ul li {
-  margin-bottom: 7px;
-  list-style: disc;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
 }
+
+.restaurant-rol-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #1A3A6B;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
 .restaurant-rol-icon {
-  font-size: 1.7rem;
-  color: #c95c0c;
+    font-size: 1.4rem;
+    color: #1A3A6B;
 }
 
 .restaurant-roles-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 32px auto 0 auto;
-  max-width: 700px;
+    width: min(900px, calc(100% - 40px));
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
-.restaurant-roles-bottom .restaurant-rol-card {
-  min-width: 200px;
-  max-width: 260px;
-  padding: 20px 12px 16px 12px;
+
+/* =========================
+   FAQ
+========================= */
+.restaurant-faq-wrapper {
+    padding: 0 0 90px;
+    background: #fff8f2;
 }
 
 .restaurant-faq-section {
-  max-width: 1100px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
 }
+
 .restaurant-faq {
-  flex: 2 1 400px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 32px 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(201,92,12,0.08);
+    padding: 32px 24px;
+    border: 1px solid #1A3A6B;
 }
+
 .restaurant-faq h2 {
-  color: #c95c0c;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-align: center;
+    color: #1A3A6B;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-align: center;
 }
+
 .restaurant-faq-item {
-  margin-bottom: 18px;
-  border-bottom: 1px solid #f7e2d1;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #1A3A6B;
 }
+
 .restaurant-faq-question {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #c95c0c;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  transition: color 0.2s;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1A3A6B;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    transition: color 0.2s;
+    gap: 12px;
 }
+
 .restaurant-faq-question:hover {
-  color: #e67c1a;
+    color: #1A3A6B;
 }
+
 .restaurant-faq-answer {
-  font-size: 1rem;
-  color: #222;
-  padding: 0 0 10px 0;
-  display: none;
-  animation: fadeIn 0.3s;
+    font-size: 1rem;
+    color: #222;
+    padding: 0 0 12px 0;
+    display: none;
+    animation: fadeIn 0.3s;
+    line-height: 1.7;
 }
+
 .restaurant-faq-item.active .restaurant-faq-answer {
-  display: block;
+    display: block;
 }
+
 .restaurant-faq-toggle {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: transform 0.2s;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
 }
+
 .restaurant-faq-item.active .restaurant-faq-toggle {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .restaurant-faq-img {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
 }
+
 .restaurant-faq-img img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(201,92,12,0.10);
+    width: 100%;
+    max-width: 260px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(201,92,12,0.10);
+    background: #fff;
+    padding: 8px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@media (max-width: 900px) {
-  .restaurant-banner, .restaurant-desarrollo, .restaurant-roles, .restaurant-faq-section {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .restaurant-roles {
-    flex-direction: column;
-    align-items: center;
-  }
-  .restaurant-faq-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .restaurant-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .restaurant-hero-text {
+        text-align: center;
+    }
+
+    .restaurant-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .restaurant-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .restaurant-roles {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-faq-img {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-banner-modern {
+        min-height: 320px;
+    }
+
+    .restaurant-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .restaurant-banner-content p {
+        font-size: 1rem;
+    }
+
+    .restaurant-hero {
+        padding: 60px 0 40px;
+    }
+
+    .restaurant-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .restaurant-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .restaurant-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .restaurant-roles-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-banner-container {
+        padding: 12px;
+    }
+
+    .restaurant-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .restaurant-faq {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .restaurant-badge,
+    .restaurant-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .restaurant-hero-container,
+    .restaurant-roles,
+    .restaurant-roles-bottom,
+    .restaurant-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .restaurant-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .restaurant-rol-card {
+        padding: 18px 14px;
+    }
+
+    .restaurant-rol-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .restaurant-rol-card ul li,
+    .restaurant-faq-answer,
+    .restaurant-faq-question {
+        font-size: 0.95rem;
+    }
 }

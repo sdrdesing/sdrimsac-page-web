@@ -1,3 +1,110 @@
+/* --- Mejora avanzada para input file (imagen) --- */
+.producto-form-section .custom-file-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f8faff;
+  border: 2px solid #2e3a8c;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #2e3a8c11;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  max-width: 340px;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.producto-form-section .custom-file-input-wrapper:focus-within {
+  border-color: #1a237e;
+  box-shadow: 0 4px 16px #2e3a8c22;
+  background: #eef2ff;
+}
+.producto-form-section input[type="file"] {
+  flex: none;
+  margin-right: 12px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  font-size: 1.08em;
+  color: #223;
+  cursor: pointer;
+  width: auto;
+  max-width: 160px;
+}
+.producto-form-section .custom-file-label {
+  color: #555;
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.producto-form-section label[for], .producto-form-section label[for][for^="imagen"], .producto-form-section label[for^="file"] {
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 0.4em;
+  display: block;
+}
+/* --- Mejora visual para input file (imagen) --- */
+.producto-form-section input[type="file"] {
+  display: block;
+  padding: 8px 0;
+  font-size: 1.08em;
+  color: #223;
+  background: #f8faff;
+  border: 2px solid #2e3a8c;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #2e3a8c11;
+  margin-bottom: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+}
+
+.producto-form-section input[type="file"]:focus {
+  border-color: #1a237e;
+  box-shadow: 0 4px 16px #2e3a8c22;
+  background: #eef2ff;
+}
+
+.producto-form-section label[for], .producto-form-section label[for][for^="imagen"], .producto-form-section label[for^="file"] {
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 0.4em;
+  display: block;
+}
+/* --- Mejora visual para el select de categoría --- */
+select[name="categoria"], select#categoria, .producto-form-section select {
+  padding: 10px 14px;
+  border: 2px solid #2e3a8c;
+  border-radius: 8px;
+  background: #f8faff;
+  color: #223;
+  font-size: 1.08em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #2e3a8c11;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  margin-bottom: 18px;
+  min-width: 260px;
+  max-width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+select[name="categoria"]:focus, select#categoria:focus, .producto-form-section select:focus {
+  border-color: #1a237e;
+  box-shadow: 0 4px 16px #2e3a8c22;
+  background: #eef2ff;
+}
+
+select[name="categoria"] option, select#categoria option, .producto-form-section select option {
+  padding: 8px 12px;
+  font-size: 1em;
+  color: #223;
+}
 /* admin/producto_form.css - Estilos para el formulario de productos en admin */
 .producto-form-section {
   max-width: 500px;

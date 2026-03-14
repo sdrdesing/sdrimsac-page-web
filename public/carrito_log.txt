@@ -322,3 +322,31 @@ Carrito vacío
 Producto: 61 | Cantidad: 1
 --- Carrito después de pagar (usuario_id: 13) ---
 Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 64 | Cantidad: 1
+Producto: 51 | Cantidad: 1
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 63 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 16) ---
+Producto: 63 | Cantidad: 1
+Producto: 62 | Cantidad: 1
+--- Carrito después de pagar (usuario_id: 16) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Producto: 72 | Cantidad: 2
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío
+
+--- Carrito antes de pagar (usuario_id: 13) ---
+Carrito vacío
+--- Carrito después de pagar (usuario_id: 13) ---
+Carrito vacío

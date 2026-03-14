@@ -80,7 +80,16 @@ if(file_exists(__DIR__ . '/config/database.php')){
             </ul>
         </li>
 
-        <li><a href="productos.php"><i class="fa-solid fa-store"></i> Tienda</a></li>
+        <li class="dropdown">
+          <a href="productos.php"><i class="fa-solid fa-store"></i> Tienda</a>
+          <ul class="submenu">
+            <li><a href="productos.php?categoria=1">Lector de código de barra</a></li>
+            <li><a href="productos.php?categoria=2">Contómetro y papel de etiquetas</a></li>
+            <li><a href="productos.php?categoria=3">Impresora de etiquetas - Impresora de ticket</a></li>
+            <li><a href="productos.php?categoria=4">Computadoras - Tablet</a></li>
+            <li><a href="productos.php?categoria=5">Gaveta de dinero</a></li>
+          </ul>
+        </li>
         <li><a href="herramientas.php"><i class="fa-solid fa-wrench"></i> Herramientas</a></li>
         <li><a href="manuales.php"><i class="fa-solid fa-book"></i> Manuales</a></li>
         <li><a href="blog.php"><i class="fa-solid fa-blog"></i> Blog</a></li>
@@ -407,7 +416,7 @@ if(file_exists(__DIR__ . '/config/database.php')){
             <a href="servicios.php" class="btn-hero-primary" style="display:inline-block;margin-top:24px;">Ver todos los servicios</a>
         </div>
         <div class="showcase-img">
-            <img src="assets/img/facturacion1.jpg" alt="Sistema de gestión">
+            <img src="assets/img/imgindex.jpg" alt="Sistema de gestión">
         </div>
     </div>
 </section>

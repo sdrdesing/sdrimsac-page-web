@@ -1,102 +1,481 @@
-.fact-banner img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 40px;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
 }
 
-.fact-desarrollo {
-    max-width: 900px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.fact-desarrollo h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.cevicheria-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eaf2ff;
     color: #18376b;
+    border: 1px solid #cfe0ff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
 }
 
-.fact-desarrollo p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
+.cevicheria-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
 }
 
-/* MODULOS */
+.cevicheria-section-heading h3 {
+    font-size: 2.2rem;
+    color: #18376b;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.cevicheria-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.cevicheria-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
+}
+
+.cevicheria-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cevicheria-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.cevicheria-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.cevicheria-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.cevicheria-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.cevicheria-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.cevicheria-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
+}
+
+.cevicheria-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cevicheria-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #18376b;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.cevicheria-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.cevicheria-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #e5edf8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
+}
+
+.feature i {
+    color: #2a2aee;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.cevicheria-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.cevicheria-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
+
+.cevicheria-banner {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+}
+
+.cevicheria-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* =========================
+   MODULOS
+========================= */
+.cevicheria-modulos-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef3fb 100%);
+}
+
 .fact-modulos {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-    max-width: 1200px;
-    margin: 60px auto;
 }
 
 .modulo {
-    background: #f5f7fb;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 26px 22px;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    border: 1px solid #e7edf8;
     transition: 0.3s;
 }
 
 .modulo:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 14px 34px rgba(24,55,107,0.14);
 }
 
 .modulo h3 {
     color: #18376b;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    font-size: 1.22rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .modulo ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .modulo ul li {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #374151;
+    padding-left: 24px;
 }
 
-/* FAQ */
-.faq-section {
-    max-width: 900px;
-    margin: 80px auto;
-}
-
-.faq-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
+.modulo ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     color: #18376b;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
+/* =========================
+   FAQ
+========================= */
+.faq-wrapper {
+    padding: 0 0 90px;
+    background: #eef3fb;
+}
+
+.faq-section {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.faq-left {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    padding: 34px 28px;
+    border: 1px solid #e7edf8;
+}
+
+.faq-left h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #18376b;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .faq-item {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e5edf8;
 }
 
 .faq-question {
     width: 100%;
-    background: #18376b;
-    color: #fff;
+    background: transparent;
+    color: #18376b;
     border: none;
-    padding: 15px;
+    padding: 14px 0;
     text-align: left;
     font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .faq-question:hover {
-    background: #0f2550;
+    color: #2a2aee;
+}
+
+.faq-toggle {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(90deg);
 }
 
 .faq-answer {
     display: none;
-    padding: 15px;
-    background: #f5f7fb;
-    border-radius: 8px;
-    margin-top: 5px;
-    color: #333;
+    padding: 0 0 14px 0;
+    color: #374151;
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+.faq-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.faq-side-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(24,55,107,0.12);
+    background: #fff;
+    padding: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .cevicheria-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .cevicheria-hero-text {
+        text-align: center;
+    }
+
+    .cevicheria-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cevicheria-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .cevicheria-banner-modern {
+        min-height: 320px;
+    }
+
+    .cevicheria-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .cevicheria-banner-content p {
+        font-size: 1rem;
+    }
+
+    .cevicheria-hero {
+        padding: 60px 0 40px;
+    }
+
+    .cevicheria-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .cevicheria-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .cevicheria-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .cevicheria-banner-container {
+        padding: 12px;
+    }
+
+    .cevicheria-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .faq-left {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cevicheria-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .cevicheria-badge,
+    .cevicheria-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .cevicheria-hero-container,
+    .fact-modulos,
+    .faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .cevicheria-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .modulo {
+        padding: 18px 14px;
+    }
+
+    .modulo h3 {
+        font-size: 1.08rem;
+    }
+
+    .modulo ul li,
+    .faq-answer,
+    .faq-question {
+        font-size: 0.95rem;
+    }
 }

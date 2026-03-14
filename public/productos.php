@@ -16,7 +16,6 @@ function mostrarAlertaSesion() {
   });
 }
 <?php if(!$usuarioLogueado): ?>
-// Llama a la función solo cuando el usuario no ha iniciado sesión
 mostrarAlertaSesion();
 <?php endif; ?>
 </script>
@@ -59,23 +58,57 @@ function actualizarContadorCarrito() {
 
 <?php
 $productosPorPagina = 6;
-$totalProductos = $conn->query("SELECT COUNT(*) as total FROM productos")->fetch_assoc()['total'];
+$categoriaSeleccionada = isset($_GET['categoria']) ? intval($_GET['categoria']) : 0;
+
+// Traer categorías para los filtros
+$categorias = [];
+$qCategorias = $conn->query("SELECT id, name FROM categories ORDER BY name ASC");
+if($qCategorias && $qCategorias->num_rows > 0){
+    while($cat = $qCategorias->fetch_assoc()){
+        $categorias[] = $cat;
+    }
+}
+
+// Contar productos según filtro
+if($categoriaSeleccionada > 0){
+    $totalQuery = $conn->query("SELECT COUNT(*) as total FROM productos WHERE category_id = $categoriaSeleccionada");
+} else {
+    $totalQuery = $conn->query("SELECT COUNT(*) as total FROM productos");
+}
+
+$totalProductos = $totalQuery->fetch_assoc()['total'];
 $totalPaginas = ceil($totalProductos / $productosPorPagina);
 $paginaActual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
 $offset = ($paginaActual - 1) * $productosPorPagina;
-$sql = "SELECT * FROM productos ORDER BY id DESC LIMIT $offset, $productosPorPagina";
+
+// Consulta principal con filtro opcional
+if($categoriaSeleccionada > 0){
+    $sql = "SELECT p.*, c.name AS categoria
+            FROM productos p
+            LEFT JOIN categories c ON p.category_id = c.id
+            WHERE p.category_id = $categoriaSeleccionada
+            ORDER BY p.id DESC
+            LIMIT $offset, $productosPorPagina";
+} else {
+    $sql = "SELECT p.*, c.name AS categoria
+            FROM productos p
+            LEFT JOIN categories c ON p.category_id = c.id
+            ORDER BY p.id DESC
+            LIMIT $offset, $productosPorPagina";
+}
+
 $result = $conn->query($sql);
 ?>
 
 <nav class="paginacion">
   <?php if($paginaActual > 1): ?>
-    <a href="?pagina=<?php echo $paginaActual-1; ?>" class="paginacion-btn">&laquo; Anterior</a>
+    <a href="?pagina=<?php echo $paginaActual-1; ?><?php echo $categoriaSeleccionada ? '&categoria='.$categoriaSeleccionada : ''; ?>" class="paginacion-btn">&laquo; Anterior</a>
   <?php endif; ?>
   <?php for($i=1; $i<=$totalPaginas; $i++): ?>
-    <a href="?pagina=<?php echo $i; ?>" class="paginacion-btn <?php if($i==$paginaActual) echo 'activa'; ?>"><?php echo $i; ?></a>
+    <a href="?pagina=<?php echo $i; ?><?php echo $categoriaSeleccionada ? '&categoria='.$categoriaSeleccionada : ''; ?>" class="paginacion-btn <?php if($i==$paginaActual) echo 'activa'; ?>"><?php echo $i; ?></a>
   <?php endfor; ?>
   <?php if($paginaActual < $totalPaginas): ?>
-    <a href="?pagina=<?php echo $paginaActual+1; ?>" class="paginacion-btn">Siguiente &raquo;</a>
+    <a href="?pagina=<?php echo $paginaActual+1; ?><?php echo $categoriaSeleccionada ? '&categoria='.$categoriaSeleccionada : ''; ?>" class="paginacion-btn">Siguiente &raquo;</a>
   <?php endif; ?>
 </nav>
 
@@ -197,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p>Equipos y suministros confiables para puntos de venta, control comercial y operación diaria.</p>
   </div>
 
+
   <div class="cards">
   <?php
   if($result && $result->num_rows > 0):
@@ -210,12 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   ?>
       <div class="card card-visual producto-card">
-  <div class="producto-imagen-box">
-    <a href="detalle_producto.php?id=<?= $row['id'] ?>">
-      <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
-    </a>
-  </div>
-  <div class="card-body producto-card-body">
+        <div class="producto-imagen-box">
+          <a href="detalle_producto.php?id=<?= $row['id'] ?>">
+            <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($row['nombre']) ?>" class="producto-card-img">
+          </a>
+        </div>
+        <div class="card-body producto-card-body">
           <h3 class="producto-card-text-marquee" title="<?= htmlspecialchars($row['nombre']) ?>">
             <a href="detalle_producto.php?id=<?= $row['id'] ?>" style="color:inherit;text-decoration:none;">
               <span class="producto-card-text-marquee-inner"><?= htmlspecialchars($row['nombre']) ?></span>
@@ -223,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </h3>
 
           <p class="producto-precio"><strong>Precio: S/ <?= number_format($row['precio'],2) ?></strong></p>
+          <p class="producto-categoria"><strong>Categoría:</strong> <?= htmlspecialchars($row['categoria'] ?? 'Sin categoría') ?></p>
 
           <div class="producto-card-buttons">
             <?php if ((int)$row['stock'] > 0): ?>
@@ -277,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       </div>
-  <?php endwhile; endif; ?>
+  <?php endwhile; else: ?>
+    <p style="text-align:center;width:100%;">No hay productos en esta categoría.</p>
+  <?php endif; ?>
   </div>
 </section>
 

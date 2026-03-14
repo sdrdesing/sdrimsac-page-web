@@ -1,204 +1,452 @@
-/* Manual de uso estilo columnas */
-.manual-blocks {
-    margin: 48px auto 0 auto;
-    max-width: 980px;
-    background: #f7f8fc;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(24,55,107,0.08);
-    padding: 32px 18px 24px 18px;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
 }
-.manual-columns {
+
+.section-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eaf2ff;
+    color: #18376b;
+    border: 1px solid #cfe0ff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.section-heading h3 {
+    font-size: 2.2rem;
+    color: #18376b;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER PRINCIPAL
+========================= */
+.page-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
+    overflow: hidden;
+    background: #18376b;
 }
-.manual-col {
-    flex: 1 1 260px;
-    min-width: 240px;
-    max-width: 320px;
+
+.page-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 43, 89, 0.88), rgba(24, 55, 107, 0.78));
+}
+
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.page-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.page-banner-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.page-banner-content p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.chifa-hero-section {
+    padding: 80px 0 60px;
+    background: #f5f7fb;
+}
+
+.chifa-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.chifa-hero-text h2 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    color: #18376b;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.chifa-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.hero-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(24,55,107,0.06);
-    padding: 18px 12px 18px 12px;
-    text-align: left;
+    border: 1px solid #e5edf8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
 }
-.manual-icon {
+
+.hero-feature i {
+    color: #2a2aee;
+    font-size: 1rem;
+}
+
+.hero-feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.chifa-hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.chifa-banner-container {
+    position: relative;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
+
+.chifa-banner {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+}
+
+.chifa-card {
+    position: absolute;
+    right: -55px;
+    bottom: -45px;
+    width: 380px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* =========================
+   PREVIEW DEL SISTEMA
+========================= */
+.system-preview-section {
+    padding: 30px 0 70px;
+    background: #f5f7fb;
+}
+
+.system-preview-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.system-preview-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 18px 40px rgba(24,55,107,0.08);
+    border: 1px solid #e9eff8;
+}
+
+.system-preview-img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+/* =========================
+   MÓDULOS
+========================= */
+.modules-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef3fb 100%);
+}
+
+.modules-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* =========================
+   CARDS MANUAL
+========================= */
+.manual-blocks {
+    margin: 0 auto;
+    max-width: 1180px;
+    background: #f7f9fd;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(24,55,107,0.07);
+    padding: 34px 24px 28px;
+    border: 1px solid #e7edf8;
+}
+
+.manual-columns {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 24px;
+    margin-bottom: 24px;
+    align-items: start;
+}
+
+.manual-col,
+.manual-bottom-col {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(24,55,107,0.07);
+    padding: 24px 20px;
+    text-align: left;
+    border: 1px solid #edf2f9;
+}
+
+.manual-col-large {
+    min-height: 100%;
+}
+
+.manual-icon,
+.manual-icon-bottom {
     text-align: center;
     font-size: 2.2rem;
     color: #18376b;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-.manual-title {
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #18376b;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-}
-.manual-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.manual-list li {
-    position: relative;
-    font-size: 1rem;
-    color: #222;
-    margin-bottom: 8px;
-    padding-left: 22px;
-}
-.manual-list li:before {
-    content: '\f00c';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: #2a2aee;
-    position: absolute;
-    left: 0;
-    top: 2px;
-    font-size: 1rem;
-}
-.manual-bottom-blocks {
-    display: flex;
-    gap: 18px;
-    justify-content: center;
-    margin-top: 24px;
-}
-.manual-bottom-col {
-    flex: 1 1 220px;
-    min-width: 180px;
-    max-width: 320px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(24,55,107,0.06);
-    padding: 18px 12px 18px 12px;
-    text-align: left;
-}
-.manual-icon-bottom {
-    text-align: center;
-    font-size: 2rem;
-    color: #2a2aee;
-    margin-bottom: 8px;
-}
+
+.manual-title,
 .manual-title-bottom {
     text-align: center;
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     color: #18376b;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
 }
+
+.manual-list,
 .manual-list-bottom {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
+.manual-list li,
 .manual-list-bottom li {
     position: relative;
     font-size: 1rem;
-    color: #222;
-    margin-bottom: 8px;
-    padding-left: 22px;
+    color: #374151;
+    margin-bottom: 12px;
+    padding-left: 26px;
+    line-height: 1.65;
 }
+
+.manual-list li:before,
 .manual-list-bottom li:before {
     content: '\f00c';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    color: #18376b;
+    color: #2a2aee;
     position: absolute;
     left: 0;
     top: 2px;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
-@media (max-width: 900px) {
+
+.manual-bottom-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .chifa-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .chifa-hero-text {
+        text-align: center;
+    }
+
+    .hero-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .chifa-card {
+        right: -20px;
+        bottom: -30px;
+        width: 240px;
+    }
+
     .manual-columns {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    .page-banner-modern {
+        min-height: 320px;
+    }
+
+    .page-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-banner-content p {
+        font-size: 1rem;
+    }
+
+    .chifa-hero-section {
+        padding: 60px 0 40px;
+    }
+
+    .chifa-hero-text h2 {
+        font-size: 2.3rem;
+    }
+
+    .chifa-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .section-heading h3 {
+        font-size: 1.8rem;
+    }
+
     .manual-bottom-blocks {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+    }
+
+    .chifa-banner-container {
+        padding: 12px;
+    }
+
+    .chifa-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 280px;
     }
 }
-/* Estilos exclusivos para facturacionchifa.php */
-.chifa-main {
-    max-width: 900px;
-    margin: 40px auto 0 auto;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    padding: 32px 24px 48px 24px;
-}
-.chifa-img-top {
-    text-align: center;
-    margin-bottom: 32px;
-}
-.chifa-img-large {
-    width: 100%;
-    max-width: 420px;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-}
-.chifa-desc {
-    text-align: center;
-    margin-bottom: 32px;
-}
-.chifa-desc h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #18376b;
-}
-.chifa-desc p {
-    font-size: 1.1rem;
-    color: #222;
-}
-.chifa-img-mid {
-    display: block;
-    margin: 32px auto 32px auto;
-    max-width: 340px;
-    width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-}
-.chifa-manual {
-    text-align: center;
-    margin-top: 24px;
-}
-.chifa-manual h3 {
-    font-size: 1.3rem;
-    color: #18376b;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-.chifa-manual p {
-    font-size: 1.05rem;
-    color: #222;
-    margin-bottom: 12px;
-}
-.chifa-demo-btn {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 12px 32px;
-    background: #18376b;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(24,55,107,0.12);
-    transition: background 0.2s;
-}
-.chifa-demo-btn:hover {
-    background: #2a2aee;
-}
-@media (max-width: 600px) {
-    .chifa-main {
-        padding: 16px 6px 24px 6px;
+
+@media (max-width: 480px) {
+    .page-banner-content h1 {
+        font-size: 1.8rem;
     }
-    .chifa-img-large, .chifa-img-mid {
-        max-width: 98vw;
+
+    .page-badge,
+    .section-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .chifa-hero-container,
+    .system-preview-container,
+    .modules-container {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .chifa-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .hero-feature {
+        padding: 12px 14px;
+    }
+
+    .manual-blocks {
+        padding: 20px 14px;
+    }
+
+    .manual-col,
+    .manual-bottom-col {
+        padding: 18px 14px;
+    }
+
+    .manual-title,
+    .manual-title-bottom {
+        font-size: 1.15rem;
+    }
+
+    .manual-list li,
+    .manual-list-bottom li {
+        font-size: 0.95rem;
     }
 }

@@ -1,221 +1,530 @@
-/* FAQ Arrow Toggle Styles */
-.faq-question {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
 }
 
-.faq-arrow {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 4px;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  background: none;
-  position: relative;
+.karaoke-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eaf2ff;
+    color: #18376b;
+    border: 1px solid #cfe0ff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
 }
-.faq-arrow::before {
-  content: '';
-  display: block;
-  width: 0.6em;
-  height: 0.6em;
-  border-right: 3px solid #18376b;
-  border-bottom: 3px solid #18376b;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+
+.karaoke-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
 }
-.faq-item.active .faq-arrow {
-  transform: rotate(90deg);
+
+.karaoke-section-heading h3 {
+    font-size: 2.2rem;
+    color: #18376b;
+    margin-bottom: 14px;
+    font-weight: 800;
 }
-/* Estilos para facturacionkaraoke.php */
+
+.karaoke-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER MODERNO AZUL
+========================= */
+.karaoke-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
+}
+
+.karaoke-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.karaoke-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.karaoke-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.karaoke-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.karaoke-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.karaoke-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.karaoke-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
+}
+
+.karaoke-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.karaoke-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #18376b;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.karaoke-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.karaoke-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #e5edf8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
+}
+
+.feature i {
+    color: #2a2aee;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.karaoke-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.karaoke-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
 
 .karaoke-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0 auto;
-  max-width: 900px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
-  background: #fff;
-}
-.karaoke-banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
 }
 
-.karaoke-desarrollo {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 32px auto 0 auto;
-  padding: 32px 24px 24px 24px;
-  text-align: center;
-}
-.karaoke-desarrollo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #18376b;
-}
-.karaoke-desarrollo p {
-  font-size: 1.1rem;
-  color: #333;
+.karaoke-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
 }
 
-.karaoke-roles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
+/* =========================
+   ROLES
+========================= */
+.karaoke-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef3fb 100%);
 }
-.karaoke-rol-card {
-  flex: 1 1 300px;
-  background: #f7faff;
-  border-radius: 16px;
-  box-shadow: 0 1px 8px rgba(24,55,107,0.07);
-  padding: 28px 20px 20px 20px;
-  min-width: 280px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
+.karaoke-roles-grid {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 24px;
 }
-.karaoke-rol-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #18376b;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+
+.karaoke-role-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    padding: 26px 22px;
+    border: 1px solid #e7edf8;
 }
-.karaoke-rol-card ul {
-  padding-left: 18px;
-  color: #222;
-  font-size: 1rem;
-  margin: 0;
+
+.karaoke-role-large {
+    min-height: 100%;
 }
-.karaoke-rol-card ul li {
-  margin-bottom: 7px;
-  list-style: disc;
+
+.role-icon {
+    text-align: center;
+    font-size: 2rem;
+    color: #18376b;
+    margin-bottom: 10px;
 }
-.karaoke-rol-icon {
-  font-size: 1.7rem;
-  color: #18376b;
+
+.karaoke-role-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #18376b;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.karaoke-role-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.karaoke-role-card ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
+}
+
+.karaoke-role-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #18376b;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
 }
 
 .karaoke-roles-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 32px auto 0 auto;
-  max-width: 700px;
+    width: min(900px, calc(100% - 40px));
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
-.karaoke-roles-bottom .karaoke-rol-card {
-  min-width: 200px;
-  max-width: 260px;
-  padding: 20px 12px 16px 12px;
+
+/* =========================
+   FAQ
+========================= */
+.karaoke-faq-wrapper {
+    padding: 0 0 90px;
+    background: #eef3fb;
 }
 
 .karaoke-faq-section {
-  max-width: 1100px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
 }
+
 .karaoke-faq {
-  flex: 2 1 400px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 32px 24px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    padding: 34px 28px;
+    border: 1px solid #e7edf8;
 }
+
 .karaoke-faq h2 {
-  color: #18376b;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-align: center;
+    color: #18376b;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
 }
-.karaoke-faq-item {
-  margin-bottom: 18px;
-  border-bottom: 1px solid #e3e8f0;
+
+.faq-item {
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e5edf8;
 }
-.karaoke-faq-question {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #18376b;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  transition: color 0.2s;
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    color: #18376b;
+    border: none;
+    padding: 14px 0;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
-.karaoke-faq-question:hover {
-  color: #2a4d9b;
+
+.faq-question:hover {
+    color: #2a2aee;
 }
-.karaoke-faq-answer {
-  font-size: 1rem;
-  color: #222;
-  padding: 0 0 10px 0;
-  display: none;
-  animation: fadeIn 0.3s;
+
+.faq-question-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.karaoke-faq-item.active .karaoke-faq-answer {
-  display: block;
+
+.faq-answer {
+    display: none;
+    padding: 0 0 14px 0;
+    color: #374151;
+    line-height: 1.7;
+    font-size: 0.98rem;
 }
-.karaoke-faq-toggle {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: transform 0.2s;
+
+.faq-arrow {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    background: none;
+    position: relative;
+    flex-shrink: 0;
 }
-.karaoke-faq-item.active .karaoke-faq-toggle {
-  transform: rotate(90deg);
+
+.faq-arrow::before {
+    content: '';
+    display: block;
+    width: 0.6em;
+    height: 0.6em;
+    border-right: 3px solid #18376b;
+    border-bottom: 3px solid #18376b;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(90deg);
 }
 
 .karaoke-faq-img {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 .karaoke-faq-img img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(24,55,107,0.10);
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(24,55,107,0.12);
+    background: #fff;
+    padding: 8px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@media (max-width: 900px) {
-  .karaoke-banner, .karaoke-desarrollo, .karaoke-roles, .karaoke-faq-section {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .karaoke-roles {
-    flex-direction: column;
-    align-items: center;
-  }
-  .karaoke-faq-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .karaoke-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .karaoke-hero-text {
+        text-align: center;
+    }
+
+    .karaoke-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .karaoke-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .karaoke-roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .karaoke-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .karaoke-faq-img {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .karaoke-banner-modern {
+        min-height: 320px;
+    }
+
+    .karaoke-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .karaoke-banner-content p {
+        font-size: 1rem;
+    }
+
+    .karaoke-hero {
+        padding: 60px 0 40px;
+    }
+
+    .karaoke-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .karaoke-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .karaoke-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .karaoke-roles-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .karaoke-banner-container {
+        padding: 12px;
+    }
+
+    .karaoke-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .karaoke-faq {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .karaoke-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .karaoke-badge,
+    .karaoke-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .karaoke-hero-container,
+    .karaoke-roles-grid,
+    .karaoke-roles-bottom,
+    .karaoke-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .karaoke-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .karaoke-role-card {
+        padding: 18px 14px;
+    }
+
+    .karaoke-role-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .karaoke-role-card ul li,
+    .faq-answer,
+    .faq-question {
+        font-size: 0.95rem;
+    }
 }

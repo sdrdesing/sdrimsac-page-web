@@ -1,8 +1,8 @@
 /* ================================================================
    ESTILO FACTURACIÓN ESCOLAR - SDRIMSAC
-   ================================================================ */
+================================================================ */
 
-/* 1. Configuración Base */
+/* BASE */
 :root {
     --primary: #18376b;
     --secondary: #3a7be0;
@@ -23,88 +23,259 @@ body {
     line-height: 1.6;
 }
 
-/* 2. Header y Banners */
-.servicios-header {
-    background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
-    padding: 80px 20px;
-    clip-path: ellipse(150% 100% at 50% 0%);
+/* BANNER MODERNO */
+.escolar-banner-modern {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
+}
+
+.escolar-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.escolar-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.escolar-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
     text-align: center;
-    color: var(--white);
+    padding: 40px 20px;
+    color: #fff;
 }
 
-.servicios-header h1 {
-    font-size: 3rem;
+.escolar-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.escolar-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
     font-weight: 800;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
 }
 
-.container-card {
-    max-width: 1000px;
-    margin: 40px auto;
+.escolar-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* TAGS Y TITULOS */
+.escolar-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eef4ff;
+    color: var(--primary);
+    border: 1px solid #dbe7ff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.escolar-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.escolar-section-heading h3 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.escolar-section-heading p {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* HERO */
+.escolar-hero {
+    padding: 80px 0 70px;
+    background: var(--bg-light);
+}
+
+.escolar-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.escolar-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: var(--primary);
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.escolar-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.escolar-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #e4ebf7;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
+}
+
+.feature i {
+    color: var(--secondary);
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* IMAGEN PRINCIPAL */
+.escolar-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.escolar-main {
+    display: flex;
+    justify-content: center;
+    padding: 1px 20px;
+}
+
+.escolar-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
+
+.escolar-banner {
+    width: 100%;
+    border-radius: 22px;
+    display: block;
+}
+
+.escolar-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* ROLES */
+.escolar-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef4ff 100%);
+}
+
+.escolar-roles-grid {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+}
+
+.escolar-role-card {
     background: var(--white);
     border-radius: 24px;
     box-shadow: var(--shadow);
-    overflow: hidden;
     border: 1px solid #eef2f6;
-    transition: var(--transition);
+    padding: 34px 28px;
 }
 
-.banner-principal {
-    margin-top: -60px;
-    position: relative;
-    z-index: 10;
+.escolar-role-large {
+    min-height: 100%;
 }
 
-/* 3. Seccion Roles (Admin y Caja) */
-.roles-container {
-    display: flex;
-    flex-wrap: wrap;
-    background: var(--white);
+.role-icon {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.role-column {
-    flex: 1 1 50%;
-    padding: 45px;
-}
-
-.role-column:first-child {
-    border-right: 1px solid #f0f4f8;
-}
-
-.role-title {
+.escolar-role-card h3 {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--primary);
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 700;
     margin-bottom: 25px;
+    text-align: center;
 }
 
-.role-title i {
-    background: #eef4ff;
-    padding: 15px;
-    border-radius: 14px;
-    margin-right: 15px;
-    color: var(--secondary);
-    font-size: 1.4rem;
-}
-
-.list-style {
+.escolar-role-card ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.list-style li {
+.escolar-role-card ul li {
     position: relative;
     padding-left: 30px;
     margin-bottom: 15px;
     font-size: 1rem;
     color: #444;
+    line-height: 1.65;
 }
 
-.list-style li::before {
-    content: "\f00c"; /* Icono Check */
+.escolar-role-card ul li::before {
+    content: "\f00c";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
@@ -113,19 +284,29 @@ body {
     font-size: 0.9rem;
 }
 
-/* 4. FAQ Dinámico (Preguntas Frecuentes) */
-.faq-section {
+/* FAQ */
+.escolar-faq-wrapper {
+    padding: 0 0 90px;
+    background: #eef4ff;
+}
+
+.escolar-faq-section {
     max-width: 1000px;
-    margin: 60px auto;
-    display: flex;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
     align-items: flex-start;
     gap: 40px;
     padding: 0 20px;
 }
 
+.faq-escolar {
+    background: transparent;
+}
+
 .faq-title {
     color: var(--primary);
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 35px;
 }
@@ -136,7 +317,8 @@ body {
     margin-bottom: 18px;
     border: 2px solid #f0f4f8;
     transition: var(--transition);
-    counter-increment: faq-count; /* Numeración automática */
+    counter-increment: faq-count;
+    box-shadow: 0 6px 18px rgba(24,55,107,0.05);
 }
 
 .faq-item:hover {
@@ -157,14 +339,14 @@ body {
     cursor: pointer;
     font-weight: 700;
     color: var(--text-dark);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     user-select: none;
+    gap: 14px;
 }
 
-/* El Número de la pregunta */
 .faq-question::before {
     content: counter(faq-count, decimal-leading-zero);
-    margin-right: 18px;
+    margin-right: 4px;
     background: var(--secondary);
     color: var(--white);
     padding: 5px 10px;
@@ -172,6 +354,7 @@ body {
     font-size: 0.85rem;
     font-weight: 800;
     box-shadow: 0 4px 10px rgba(58, 123, 224, 0.3);
+    flex-shrink: 0;
 }
 
 .faq-arrow {
@@ -184,6 +367,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .faq-arrow::after {
@@ -199,11 +383,11 @@ body {
 }
 
 .faq-answer {
-    padding: 0 30px 25px 75px; /* Alineado para que no choque con el número */
+    padding: 0 30px 25px 75px;
     color: var(--text-muted);
     font-size: 1.05rem;
     line-height: 1.8;
-    display: none; /* Controlado por JS */
+    display: none;
     animation: fadeInUp 0.4s ease;
 }
 
@@ -212,88 +396,147 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.faq-img-escolar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .faq-img-escolar img {
+    max-width: 280px;
+    width: 100%;
     border-radius: 28px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     transition: transform 0.4s ease;
+    background: #fff;
+    padding: 8px;
 }
 
-/* 5. Responsive */
-@media (max-width: 850px) {
-    .roles-container, .faq-section {
-        flex-direction: column;
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .escolar-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
-    .role-column {
-        border-right: none;
-        border-bottom: 1px solid #f0f4f8;
-        padding: 30px;
+
+    .escolar-hero-text {
+        text-align: center;
     }
+
+    .escolar-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .escolar-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .escolar-roles-grid,
+    .escolar-faq-section {
+        grid-template-columns: 1fr;
+    }
+
     .faq-img-escolar {
         order: -1;
-        margin: 0 auto 30px auto;
+        margin: 0 auto 10px auto;
     }
-    .servicios-header h1 {
+
+    .faq-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .escolar-banner-content h1 {
         font-size: 2.2rem;
     }
 
+    .escolar-hero-text h2 {
+        font-size: 2.2rem;
+    }
 
+    .escolar-section-heading h3 {
+        font-size: 1.8rem;
+    }
 
-
-    :root {
-  --faq-brown: #8B5C2B;
-  --faq-light: #fff8f2;
-  --faq-border: #e2c7a2;
+    .escolar-role-card {
+        padding: 26px 20px;
+    }
 }
 
-.faq-title {
-  color: var(--faq-brown);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  text-align: center;
+@media (max-width: 768px) {
+    .escolar-banner-modern {
+        min-height: 320px;
+    }
+
+    .escolar-banner-container {
+        padding: 12px;
+    }
+
+    .escolar-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+
+    .faq-question::before {
+        display: none;
+    }
 }
 
-.faq-item {
-  border-bottom: 2px solid var(--faq-border);
-  margin-bottom: 18px;
-  padding-bottom: 12px;
-  background: var(--faq-light);
-}
+@media (max-width: 480px) {
+    .escolar-banner-content h1 {
+        font-size: 1.8rem;
+    }
 
-.faq-question {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--faq-brown);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .escolar-badge,
+    .escolar-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
 
-.faq-arrow {
-  display: inline-block;
-  margin-left: 8px;
-  width: 24px;
-  height: 24px;
-  background: none;
-  border: none;
-  color: var(--faq-brown);
-  font-size: 1.5rem;
-  transition: transform 0.3s;
-}
+    .escolar-hero-container,
+    .escolar-roles-grid,
+    .escolar-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
 
-.faq-item.active .faq-arrow {
-  transform: rotate(90deg);
-}
+    .escolar-hero-text h2 {
+        font-size: 1.9rem;
+    }
 
-.faq-answer {
-  font-size: 1rem;
-  color: #444;
-  margin-top: 8px;
-  padding-left: 8px;
-  background: #fff;
-  border-radius: 8px;
-  display: block;
-}
+    .feature {
+        padding: 12px 14px;
+    }
 
+    .escolar-role-card {
+        padding: 18px 14px;
+    }
+
+    .escolar-role-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .escolar-role-card ul li,
+    .faq-answer,
+    .faq-question {
+        font-size: 0.95rem;
+    }
 }

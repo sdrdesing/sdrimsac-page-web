@@ -1,193 +1,504 @@
-/* Estilos para facturacioncafeteria.php */
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.cafeteria-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f7e7d5;
+    color: #041a56;
+    border: 1px solid #edd7c0;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.cafeteria-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.cafeteria-section-heading h3 {
+    font-size: 2.2rem;
+    color: #041a56;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.cafeteria-section-heading p {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   BANNER MODERNO
+========================= */
+/* BANNER CORPORATIVO AZUL */
+
+.cafeteria-banner-modern{
+position:relative;
+width:100%;
+height:380px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+background:#18376b;
+}
+
+.cafeteria-banner-modern img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.cafeteria-banner-overlay{
+position:absolute;
+width:100%;
+height:100%;
+
+/* COLOR AZUL CORPORATIVO */
+background:linear-gradient(
+135deg,
+rgba(10,40,90,0.90),
+rgba(24,55,107,0.90)
+);
+}
+
+.cafeteria-banner-content{
+position:relative;
+text-align:center;
+color:white;
+max-width:800px;
+padding:20px;
+}
+
+.cafeteria-banner-content h1{
+font-size:3rem;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.cafeteria-badge{
+background:rgba(255,255,255,0.15);
+padding:8px 16px;
+border-radius:30px;
+font-size:0.9rem;
+margin-bottom:20px;
+display:inline-block;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+.cafeteria-hero {
+    padding: 80px 0 70px;
+    background: #f5f7fb;
+}
+
+.cafeteria-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cafeteria-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #041453dd;
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.cafeteria-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.cafeteria-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #f0e3d8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(124,74,30,0.07);
+}
+
+.feature i {
+    color: #7c4a1e;
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.cafeteria-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.cafeteria-banner-container {
+    position: relative;
+    background: #fff;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
+}
 
 .cafeteria-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0 auto;
-  max-width: 900px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(24,55,107,0.13);
-  background: #fff;
-}
-.cafeteria-banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
 }
 
-.cafeteria-desarrollo {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 32px auto 0 auto;
-  padding: 32px 24px 24px 24px;
-  text-align: center;
+.cafeteria-card {
+    position: absolute;
+    right: -45px;
+    bottom: -40px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
 }
-.cafeteria-desarrollo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #7c4a1e;
-}
-.cafeteria-desarrollo p {
-  font-size: 1.1rem;
-  color: #333;
+
+/* =========================
+   ROLES
+========================= */
+.cafeteria-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #f8f3ef 100%);
 }
 
 .cafeteria-roles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 24px;
 }
+
 .cafeteria-rol-card {
-  flex: 1 1 300px;
-  background: #fdf7f2;
-  border-radius: 16px;
-  box-shadow: 0 1px 8px rgba(124,74,30,0.07);
-  padding: 28px 20px 20px 20px;
-  min-width: 280px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(124,74,30,0.08);
+    padding: 26px 22px;
+    border: 1px solid #f0e7de;
 }
+
+.cafeteria-rol-large {
+    min-height: 100%;
+}
+
 .cafeteria-rol-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #7c4a1e;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #032364;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 .cafeteria-rol-card ul {
-  padding-left: 18px;
-  color: #222;
-  font-size: 1rem;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .cafeteria-rol-card ul li {
-  margin-bottom: 7px;
-  list-style: disc;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 11px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
 }
+
+.cafeteria-rol-card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #7c4a1e;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.92rem;
+}
+
 .cafeteria-rol-icon {
-  font-size: 1.7rem;
-  color: #7c4a1e;
+    font-size: 1.4rem;
+    color: #7c4a1e;
 }
 
 .cafeteria-roles-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 32px auto 0 auto;
-  max-width: 700px;
+    width: min(900px, calc(100% - 40px));
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
-.cafeteria-roles-bottom .cafeteria-rol-card {
-  min-width: 200px;
-  max-width: 260px;
-  padding: 20px 12px 16px 12px;
+
+/* =========================
+   FAQ
+========================= */
+.cafeteria-faq-wrapper {
+    padding: 0 0 90px;
+    background: #f8f3ef;
 }
 
 .cafeteria-faq-section {
-  max-width: 1100px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
 }
+
 .cafeteria-faq {
-  flex: 2 1 400px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 32px 24px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(124,74,30,0.08);
+    padding: 34px 28px;
+    border: 1px solid #f0e7de;
 }
+
 .cafeteria-faq h2 {
-  color: #7c4a1e;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-align: center;
+    color: #7c4a1e;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
 }
+
 .cafeteria-faq-item {
-  margin-bottom: 18px;
-  border-bottom: 1px solid #f3e3d1;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #f3e3d1;
 }
+
 .cafeteria-faq-question {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #7c4a1e;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  transition: color 0.2s;
+    font-weight: 700;
+    font-size: 1.04rem;
+    color: #7c4a1e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    transition: color 0.2s;
 }
+
 .cafeteria-faq-question:hover {
-  color: #a86c3c;
+    color: #a86c3c;
 }
+
 .cafeteria-faq-answer {
-  font-size: 1rem;
-  color: #222;
-  padding: 0 0 10px 0;
-  display: none;
-  animation: fadeIn 0.3s;
+    font-size: 1rem;
+    color: #374151;
+    padding: 0 0 14px 0;
+    display: none;
+    animation: fadeIn 0.3s;
+    line-height: 1.7;
 }
+
 .cafeteria-faq-item.active .cafeteria-faq-answer {
-  display: block;
+    display: block;
 }
+
 .cafeteria-faq-toggle {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: transform 0.2s;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
 }
+
 .cafeteria-faq-item.active .cafeteria-faq-toggle {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .cafeteria-faq-img {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 .cafeteria-faq-img img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(124,74,30,0.10);
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(124,74,30,0.12);
+    background: #fff;
+    padding: 8px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@media (max-width: 900px) {
-  .cafeteria-banner, .cafeteria-desarrollo, .cafeteria-roles, .cafeteria-faq-section {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .cafeteria-roles {
-    flex-direction: column;
-    align-items: center;
-  }
-  .cafeteria-faq-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+    .cafeteria-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .cafeteria-hero-text {
+        text-align: center;
+    }
+
+    .cafeteria-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cafeteria-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .cafeteria-roles {
+        grid-template-columns: 1fr;
+    }
+
+    .cafeteria-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .cafeteria-faq-img {
+        order: -1;
+    }
 }
 
+@media (max-width: 768px) {
+    .cafeteria-banner-modern {
+        min-height: 320px;
+    }
 
+    .cafeteria-banner-content h1 {
+        font-size: 2.2rem;
+    }
 
+    .cafeteria-banner-content p {
+        font-size: 1rem;
+    }
 
+    .cafeteria-hero {
+        padding: 60px 0 40px;
+    }
+
+    .cafeteria-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .cafeteria-hero-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .cafeteria-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .cafeteria-roles-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .cafeteria-banner-container {
+        padding: 12px;
+    }
+
+    .cafeteria-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .cafeteria-faq {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cafeteria-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .cafeteria-badge,
+    .cafeteria-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .cafeteria-hero-container,
+    .cafeteria-roles,
+    .cafeteria-roles-bottom,
+    .cafeteria-faq-section {
+        width: min(100% - 24px, 1200px);
+    }
+
+    .cafeteria-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .cafeteria-rol-card {
+        padding: 18px 14px;
+    }
+
+    .cafeteria-rol-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .cafeteria-rol-card ul li,
+    .cafeteria-faq-answer,
+    .cafeteria-faq-question {
+        font-size: 0.95rem;
+    }
+}

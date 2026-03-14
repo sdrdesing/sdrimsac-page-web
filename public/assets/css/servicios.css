@@ -28,35 +28,39 @@ body{
 }
 
 /* =========================
-   BANNER
+   BANNER MODERNO
 ========================= */
-.page-banner{
+.page-banner-modern{
   position: relative;
   width: 100%;
-  min-height: 360px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: #dfe7f2;
+  background: #18376b;
 }
 
-.page-banner img{
+.page-banner-modern img{
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 360px;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.45) saturate(0.9);
 }
 
-.page-banner::before{
-  content: "";
+.page-banner-modern-overlay{
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, rgba(15, 36, 67, 0.82), rgba(22, 59, 115, 0.62));
-  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 29, 74, 0.90),
+    rgba(24, 55, 107, 0.88)
+  );
 }
 
-.page-banner-overlay{
-  position: absolute;
-  inset: 0;
+.page-banner-modern-content{
+  position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -64,10 +68,12 @@ body{
   align-items: center;
   gap: 14px;
   text-align: center;
-  padding: 20px;
+  color: #fff;
+  max-width: 900px;
+  padding: 40px 20px;
 }
 
-.page-banner-chip{
+.page-banner-modern-chip{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -76,26 +82,27 @@ body{
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.22);
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
   backdrop-filter: blur(6px);
+  margin-bottom: 6px;
 }
 
-.page-banner-overlay h1{
+.page-banner-modern-content h1{
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   line-height: 1.1;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
-.page-banner-overlay p{
-  margin: 0;
+.page-banner-modern-content p{
+  margin: 0 auto;
   max-width: 760px;
   color: rgba(255,255,255,0.92);
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 /* =========================
@@ -418,7 +425,7 @@ body{
   box-shadow: var(--sd-shadow);
   display: inline-block;
   background: #fff;
-   margin-left: 550px;
+  margin-left: 550px;
 }
 
 /* =========================
@@ -486,9 +493,8 @@ body{
 }
 
 @media (max-width: 768px){
-  .page-banner,
-  .page-banner img{
-    height: 300px;
+  .page-banner-modern{
+    min-height: 320px;
   }
 
   .sdrim-flyer-content{
@@ -511,15 +517,15 @@ body{
 }
 
 @media (max-width: 560px){
-  .page-banner-overlay h1{
+  .page-banner-modern-content h1{
     font-size: 1.85rem;
   }
 
-  .page-banner-overlay p{
+  .page-banner-modern-content p{
     font-size: 0.95rem;
   }
 
-  .page-banner-chip,
+  .page-banner-modern-chip,
   .sdrim-mini-badge,
   .sdrim-section-chip{
     font-size: 0.82rem;

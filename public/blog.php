@@ -1,15 +1,17 @@
 <?php include("includes/header.php"); ?>
 <link rel="stylesheet" href="assets/css/blog.css">
 
-<!-- BANNER -->
-<div class="page-banner">
+<!-- BANNER MODERNO -->
+<section class="blog-banner-modern">
     <img src="https://www.manutan.es/blog/wp-content/uploads/2023/12/fatura-eletronica-scaled.jpeg" alt="Blog SDRIMSAC">
-    <div class="page-banner-overlay">
+    <div class="blog-banner-overlay"></div>
+
+    <div class="blog-banner-content">
+        <span class="blog-banner-chip">Contenido útil para empresas</span>
         <h1>Blog</h1>
         <p>Noticias, guías y novedades sobre SUNAT, facturación electrónica y tecnología para empresas.</p>
-        
     </div>
-</div>
+</section>
 
 <section class="blog-section" id="blog-listado">
     <div class="blog-layout">
@@ -21,7 +23,7 @@
             <article class="post-featured">
                 <div class="post-featured-media">
                     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80" alt="SIRE SUNAT - Registros electrónicos">
-                    
+                    <span class="post-badge-featured">Destacado</span>
                 </div>
 
                 <div class="post-featured-body">
@@ -49,7 +51,7 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="CPE - Comprobante de pago electrónico">
-                        
+                        <span class="post-badge">Facturación</span>
                     </div>
 
                     <div class="post-body">
@@ -72,12 +74,12 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=80" alt="Consulta validez CPE SUNAT">
-                        
+                        <span class="post-badge">Guía</span>
                     </div>
 
                     <div class="post-body">
                         <div class="post-meta">
-                            
+                            <span class="post-category">SUNAT</span>
                             <span class="post-date">Actualizado 2025</span>
                         </div>
 
@@ -94,13 +96,13 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1200&q=80" alt="OSE y PSE SUNAT">
-                        
+                        <span class="post-badge">Tecnología</span>
                     </div>
 
                     <div class="post-body">
                         <div class="post-meta">
                             <span class="post-category">Tecnología</span>
-                           
+                            <span class="post-date">Especial</span>
                         </div>
 
                         <h3 class="post-title">OSE vs PSE: diferencias y cuál conviene para tu empresa</h3>
@@ -116,12 +118,13 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80" alt="Validación XML UBL 2.1">
-                        
+                        <span class="post-badge">Validación</span>
                     </div>
 
                     <div class="post-body">
                         <div class="post-meta">
-                      
+                            <span class="post-category">Técnico</span>
+                            <span class="post-date">Guía práctica</span>
                         </div>
 
                         <h3 class="post-title">Validación de XML (UBL 2.1): cómo evitar rechazos antes de enviar a SUNAT</h3>
@@ -137,12 +140,12 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Verificación de XML SUNAT">
-                        
+                        <span class="post-badge">Oficial</span>
                     </div>
 
                     <div class="post-body">
                         <div class="post-meta">
-                            
+                            <span class="post-category">Herramienta</span>
                             <span class="post-date">Herramienta oficial</span>
                         </div>
 
@@ -159,12 +162,12 @@
                 <article class="post-card">
                     <div class="post-media">
                         <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200&q=80" alt="Transformación digital empresarial">
-                        
+                        <span class="post-badge">Empresa</span>
                     </div>
 
                     <div class="post-body">
                         <div class="post-meta">
-                        
+                            <span class="post-category">Transformación digital</span>
                             <span class="post-date">08 enero 2025</span>
                         </div>
 
@@ -181,6 +184,8 @@
             </div>
         </div>
 
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
             <div class="sidebar-box">
                 <h4 class="sidebar-title">Publicaciones recientes</h4>
                 <ul class="sidebar-posts">

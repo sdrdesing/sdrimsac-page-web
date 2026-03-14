@@ -1,110 +1,530 @@
-/* Estilos para Facturación Créditos */
-.creditos-banner {
-    max-width: 900px;
-    margin: 40px auto 0 auto;
-    padding: 0;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    text-align: center;
+/* ================================================================
+   ESTILO FACTURACIÓN CRÉDITOS - SDRIMSAC
+================================================================ */
+
+/* BASE */
+:root {
+    --primary: #18376b;
+    --secondary: #3a7be0;
+    --accent: #764ba2;
+    --bg-light: #f4f7fa;
+    --text-dark: #2c3e50;
+    --text-muted: #5d6a7a;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(24, 55, 107, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.creditos-banner img {
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* BANNER MODERNO */
+.creditos-banner-modern {
+    position: relative;
     width: 100%;
-    border-radius: 18px 18px 0 0;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #18376b;
 }
-.creditos-desarrollo {
+
+.creditos-banner-modern img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.creditos-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,40,90,0.90), rgba(24,55,107,0.90));
+}
+
+.creditos-banner-content {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
-    margin: 40px auto 0 auto;
-    padding: 32px 24px 24px 24px;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     text-align: center;
+    padding: 40px 20px;
+    color: #fff;
 }
-.creditos-desarrollo h2 {
-    color: #18376b;
-    font-size: 2rem;
-    font-weight: 700;
+
+.creditos-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+}
+
+.creditos-banner-content h1 {
+    font-size: 3.1rem;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+.creditos-banner-content p {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.96;
+}
+
+/* TAGS Y TITULOS */
+.creditos-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eef4ff;
+    color: var(--primary);
+    border: 1px solid #dbe7ff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
     margin-bottom: 18px;
 }
-.creditos-roles-grid {
-    max-width: 1100px;
-    margin: 40px auto 0 auto;
-    padding: 0;
-    background: #f7faff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+.creditos-section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+}
+
+.creditos-section-heading h3 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.creditos-section-heading p {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* HERO */
+.creditos-hero {
+    padding: 80px 0 70px;
+    background: var(--bg-light);
+}
+
+.creditos-hero-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.creditos-hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: var(--primary);
+    margin: 0 0 20px;
+    font-weight: 800;
+}
+
+.creditos-hero-text p {
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 28px;
+}
+
+.creditos-features {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.feature {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #e4ebf7;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(24,55,107,0.06);
+}
+
+.feature i {
+    color: var(--secondary);
+    font-size: 1rem;
+}
+
+.feature span {
+    font-size: 1rem;
+    color: #243041;
+    font-weight: 500;
+}
+
+/* IMAGEN PRINCIPAL */
+.creditos-hero-image {
+    display: flex;
     justify-content: center;
 }
-.creditos-rol-card {
-    flex: 1 1 220px;
-    min-width: 220px;
+
+.creditos-main {
+    display: flex;
+    justify-content: center;
+    padding: 1px 20px;
+}
+
+.creditos-banner-container {
+    position: relative;
     background: #fff;
-    margin: 24px 12px;
-    border-radius: 14px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-    padding: 24px 18px 18px 18px;
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+    max-width: 620px;
+    width: 100%;
 }
-.creditos-rol-icon {
-    font-size: 2rem;
-    color: #18376b;
-    margin-right: 8px;
+
+.creditos-banner {
+    width: 100%;
+    border-radius: 22px;
+    display: block;
 }
+
+.creditos-card {
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 260px;
+    max-width: 45%;
+    border-radius: 22px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* ROLES */
+.creditos-roles-section {
+    padding: 20px 0 90px;
+    background: linear-gradient(to bottom, #f5f7fb 0%, #eef4ff 100%);
+}
+
+.creditos-roles-grid {
+    width: min(1250px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.creditos-rol-card {
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eef2f6;
+    padding: 30px 24px;
+}
+
 .creditos-rol-card h3 {
-    color: #18376b;
-    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 12px;
-    text-align: center;
+    margin-bottom: 22px;
+    line-height: 1.3;
 }
+
+.creditos-rol-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef4ff;
+    padding: 12px;
+    border-radius: 14px;
+    margin-right: 12px;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
 .creditos-rol-card ul {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #222;
-    padding-left: 18px;
-    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+.creditos-rol-card ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 0.97rem;
+    color: #444;
+    line-height: 1.65;
+}
+
+.creditos-rol-card ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+/* FAQ */
+.creditos-faq-wrapper {
+    padding: 0 0 90px;
+    background: #eef4ff;
+}
+
 .creditos-faq-section {
-    max-width: 1100px;
-    margin: 40px auto 40px auto;
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
     padding: 32px 24px 24px 24px;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 24px rgba(24,55,107,0.08);
+    border: 1px solid #e0e8f0;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    gap: 32px;
+    align-items: start;
 }
-.creditos-faq-section h2 {
-    color: #18376b;
+
+.creditos-faq-list h2 {
+    color: var(--primary);
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 18px;
 }
-.creditos-faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+
 .creditos-faq-item {
     background: #f8fafd;
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    margin-bottom: 0;
-    cursor: pointer;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    border: 1.5px solid #e0e8f0;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(24,55,107,0.04);
 }
+
+.creditos-faq-item.active {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 16px rgba(24,55,107,0.10);
+}
+
 .creditos-faq-question {
-    font-weight: 600;
-    color: #18376b;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.05rem;
+    user-select: none;
+    position: relative;
 }
+
+.creditos-faq-question::after {
+    content: '\f107';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef4ff;
+    border-radius: 50%;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.creditos-faq-item.active .creditos-faq-question::after {
+    transform: rotate(180deg);
+    background: var(--secondary);
+    color: #fff;
+}
+
 .creditos-faq-answer {
-    margin-top: 8px;
-    color: #222;
+    padding: 0 22px 22px 22px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
     display: none;
+    animation: fadeInUp 0.4s ease;
 }
+
 .creditos-faq-item.active .creditos-faq-answer {
     display: block;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.creditos-faq-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.creditos-faq-img img {
+    max-width: 260px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    background: #fff;
+    padding: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .creditos-roles-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .creditos-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .creditos-hero-text {
+        text-align: center;
+    }
+
+    .creditos-features {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .creditos-card {
+        right: -20px;
+        bottom: -25px;
+        width: 220px;
+    }
+
+    .creditos-faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .creditos-faq-img {
+        order: -1;
+        margin: 0 auto 10px auto;
+    }
+
+    .creditos-faq-list h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .creditos-banner-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .creditos-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .creditos-section-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .creditos-rol-card {
+        padding: 26px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .creditos-banner-modern {
+        min-height: 320px;
+    }
+
+    .creditos-roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .creditos-banner-container {
+        padding: 12px;
+    }
+
+    .creditos-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 16px auto 0;
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .creditos-faq-question {
+        padding: 18px 18px;
+        font-size: 1rem;
+    }
+
+    .creditos-faq-answer {
+        padding: 0 18px 18px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .creditos-banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .creditos-badge,
+    .creditos-tag {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .creditos-hero-container,
+    .creditos-roles-grid,
+    .creditos-faq-section {
+        width: min(100% - 24px, 1250px);
+    }
+
+    .creditos-hero-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .feature {
+        padding: 12px 14px;
+    }
+
+    .creditos-rol-card {
+        padding: 18px 14px;
+    }
+
+    .creditos-rol-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .creditos-rol-card ul li,
+    .creditos-faq-answer,
+    .creditos-faq-question {
+        font-size: 0.95rem;
+    }
 }

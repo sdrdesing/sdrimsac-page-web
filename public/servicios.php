@@ -1,15 +1,16 @@
 <?php include("includes/header.php"); ?>
 <link rel="stylesheet" href="assets/css/servicios.css">
 
-<!-- BANNER -->
-<div class="page-banner">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/695/792/small/electronic-bill-payment-concept.jpg" alt="Servicios SDRIMSAC">
-    <div class="page-banner-overlay">
-        <span class="page-banner-chip">Soluciones empresariales SDRIMSAC</span>
+<!-- BANNER MODERNO -->
+<section class="page-banner-modern">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/695/792/small/electronic-bill-payment-concept.jpg" alt="Servicios SDRIM">
+    <div class="page-banner-modern-overlay"></div>
+    <div class="page-banner-modern-content">
+        <span class="page-banner-modern-chip">Soluciones empresariales SDRIMSAC</span>
         <h1>Nuestros Servicios</h1>
         <p>Facturación electrónica, inventario, caja, restaurante y soluciones adaptadas a cada rubro.</p>
     </div>
-</div>
+</section>
 
 <section class="sdrim-flyer-content">
 

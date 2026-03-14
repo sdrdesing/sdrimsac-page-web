@@ -28,7 +28,7 @@
   color: var(--text);
   margin-bottom: 10px;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, var(--primary) 0%, #6c6cff 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #1A3A6B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +156,7 @@
   transform: translateY(-1px);
 }
 .manual-btn:last-child {
-  background: linear-gradient(135deg, var(--primary), #6c6cff);
+  background: linear-gradient(135deg, var(--primary), #1A3A6B);
   color: #fff;
   border: 1.5px solid transparent;
 }
